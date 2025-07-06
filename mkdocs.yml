@@ -1,0 +1,14 @@
+site_name: My Docs
+site_name: "Dr Jitendra K. Verma"
+site_url: "https://jk-verma.github.com/"
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+extra_css:
+  - styles/extra.css        # we’ll add this shortly
+nav:
+  - Home: index.md          # more items will appear later
+plugins: []
+markdown_extensions: [toc, admonition, footnotes]

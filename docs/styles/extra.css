@@ -1,0 +1,16 @@
+/* Circular avatar that resists right-click save */
+.avatar-wrap{
+  float:left;
+  width:160px;height:160px;margin:0 1.5rem 1rem 0;
+  background:url("../assets/avatar.webp") center/cover no-repeat;
+  border-radius:50%;
+  box-shadow:0 2px 6px rgb(0 0 0 /.15);
+  position:relative;
+}
+.avatar-wrap::after{          /* transparent shield */
+  content:"";
+  position:absolute;inset:0;
+  border-radius:50%;
+  background:transparent;
+  pointer-events:auto;
+}
