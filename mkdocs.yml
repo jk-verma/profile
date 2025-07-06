@@ -7,8 +7,24 @@ theme:
     - scheme: default
       primary: indigo
 extra_css:
-  - styles/extra.css        # we’ll add this shortly
+  - styles/extra.css                                   # we’ll add this shortly
 nav:
-  - Home: index.md          # more items will appear later
+  - Home: index.md                                     # more items will appear later
+  - About: about.md                                    # Short bio + personal details
+  - CV: cv.md                                          # Full résumé sections
+  - Teaching: teaching.md                              # Courses taught
+  - Research & Grants: research.md                     # Grants, patents, research IDs
+  - Publications:
+      - Overview: publications/index.md                # Overview paragraph
+      - Books: publications/books.md                   # Authored + Edited books
+      - Journals: publications/journals.md             # Journal articles
+      - Conferences: publications/conferences.md       # Conference papers
+  - Talks & Media: talks.md                            # Keynotes & invited talks	
+  - Supervision: supervision.md                        # Ph.D./M.Tech./MBA theses
+  - Service: service.md                                # Committees, reviewer roles
+  - Awards: awards.md                                  # Awards & fellowships
+  - Updates: news.md                                   # Long-form update log
+  - Contact: contact.md                                # Email, phone, LinkedIn
+
 plugins: []
 markdown_extensions: [toc, admonition, footnotes]
