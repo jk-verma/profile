@@ -252,7 +252,7 @@ a:hover {
 }
 
 .ticker-gap {
-  min-width: 90px;
+  min-width: min(32vw, 360px);
 }
 
 .ticker-gap::after {
