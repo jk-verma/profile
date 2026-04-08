@@ -57,6 +57,21 @@ function createTextElement(tag, className, text) {
   return element;
 }
 
+function sortNewsItems(items) {
+  return [...items].sort((left, right) => {
+    const leftTime = Date.parse(left?.date || "");
+    const rightTime = Date.parse(right?.date || "");
+
+    if (!Number.isNaN(leftTime) && !Number.isNaN(rightTime) && leftTime !== rightTime) {
+      return rightTime - leftTime;
+    }
+
+    if (!Number.isNaN(rightTime)) return 1;
+    if (!Number.isNaN(leftTime)) return -1;
+    return 0;
+  });
+}
+
 function renderNewsItem(item) {
   const article = document.createElement("article");
   article.className = "news-item";
@@ -126,7 +141,7 @@ async function loadNews() {
     const response = await fetch("news.json", { cache: "no-store" });
     if (!response.ok) throw new Error("Unable to load news data");
 
-    const items = await response.json();
+    const items = sortNewsItems(await response.json());
     renderNewsTicker(items);
 
     if (container) {
