@@ -195,11 +195,19 @@ a:hover {
   animation-play-state: paused;
 }
 
-.ticker-track span {
+.ticker-track span,
+.ticker-track a {
   position: relative;
+  color: var(--text);
 }
 
-.ticker-track span::after {
+.ticker-track a:hover {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+.ticker-track span::after,
+.ticker-track a::after {
   content: "";
   position: absolute;
   top: 50%;

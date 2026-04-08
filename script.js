@@ -94,7 +94,11 @@ function renderNewsTicker(items) {
   }
 
   const repeatedItems = [...tickerItems, ...tickerItems];
-  track.replaceChildren(...repeatedItems.map((text) => createTextElement("span", "", text)));
+  track.replaceChildren(...repeatedItems.map((text) => {
+    const link = createTextElement("a", "", text);
+    link.href = "#news";
+    return link;
+  }));
 }
 
 async function loadNews() {
