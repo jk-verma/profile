@@ -1,4 +1,4 @@
-# Dr. Jitendra Kumar Verma - GitHub Pages Website
+# Dr. J. K. Verma - Profile
 
 Static academic profile website for GitHub Pages.
 
