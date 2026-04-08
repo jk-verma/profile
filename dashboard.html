@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="News dashboard for updating the profile website of Dr. Jitendra Kumar Verma." />
+  <title>News Dashboard | Dr. Jitendra Kumar Verma</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Back to profile home">
+      <span>JKV</span>
+      <strong>News Dashboard</strong>
+    </a>
+    <button id="menuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+      Menu
+    </button>
+    <nav id="primaryNav" class="primary-nav" aria-label="Dashboard navigation">
+      <a href="index.html">Profile</a>
+      <a href="index.html#news">Latest News</a>
+      <a href="news.json" target="_blank" rel="noopener">Open JSON</a>
+      <a href="https://github.com/jk-verma/profile/edit/main/news.json" target="_blank" rel="noopener">Edit on GitHub</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="dashboard-hero section">
+      <div>
+        <p class="eyebrow">Dashboard</p>
+        <h1>Prepare latest achievements, calls, and academic announcements.</h1>
+        <p class="lead">
+          Add a news item, preview the updated feed, then copy or download the generated <code>news.json</code>.
+          Upload it through GitHub to publish the update on the profile website.
+        </p>
+      </div>
+      <div class="dashboard-steps">
+        <span>1. Add update</span>
+        <span>2. Preview feed</span>
+        <span>3. Download JSON</span>
+        <span>4. Replace on GitHub</span>
+      </div>
+    </section>
+
+    <section class="section dashboard-layout">
+      <form id="newsForm" class="dashboard-card" autocomplete="off">
+        <div class="section-heading">
+          <p class="eyebrow">Create Update</p>
+          <h2>New news item</h2>
+        </div>
+
+        <label>
+          Date
+          <input id="newsDate" name="date" type="date" required />
+        </label>
+
+        <label>
+          Category
+          <select id="newsCategory" name="category" required>
+            <option value="Achievement">Achievement</option>
+            <option value="Call for Papers">Call for Papers</option>
+            <option value="Call for Chapters">Call for Chapters</option>
+            <option value="Conference News">Conference News</option>
+            <option value="Announcement">Announcement</option>
+            <option value="Academic">Academic</option>
+            <option value="Research">Research</option>
+          </select>
+        </label>
+
+        <label>
+          Title
+          <input id="newsTitle" name="title" type="text" maxlength="140" placeholder="Example: Call for book chapters now open" required />
+        </label>
+
+        <label>
+          Summary
+          <textarea id="newsSummary" name="summary" rows="6" maxlength="700" placeholder="Write the short update that visitors should see." required></textarea>
+        </label>
+
+        <div class="dashboard-actions">
+          <button class="button primary" type="submit">Add to Preview</button>
+          <button id="clearDraft" class="button secondary" type="button">Clear Draft</button>
+        </div>
+      </form>
+
+      <article class="dashboard-card">
+        <div class="section-heading">
+          <p class="eyebrow">Publish</p>
+          <h2>Generated news.json</h2>
+        </div>
+        <p>
+          After adding your update, copy or download this JSON. Then open GitHub and replace the content of
+          <code>news.json</code>.
+        </p>
+        <div class="dashboard-actions">
+          <button id="copyJson" class="button primary" type="button">Copy JSON</button>
+          <button id="downloadJson" class="button secondary" type="button">Download news.json</button>
+          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/news.json" target="_blank" rel="noopener">Open GitHub Editor</a>
+        </div>
+        <p id="dashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
+        <textarea id="jsonOutput" class="json-output" rows="16" spellcheck="false" aria-label="Generated news JSON"></textarea>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Preview</p>
+        <h2>Latest News Preview</h2>
+      </div>
+      <div id="dashboardNewsList" class="news-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
