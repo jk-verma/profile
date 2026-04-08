@@ -789,6 +789,7 @@ dd {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 18px;
+  justify-content: center;
 }
 
 .signature-row span {
