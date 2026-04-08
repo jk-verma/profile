@@ -1,0 +1,44 @@
+[
+  {
+    "type": "Consultancy",
+    "whoPays": "Client",
+    "purpose": "Solve specific problem",
+    "flexibility": "Low",
+    "output": "Report / solution"
+  },
+  {
+    "type": "Sponsored",
+    "whoPays": "Agency",
+    "purpose": "Research",
+    "flexibility": "Medium",
+    "output": "Papers, patents"
+  },
+  {
+    "type": "Grant-in-Aid",
+    "whoPays": "Govt",
+    "purpose": "Support development",
+    "flexibility": "High",
+    "output": "Capacity building"
+  },
+  {
+    "type": "Collaborative",
+    "whoPays": "Multiple",
+    "purpose": "Joint research",
+    "flexibility": "Medium",
+    "output": "Shared outputs"
+  },
+  {
+    "type": "Internal",
+    "whoPays": "Institution",
+    "purpose": "Seed research",
+    "flexibility": "High",
+    "output": "Pilot results"
+  },
+  {
+    "type": "International",
+    "whoPays": "Global org",
+    "purpose": "Development/research",
+    "flexibility": "Medium",
+    "output": "High-impact outputs"
+  }
+]

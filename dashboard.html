@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dashboard for updating news and publications on the profile website of Dr. Jitendra Kumar Verma." />
+  <meta name="description" content="Dashboard for updating news, publications, and projects on the profile website of Dr. Jitendra Kumar Verma." />
   <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="styles.css?v=20260409-4" />
+  <link rel="stylesheet" href="styles.css?v=20260409-5" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -25,6 +25,8 @@
       <a href="publications.html">Publications</a>
       <a href="news.json" target="_blank" rel="noopener">News JSON</a>
       <a href="publications.json" target="_blank" rel="noopener">Publications JSON</a>
+      <a href="projects.json" target="_blank" rel="noopener">Projects JSON</a>
+      <a href="project-modes.json" target="_blank" rel="noopener">Modes JSON</a>
     </nav>
   </header>
 
@@ -32,15 +34,15 @@
     <section class="dashboard-hero section">
       <div>
         <p class="eyebrow">Dashboard</p>
-        <h1>Prepare latest updates and publication entries.</h1>
+        <h1>Prepare latest updates, publications, and projects.</h1>
         <p class="lead">
-          Add news items or publication records, preview the generated data, then copy or download the JSON file
-          and replace it through GitHub to publish the update on the website.
+          Add news items, publication records, website projects, and project-mode rows. Then copy or download the
+          generated JSON file and replace it through GitHub to publish the update on the website.
         </p>
       </div>
       <div class="dashboard-steps">
         <span>1. Add update</span>
-        <span>2. Preview output</span>
+        <span>2. Generate JSON</span>
         <span>3. Download JSON</span>
         <span>4. Replace on GitHub</span>
       </div>
@@ -92,7 +94,7 @@
         </label>
 
         <div class="dashboard-actions">
-          <button class="button primary" type="submit">Add to Preview</button>
+          <button class="button primary" type="submit">Add to JSON</button>
           <button id="clearDraft" class="button secondary" type="button">Clear Draft</button>
         </div>
       </form>
@@ -114,14 +116,6 @@
         <p id="dashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="jsonOutput" class="json-output" rows="16" spellcheck="false" aria-label="Generated news JSON"></textarea>
       </article>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Preview</p>
-        <h2>Latest News Preview</h2>
-      </div>
-      <div id="dashboardNewsList" class="news-list" aria-live="polite"></div>
     </section>
 
     <section class="section dashboard-layout">
@@ -209,7 +203,7 @@
         </div>
 
         <div class="dashboard-actions">
-          <button class="button primary" type="submit">Add to Publications Preview</button>
+          <button class="button primary" type="submit">Add to Publications JSON</button>
           <button id="clearPublicationDraft" class="button secondary" type="button">Clear Draft</button>
         </div>
       </form>
@@ -233,15 +227,116 @@
       </article>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Preview</p>
-        <h2>Publications Preview</h2>
-      </div>
-      <div id="dashboardPublicationsList" class="publications-list" aria-live="polite"></div>
+    <section class="section dashboard-layout">
+      <form id="projectForm" class="dashboard-card" autocomplete="off">
+        <div class="section-heading">
+          <p class="eyebrow">Create Entry</p>
+          <h2>New website or utility project</h2>
+        </div>
+
+        <label>
+          Project Title
+          <input id="projectTitle" name="title" type="text" placeholder="Attendance Tracker" required />
+        </label>
+
+        <label>
+          Summary
+          <textarea id="projectSummary" name="summary" rows="5" maxlength="500" placeholder="Short project description for the Projects page." required></textarea>
+        </label>
+
+        <label>
+          Website URL
+          <input id="projectSiteUrl" name="siteUrl" type="url" placeholder="https://jk-verma.github.io/project-name/" required />
+        </label>
+
+        <label>
+          Repository URL (optional)
+          <input id="projectRepoUrl" name="repoUrl" type="url" placeholder="https://github.com/jk-verma/project-name" />
+        </label>
+
+        <div class="dashboard-actions">
+          <button class="button primary" type="submit">Add to Projects JSON</button>
+          <button id="clearProjectDraft" class="button secondary" type="button">Clear Draft</button>
+        </div>
+      </form>
+
+      <article class="dashboard-card">
+        <div class="section-heading">
+          <p class="eyebrow">Publish</p>
+          <h2>Generated projects.json</h2>
+        </div>
+        <p>
+          Add website and utility projects here. Then replace <code>projects.json</code> in GitHub to publish the
+          updated Projects page.
+        </p>
+        <div class="dashboard-actions">
+          <button id="copyProjectsJson" class="button primary" type="button">Copy Projects JSON</button>
+          <button id="downloadProjectsJson" class="button secondary" type="button">Download projects.json</button>
+          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
+        </div>
+        <p id="projectDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
+        <textarea id="projectsJsonOutput" class="json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
+      </article>
+    </section>
+
+    <section class="section dashboard-layout">
+      <form id="projectModeForm" class="dashboard-card" autocomplete="off">
+        <div class="section-heading">
+          <p class="eyebrow">Create Entry</p>
+          <h2>New project or funding mode row</h2>
+        </div>
+
+        <label>
+          Type
+          <input id="projectModeType" name="type" type="text" placeholder="Consultancy" required />
+        </label>
+
+        <label>
+          Who Pays
+          <input id="projectModeWhoPays" name="whoPays" type="text" placeholder="Client" required />
+        </label>
+
+        <label>
+          Purpose
+          <input id="projectModePurpose" name="purpose" type="text" placeholder="Solve specific problem" required />
+        </label>
+
+        <label>
+          Flexibility
+          <input id="projectModeFlexibility" name="flexibility" type="text" placeholder="Low" required />
+        </label>
+
+        <label>
+          Output
+          <input id="projectModeOutput" name="output" type="text" placeholder="Report / solution" required />
+        </label>
+
+        <div class="dashboard-actions">
+          <button class="button primary" type="submit">Add to Modes JSON</button>
+          <button id="clearProjectModeDraft" class="button secondary" type="button">Clear Draft</button>
+        </div>
+      </form>
+
+      <article class="dashboard-card">
+        <div class="section-heading">
+          <p class="eyebrow">Publish</p>
+          <h2>Generated project-modes.json</h2>
+        </div>
+        <p>
+          Add or revise project and funding rows here. Then replace <code>project-modes.json</code> in GitHub to
+          update the Projects page table.
+        </p>
+        <div class="dashboard-actions">
+          <button id="copyProjectModesJson" class="button primary" type="button">Copy Modes JSON</button>
+          <button id="downloadProjectModesJson" class="button secondary" type="button">Download project-modes.json</button>
+          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/project-modes.json" target="_blank" rel="noopener">Open GitHub Editor</a>
+        </div>
+        <p id="projectModeDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
+        <textarea id="projectModesJsonOutput" class="json-output" rows="18" spellcheck="false" aria-label="Generated project modes JSON"></textarea>
+      </article>
     </section>
   </main>
 
-  <script src="dashboard.js?v=20260409-3"></script>
+  <script src="dashboard.js?v=20260409-5"></script>
 </body>
 </html>

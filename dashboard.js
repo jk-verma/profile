@@ -6,11 +6,11 @@ const newsDeadline = document.getElementById("newsDeadline");
 const newsLink = document.getElementById("newsLink");
 const newsSummary = document.getElementById("newsSummary");
 const jsonOutput = document.getElementById("jsonOutput");
-const newsList = document.getElementById("dashboardNewsList");
 const statusMessage = document.getElementById("dashboardStatus");
 const copyJson = document.getElementById("copyJson");
 const downloadJson = document.getElementById("downloadJson");
 const clearDraft = document.getElementById("clearDraft");
+
 const publicationForm = document.getElementById("publicationForm");
 const publicationType = document.getElementById("publicationType");
 const publicationYear = document.getElementById("publicationYear");
@@ -27,16 +27,41 @@ const publicationPatentNumber = document.getElementById("publicationPatentNumber
 const publicationCountry = document.getElementById("publicationCountry");
 const publicationStatus = document.getElementById("publicationStatus");
 const publicationsJsonOutput = document.getElementById("publicationsJsonOutput");
-const publicationsList = document.getElementById("dashboardPublicationsList");
 const publicationStatusMessage = document.getElementById("publicationDashboardStatus");
 const copyPublicationsJson = document.getElementById("copyPublicationsJson");
 const downloadPublicationsJson = document.getElementById("downloadPublicationsJson");
 const clearPublicationDraft = document.getElementById("clearPublicationDraft");
+
+const projectForm = document.getElementById("projectForm");
+const projectTitle = document.getElementById("projectTitle");
+const projectSummary = document.getElementById("projectSummary");
+const projectSiteUrl = document.getElementById("projectSiteUrl");
+const projectRepoUrl = document.getElementById("projectRepoUrl");
+const projectsJsonOutput = document.getElementById("projectsJsonOutput");
+const projectStatusMessage = document.getElementById("projectDashboardStatus");
+const copyProjectsJson = document.getElementById("copyProjectsJson");
+const downloadProjectsJson = document.getElementById("downloadProjectsJson");
+const clearProjectDraft = document.getElementById("clearProjectDraft");
+
+const projectModeForm = document.getElementById("projectModeForm");
+const projectModeType = document.getElementById("projectModeType");
+const projectModeWhoPays = document.getElementById("projectModeWhoPays");
+const projectModePurpose = document.getElementById("projectModePurpose");
+const projectModeFlexibility = document.getElementById("projectModeFlexibility");
+const projectModeOutput = document.getElementById("projectModeOutput");
+const projectModesJsonOutput = document.getElementById("projectModesJsonOutput");
+const projectModeStatusMessage = document.getElementById("projectModeDashboardStatus");
+const copyProjectModesJson = document.getElementById("copyProjectModesJson");
+const downloadProjectModesJson = document.getElementById("downloadProjectModesJson");
+const clearProjectModeDraft = document.getElementById("clearProjectModeDraft");
+
 const menuToggle = document.getElementById("menuToggle");
 const primaryNav = document.getElementById("primaryNav");
 
 let newsItems = [];
 let publicationItems = [];
+let projectItems = [];
+let projectModeItems = [];
 
 const publicationTypes = [
   "Journal Article",
@@ -46,15 +71,6 @@ const publicationTypes = [
   "Patent",
   "Forthcoming / Accepted"
 ];
-
-const typeLabels = {
-  "Journal Article": "Journal Articles",
-  "Conference Paper": "Conference Papers",
-  "Book Chapter": "Book Chapters",
-  "Book / Edited Volume": "Books / Edited Volumes",
-  "Patent": "Patents",
-  "Forthcoming / Accepted": "Forthcoming / Accepted Publications"
-};
 
 if (menuToggle && primaryNav) {
   menuToggle.addEventListener("click", () => {
@@ -71,66 +87,19 @@ function today() {
 }
 
 function setStatus(message) {
-  if (statusMessage) {
-    statusMessage.textContent = message;
-  }
+  if (statusMessage) statusMessage.textContent = message;
 }
 
 function setPublicationStatus(message) {
-  if (publicationStatusMessage) {
-    publicationStatusMessage.textContent = message;
-  }
+  if (publicationStatusMessage) publicationStatusMessage.textContent = message;
 }
 
-function createTextElement(tag, className, text) {
-  const element = document.createElement(tag);
-  if (className) {
-    element.className = className;
-  }
-  element.textContent = text || "";
-  return element;
+function setProjectStatus(message) {
+  if (projectStatusMessage) projectStatusMessage.textContent = message;
 }
 
-function renderNewsItem(item) {
-  const article = document.createElement("article");
-  article.className = "news-item";
-
-  const meta = document.createElement("div");
-  meta.className = "news-meta";
-  meta.append(
-    createTextElement("span", "news-badge", item.category),
-    createTextElement("span", "news-date", item.date)
-  );
-
-  if (item.submissionDeadline) {
-    meta.append(createTextElement("span", "news-deadline", `Submission Deadline: ${item.submissionDeadline}`));
-  }
-
-  article.append(
-    meta,
-    createTextElement("h3", "", item.title),
-    createTextElement("p", "", item.summary)
-  );
-
-  if (item.link) {
-    const link = document.createElement("a");
-    link.className = "button secondary news-link";
-    link.href = item.link;
-    link.target = "_blank";
-    link.rel = "noopener";
-    link.textContent = "Open Link";
-    article.append(link);
-  }
-
-  return article;
-}
-
-function compactParts(parts, separator = ", ") {
-  return parts.filter(Boolean).join(separator);
-}
-
-function wrapTitle(title) {
-  return title ? `"${title}"` : "";
+function setProjectModeStatus(message) {
+  if (projectModeStatusMessage) projectModeStatusMessage.textContent = message;
 }
 
 function parseIndexing(value) {
@@ -140,130 +109,34 @@ function parseIndexing(value) {
     .filter(Boolean);
 }
 
-function formatIndexing(indexing) {
-  if (!Array.isArray(indexing) || !indexing.length) return "";
-  return `[${indexing.join(", ")}]`;
-}
-
-function formatDoi(publication) {
-  const doi = publication.doi || publication.link || "";
-  if (!doi) return "";
-  return doi.startsWith("http") ? doi : `doi: ${doi}`;
-}
-
-function formatPublication(publication) {
-  const authors = publication.authors || "";
-  const title = wrapTitle(publication.title);
-  const year = publication.year || publication.date || "";
-  const type = publication.type || "";
-  const venue = publication.venue || "";
-  const publisher = publication.publisher || "";
-  const volume = publication.volume ? `vol. ${publication.volume}` : "";
-  const issue = publication.issue ? `no. ${publication.issue}` : "";
-  const pages = publication.pages ? `pp. ${publication.pages}` : "";
-  const indexing = formatIndexing(publication.indexing);
-  const doi = formatDoi(publication);
-
-  if (type === "Patent") {
-    const country = publication.country ? `${publication.country} Patent` : "Patent";
-    const number = publication.patentNumber || publication.number || "";
-    const status = publication.status || "";
-    return compactParts([authors, title, compactParts([country, number], " "), status, year, doi, indexing]);
-  }
-
-  if (type === "Conference Paper") {
-    const conference = venue ? `in ${venue}` : "";
-    return compactParts([authors, title, conference, publisher, year, pages, doi, indexing]);
-  }
-
-  if (type === "Book Chapter") {
-    const book = venue ? `in ${venue}` : "";
-    return compactParts([authors, title, book, publisher, year, pages, doi, indexing]);
-  }
-
-  if (type === "Book / Edited Volume") {
-    return compactParts([authors, publication.title, publisher || venue, year, doi, indexing]);
-  }
-
-  return compactParts([authors, title, venue, volume, issue, pages, year, doi, indexing]);
-}
-
-function groupPublications(publications) {
-  const groups = new Map();
-  publicationTypes.forEach((type) => groups.set(type, []));
-
-  publications.forEach((publication) => {
-    const type = publication.type || "Forthcoming / Accepted";
-    if (!groups.has(type)) groups.set(type, []);
-    groups.get(type).push(publication);
-  });
-
-  return groups;
-}
-
-function renderPublicationGroup(type, publications) {
-  const section = document.createElement("section");
-  section.className = "publication-group";
-
-  const heading = createTextElement("h3", "", typeLabels[type] || type);
-  const list = document.createElement("ol");
-  list.className = "publication-items";
-
-  publications.forEach((publication, index) => {
-    const number = publications.length - index;
-    const item = document.createElement("li");
-    item.append(
-      createTextElement("span", "publication-number", `[${number}]`),
-      createTextElement("span", "publication-reference", formatPublication(publication))
-    );
-    list.append(item);
-  });
-
-  section.append(heading, list);
-  return section;
-}
-
-function renderPublications(publications, container) {
-  if (!container) return;
-
-  const groups = groupPublications(publications);
-  const sections = [];
-
-  groups.forEach((items, type) => {
-    if (items.length) {
-      sections.push(renderPublicationGroup(type, items));
-    }
-  });
-
-  if (!sections.length) {
-    const empty = document.createElement("article");
-    empty.className = "panel";
-    empty.append(
-      createTextElement("h3", "", "Publication list coming soon"),
-      createTextElement("p", "", "Add entries here and publish the generated publications.json file.")
-    );
-    container.replaceChildren(empty);
-    return;
-  }
-
-  container.replaceChildren(...sections);
-}
-
 function syncOutput() {
-  const json = JSON.stringify(newsItems, null, 2);
-  jsonOutput.value = json;
-  newsList.replaceChildren(...newsItems.map(renderNewsItem));
+  if (jsonOutput) {
+    jsonOutput.value = JSON.stringify(newsItems, null, 2);
+  }
 }
 
 function syncPublicationsOutput() {
-  if (!publicationsJsonOutput) return;
+  if (publicationsJsonOutput) {
+    publicationsJsonOutput.value = JSON.stringify(publicationItems, null, 2);
+  }
+}
 
-  publicationsJsonOutput.value = JSON.stringify(publicationItems, null, 2);
-  renderPublications(publicationItems, publicationsList);
+function syncProjectsOutput() {
+  if (projectsJsonOutput) {
+    projectsJsonOutput.value = JSON.stringify(projectItems, null, 2);
+  }
+}
+
+function syncProjectModesOutput() {
+  if (projectModesJsonOutput) {
+    projectModesJsonOutput.value = JSON.stringify(projectModeItems, null, 2);
+  }
 }
 
 async function loadNews() {
-  newsDate.value = today();
+  if (newsDate) {
+    newsDate.value = today();
+  }
 
   try {
     const response = await fetch("news.json", { cache: "no-store" });
@@ -296,6 +169,34 @@ async function loadPublications() {
   syncPublicationsOutput();
 }
 
+async function loadProjects() {
+  try {
+    const response = await fetch("projects.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Unable to load projects.json");
+    projectItems = await response.json();
+    setProjectStatus("Loaded existing projects.json. Add a new project when ready.");
+  } catch (error) {
+    projectItems = [];
+    setProjectStatus("Could not load projects.json. You can still create a new list here.");
+  }
+
+  syncProjectsOutput();
+}
+
+async function loadProjectModes() {
+  try {
+    const response = await fetch("project-modes.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Unable to load project-modes.json");
+    projectModeItems = await response.json();
+    setProjectModeStatus("Loaded existing project-modes.json. Add a new row when ready.");
+  } catch (error) {
+    projectModeItems = [];
+    setProjectModeStatus("Could not load project-modes.json. You can still create a new list here.");
+  }
+
+  syncProjectModesOutput();
+}
+
 newsForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -308,13 +209,8 @@ newsForm?.addEventListener("submit", (event) => {
     summary: newsSummary.value.trim()
   };
 
-  if (!item.submissionDeadline) {
-    delete item.submissionDeadline;
-  }
-
-  if (!item.link) {
-    delete item.link;
-  }
+  if (!item.submissionDeadline) delete item.submissionDeadline;
+  if (!item.link) delete item.link;
 
   newsItems = [item, ...newsItems];
   newsTitle.value = "";
@@ -323,7 +219,7 @@ newsForm?.addEventListener("submit", (event) => {
   newsSummary.value = "";
   newsDate.value = today();
   syncOutput();
-  setStatus("Update added to preview. Copy or download news.json to publish it.");
+  setStatus("Update added to JSON. Copy or download news.json to publish it.");
 });
 
 publicationForm?.addEventListener("submit", (event) => {
@@ -377,7 +273,49 @@ publicationForm?.addEventListener("submit", (event) => {
   publicationYear.value = new Date().getFullYear();
 
   syncPublicationsOutput();
-  setPublicationStatus("Publication added at the top of its type. Copy or download publications.json to publish it.");
+  setPublicationStatus("Publication added to JSON. Copy or download publications.json to publish it.");
+});
+
+projectForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const item = {
+    title: projectTitle.value.trim(),
+    summary: projectSummary.value.trim(),
+    siteUrl: projectSiteUrl.value.trim(),
+    repoUrl: projectRepoUrl.value.trim()
+  };
+
+  if (!item.repoUrl) delete item.repoUrl;
+
+  projectItems = [item, ...projectItems];
+  projectTitle.value = "";
+  projectSummary.value = "";
+  projectSiteUrl.value = "";
+  projectRepoUrl.value = "";
+  syncProjectsOutput();
+  setProjectStatus("Project added to JSON. Copy or download projects.json to publish it.");
+});
+
+projectModeForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const item = {
+    type: projectModeType.value.trim(),
+    whoPays: projectModeWhoPays.value.trim(),
+    purpose: projectModePurpose.value.trim(),
+    flexibility: projectModeFlexibility.value.trim(),
+    output: projectModeOutput.value.trim()
+  };
+
+  projectModeItems = [item, ...projectModeItems];
+  projectModeType.value = "";
+  projectModeWhoPays.value = "";
+  projectModePurpose.value = "";
+  projectModeFlexibility.value = "";
+  projectModeOutput.value = "";
+  syncProjectModesOutput();
+  setProjectModeStatus("Project mode row added to JSON. Copy or download project-modes.json to publish it.");
 });
 
 clearDraft?.addEventListener("click", () => {
@@ -408,6 +346,23 @@ clearPublicationDraft?.addEventListener("click", () => {
   setPublicationStatus("Publication draft cleared.");
 });
 
+clearProjectDraft?.addEventListener("click", () => {
+  projectTitle.value = "";
+  projectSummary.value = "";
+  projectSiteUrl.value = "";
+  projectRepoUrl.value = "";
+  setProjectStatus("Project draft cleared.");
+});
+
+clearProjectModeDraft?.addEventListener("click", () => {
+  projectModeType.value = "";
+  projectModeWhoPays.value = "";
+  projectModePurpose.value = "";
+  projectModeFlexibility.value = "";
+  projectModeOutput.value = "";
+  setProjectModeStatus("Project mode draft cleared.");
+});
+
 copyJson?.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(jsonOutput.value);
@@ -430,27 +385,64 @@ copyPublicationsJson?.addEventListener("click", async () => {
   }
 });
 
-downloadJson?.addEventListener("click", () => {
-  const blob = new Blob([jsonOutput.value], { type: "application/json" });
+copyProjectsJson?.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(projectsJsonOutput.value);
+    setProjectStatus("Copied JSON. Paste it into projects.json in the GitHub editor.");
+  } catch (error) {
+    projectsJsonOutput.focus();
+    projectsJsonOutput.select();
+    setProjectStatus("Select and copy the JSON manually from the box.");
+  }
+});
+
+copyProjectModesJson?.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(projectModesJsonOutput.value);
+    setProjectModeStatus("Copied JSON. Paste it into project-modes.json in the GitHub editor.");
+  } catch (error) {
+    projectModesJsonOutput.focus();
+    projectModesJsonOutput.select();
+    setProjectModeStatus("Select and copy the JSON manually from the box.");
+  }
+});
+
+function downloadJsonFile(filename, value, callback) {
+  const blob = new Blob([value], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = "news.json";
+  link.download = filename;
   link.click();
   URL.revokeObjectURL(url);
-  setStatus("Downloaded news.json. Upload or paste it into GitHub to publish.");
+  callback();
+}
+
+downloadJson?.addEventListener("click", () => {
+  downloadJsonFile("news.json", jsonOutput.value, () => {
+    setStatus("Downloaded news.json. Upload or paste it into GitHub to publish.");
+  });
 });
 
 downloadPublicationsJson?.addEventListener("click", () => {
-  const blob = new Blob([publicationsJsonOutput.value], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "publications.json";
-  link.click();
-  URL.revokeObjectURL(url);
-  setPublicationStatus("Downloaded publications.json. Upload or paste it into GitHub to publish.");
+  downloadJsonFile("publications.json", publicationsJsonOutput.value, () => {
+    setPublicationStatus("Downloaded publications.json. Upload or paste it into GitHub to publish.");
+  });
+});
+
+downloadProjectsJson?.addEventListener("click", () => {
+  downloadJsonFile("projects.json", projectsJsonOutput.value, () => {
+    setProjectStatus("Downloaded projects.json. Upload or paste it into GitHub to publish.");
+  });
+});
+
+downloadProjectModesJson?.addEventListener("click", () => {
+  downloadJsonFile("project-modes.json", projectModesJsonOutput.value, () => {
+    setProjectModeStatus("Downloaded project-modes.json. Upload or paste it into GitHub to publish.");
+  });
 });
 
 loadNews();
 loadPublications();
+loadProjects();
+loadProjectModes();
