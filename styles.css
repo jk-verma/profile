@@ -150,6 +150,7 @@ a:hover {
 }
 
 .news-ticker {
+  position: relative;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 14px;
@@ -249,7 +250,7 @@ a:hover {
 }
 
 .ticker-gap {
-  min-width: min(32vw, 360px);
+  min-width: min(80vw, 920px);
 }
 
 .ticker-gap::after {
