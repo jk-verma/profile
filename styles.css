@@ -378,6 +378,10 @@ main {
   margin-top: -34px;
 }
 
+.profile-strip-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .photo-card,
 .identity-card,
 .panel,
