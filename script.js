@@ -83,7 +83,6 @@ function renderNewsTicker(items) {
 
   const tickerItems = items
     .filter((item) => item.title)
-    .slice(0, 8)
     .map((item) => {
       const prefix = item.category ? `${item.category}: ` : "";
       return `${prefix}${item.title}`;
