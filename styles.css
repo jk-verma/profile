@@ -30,6 +30,11 @@ body {
     linear-gradient(180deg, var(--bg) 0%, #071820 48%, #081116 100%);
 }
 
+::selection {
+  color: #031013;
+  background: var(--accent);
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -78,6 +83,7 @@ a:hover {
   border-bottom: 1px solid var(--line);
   background: rgba(6, 18, 25, 0.9);
   backdrop-filter: blur(18px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
 }
 
 .brand {
@@ -123,11 +129,13 @@ a:hover {
   color: var(--muted);
   font-weight: 700;
   font-size: 0.92rem;
+  border: 1px solid transparent;
 }
 
 .primary-nav a:hover {
   color: var(--text);
   background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.12);
   text-decoration: none;
 }
 
@@ -161,7 +169,7 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
   gap: 44px;
-  min-height: min(600px, calc(100vh - 150px));
+  min-height: min(650px, calc(100vh - 110px));
   align-items: end;
   overflow: hidden;
   width: 100%;
@@ -175,7 +183,7 @@ main {
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(6, 18, 25, 0.97), rgba(6, 18, 25, 0.74) 52%, rgba(6, 18, 25, 0.4)),
+    linear-gradient(90deg, rgba(6, 18, 25, 0.98), rgba(6, 18, 25, 0.78) 50%, rgba(6, 18, 25, 0.48)),
     linear-gradient(135deg, #0b3442 0%, #143d4b 48%, #53401a 100%);
 }
 
@@ -199,6 +207,7 @@ main {
 
 .hero-content {
   max-width: 930px;
+  padding-bottom: 14px;
 }
 
 .eyebrow {
@@ -218,6 +227,7 @@ main {
   max-width: 1040px;
   font-size: 4rem;
   line-height: 1.03;
+  text-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
 }
 
 .lead {
@@ -244,11 +254,12 @@ main {
   padding: 11px 15px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   font-weight: 800;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover {
   transform: translateY(-1px);
+  box-shadow: var(--glow);
   text-decoration: none;
 }
 
@@ -268,6 +279,7 @@ main {
   display: grid;
   align-content: end;
   gap: 14px;
+  padding-bottom: 6px;
 }
 
 .showcase-photo,
@@ -284,13 +296,23 @@ main {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 270px;
+  min-height: 360px;
   overflow: hidden;
   background:
     linear-gradient(145deg, rgba(56, 209, 194, 0.22), rgba(231, 189, 100, 0.16)),
     repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 14px),
     #071820;
   user-select: none;
+}
+
+.showcase-photo::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: var(--radius);
+  pointer-events: none;
 }
 
 .showcase-photo img {
@@ -316,22 +338,19 @@ main {
 }
 
 .showcase-photo::after {
-  content: "Protected portrait area";
+  content: "";
   position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
-  padding: 8px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: var(--radius);
-  background: rgba(6, 18, 25, 0.76);
-  color: var(--muted);
-  font-size: 0.82rem;
-  text-align: center;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, transparent 55%, rgba(6, 18, 25, 0.38));
+  pointer-events: none;
 }
 
 .showcase-card {
-  padding: 18px;
+  padding: 20px;
+  background:
+    linear-gradient(135deg, rgba(56, 209, 194, 0.16), transparent 48%),
+    rgba(8, 29, 39, 0.86);
 }
 
 .showcase-card p,
@@ -371,11 +390,16 @@ main {
   font-weight: 800;
 }
 
+.showcase-grid span:nth-child(2),
+.showcase-grid span:nth-child(3) {
+  background: rgba(13, 45, 58, 0.94);
+}
+
 .profile-strip {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 18px;
-  margin-top: -34px;
+  margin-top: -42px;
 }
 
 .profile-strip-single {
@@ -396,6 +420,13 @@ main {
     linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent),
     rgba(16, 44, 56, 0.94);
   box-shadow: var(--shadow);
+}
+
+.identity-card {
+  background:
+    linear-gradient(135deg, rgba(56, 209, 194, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), transparent),
+    rgba(16, 44, 56, 0.96);
 }
 
 .photo-card,
@@ -435,6 +466,10 @@ main {
   padding: 24px;
 }
 
+.identity-card {
+  padding: 28px;
+}
+
 .photo-card {
   display: grid;
   grid-template-columns: 180px 1fr;
@@ -469,21 +504,6 @@ main {
   user-select: none;
 }
 
-.photo-frame::after {
-  content: "Protected preview";
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  padding: 7px 8px;
-  color: rgba(242, 247, 248, 0.92);
-  background: rgba(6, 19, 27, 0.76);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius);
-  font-size: 0.78rem;
-  text-align: center;
-}
-
 .photo-initials {
   color: var(--accent);
   font-size: 2.4rem;
@@ -509,16 +529,19 @@ main {
 
 .identity-card dl {
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
-  margin: 18px 0 0;
+  margin: 20px 0 0;
 }
 
 .identity-card dl div {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 12px;
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
+  gap: 8px;
+  min-height: 100%;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.045);
 }
 
 dt {
@@ -529,6 +552,7 @@ dt {
 dd {
   margin: 0;
   font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
 .section-heading {
@@ -553,6 +577,11 @@ dd {
   max-width: 100%;
 }
 
+.panel p {
+  max-width: 980px;
+  font-size: 1.02rem;
+}
+
 .signature-row {
   display: flex;
   flex-wrap: wrap;
@@ -567,6 +596,7 @@ dd {
   color: var(--text);
   background: rgba(56, 209, 194, 0.08);
   font-weight: 800;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .split {
@@ -619,6 +649,17 @@ dd {
   color: var(--muted);
 }
 
+.card h3::after,
+.metric-card span::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 2px;
+  margin-top: 10px;
+  border-radius: var(--radius);
+  background: var(--accent);
+}
+
 .card li {
   margin: 0 0 10px;
   line-height: 1.6;
@@ -627,7 +668,13 @@ dd {
 .metric-card span {
   display: block;
   color: var(--accent-2);
+  font-size: 1rem;
   font-weight: 900;
+}
+
+.metric-card p {
+  margin-bottom: 0;
+  font-size: 1.08rem;
 }
 
 .timeline {
@@ -645,6 +692,13 @@ dd {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent),
     rgba(255, 255, 255, 0.045);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.timeline article:hover {
+  transform: translateY(-3px);
+  border-color: rgba(231, 189, 100, 0.5);
+  box-shadow: var(--glow);
 }
 
 .timeline span {
@@ -667,11 +721,13 @@ dd {
   display: grid;
   gap: 8px;
   text-align: center;
+  min-height: 132px;
+  place-items: center;
 }
 
 .stat strong {
   color: var(--accent);
-  font-size: 1.6rem;
+  font-size: 1.85rem;
 }
 
 .stat span {
@@ -689,11 +745,13 @@ dd {
 
 .news-list {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
 .news-item {
   display: grid;
+  align-content: start;
   gap: 8px;
 }
 
@@ -728,7 +786,7 @@ dd {
   gap: 18px;
   align-items: center;
   background:
-    linear-gradient(135deg, rgba(16, 44, 56, 0.98), rgba(42, 46, 25, 0.92)),
+    linear-gradient(135deg, rgba(16, 44, 56, 0.98), rgba(34, 44, 26, 0.94)),
     repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 14px);
 }
 
@@ -745,6 +803,14 @@ dd {
   border-radius: var(--radius);
   color: var(--text);
   font-weight: 800;
+  background: rgba(255, 255, 255, 0.06);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-links a:hover {
+  transform: translateY(-1px);
+  border-color: rgba(56, 209, 194, 0.42);
+  text-decoration: none;
 }
 
 code {
@@ -781,7 +847,8 @@ code {
   .split,
   .timeline,
   .card-grid.three,
-  .card-grid.four {
+  .card-grid.four,
+  .news-list {
     grid-template-columns: 1fr;
   }
 
@@ -794,6 +861,14 @@ code {
   .hero-showcase {
     grid-template-columns: 0.85fr 1fr;
     align-items: stretch;
+  }
+
+  .showcase-photo {
+    min-height: 300px;
+  }
+
+  .identity-card dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .showcase-grid {
@@ -856,6 +931,10 @@ code {
   .identity-card dl div,
   .news-heading,
   .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .identity-card dl {
     grid-template-columns: 1fr;
   }
 
