@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Dashboard for updating news, publications, and projects on the profile website of Dr. Jitendra Kumar Verma." />
   <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="styles.css?v=20260409-5" />
+  <link rel="stylesheet" href="styles.css?v=20260409-6" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -240,8 +240,60 @@
         </label>
 
         <label>
+          Funding Agency
+          <input id="projectFundingAgency" name="fundingAgency" type="text" placeholder="SERB / DST / CSIR / Client / Institution" />
+        </label>
+
+        <label>
+          Scheme / Program
+          <input id="projectSchemeProgram" name="schemeProgram" type="text" placeholder="Young Scientist / SPARC / Internal Seed Grant" />
+        </label>
+
+        <div class="dashboard-inline-fields">
+          <label>
+            Role
+            <input id="projectRole" name="role" type="text" placeholder="Chief Coordinator / Co-Investigator / PI" />
+          </label>
+          <label>
+            Fee / Funds Received By
+            <select id="projectFeeReceivedBy" name="feeReceivedBy">
+              <option value="">Select</option>
+              <option value="Self">Self</option>
+              <option value="Institution">Institution</option>
+              <option value="Shared">Shared</option>
+              <option value="No Fee">No Fee</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
           Summary
           <textarea id="projectSummary" name="summary" rows="5" maxlength="500" placeholder="Short project description for the Projects page." required></textarea>
+        </label>
+
+        <div class="dashboard-inline-fields">
+          <label>
+            Year of Funding
+            <input id="projectYearOfFunding" name="yearOfFunding" type="text" placeholder="2023-2025" />
+          </label>
+          <label>
+            Duration
+            <input id="projectDuration" name="duration" type="text" placeholder="36 Months" />
+          </label>
+          <label>
+            Amount Sanctioned
+            <input id="projectAmountSanctioned" name="amountSanctioned" type="text" placeholder="5000000.00" />
+          </label>
+        </div>
+
+        <label>
+          Status
+          <select id="projectStatus" name="status">
+            <option value="">Select</option>
+            <option value="Ongoing">Ongoing</option>
+            <option value="Completed">Completed</option>
+            <option value="Proposed">Proposed</option>
+          </select>
         </label>
 
         <label>
@@ -337,6 +389,6 @@
     </section>
   </main>
 
-  <script src="dashboard.js?v=20260409-5"></script>
+  <script src="dashboard.js?v=20260409-6"></script>
 </body>
 </html>

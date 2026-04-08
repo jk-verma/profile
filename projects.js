@@ -28,10 +28,35 @@ function renderProjectCard(project) {
   const article = document.createElement("article");
   article.className = "card";
 
-  article.append(
-    createTextElement("h3", "", project.title),
-    createTextElement("p", "", project.summary || "")
-  );
+  const fragments = [];
+  const metaBits = [
+    project.fundingAgency,
+    project.schemeProgram,
+    project.yearOfFunding,
+    project.status
+  ].filter(Boolean);
+
+  fragments.push(createTextElement("h3", "", project.title));
+
+  if (metaBits.length) {
+    fragments.push(createTextElement("p", "project-meta", metaBits.join(" | ")));
+  }
+
+  if (project.summary) {
+    fragments.push(createTextElement("p", "", project.summary));
+  }
+
+  const detailBits = [];
+  if (project.role) detailBits.push(`Role: ${project.role}`);
+  if (project.duration) detailBits.push(`Duration: ${project.duration}`);
+  if (project.amountSanctioned) detailBits.push(`Amount: ${project.amountSanctioned}`);
+  if (project.feeReceivedBy) detailBits.push(`Funds Received By: ${project.feeReceivedBy}`);
+
+  if (detailBits.length) {
+    fragments.push(createTextElement("p", "project-detail", detailBits.join(" | ")));
+  }
+
+  article.append(...fragments);
 
   if (project.siteUrl) {
     const siteLink = document.createElement("a");

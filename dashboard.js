@@ -34,7 +34,15 @@ const clearPublicationDraft = document.getElementById("clearPublicationDraft");
 
 const projectForm = document.getElementById("projectForm");
 const projectTitle = document.getElementById("projectTitle");
+const projectFundingAgency = document.getElementById("projectFundingAgency");
+const projectSchemeProgram = document.getElementById("projectSchemeProgram");
+const projectRole = document.getElementById("projectRole");
+const projectFeeReceivedBy = document.getElementById("projectFeeReceivedBy");
 const projectSummary = document.getElementById("projectSummary");
+const projectYearOfFunding = document.getElementById("projectYearOfFunding");
+const projectDuration = document.getElementById("projectDuration");
+const projectAmountSanctioned = document.getElementById("projectAmountSanctioned");
+const projectStatus = document.getElementById("projectStatus");
 const projectSiteUrl = document.getElementById("projectSiteUrl");
 const projectRepoUrl = document.getElementById("projectRepoUrl");
 const projectsJsonOutput = document.getElementById("projectsJsonOutput");
@@ -281,16 +289,36 @@ projectForm?.addEventListener("submit", (event) => {
 
   const item = {
     title: projectTitle.value.trim(),
+    fundingAgency: projectFundingAgency.value.trim(),
+    schemeProgram: projectSchemeProgram.value.trim(),
+    role: projectRole.value.trim(),
+    feeReceivedBy: projectFeeReceivedBy.value,
     summary: projectSummary.value.trim(),
+    yearOfFunding: projectYearOfFunding.value.trim(),
+    duration: projectDuration.value.trim(),
+    amountSanctioned: projectAmountSanctioned.value.trim(),
+    status: projectStatus.value,
     siteUrl: projectSiteUrl.value.trim(),
     repoUrl: projectRepoUrl.value.trim()
   };
 
-  if (!item.repoUrl) delete item.repoUrl;
+  Object.keys(item).forEach((key) => {
+    if (item[key] === "") {
+      delete item[key];
+    }
+  });
 
   projectItems = [item, ...projectItems];
   projectTitle.value = "";
+  projectFundingAgency.value = "";
+  projectSchemeProgram.value = "";
+  projectRole.value = "";
+  projectFeeReceivedBy.value = "";
   projectSummary.value = "";
+  projectYearOfFunding.value = "";
+  projectDuration.value = "";
+  projectAmountSanctioned.value = "";
+  projectStatus.value = "";
   projectSiteUrl.value = "";
   projectRepoUrl.value = "";
   syncProjectsOutput();
@@ -348,7 +376,15 @@ clearPublicationDraft?.addEventListener("click", () => {
 
 clearProjectDraft?.addEventListener("click", () => {
   projectTitle.value = "";
+  projectFundingAgency.value = "";
+  projectSchemeProgram.value = "";
+  projectRole.value = "";
+  projectFeeReceivedBy.value = "";
   projectSummary.value = "";
+  projectYearOfFunding.value = "";
+  projectDuration.value = "";
+  projectAmountSanctioned.value = "";
+  projectStatus.value = "";
   projectSiteUrl.value = "";
   projectRepoUrl.value = "";
   setProjectStatus("Project draft cleared.");
