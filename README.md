@@ -7,9 +7,12 @@ Static academic profile website for GitHub Pages.
 - `index.html` - Main website page
 - `styles.css` - Website styling
 - `script.js` - Mobile navigation, protected photo behavior, and news rendering
-- `dashboard.html` - Browser-based dashboard for preparing Latest News updates
-- `dashboard.js` - Dashboard form, preview, copy, and download behavior
+- `publications.html` - Publications and patents page grouped by publication type
+- `publications.js` - Publications rendering and IEEE-style reference formatting
+- `dashboard.html` - Browser-based dashboard for preparing Latest News and Publications updates
+- `dashboard.js` - Dashboard forms, previews, copy, and download behavior
 - `news.json` - Latest news / daily developments data source
+- `publications.json` - Publications and patents data source
 - `assets/JK_Verma_Resume.pdf` - Resume PDF
 - `assets/profile-photo.jpg` - Optional portrait photo to add later
 
@@ -58,3 +61,25 @@ The JSON format is:
 ```
 
 Commit and push the change. GitHub Pages will update after deployment finishes.
+
+## Update Publications
+
+Open `dashboard.html`, add a publication entry, then copy or download the generated `publications.json`.
+Use the GitHub editor to replace the repository's `publications.json` file and commit the change.
+
+The public `publications.html` page automatically:
+
+- Groups entries by publication type
+- Places new entries at the top of their selected type when prepared through the dashboard
+- Shows reverse numbering within each publication type
+- Formats entries in an IEEE-style reference format
+- Includes patents as a supported publication type
+
+Supported publication types:
+
+- Journal Article
+- Conference Paper
+- Book Chapter
+- Book / Edited Volume
+- Patent
+- Forthcoming / Accepted

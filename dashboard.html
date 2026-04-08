@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="News dashboard for updating the profile website of Dr. Jitendra Kumar Verma." />
-  <title>News Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Dashboard for updating news and publications on the profile website of Dr. Jitendra Kumar Verma." />
+  <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
+  <link rel="stylesheet" href="styles.css?v=20260408-6" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -13,7 +13,7 @@
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Back to profile home">
       <span>JKV</span>
-      <strong>News Dashboard</strong>
+      <strong>Content Dashboard</strong>
     </a>
     <button id="menuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
       Menu
@@ -21,8 +21,9 @@
     <nav id="primaryNav" class="primary-nav" aria-label="Dashboard navigation">
       <a href="index.html">Profile</a>
       <a href="index.html#news">Latest News</a>
-      <a href="news.json" target="_blank" rel="noopener">Open JSON</a>
-      <a href="https://github.com/jk-verma/profile/edit/main/news.json" target="_blank" rel="noopener">Edit on GitHub</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.json" target="_blank" rel="noopener">News JSON</a>
+      <a href="publications.json" target="_blank" rel="noopener">Publications JSON</a>
     </nav>
   </header>
 
@@ -30,15 +31,15 @@
     <section class="dashboard-hero section">
       <div>
         <p class="eyebrow">Dashboard</p>
-        <h1>Prepare latest achievements, calls, and academic announcements.</h1>
+        <h1>Prepare latest updates and publication entries.</h1>
         <p class="lead">
-          Add a news item, preview the updated feed, then copy or download the generated <code>news.json</code>.
-          Upload it through GitHub to publish the update on the profile website.
+          Add news items or publication records, preview the generated data, then copy or download the JSON file
+          and replace it through GitHub to publish the update on the website.
         </p>
       </div>
       <div class="dashboard-steps">
         <span>1. Add update</span>
-        <span>2. Preview feed</span>
+        <span>2. Preview output</span>
         <span>3. Download JSON</span>
         <span>4. Replace on GitHub</span>
       </div>
@@ -111,8 +112,125 @@
       </div>
       <div id="dashboardNewsList" class="news-list" aria-live="polite"></div>
     </section>
+
+    <section class="section dashboard-layout">
+      <form id="publicationForm" class="dashboard-card" autocomplete="off">
+        <div class="section-heading">
+          <p class="eyebrow">Create Entry</p>
+          <h2>New publication item</h2>
+        </div>
+
+        <label>
+          Type
+          <select id="publicationType" name="type" required>
+            <option value="Journal Article">Journal Article</option>
+            <option value="Conference Paper">Conference Paper</option>
+            <option value="Book Chapter">Book Chapter</option>
+            <option value="Book / Edited Volume">Book / Edited Volume</option>
+            <option value="Patent">Patent</option>
+            <option value="Forthcoming / Accepted">Forthcoming / Accepted</option>
+          </select>
+        </label>
+
+        <label>
+          Year
+          <input id="publicationYear" name="year" type="number" min="1990" max="2100" placeholder="2026" required />
+        </label>
+
+        <label>
+          Authors / Inventors
+          <input id="publicationAuthors" name="authors" type="text" placeholder="J. K. Verma and A. Kumar" required />
+        </label>
+
+        <label>
+          Title
+          <input id="publicationTitle" name="title" type="text" placeholder="Publication or patent title" required />
+        </label>
+
+        <label>
+          Journal / Conference / Book / Patent Office
+          <input id="publicationVenue" name="venue" type="text" placeholder="Venue name" />
+        </label>
+
+        <label>
+          Publisher / Location
+          <input id="publicationPublisher" name="publisher" type="text" placeholder="Publisher or conference location" />
+        </label>
+
+        <div class="dashboard-inline-fields">
+          <label>
+            Volume
+            <input id="publicationVolume" name="volume" type="text" placeholder="12" />
+          </label>
+          <label>
+            Issue
+            <input id="publicationIssue" name="issue" type="text" placeholder="2" />
+          </label>
+          <label>
+            Pages
+            <input id="publicationPages" name="pages" type="text" placeholder="45-58" />
+          </label>
+        </div>
+
+        <label>
+          DOI / URL
+          <input id="publicationDoi" name="doi" type="url" placeholder="https://doi.org/..." />
+        </label>
+
+        <label>
+          Indexing
+          <input id="publicationIndexing" name="indexing" type="text" placeholder="Scopus, ABDC, WoS, UGC-CARE" />
+        </label>
+
+        <div class="dashboard-inline-fields">
+          <label>
+            Patent Number
+            <input id="publicationPatentNumber" name="patentNumber" type="text" placeholder="For patents" />
+          </label>
+          <label>
+            Country
+            <input id="publicationCountry" name="country" type="text" placeholder="India" />
+          </label>
+          <label>
+            Status / Date
+            <input id="publicationStatus" name="status" type="text" placeholder="Published, Granted, Filed" />
+          </label>
+        </div>
+
+        <div class="dashboard-actions">
+          <button class="button primary" type="submit">Add to Publications Preview</button>
+          <button id="clearPublicationDraft" class="button secondary" type="button">Clear Draft</button>
+        </div>
+      </form>
+
+      <article class="dashboard-card">
+        <div class="section-heading">
+          <p class="eyebrow">Publish</p>
+          <h2>Generated publications.json</h2>
+        </div>
+        <p>
+          New entries are placed at the top of the selected publication type. Copy or download this JSON, then
+          replace <code>publications.json</code> in GitHub.
+        </p>
+        <div class="dashboard-actions">
+          <button id="copyPublicationsJson" class="button primary" type="button">Copy Publications JSON</button>
+          <button id="downloadPublicationsJson" class="button secondary" type="button">Download publications.json</button>
+          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/publications.json" target="_blank" rel="noopener">Open GitHub Editor</a>
+        </div>
+        <p id="publicationDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
+        <textarea id="publicationsJsonOutput" class="json-output" rows="18" spellcheck="false" aria-label="Generated publications JSON"></textarea>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Preview</p>
+        <h2>Publications Preview</h2>
+      </div>
+      <div id="dashboardPublicationsList" class="publications-list" aria-live="polite"></div>
+    </section>
   </main>
 
-  <script src="dashboard.js"></script>
+  <script src="dashboard.js?v=20260408-1"></script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Publications and patents of Dr. Jitendra Kumar Verma." />
+  <title>Publications | Dr. Jitendra Kumar Verma</title>
+  <link rel="stylesheet" href="styles.css?v=20260408-6" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html#home" aria-label="Back to profile home">
+      <span>JKV</span>
+      <strong>Dr. Jitendra Kumar Verma</strong>
+    </a>
+    <button id="menuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+      Menu
+    </button>
+    <nav id="primaryNav" class="primary-nav" aria-label="Publications navigation">
+      <a href="index.html#about">About</a>
+      <a href="index.html#research">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="index.html#news">Latest News</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="publications-hero section">
+      <div class="section-heading">
+        <p class="eyebrow">Research Output</p>
+        <h1>Publications and Patents</h1>
+      </div>
+      <p class="lead">
+        Publications are grouped by type and displayed in IEEE-style reference format. New entries can be prepared
+        through the dashboard and published by updating <code>publications.json</code>.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#publicationList">Browse Publications</a>
+        <a class="button secondary" href="dashboard.html">Add Entry from Dashboard</a>
+      </div>
+    </section>
+
+    <section id="publicationList" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Indexed by Type</p>
+        <h2>Publication List</h2>
+      </div>
+      <div id="publicationsList" class="publications-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="publications.js?v=20260408-1"></script>
+</body>
+</html>
