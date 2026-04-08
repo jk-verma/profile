@@ -582,6 +582,32 @@ dd {
   font-size: 1.02rem;
 }
 
+.author-info {
+  position: relative;
+  max-width: 980px;
+  margin: 22px 0;
+  padding: 20px 22px;
+  border: 1px solid rgba(231, 189, 100, 0.34);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(231, 189, 100, 0.12), rgba(56, 209, 194, 0.08)),
+    rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.author-info h3 {
+  margin: 0 0 10px;
+  color: var(--accent-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.86rem;
+}
+
+.author-info p {
+  margin: 0;
+  color: var(--text);
+}
+
 .signature-row {
   display: flex;
   flex-wrap: wrap;
