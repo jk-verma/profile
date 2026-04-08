@@ -93,6 +93,16 @@ function renderNewsItem(item) {
     createTextElement("p", "", item.summary)
   );
 
+  if (item.link) {
+    const link = document.createElement("a");
+    link.className = "button secondary news-link";
+    link.href = item.link;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "Open Link";
+    article.append(link);
+  }
+
   return article;
 }
 

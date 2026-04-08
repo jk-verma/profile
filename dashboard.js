@@ -3,6 +3,7 @@ const newsDate = document.getElementById("newsDate");
 const newsCategory = document.getElementById("newsCategory");
 const newsTitle = document.getElementById("newsTitle");
 const newsDeadline = document.getElementById("newsDeadline");
+const newsLink = document.getElementById("newsLink");
 const newsSummary = document.getElementById("newsSummary");
 const jsonOutput = document.getElementById("jsonOutput");
 const newsList = document.getElementById("dashboardNewsList");
@@ -110,6 +111,16 @@ function renderNewsItem(item) {
     createTextElement("h3", "", item.title),
     createTextElement("p", "", item.summary)
   );
+
+  if (item.link) {
+    const link = document.createElement("a");
+    link.className = "button secondary news-link";
+    link.href = item.link;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "Open Link";
+    article.append(link);
+  }
 
   return article;
 }
@@ -293,6 +304,7 @@ newsForm?.addEventListener("submit", (event) => {
     category: newsCategory.value.trim(),
     title: newsTitle.value.trim(),
     submissionDeadline: newsDeadline.value,
+    link: newsLink.value.trim(),
     summary: newsSummary.value.trim()
   };
 
@@ -300,9 +312,14 @@ newsForm?.addEventListener("submit", (event) => {
     delete item.submissionDeadline;
   }
 
+  if (!item.link) {
+    delete item.link;
+  }
+
   newsItems = [item, ...newsItems];
   newsTitle.value = "";
   newsDeadline.value = "";
+  newsLink.value = "";
   newsSummary.value = "";
   newsDate.value = today();
   syncOutput();
@@ -366,6 +383,7 @@ publicationForm?.addEventListener("submit", (event) => {
 clearDraft?.addEventListener("click", () => {
   newsTitle.value = "";
   newsDeadline.value = "";
+  newsLink.value = "";
   newsSummary.value = "";
   newsCategory.value = "Achievement";
   newsDate.value = today();

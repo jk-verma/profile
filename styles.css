@@ -1073,6 +1073,11 @@ dd {
   font-weight: 900;
 }
 
+.news-link {
+  justify-self: start;
+  margin-top: 4px;
+}
+
 .contact-section {
   padding-bottom: 86px;
 }
