@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Dashboard for updating news, publications, and projects on the profile website of Dr. Jitendra Kumar Verma." />
   <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="styles.css?v=20260409-7" />
+  <link rel="stylesheet" href="styles.css?v=20260409-8" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -338,64 +338,8 @@
       </article>
     </section>
 
-    <section class="section dashboard-layout">
-      <form id="projectModeForm" class="dashboard-card" autocomplete="off">
-        <div class="section-heading">
-          <p class="eyebrow">Create Entry</p>
-          <h2>New project type or funding mode row</h2>
-        </div>
-
-        <label>
-          Type
-          <input id="projectModeType" name="type" type="text" placeholder="Self-Initiated Utility / Showcase" required />
-        </label>
-
-        <label>
-          Who Pays
-          <input id="projectModeWhoPays" name="whoPays" type="text" placeholder="Self / Client / Agency / Institution" required />
-        </label>
-
-        <label>
-          Purpose
-          <input id="projectModePurpose" name="purpose" type="text" placeholder="Build practical tools or solve a defined problem" required />
-        </label>
-
-        <label>
-          Flexibility
-          <input id="projectModeFlexibility" name="flexibility" type="text" placeholder="High / Medium / Low" required />
-        </label>
-
-        <label>
-          Output
-          <input id="projectModeOutput" name="output" type="text" placeholder="Working website / report / paper / prototype" required />
-        </label>
-
-        <div class="dashboard-actions">
-          <button class="button primary" type="submit">Add to Modes JSON</button>
-          <button id="clearProjectModeDraft" class="button secondary" type="button">Clear Draft</button>
-        </div>
-      </form>
-
-      <article class="dashboard-card">
-        <div class="section-heading">
-          <p class="eyebrow">Publish</p>
-          <h2>Generated project-modes.json</h2>
-        </div>
-        <p>
-          Add or revise project and funding rows here. Then replace <code>project-modes.json</code> in GitHub to
-          update the Projects page table.
-        </p>
-        <div class="dashboard-actions">
-          <button id="copyProjectModesJson" class="button primary" type="button">Copy Modes JSON</button>
-          <button id="downloadProjectModesJson" class="button secondary" type="button">Download project-modes.json</button>
-          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/project-modes.json" target="_blank" rel="noopener">Open GitHub Editor</a>
-        </div>
-        <p id="projectModeDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
-        <textarea id="projectModesJsonOutput" class="json-output" rows="18" spellcheck="false" aria-label="Generated project modes JSON"></textarea>
-      </article>
-    </section>
   </main>
 
-  <script src="dashboard.js?v=20260409-7"></script>
+  <script src="dashboard.js?v=20260409-8"></script>
 </body>
 </html>

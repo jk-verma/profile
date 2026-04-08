@@ -54,25 +54,12 @@ const projectStatusMessage = document.getElementById("projectDashboardStatus");
 const copyProjectsJson = document.getElementById("copyProjectsJson");
 const downloadProjectsJson = document.getElementById("downloadProjectsJson");
 
-const projectModeForm = document.getElementById("projectModeForm");
-const projectModeType = document.getElementById("projectModeType");
-const projectModeWhoPays = document.getElementById("projectModeWhoPays");
-const projectModePurpose = document.getElementById("projectModePurpose");
-const projectModeFlexibility = document.getElementById("projectModeFlexibility");
-const projectModeOutput = document.getElementById("projectModeOutput");
-const projectModesJsonOutput = document.getElementById("projectModesJsonOutput");
-const projectModeStatusMessage = document.getElementById("projectModeDashboardStatus");
-const copyProjectModesJson = document.getElementById("copyProjectModesJson");
-const downloadProjectModesJson = document.getElementById("downloadProjectModesJson");
-const clearProjectModeDraft = document.getElementById("clearProjectModeDraft");
-
 const menuToggle = document.getElementById("menuToggle");
 const primaryNav = document.getElementById("primaryNav");
 
 let newsItems = [];
 let publicationItems = [];
 let projectItems = [];
-let projectModeItems = [];
 
 const publicationTypes = [
   "Journal Article",
@@ -109,10 +96,6 @@ function setProjectStatus(message) {
   if (projectStatusMessage) projectStatusMessage.textContent = message;
 }
 
-function setProjectModeStatus(message) {
-  if (projectModeStatusMessage) projectModeStatusMessage.textContent = message;
-}
-
 function parseIndexing(value) {
   return value
     .split(",")
@@ -135,12 +118,6 @@ function syncPublicationsOutput() {
 function syncProjectsOutput() {
   if (projectsJsonOutput) {
     projectsJsonOutput.value = JSON.stringify(projectItems, null, 2);
-  }
-}
-
-function syncProjectModesOutput() {
-  if (projectModesJsonOutput) {
-    projectModesJsonOutput.value = JSON.stringify(projectModeItems, null, 2);
   }
 }
 
@@ -192,20 +169,6 @@ async function loadProjects() {
   }
 
   syncProjectsOutput();
-}
-
-async function loadProjectModes() {
-  try {
-    const response = await fetch("project-modes.json", { cache: "no-store" });
-    if (!response.ok) throw new Error("Unable to load project-modes.json");
-    projectModeItems = await response.json();
-    setProjectModeStatus("Loaded existing project-modes.json. Add a new row when ready.");
-  } catch (error) {
-    projectModeItems = [];
-    setProjectModeStatus("Could not load project-modes.json. You can still create a new list here.");
-  }
-
-  syncProjectModesOutput();
 }
 
 newsForm?.addEventListener("submit", (event) => {
@@ -346,27 +309,6 @@ fundedProjectForm?.addEventListener("submit", (event) => {
   setProjectStatus("Funded project added to JSON. Copy or download projects.json to publish it.");
 });
 
-projectModeForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const item = {
-    type: projectModeType.value.trim(),
-    whoPays: projectModeWhoPays.value.trim(),
-    purpose: projectModePurpose.value.trim(),
-    flexibility: projectModeFlexibility.value.trim(),
-    output: projectModeOutput.value.trim()
-  };
-
-  projectModeItems = [item, ...projectModeItems];
-  projectModeType.value = "";
-  projectModeWhoPays.value = "";
-  projectModePurpose.value = "";
-  projectModeFlexibility.value = "";
-  projectModeOutput.value = "";
-  syncProjectModesOutput();
-  setProjectModeStatus("Project mode row added to JSON. Copy or download project-modes.json to publish it.");
-});
-
 clearDraft?.addEventListener("click", () => {
   newsTitle.value = "";
   newsDeadline.value = "";
@@ -414,15 +356,6 @@ clearFundedProjectDraft?.addEventListener("click", () => {
   setProjectStatus("Funded project draft cleared.");
 });
 
-clearProjectModeDraft?.addEventListener("click", () => {
-  projectModeType.value = "";
-  projectModeWhoPays.value = "";
-  projectModePurpose.value = "";
-  projectModeFlexibility.value = "";
-  projectModeOutput.value = "";
-  setProjectModeStatus("Project mode draft cleared.");
-});
-
 copyJson?.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(jsonOutput.value);
@@ -456,17 +389,6 @@ copyProjectsJson?.addEventListener("click", async () => {
   }
 });
 
-copyProjectModesJson?.addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText(projectModesJsonOutput.value);
-    setProjectModeStatus("Copied JSON. Paste it into project-modes.json in the GitHub editor.");
-  } catch (error) {
-    projectModesJsonOutput.focus();
-    projectModesJsonOutput.select();
-    setProjectModeStatus("Select and copy the JSON manually from the box.");
-  }
-});
-
 function downloadJsonFile(filename, value, callback) {
   const blob = new Blob([value], { type: "application/json" });
   const url = URL.createObjectURL(blob);
@@ -496,13 +418,6 @@ downloadProjectsJson?.addEventListener("click", () => {
   });
 });
 
-downloadProjectModesJson?.addEventListener("click", () => {
-  downloadJsonFile("project-modes.json", projectModesJsonOutput.value, () => {
-    setProjectModeStatus("Downloaded project-modes.json. Upload or paste it into GitHub to publish.");
-  });
-});
-
 loadNews();
 loadPublications();
 loadProjects();
-loadProjectModes();
