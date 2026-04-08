@@ -150,9 +150,6 @@ a:hover {
 }
 
 .news-ticker {
-  position: sticky;
-  top: 75px;
-  z-index: 40;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   gap: 14px;
