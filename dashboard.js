@@ -2,6 +2,7 @@ const newsForm = document.getElementById("newsForm");
 const newsDate = document.getElementById("newsDate");
 const newsCategory = document.getElementById("newsCategory");
 const newsTitle = document.getElementById("newsTitle");
+const newsDeadline = document.getElementById("newsDeadline");
 const newsSummary = document.getElementById("newsSummary");
 const jsonOutput = document.getElementById("jsonOutput");
 const newsList = document.getElementById("dashboardNewsList");
@@ -99,6 +100,10 @@ function renderNewsItem(item) {
     createTextElement("span", "news-badge", item.category),
     createTextElement("span", "news-date", item.date)
   );
+
+  if (item.submissionDeadline) {
+    meta.append(createTextElement("span", "news-deadline", `Submission Deadline: ${item.submissionDeadline}`));
+  }
 
   article.append(
     meta,
@@ -287,11 +292,17 @@ newsForm?.addEventListener("submit", (event) => {
     date: newsDate.value,
     category: newsCategory.value.trim(),
     title: newsTitle.value.trim(),
+    submissionDeadline: newsDeadline.value,
     summary: newsSummary.value.trim()
   };
 
+  if (!item.submissionDeadline) {
+    delete item.submissionDeadline;
+  }
+
   newsItems = [item, ...newsItems];
   newsTitle.value = "";
+  newsDeadline.value = "";
   newsSummary.value = "";
   newsDate.value = today();
   syncOutput();
@@ -354,6 +365,7 @@ publicationForm?.addEventListener("submit", (event) => {
 
 clearDraft?.addEventListener("click", () => {
   newsTitle.value = "";
+  newsDeadline.value = "";
   newsSummary.value = "";
   newsCategory.value = "Achievement";
   newsDate.value = today();

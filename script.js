@@ -83,6 +83,10 @@ function renderNewsItem(item) {
     createTextElement("span", "news-date", item.date)
   );
 
+  if (item.submissionDeadline) {
+    meta.append(createTextElement("span", "news-deadline", `Submission Deadline: ${item.submissionDeadline}`));
+  }
+
   article.append(
     meta,
     createTextElement("h3", "", item.title),

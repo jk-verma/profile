@@ -1063,6 +1063,16 @@ dd {
   font-size: 0.92rem;
 }
 
+.news-deadline {
+  padding: 6px 10px;
+  border: 1px solid rgba(231, 189, 100, 0.42);
+  border-radius: var(--radius);
+  color: #2b1700;
+  background: linear-gradient(135deg, #ffd27a, #ffebb9);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
 .contact-section {
   padding-bottom: 86px;
 }
