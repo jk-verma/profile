@@ -24,6 +24,10 @@ function createTextElement(tag, className, text) {
   return element;
 }
 
+function getProjectSectionName(project) {
+  return project.projectType || (project.entryType === "fundedProject" ? "Funded Projects" : "Website and Utility Projects");
+}
+
 function renderProjectCard(project) {
   const article = document.createElement("article");
   article.className = "card";
@@ -73,6 +77,25 @@ function renderProjectCard(project) {
   return article;
 }
 
+function renderProjectSection(title, projects) {
+  const section = document.createElement("section");
+  section.className = "section";
+
+  const heading = document.createElement("div");
+  heading.className = "section-heading";
+  heading.append(
+    createTextElement("p", "eyebrow", "Projects"),
+    createTextElement("h2", "", title)
+  );
+
+  const grid = document.createElement("div");
+  grid.className = "card-grid three project-grid";
+  grid.append(...projects.map(renderProjectCard));
+
+  section.append(heading, grid);
+  return section;
+}
+
 function renderProjectModeRow(mode) {
   const row = document.createElement("tr");
   row.append(
@@ -86,9 +109,8 @@ function renderProjectModeRow(mode) {
 }
 
 async function loadProjects() {
-  const websiteList = document.getElementById("projectsList");
-  const fundedList = document.getElementById("fundedProjectsList");
-  if (!websiteList && !fundedList) return;
+  const container = document.getElementById("projectSections");
+  if (!container) return;
 
   try {
     const response = await fetch("projects.json", { cache: "no-store" });
@@ -102,41 +124,22 @@ async function loadProjects() {
         createTextElement("h3", "", "Projects will appear here"),
         createTextElement("p", "", "Add entries through the dashboard and publish the generated projects.json file.")
       );
-      websiteList?.replaceChildren(empty.cloneNode(true));
-      fundedList?.replaceChildren(empty);
+      container.replaceChildren(empty);
       return;
     }
 
-    const websiteProjects = projects.filter((project) => project.entryType !== "fundedProject");
-    const fundedProjects = projects.filter((project) => project.entryType === "fundedProject");
-
-    if (websiteList) {
-      if (websiteProjects.length) {
-        websiteList.replaceChildren(...websiteProjects.map(renderProjectCard));
-      } else {
-        const emptyWebsite = document.createElement("article");
-        emptyWebsite.className = "panel";
-        emptyWebsite.append(
-          createTextElement("h3", "", "Website and utility projects will appear here"),
-          createTextElement("p", "", "Add a website or utility project through the dashboard to show it here.")
-        );
-        websiteList.replaceChildren(emptyWebsite);
+    const groupedProjects = new Map();
+    projects.forEach((project) => {
+      const sectionName = getProjectSectionName(project);
+      if (!groupedProjects.has(sectionName)) {
+        groupedProjects.set(sectionName, []);
       }
-    }
+      groupedProjects.get(sectionName).push(project);
+    });
 
-    if (fundedList) {
-      if (fundedProjects.length) {
-        fundedList.replaceChildren(...fundedProjects.map(renderProjectCard));
-      } else {
-        const emptyFunded = document.createElement("article");
-        emptyFunded.className = "panel";
-        emptyFunded.append(
-          createTextElement("h3", "", "Funded projects will appear here"),
-          createTextElement("p", "", "Add a funded project through the dashboard to show it here.")
-        );
-        fundedList.replaceChildren(emptyFunded);
-      }
-    }
+    container.replaceChildren(
+      ...Array.from(groupedProjects.entries()).map(([title, items]) => renderProjectSection(title, items))
+    );
   } catch (error) {
     const fallback = document.createElement("article");
     fallback.className = "panel";
@@ -144,8 +147,7 @@ async function loadProjects() {
       createTextElement("h3", "", "Projects unavailable"),
       createTextElement("p", "", "Please check projects.json and try again.")
     );
-    websiteList?.replaceChildren(fallback.cloneNode(true));
-    fundedList?.replaceChildren(fallback);
+    container.replaceChildren(fallback);
   }
 }
 
