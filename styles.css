@@ -204,6 +204,7 @@ a:hover {
 .ticker-track a {
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   cursor: pointer;
   pointer-events: auto;
 }
@@ -216,6 +217,25 @@ a:hover {
 .ticker-track a:focus-visible {
   outline: 2px solid var(--accent-2);
   outline-offset: 4px;
+}
+
+.ticker-category {
+  padding: 4px 8px;
+  border: 1px solid rgba(231, 189, 100, 0.42);
+  border-radius: var(--radius);
+  color: #031013;
+  background: var(--accent-2);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.ticker-title {
+  color: var(--text);
+}
+
+.ticker-track a:hover .ticker-title {
+  color: var(--accent-2);
 }
 
 .ticker-track span::after,

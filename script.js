@@ -83,10 +83,10 @@ function renderNewsTicker(items) {
 
   const tickerItems = items
     .filter((item) => item.title)
-    .map((item) => {
-      const prefix = item.category ? `${item.category}: ` : "";
-      return `${prefix}${item.title}`;
-    });
+    .map((item) => ({
+      category: item.category || "News",
+      title: item.title
+    }));
 
   if (!tickerItems.length) {
     track.replaceChildren(createTextElement("span", "", "Latest updates will appear here."));
@@ -95,15 +95,20 @@ function renderNewsTicker(items) {
 
   const tickerCycle = [...tickerItems, "__ticker_gap__"];
   const repeatedItems = [...tickerCycle, ...tickerCycle];
-  track.replaceChildren(...repeatedItems.map((text) => {
-    if (text === "__ticker_gap__") {
+  track.replaceChildren(...repeatedItems.map((item) => {
+    if (item === "__ticker_gap__") {
       const gap = createTextElement("span", "ticker-gap", "");
       gap.setAttribute("aria-hidden", "true");
       return gap;
     }
 
-    const link = createTextElement("a", "ticker-link", text);
+    const link = document.createElement("a");
+    link.className = "ticker-link";
     link.href = "#news";
+    link.append(
+      createTextElement("span", "ticker-category", item.category),
+      createTextElement("span", "ticker-title", item.title)
+    );
     link.addEventListener("click", (event) => {
       event.preventDefault();
       document.getElementById("news")?.scrollIntoView({ behavior: "smooth", block: "start" });
