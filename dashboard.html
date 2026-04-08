@@ -36,8 +36,8 @@
         <p class="eyebrow">Dashboard</p>
         <h1>Prepare latest updates, publications, and projects.</h1>
         <p class="lead">
-          Add news items, publication records, website projects, and project-mode rows. Then copy or download the
-          generated JSON file and replace it through GitHub to publish the update on the website.
+          Add news items, publication records, website projects, and project-type or funding-mode rows. Then copy or
+          download the generated JSON file and replace it through GitHub to publish the update on the website.
         </p>
       </div>
       <div class="dashboard-steps">
@@ -240,6 +240,19 @@
         </label>
 
         <label>
+          Project Type
+          <select id="projectType" name="projectType">
+            <option value="Self-Initiated Utility / Showcase">Self-Initiated Utility / Showcase</option>
+            <option value="Consultancy Project">Consultancy Project</option>
+            <option value="Sponsored Research Project">Sponsored Research Project</option>
+            <option value="Grant-in-Aid Project">Grant-in-Aid Project</option>
+            <option value="Collaborative Project">Collaborative Project</option>
+            <option value="Internal / Seed Project">Internal / Seed Project</option>
+            <option value="International Project">International Project</option>
+          </select>
+        </label>
+
+        <label>
           Funding Agency
           <input id="projectFundingAgency" name="fundingAgency" type="text" placeholder="SERB / DST / CSIR / Client / Institution" />
         </label>
@@ -335,32 +348,32 @@
       <form id="projectModeForm" class="dashboard-card" autocomplete="off">
         <div class="section-heading">
           <p class="eyebrow">Create Entry</p>
-          <h2>New project or funding mode row</h2>
+          <h2>New project type or funding mode row</h2>
         </div>
 
         <label>
           Type
-          <input id="projectModeType" name="type" type="text" placeholder="Consultancy" required />
+          <input id="projectModeType" name="type" type="text" placeholder="Self-Initiated Utility / Showcase" required />
         </label>
 
         <label>
           Who Pays
-          <input id="projectModeWhoPays" name="whoPays" type="text" placeholder="Client" required />
+          <input id="projectModeWhoPays" name="whoPays" type="text" placeholder="Self / Client / Agency / Institution" required />
         </label>
 
         <label>
           Purpose
-          <input id="projectModePurpose" name="purpose" type="text" placeholder="Solve specific problem" required />
+          <input id="projectModePurpose" name="purpose" type="text" placeholder="Build practical tools or solve a defined problem" required />
         </label>
 
         <label>
           Flexibility
-          <input id="projectModeFlexibility" name="flexibility" type="text" placeholder="Low" required />
+          <input id="projectModeFlexibility" name="flexibility" type="text" placeholder="High / Medium / Low" required />
         </label>
 
         <label>
           Output
-          <input id="projectModeOutput" name="output" type="text" placeholder="Report / solution" required />
+          <input id="projectModeOutput" name="output" type="text" placeholder="Working website / report / paper / prototype" required />
         </label>
 
         <div class="dashboard-actions">

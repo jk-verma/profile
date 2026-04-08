@@ -1,44 +1,51 @@
 [
   {
-    "type": "Consultancy",
-    "whoPays": "Client",
-    "purpose": "Solve specific problem",
-    "flexibility": "Low",
-    "output": "Report / solution"
-  },
-  {
-    "type": "Sponsored",
-    "whoPays": "Agency",
-    "purpose": "Research",
-    "flexibility": "Medium",
-    "output": "Papers, patents"
-  },
-  {
-    "type": "Grant-in-Aid",
-    "whoPays": "Govt",
-    "purpose": "Support development",
+    "type": "Self-Initiated Utility / Showcase",
+    "whoPays": "Self",
+    "purpose": "Build practical tools, utilities, and showcase websites",
     "flexibility": "High",
-    "output": "Capacity building"
+    "output": "Working website / utility / demonstration"
   },
   {
-    "type": "Collaborative",
-    "whoPays": "Multiple",
-    "purpose": "Joint research",
+    "type": "Consultancy Project",
+    "whoPays": "Client / Institution",
+    "purpose": "Solve a defined practical or managerial problem",
     "flexibility": "Medium",
-    "output": "Shared outputs"
+    "output": "Report / solution / implementation support"
   },
   {
-    "type": "Internal",
+    "type": "Sponsored Research Project",
+    "whoPays": "Agency / Funding body",
+    "purpose": "Conduct funded research and applied investigation",
+    "flexibility": "Medium",
+    "output": "Papers / patents / prototypes"
+  },
+  {
+    "type": "Grant-in-Aid Project",
+    "whoPays": "Government / Public body",
+    "purpose": "Support development, outreach, and capacity building",
+    "flexibility": "High",
+    "output": "Capacity building / tools / pilot outcomes"
+  },
+  {
+    "type": "Collaborative Project",
+    "whoPays": "Multiple partners",
+    "purpose": "Joint research, development, and knowledge creation",
+    "flexibility": "Medium",
+    "output": "Shared outputs / publications / deliverables"
+  },
+  {
+    "type": "Internal / Seed Project",
     "whoPays": "Institution",
-    "purpose": "Seed research",
+    "purpose": "Support exploratory work and pilot implementation",
     "flexibility": "High",
-    "output": "Pilot results"
+    "output": "Pilot results / proof of concept / proposals"
   },
   {
-    "type": "International",
-    "whoPays": "Global org",
-    "purpose": "Development/research",
+    "type": "International Project",
+    "whoPays": "Global partner / international agency",
+    "purpose": "Advance development, research, and academic collaboration",
     "flexibility": "Medium",
-    "output": "High-impact outputs"
+    "output": "High-impact outputs / networks / collaborative results"
   }
 ]

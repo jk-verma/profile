@@ -30,6 +30,7 @@ function renderProjectCard(project) {
 
   const fragments = [];
   const metaBits = [
+    project.projectType,
     project.fundingAgency,
     project.schemeProgram,
     project.yearOfFunding,

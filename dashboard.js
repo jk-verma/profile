@@ -34,6 +34,7 @@ const clearPublicationDraft = document.getElementById("clearPublicationDraft");
 
 const projectForm = document.getElementById("projectForm");
 const projectTitle = document.getElementById("projectTitle");
+const projectType = document.getElementById("projectType");
 const projectFundingAgency = document.getElementById("projectFundingAgency");
 const projectSchemeProgram = document.getElementById("projectSchemeProgram");
 const projectRole = document.getElementById("projectRole");
@@ -289,6 +290,7 @@ projectForm?.addEventListener("submit", (event) => {
 
   const item = {
     title: projectTitle.value.trim(),
+    projectType: projectType.value.trim(),
     fundingAgency: projectFundingAgency.value.trim(),
     schemeProgram: projectSchemeProgram.value.trim(),
     role: projectRole.value.trim(),
@@ -310,6 +312,7 @@ projectForm?.addEventListener("submit", (event) => {
 
   projectItems = [item, ...projectItems];
   projectTitle.value = "";
+  projectType.value = "Self-Initiated Utility / Showcase";
   projectFundingAgency.value = "";
   projectSchemeProgram.value = "";
   projectRole.value = "";
@@ -376,6 +379,7 @@ clearPublicationDraft?.addEventListener("click", () => {
 
 clearProjectDraft?.addEventListener("click", () => {
   projectTitle.value = "";
+  projectType.value = "Self-Initiated Utility / Showcase";
   projectFundingAgency.value = "";
   projectSchemeProgram.value = "";
   projectRole.value = "";
