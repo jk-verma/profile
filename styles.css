@@ -1295,6 +1295,26 @@ code {
     padding: 12px 18px;
   }
 
+  .news-ticker {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    align-items: start;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .ticker-label {
+    justify-self: start;
+  }
+
+  .ticker-track {
+    font-size: 0.88rem;
+  }
+
+  .ticker-category {
+    font-size: 0.72rem;
+  }
+
   .brand strong {
     max-width: 190px;
     overflow: hidden;
@@ -1307,11 +1327,72 @@ code {
   }
 
   .hero {
+    gap: 24px;
+    padding-top: 58px;
     padding-bottom: 42px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .lead {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .usp-strip {
+    margin-top: 28px;
+    gap: 8px;
+  }
+
+  .usp-strip span {
+    width: 100%;
+    font-size: 0.84rem;
+    text-align: center;
   }
 
   .hero-showcase {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .showcase-photo,
+  .showcase-card,
+  .showcase-grid {
+    width: min(100%, 320px);
+    margin-inline: auto;
+  }
+
+  .showcase-photo {
+    min-height: 260px;
+  }
+
+  .showcase-card {
+    padding: 18px;
+  }
+
+  .showcase-card p {
+    font-size: 0.92rem;
+  }
+
+  .showcase-card strong {
+    font-size: 1.2rem;
+  }
+
+  .showcase-card small {
+    font-size: 0.9rem;
   }
 
   .showcase-grid {
@@ -1319,7 +1400,8 @@ code {
   }
 
   .hero h1 {
-    font-size: 2.15rem;
+    font-size: 1.9rem;
+    line-height: 1.12;
   }
 
   .dashboard-hero h1 {
@@ -1358,5 +1440,88 @@ code {
 
   .contact-card {
     display: grid;
+  }
+
+  .contact-links {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  .site-header {
+    gap: 12px;
+    padding-inline: 14px;
+  }
+
+  .brand {
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .brand span {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand strong {
+    max-width: 150px;
+    font-size: 0.9rem;
+  }
+
+  .primary-nav {
+    left: 14px;
+    right: 14px;
+  }
+
+  .section,
+  .profile-strip {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .hero {
+    padding-inline: 14px;
+    padding-top: 52px;
+  }
+
+  .hero h1 {
+    font-size: 1.72rem;
+  }
+
+  .lead {
+    font-size: 0.96rem;
+  }
+
+  .button {
+    min-height: 42px;
+    padding: 10px 12px;
+    font-size: 0.94rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.45rem;
+  }
+
+  .panel,
+  .card,
+  .news-item,
+  .contact-card,
+  .photo-card,
+  .identity-card,
+  .metric-card,
+  .stat {
+    padding: 18px;
+  }
+
+  .experience-highlight {
+    padding: 14px 16px;
+  }
+
+  .experience-highlight strong {
+    font-size: 1.55rem;
+  }
+
+  .showcase-photo {
+    min-height: 230px;
   }
 }
