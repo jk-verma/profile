@@ -93,10 +93,21 @@ function renderNewsTicker(items) {
     return;
   }
 
-  const repeatedItems = [...tickerItems, ...tickerItems];
+  const tickerCycle = [...tickerItems, "__ticker_gap__"];
+  const repeatedItems = [...tickerCycle, ...tickerCycle];
   track.replaceChildren(...repeatedItems.map((text) => {
-    const link = createTextElement("a", "", text);
+    if (text === "__ticker_gap__") {
+      const gap = createTextElement("span", "ticker-gap", "");
+      gap.setAttribute("aria-hidden", "true");
+      return gap;
+    }
+
+    const link = createTextElement("a", "ticker-link", text);
     link.href = "#news";
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      document.getElementById("news")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
     return link;
   }));
 }
