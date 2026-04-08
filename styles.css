@@ -193,8 +193,8 @@ a:hover {
   animation-play-state: paused;
 }
 
-.ticker-track span,
-.ticker-track a {
+.ticker-track > span,
+.ticker-track > a {
   position: relative;
   color: var(--text);
 }
@@ -236,8 +236,8 @@ a:hover {
   color: var(--accent-2);
 }
 
-.ticker-track span::after,
-.ticker-track a::after {
+.ticker-track > span::after,
+.ticker-track > a::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -254,6 +254,11 @@ a:hover {
 }
 
 .ticker-gap::after {
+  display: none;
+}
+
+.ticker-category::after,
+.ticker-title::after {
   display: none;
 }
 
