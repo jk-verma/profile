@@ -960,6 +960,60 @@ dd {
   gap: 14px;
 }
 
+.project-grid .card {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.project-link {
+  justify-self: start;
+  margin-top: auto;
+}
+
+.project-table-panel {
+  margin-top: 18px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.project-types-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background: rgba(8, 29, 39, 0.62);
+}
+
+.project-types-table th,
+.project-types-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.project-types-table th {
+  color: var(--accent-2);
+  font-size: 0.84rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: rgba(16, 44, 56, 0.96);
+}
+
+.project-types-table td {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.project-types-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
 .news-item {
   display: grid;
   align-content: start;
