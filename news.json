@@ -1,15 +1,15 @@
 [
   {
+    "date": "2026-04-07",
+    "category": "Profile Update",
+    "title": "Website launched on GitHub Pages",
+    "summary": "The academic profile website of Dr. Jitendra Kumar Verma has been prepared with sections covering qualifications, interests, teaching, research, work experience, and contact details."
+  },
+  {
     "date": "2025-12-18",
     "category": "Announcement",
     "title": "Chairperson, Committee for SC/ST",
     "summary": "In compliance with the Scheduled Castes and the Scheduled Tribe (Prevention of Atrocities) Act 1989, No 33 of 1989"
-  },
-  {
-    "date": "2024-10-25",
-    "category": "Announcement",
-    "title": "Chairperson, Library Committee",
-    "summary": "To look after recommendations for purchase of various databases, journals and books in IIFT Kakinada Campus."
   },
   {
     "date": "2025-12-18",
@@ -18,21 +18,21 @@
     "summary": "To look after IIC's Internship activities and IPR activities"
   },
   {
-    "date": "2025-07-30",
-    "category": "Announcement",
-    "title": "Faculty In-Charge, International Collaboration & Capacity Development Division (ICCD)",
-    "summary": "To look after the ICCD relataed activities of IIFT Kakinada Campus."
-  },
-  {
     "date": "2025-10-14",
     "category": "Announcement",
     "title": "Chairperson, Anti-Ragging Squad",
     "summary": "The squad will initially investigate all student's complaints regarding ragging.\n\nThis Anti-Ragging Squad will be valid for the period of Two Academic Years."
   },
   {
-    "date": "2026-04-07",
-    "category": "Profile Update",
-    "title": "Website launched on GitHub Pages",
-    "summary": "The academic profile website of Dr. Jitendra Kumar Verma has been prepared with sections covering qualifications, interests, teaching, research, work experience, and contact details."
+    "date": "2025-07-30",
+    "category": "Announcement",
+    "title": "Faculty In-Charge, International Collaboration & Capacity Development Division (ICCD)",
+    "summary": "To look after the ICCD relataed activities of IIFT Kakinada Campus."
+  },
+  {
+    "date": "2024-10-25",
+    "category": "Announcement",
+    "title": "Chairperson, Library Committee",
+    "summary": "To look after recommendations for purchase of various databases, journals and books in IIFT Kakinada Campus."
   }
 ]
