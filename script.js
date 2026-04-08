@@ -77,24 +77,56 @@ function renderNewsItem(item) {
   return article;
 }
 
+function renderNewsTicker(items) {
+  const track = document.getElementById("newsTickerTrack");
+  if (!track) return;
+
+  const tickerItems = items
+    .filter((item) => item.title)
+    .slice(0, 8)
+    .map((item) => {
+      const prefix = item.category ? `${item.category}: ` : "";
+      return `${prefix}${item.title}`;
+    });
+
+  if (!tickerItems.length) {
+    track.replaceChildren(createTextElement("span", "", "Latest updates will appear here."));
+    return;
+  }
+
+  const repeatedItems = [...tickerItems, ...tickerItems];
+  track.replaceChildren(...repeatedItems.map((text) => createTextElement("span", "", text)));
+}
+
 async function loadNews() {
   const container = document.getElementById("newsList");
-  if (!container) return;
+  const ticker = document.getElementById("newsTickerTrack");
+  if (!container && !ticker) return;
 
   try {
     const response = await fetch("news.json", { cache: "no-store" });
     if (!response.ok) throw new Error("Unable to load news data");
 
     const items = await response.json();
-    container.replaceChildren(...items.map(renderNewsItem));
+    renderNewsTicker(items);
+
+    if (container) {
+      container.replaceChildren(...items.map(renderNewsItem));
+    }
   } catch (error) {
-    const fallback = document.createElement("article");
-    fallback.className = "news-item";
-    fallback.append(
-      createTextElement("h3", "", "News feed unavailable"),
-      createTextElement("p", "", "Please check news.json or add the first update there.")
-    );
-    container.replaceChildren(fallback);
+    if (ticker) {
+      ticker.replaceChildren(createTextElement("span", "", "Latest news will appear here once news.json is available."));
+    }
+
+    if (container) {
+      const fallback = document.createElement("article");
+      fallback.className = "news-item";
+      fallback.append(
+        createTextElement("h3", "", "News feed unavailable"),
+        createTextElement("p", "", "Please check news.json or add the first update there.")
+      );
+      container.replaceChildren(fallback);
+    }
   }
 }
 

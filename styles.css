@@ -149,6 +149,85 @@ a:hover {
   font-weight: 800;
 }
 
+.news-ticker {
+  position: sticky;
+  top: 75px;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 10px clamp(18px, 5vw, 64px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(8, 29, 39, 0.92);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+}
+
+.ticker-label {
+  padding: 7px 10px;
+  border-radius: var(--radius);
+  color: #031013;
+  background: linear-gradient(135deg, var(--accent-2), #ffe5a8);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ticker-window {
+  overflow: hidden;
+  min-width: 0;
+}
+
+.ticker-track {
+  display: inline-flex;
+  gap: 34px;
+  min-width: max-content;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 800;
+  white-space: nowrap;
+  animation: ticker-scroll 34s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-track span {
+  position: relative;
+}
+
+.ticker-track span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -21px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateY(-50%);
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+    white-space: normal;
+  }
+}
+
 main {
   position: relative;
   z-index: 1;
