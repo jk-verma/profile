@@ -167,13 +167,13 @@ main {
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 380px;
-  gap: 44px;
-  min-height: min(650px, calc(100vh - 110px));
-  align-items: end;
+  grid-template-columns: minmax(0, 1fr) minmax(330px, 390px);
+  gap: clamp(32px, 5vw, 72px);
+  min-height: min(680px, calc(100vh - 96px));
+  align-items: center;
   overflow: hidden;
   width: 100%;
-  padding: 96px clamp(18px, 5vw, 64px) 54px;
+  padding: 104px clamp(18px, 6vw, 82px) 70px;
   border-bottom: 1px solid var(--line);
   isolation: isolate;
 }
@@ -207,7 +207,6 @@ main {
 
 .hero-content {
   max-width: 930px;
-  padding-bottom: 14px;
 }
 
 .eyebrow {
@@ -224,17 +223,17 @@ main {
 }
 
 .hero h1 {
-  max-width: 1040px;
-  font-size: 4rem;
-  line-height: 1.03;
+  max-width: 980px;
+  font-size: 3.85rem;
+  line-height: 1.04;
   text-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
 }
 
 .lead {
-  max-width: 850px;
-  margin: 18px 0 0;
+  max-width: 780px;
+  margin: 20px 0 0;
   color: var(--muted);
-  font-size: 1.08rem;
+  font-size: 1.1rem;
   line-height: 1.75;
 }
 
@@ -275,11 +274,11 @@ main {
 }
 
 .hero-showcase {
-  align-self: stretch;
+  align-self: center;
   display: grid;
-  align-content: end;
-  gap: 14px;
-  padding-bottom: 6px;
+  align-content: center;
+  gap: 12px;
+  width: 100%;
 }
 
 .showcase-photo,
@@ -296,7 +295,8 @@ main {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 360px;
+  min-height: 390px;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   background:
     linear-gradient(145deg, rgba(56, 209, 194, 0.22), rgba(231, 189, 100, 0.16)),
@@ -347,7 +347,8 @@ main {
 }
 
 .showcase-card {
-  padding: 20px;
+  padding: 22px;
+  text-align: center;
   background:
     linear-gradient(135deg, rgba(56, 209, 194, 0.16), transparent 48%),
     rgba(8, 29, 39, 0.86);
@@ -363,10 +364,11 @@ main {
   margin: 0 0 5px;
   color: var(--accent-2);
   font-weight: 800;
+  line-height: 1.5;
 }
 
 .showcase-card strong {
-  font-size: 1.5rem;
+  font-size: 1.55rem;
 }
 
 .showcase-card small {
@@ -388,6 +390,7 @@ main {
   background: rgba(8, 29, 39, 0.94);
   font-size: 0.9rem;
   font-weight: 800;
+  text-align: center;
 }
 
 .showcase-grid span:nth-child(2),
