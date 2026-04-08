@@ -30,6 +30,24 @@ document.querySelectorAll(".protected-photo img").forEach((image) => {
   });
 });
 
+function updateExperienceYears() {
+  const experienceElement = document.getElementById("experienceYears");
+  if (!experienceElement) return;
+
+  const startDate = new Date(`${experienceElement.dataset.startDate}T00:00:00`);
+  if (Number.isNaN(startDate.getTime())) return;
+
+  const today = new Date();
+  let years = today.getFullYear() - startDate.getFullYear();
+  const anniversaryThisYear = new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate());
+
+  if (today < anniversaryThisYear) {
+    years -= 1;
+  }
+
+  experienceElement.textContent = `${Math.max(years, 0)}+ years`;
+}
+
 function createTextElement(tag, className, text) {
   const element = document.createElement(tag);
   if (className) {
@@ -80,4 +98,5 @@ async function loadNews() {
   }
 }
 
+updateExperienceYears();
 loadNews();
