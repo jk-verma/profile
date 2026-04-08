@@ -32,25 +32,27 @@ const copyPublicationsJson = document.getElementById("copyPublicationsJson");
 const downloadPublicationsJson = document.getElementById("downloadPublicationsJson");
 const clearPublicationDraft = document.getElementById("clearPublicationDraft");
 
-const projectForm = document.getElementById("projectForm");
+const websiteProjectForm = document.getElementById("websiteProjectForm");
 const projectTitle = document.getElementById("projectTitle");
-const projectType = document.getElementById("projectType");
-const projectFundingAgency = document.getElementById("projectFundingAgency");
-const projectSchemeProgram = document.getElementById("projectSchemeProgram");
-const projectRole = document.getElementById("projectRole");
-const projectFeeReceivedBy = document.getElementById("projectFeeReceivedBy");
-const projectSummary = document.getElementById("projectSummary");
-const projectYearOfFunding = document.getElementById("projectYearOfFunding");
-const projectDuration = document.getElementById("projectDuration");
-const projectAmountSanctioned = document.getElementById("projectAmountSanctioned");
-const projectStatus = document.getElementById("projectStatus");
-const projectSiteUrl = document.getElementById("projectSiteUrl");
-const projectRepoUrl = document.getElementById("projectRepoUrl");
+const websiteProjectSummary = document.getElementById("websiteProjectSummary");
+const websiteProjectLink = document.getElementById("websiteProjectLink");
+const clearWebsiteProjectDraft = document.getElementById("clearWebsiteProjectDraft");
+
+const fundedProjectForm = document.getElementById("fundedProjectForm");
+const fundedProjectType = document.getElementById("fundedProjectType");
+const fundedProjectAgency = document.getElementById("fundedProjectAgency");
+const fundedProjectScheme = document.getElementById("fundedProjectScheme");
+const fundedProjectTitle = document.getElementById("fundedProjectTitle");
+const fundedProjectYears = document.getElementById("fundedProjectYears");
+const fundedProjectDuration = document.getElementById("fundedProjectDuration");
+const fundedProjectAmount = document.getElementById("fundedProjectAmount");
+const fundedProjectStatus = document.getElementById("fundedProjectStatus");
+const clearFundedProjectDraft = document.getElementById("clearFundedProjectDraft");
+
 const projectsJsonOutput = document.getElementById("projectsJsonOutput");
 const projectStatusMessage = document.getElementById("projectDashboardStatus");
 const copyProjectsJson = document.getElementById("copyProjectsJson");
 const downloadProjectsJson = document.getElementById("downloadProjectsJson");
-const clearProjectDraft = document.getElementById("clearProjectDraft");
 
 const projectModeForm = document.getElementById("projectModeForm");
 const projectModeType = document.getElementById("projectModeType");
@@ -285,23 +287,15 @@ publicationForm?.addEventListener("submit", (event) => {
   setPublicationStatus("Publication added to JSON. Copy or download publications.json to publish it.");
 });
 
-projectForm?.addEventListener("submit", (event) => {
+websiteProjectForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const item = {
     title: projectTitle.value.trim(),
-    projectType: projectType.value.trim(),
-    fundingAgency: projectFundingAgency.value.trim(),
-    schemeProgram: projectSchemeProgram.value.trim(),
-    role: projectRole.value.trim(),
-    feeReceivedBy: projectFeeReceivedBy.value,
-    summary: projectSummary.value.trim(),
-    yearOfFunding: projectYearOfFunding.value.trim(),
-    duration: projectDuration.value.trim(),
-    amountSanctioned: projectAmountSanctioned.value.trim(),
-    status: projectStatus.value,
-    siteUrl: projectSiteUrl.value.trim(),
-    repoUrl: projectRepoUrl.value.trim()
+    entryType: "websiteUtility",
+    projectType: "Self-Initiated Utility / Showcase",
+    summary: websiteProjectSummary.value.trim(),
+    siteUrl: websiteProjectLink.value.trim()
   };
 
   Object.keys(item).forEach((key) => {
@@ -312,20 +306,44 @@ projectForm?.addEventListener("submit", (event) => {
 
   projectItems = [item, ...projectItems];
   projectTitle.value = "";
-  projectType.value = "Self-Initiated Utility / Showcase";
-  projectFundingAgency.value = "";
-  projectSchemeProgram.value = "";
-  projectRole.value = "";
-  projectFeeReceivedBy.value = "";
-  projectSummary.value = "";
-  projectYearOfFunding.value = "";
-  projectDuration.value = "";
-  projectAmountSanctioned.value = "";
-  projectStatus.value = "";
-  projectSiteUrl.value = "";
-  projectRepoUrl.value = "";
+  websiteProjectSummary.value = "";
+  websiteProjectLink.value = "";
   syncProjectsOutput();
-  setProjectStatus("Project added to JSON. Copy or download projects.json to publish it.");
+  setProjectStatus("Website or utility project added to JSON. Copy or download projects.json to publish it.");
+});
+
+fundedProjectForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const item = {
+    title: fundedProjectTitle.value.trim(),
+    entryType: "fundedProject",
+    projectType: fundedProjectType.value,
+    fundingAgency: fundedProjectAgency.value.trim(),
+    schemeName: fundedProjectScheme.value.trim(),
+    yearOfFunding: fundedProjectYears.value.trim(),
+    duration: fundedProjectDuration.value.trim(),
+    amountSanctioned: fundedProjectAmount.value.trim(),
+    status: fundedProjectStatus.value
+  };
+
+  Object.keys(item).forEach((key) => {
+    if (item[key] === "") {
+      delete item[key];
+    }
+  });
+
+  projectItems = [item, ...projectItems];
+  fundedProjectType.value = "Consultancy Project";
+  fundedProjectAgency.value = "";
+  fundedProjectScheme.value = "";
+  fundedProjectTitle.value = "";
+  fundedProjectYears.value = "";
+  fundedProjectDuration.value = "";
+  fundedProjectAmount.value = "";
+  fundedProjectStatus.value = "Ongoing";
+  syncProjectsOutput();
+  setProjectStatus("Funded project added to JSON. Copy or download projects.json to publish it.");
 });
 
 projectModeForm?.addEventListener("submit", (event) => {
@@ -377,21 +395,23 @@ clearPublicationDraft?.addEventListener("click", () => {
   setPublicationStatus("Publication draft cleared.");
 });
 
-clearProjectDraft?.addEventListener("click", () => {
+clearWebsiteProjectDraft?.addEventListener("click", () => {
   projectTitle.value = "";
-  projectType.value = "Self-Initiated Utility / Showcase";
-  projectFundingAgency.value = "";
-  projectSchemeProgram.value = "";
-  projectRole.value = "";
-  projectFeeReceivedBy.value = "";
-  projectSummary.value = "";
-  projectYearOfFunding.value = "";
-  projectDuration.value = "";
-  projectAmountSanctioned.value = "";
-  projectStatus.value = "";
-  projectSiteUrl.value = "";
-  projectRepoUrl.value = "";
-  setProjectStatus("Project draft cleared.");
+  websiteProjectSummary.value = "";
+  websiteProjectLink.value = "";
+  setProjectStatus("Website or utility project draft cleared.");
+});
+
+clearFundedProjectDraft?.addEventListener("click", () => {
+  fundedProjectType.value = "Consultancy Project";
+  fundedProjectAgency.value = "";
+  fundedProjectScheme.value = "";
+  fundedProjectTitle.value = "";
+  fundedProjectYears.value = "";
+  fundedProjectDuration.value = "";
+  fundedProjectAmount.value = "";
+  fundedProjectStatus.value = "Ongoing";
+  setProjectStatus("Funded project draft cleared.");
 });
 
 clearProjectModeDraft?.addEventListener("click", () => {

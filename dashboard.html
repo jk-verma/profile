@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Dashboard for updating news, publications, and projects on the profile website of Dr. Jitendra Kumar Verma." />
   <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="styles.css?v=20260409-6" />
+  <link rel="stylesheet" href="styles.css?v=20260409-7" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -36,7 +36,7 @@
         <p class="eyebrow">Dashboard</p>
         <h1>Prepare latest updates, publications, and projects.</h1>
         <p class="lead">
-          Add news items, publication records, website projects, and project-type or funding-mode rows. Then copy or
+          Add news items, publication records, website projects, funded projects, and project-type rows. Then copy or
           download the generated JSON file and replace it through GitHub to publish the update on the website.
         </p>
       </div>
@@ -228,7 +228,7 @@
     </section>
 
     <section class="section dashboard-layout">
-      <form id="projectForm" class="dashboard-card" autocomplete="off">
+      <form id="websiteProjectForm" class="dashboard-card" autocomplete="off">
         <div class="section-heading">
           <p class="eyebrow">Create Entry</p>
           <h2>New website or utility project</h2>
@@ -240,9 +240,30 @@
         </label>
 
         <label>
-          Project Type
-          <select id="projectType" name="projectType">
-            <option value="Self-Initiated Utility / Showcase">Self-Initiated Utility / Showcase</option>
+          Project Summary
+          <textarea id="websiteProjectSummary" name="summary" rows="5" maxlength="500" placeholder="Short project description for the Projects page." required></textarea>
+        </label>
+
+        <label>
+          Project Link
+          <input id="websiteProjectLink" name="siteUrl" type="url" placeholder="https://jk-verma.github.io/project-name/" required />
+        </label>
+
+        <div class="dashboard-actions">
+          <button class="button primary" type="submit">Add to Projects JSON</button>
+          <button id="clearWebsiteProjectDraft" class="button secondary" type="button">Clear Draft</button>
+        </div>
+      </form>
+
+      <form id="fundedProjectForm" class="dashboard-card" autocomplete="off">
+        <div class="section-heading">
+          <p class="eyebrow">Create Entry</p>
+          <h2>New funded project</h2>
+        </div>
+
+        <label>
+          Type of Grant
+          <select id="fundedProjectType" name="projectType" required>
             <option value="Consultancy Project">Consultancy Project</option>
             <option value="Sponsored Research Project">Sponsored Research Project</option>
             <option value="Grant-in-Aid Project">Grant-in-Aid Project</option>
@@ -253,86 +274,59 @@
         </label>
 
         <label>
-          Funding Agency
-          <input id="projectFundingAgency" name="fundingAgency" type="text" placeholder="SERB / DST / CSIR / Client / Institution" />
+          Name of Funding Agency
+          <input id="fundedProjectAgency" name="fundingAgency" type="text" placeholder="ICSSR / DST / IIFT / International agency" required />
         </label>
 
         <label>
-          Scheme / Program
-          <input id="projectSchemeProgram" name="schemeProgram" type="text" placeholder="Young Scientist / SPARC / Internal Seed Grant" />
+          Name of the Scheme
+          <input id="fundedProjectScheme" name="schemeName" type="text" placeholder="Scheme or grant name" required />
+        </label>
+
+        <label>
+          Program/Project Title
+          <input id="fundedProjectTitle" name="title" type="text" placeholder="Title of the funded project" required />
         </label>
 
         <div class="dashboard-inline-fields">
           <label>
-            Role
-            <input id="projectRole" name="role" type="text" placeholder="Chief Coordinator / Co-Investigator / PI" />
-          </label>
-          <label>
-            Fee / Funds Received By
-            <select id="projectFeeReceivedBy" name="feeReceivedBy">
-              <option value="">Select</option>
-              <option value="Self">Self</option>
-              <option value="Institution">Institution</option>
-              <option value="Shared">Shared</option>
-              <option value="No Fee">No Fee</option>
-            </select>
-          </label>
-        </div>
-
-        <label>
-          Summary
-          <textarea id="projectSummary" name="summary" rows="5" maxlength="500" placeholder="Short project description for the Projects page." required></textarea>
-        </label>
-
-        <div class="dashboard-inline-fields">
-          <label>
-            Year of Funding
-            <input id="projectYearOfFunding" name="yearOfFunding" type="text" placeholder="2023-2025" />
+            Year(s) of Funding
+            <input id="fundedProjectYears" name="yearOfFunding" type="text" placeholder="2024-2026" required />
           </label>
           <label>
             Duration
-            <input id="projectDuration" name="duration" type="text" placeholder="36 Months" />
+            <input id="fundedProjectDuration" name="duration" type="text" placeholder="24 Months" required />
           </label>
           <label>
             Amount Sanctioned
-            <input id="projectAmountSanctioned" name="amountSanctioned" type="text" placeholder="5000000.00" />
+            <input id="fundedProjectAmount" name="amountSanctioned" type="text" placeholder="INR 5,00,000" required />
           </label>
         </div>
 
         <label>
           Status
-          <select id="projectStatus" name="status">
-            <option value="">Select</option>
+          <select id="fundedProjectStatus" name="status" required>
             <option value="Ongoing">Ongoing</option>
             <option value="Completed">Completed</option>
-            <option value="Proposed">Proposed</option>
           </select>
-        </label>
-
-        <label>
-          Website URL
-          <input id="projectSiteUrl" name="siteUrl" type="url" placeholder="https://jk-verma.github.io/project-name/" required />
-        </label>
-
-        <label>
-          Repository URL (optional)
-          <input id="projectRepoUrl" name="repoUrl" type="url" placeholder="https://github.com/jk-verma/project-name" />
         </label>
 
         <div class="dashboard-actions">
           <button class="button primary" type="submit">Add to Projects JSON</button>
-          <button id="clearProjectDraft" class="button secondary" type="button">Clear Draft</button>
+          <button id="clearFundedProjectDraft" class="button secondary" type="button">Clear Draft</button>
         </div>
       </form>
+    </section>
 
+    <section class="section dashboard-layout">
       <article class="dashboard-card">
         <div class="section-heading">
           <p class="eyebrow">Publish</p>
           <h2>Generated projects.json</h2>
         </div>
         <p>
-          Add website and utility projects here. Then replace <code>projects.json</code> in GitHub to publish the
-          updated Projects page.
+          Add website, utility, and funded projects here. Then replace <code>projects.json</code> in GitHub to publish
+          the updated Projects page.
         </p>
         <div class="dashboard-actions">
           <button id="copyProjectsJson" class="button primary" type="button">Copy Projects JSON</button>
@@ -402,6 +396,6 @@
     </section>
   </main>
 
-  <script src="dashboard.js?v=20260409-6"></script>
+  <script src="dashboard.js?v=20260409-7"></script>
 </body>
 </html>

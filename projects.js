@@ -29,10 +29,11 @@ function renderProjectCard(project) {
   article.className = "card";
 
   const fragments = [];
+  const isFundedProject = project.entryType === "fundedProject";
   const metaBits = [
     project.projectType,
     project.fundingAgency,
-    project.schemeProgram,
+    project.schemeName || project.schemeProgram,
     project.yearOfFunding,
     project.status
   ].filter(Boolean);
@@ -48,10 +49,8 @@ function renderProjectCard(project) {
   }
 
   const detailBits = [];
-  if (project.role) detailBits.push(`Role: ${project.role}`);
   if (project.duration) detailBits.push(`Duration: ${project.duration}`);
   if (project.amountSanctioned) detailBits.push(`Amount: ${project.amountSanctioned}`);
-  if (project.feeReceivedBy) detailBits.push(`Funds Received By: ${project.feeReceivedBy}`);
 
   if (detailBits.length) {
     fragments.push(createTextElement("p", "project-detail", detailBits.join(" | ")));
@@ -67,6 +66,8 @@ function renderProjectCard(project) {
     siteLink.rel = "noopener";
     siteLink.textContent = "Open Project";
     article.append(siteLink);
+  } else if (isFundedProject) {
+    article.append(createTextElement("p", "project-detail", "Funded project entry"));
   }
 
   return article;
@@ -85,8 +86,9 @@ function renderProjectModeRow(mode) {
 }
 
 async function loadProjects() {
-  const list = document.getElementById("projectsList");
-  if (!list) return;
+  const websiteList = document.getElementById("projectsList");
+  const fundedList = document.getElementById("fundedProjectsList");
+  if (!websiteList && !fundedList) return;
 
   try {
     const response = await fetch("projects.json", { cache: "no-store" });
@@ -100,11 +102,41 @@ async function loadProjects() {
         createTextElement("h3", "", "Projects will appear here"),
         createTextElement("p", "", "Add entries through the dashboard and publish the generated projects.json file.")
       );
-      list.replaceChildren(empty);
+      websiteList?.replaceChildren(empty.cloneNode(true));
+      fundedList?.replaceChildren(empty);
       return;
     }
 
-    list.replaceChildren(...projects.map(renderProjectCard));
+    const websiteProjects = projects.filter((project) => project.entryType !== "fundedProject");
+    const fundedProjects = projects.filter((project) => project.entryType === "fundedProject");
+
+    if (websiteList) {
+      if (websiteProjects.length) {
+        websiteList.replaceChildren(...websiteProjects.map(renderProjectCard));
+      } else {
+        const emptyWebsite = document.createElement("article");
+        emptyWebsite.className = "panel";
+        emptyWebsite.append(
+          createTextElement("h3", "", "Website and utility projects will appear here"),
+          createTextElement("p", "", "Add a website or utility project through the dashboard to show it here.")
+        );
+        websiteList.replaceChildren(emptyWebsite);
+      }
+    }
+
+    if (fundedList) {
+      if (fundedProjects.length) {
+        fundedList.replaceChildren(...fundedProjects.map(renderProjectCard));
+      } else {
+        const emptyFunded = document.createElement("article");
+        emptyFunded.className = "panel";
+        emptyFunded.append(
+          createTextElement("h3", "", "Funded projects will appear here"),
+          createTextElement("p", "", "Add a funded project through the dashboard to show it here.")
+        );
+        fundedList.replaceChildren(emptyFunded);
+      }
+    }
   } catch (error) {
     const fallback = document.createElement("article");
     fallback.className = "panel";
@@ -112,7 +144,8 @@ async function loadProjects() {
       createTextElement("h3", "", "Projects unavailable"),
       createTextElement("p", "", "Please check projects.json and try again.")
     );
-    list.replaceChildren(fallback);
+    websiteList?.replaceChildren(fallback.cloneNode(true));
+    fundedList?.replaceChildren(fallback);
   }
 }
 
