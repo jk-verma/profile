@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Dashboard for updating news, publications, and projects on the profile website of Dr. Jitendra Kumar Verma." />
   <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="styles.css?v=20260409-8" />
+  <link rel="stylesheet" href="styles.css?v=20260409-10" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -111,10 +111,11 @@
         <div class="dashboard-actions">
           <button id="copyJson" class="button primary" type="button">Copy JSON</button>
           <button id="downloadJson" class="button secondary" type="button">Download news.json</button>
+          <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="jsonOutput">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/news.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p id="dashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
-        <textarea id="jsonOutput" class="json-output" rows="16" spellcheck="false" aria-label="Generated news JSON"></textarea>
+        <textarea id="jsonOutput" class="json-output" rows="16" spellcheck="false" aria-label="Generated news JSON" hidden></textarea>
       </article>
     </section>
 
@@ -220,10 +221,11 @@
         <div class="dashboard-actions">
           <button id="copyPublicationsJson" class="button primary" type="button">Copy Publications JSON</button>
           <button id="downloadPublicationsJson" class="button secondary" type="button">Download publications.json</button>
+          <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="publicationsJsonOutput">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/publications.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p id="publicationDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
-        <textarea id="publicationsJsonOutput" class="json-output" rows="18" spellcheck="false" aria-label="Generated publications JSON"></textarea>
+        <textarea id="publicationsJsonOutput" class="json-output" rows="18" spellcheck="false" aria-label="Generated publications JSON" hidden></textarea>
       </article>
     </section>
 
@@ -267,10 +269,11 @@
         <div class="dashboard-actions">
           <button class="button primary copy-projects-json" type="button">Copy Projects JSON</button>
           <button class="button secondary download-projects-json" type="button">Download projects.json</button>
+          <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="websiteProjectsJsonOutput">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p class="dashboard-status project-dashboard-status" role="status" aria-live="polite"></p>
-        <textarea class="json-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
+        <textarea id="websiteProjectsJsonOutput" class="json-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON" hidden></textarea>
       </article>
     </section>
 
@@ -349,15 +352,16 @@
         <div class="dashboard-actions">
           <button class="button primary copy-projects-json" type="button">Copy Projects JSON</button>
           <button class="button secondary download-projects-json" type="button">Download projects.json</button>
+          <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="fundedProjectsJsonOutput">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p class="dashboard-status project-dashboard-status" role="status" aria-live="polite"></p>
-        <textarea class="json-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
+        <textarea id="fundedProjectsJsonOutput" class="json-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON" hidden></textarea>
       </article>
     </section>
 
   </main>
 
-  <script src="dashboard.js?v=20260409-9"></script>
+  <script src="dashboard.js?v=20260409-10"></script>
 </body>
 </html>

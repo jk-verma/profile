@@ -31,6 +31,7 @@ const publicationStatusMessage = document.getElementById("publicationDashboardSt
 const copyPublicationsJson = document.getElementById("copyPublicationsJson");
 const downloadPublicationsJson = document.getElementById("downloadPublicationsJson");
 const clearPublicationDraft = document.getElementById("clearPublicationDraft");
+const previewToggles = Array.from(document.querySelectorAll(".preview-toggle"));
 
 const websiteProjectForm = document.getElementById("websiteProjectForm");
 const projectTitle = document.getElementById("projectTitle");
@@ -76,6 +77,26 @@ if (menuToggle && primaryNav) {
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 }
+
+previewToggles.forEach((button) => {
+  const targetId = button.getAttribute("aria-controls");
+  if (!targetId) return;
+  const target = document.getElementById(targetId);
+  if (!target) return;
+
+  button.addEventListener("click", () => {
+    const isHidden = target.hasAttribute("hidden");
+    if (isHidden) {
+      target.removeAttribute("hidden");
+      button.textContent = "Hide Preview";
+      button.setAttribute("aria-expanded", "true");
+    } else {
+      target.setAttribute("hidden", "");
+      button.textContent = "Show Preview";
+      button.setAttribute("aria-expanded", "false");
+    }
+  });
+});
 
 function today() {
   const date = new Date();
