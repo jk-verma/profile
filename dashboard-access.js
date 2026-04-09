@@ -1,5 +1,5 @@
 (function () {
-  const DASHBOARD_PASSWORD_HASH = "10d33bb628c4184e65e78c0473060aa2365e3ebd1906af51a1534dd0143a781c";
+  const DASHBOARD_PASSWORD_HASH = "a4c5a1b85cb7e9a209e697050be8a912258c5991f963c3430d3b925028b514ef";
   const ACCESS_KEY = "jkvDashboardAccess";
   const DASHBOARD_PATH = "dashboard.html";
 
