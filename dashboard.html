@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Dashboard for updating news, publications, and projects on the profile website of Dr. Jitendra Kumar Verma." />
   <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="styles.css?v=20260409-20" />
+  <link rel="stylesheet" href="css/styles.css?v=20260409-21" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -24,10 +24,10 @@
       <a href="index.html#projects">Projects</a>
       <a href="index.html#affiliations">Affiliations</a>
       <a href="index.html#news">Latest News<sup class="nav-badge">New</sup></a>
-      <a href="news.json" target="_blank" rel="noopener">News JSON</a>
-      <a href="publications.json" target="_blank" rel="noopener">Publications JSON</a>
-      <a href="projects.json" target="_blank" rel="noopener">Projects JSON</a>
-      <a href="project-modes.json" target="_blank" rel="noopener">Modes JSON</a>
+      <a href="data/news.json" target="_blank" rel="noopener">News JSON</a>
+      <a href="data/publications.json" target="_blank" rel="noopener">Publications JSON</a>
+      <a href="data/projects.json" target="_blank" rel="noopener">Projects JSON</a>
+      <a href="data/project-modes.json" target="_blank" rel="noopener">Modes JSON</a>
     </nav>
   </header>
 
@@ -55,7 +55,7 @@
           <p class="eyebrow">Create Entry</p>
           <h2>New news item</h2>
         </div>
-        <p class="dashboard-form-note">Updates <code>news.json</code></p>
+        <p class="dashboard-form-note">Updates <code>data/news.json</code></p>
 
         <label>
           Date
@@ -108,13 +108,13 @@
         </div>
         <p>
           After adding your update, copy or download this JSON. Then open GitHub and replace the content of
-          <code>news.json</code>.
+          <code>data/news.json</code>.
         </p>
         <div class="dashboard-actions">
           <button id="copyJson" class="button primary" type="button">Copy JSON</button>
           <button id="downloadJson" class="button secondary" type="button">Download news.json</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="newsPreview">Show Preview</button>
-          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/news.json" target="_blank" rel="noopener">Open GitHub Editor</a>
+          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/news.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p id="dashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="jsonOutput" class="json-output dashboard-data-output" rows="16" spellcheck="false" aria-label="Generated news JSON"></textarea>
@@ -130,7 +130,7 @@
           <p class="eyebrow">Create Entry</p>
           <h2>New publication item</h2>
         </div>
-        <p class="dashboard-form-note">Updates <code>publications.json</code></p>
+        <p class="dashboard-form-note">Updates <code>data/publications.json</code></p>
 
         <label>
           Type
@@ -222,13 +222,13 @@
         </div>
         <p>
           New entries are placed at the top of the selected publication type. Copy or download this JSON, then
-          replace <code>publications.json</code> in GitHub.
+          replace <code>data/publications.json</code> in GitHub.
         </p>
         <div class="dashboard-actions">
           <button id="copyPublicationsJson" class="button primary" type="button">Copy Publications JSON</button>
           <button id="downloadPublicationsJson" class="button secondary" type="button">Download publications.json</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="publicationsPreview">Show Preview</button>
-          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/publications.json" target="_blank" rel="noopener">Open GitHub Editor</a>
+          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/publications.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p id="publicationDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="publicationsJsonOutput" class="json-output dashboard-data-output" rows="18" spellcheck="false" aria-label="Generated publications JSON"></textarea>
@@ -244,7 +244,7 @@
           <p class="eyebrow">Create Entry</p>
           <h2>New website or utility project</h2>
         </div>
-        <p class="dashboard-form-note">Updates <code>projects.json</code></p>
+        <p class="dashboard-form-note">Updates <code>data/projects.json</code></p>
 
         <label>
           Project Title
@@ -273,14 +273,14 @@
           <h2>Generated projects.json</h2>
         </div>
         <p>
-          Add website and utility projects here. Then replace <code>projects.json</code> in GitHub to publish the
+          Add website and utility projects here. Then replace <code>data/projects.json</code> in GitHub to publish the
           updated Projects page.
         </p>
         <div class="dashboard-actions">
           <button class="button primary copy-projects-json" type="button">Copy Projects JSON</button>
           <button class="button secondary download-projects-json" type="button">Download projects.json</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="websiteProjectsPreview">Show Preview</button>
-          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
+          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p class="dashboard-status project-dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="websiteProjectsJsonOutput" class="json-output dashboard-data-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
@@ -296,7 +296,7 @@
           <p class="eyebrow">Create Entry</p>
           <h2>New funded project</h2>
         </div>
-        <p class="dashboard-form-note">Updates <code>projects.json</code></p>
+        <p class="dashboard-form-note">Updates <code>data/projects.json</code></p>
 
         <label>
           Type of Grant
@@ -360,14 +360,14 @@
           <h2>Generated projects.json</h2>
         </div>
         <p>
-          Add funded projects here. Then replace <code>projects.json</code> in GitHub to publish the updated Projects
+          Add funded projects here. Then replace <code>data/projects.json</code> in GitHub to publish the updated Projects
           page.
         </p>
         <div class="dashboard-actions">
           <button class="button primary copy-projects-json" type="button">Copy Projects JSON</button>
           <button class="button secondary download-projects-json" type="button">Download projects.json</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="fundedProjectsPreview">Show Preview</button>
-          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
+          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p class="dashboard-status project-dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="fundedProjectsJsonOutput" class="json-output dashboard-data-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
@@ -406,7 +406,7 @@
     <p class="site-footer-note">© <span data-current-year></span> Dr. Jitendra Kumar Verma. All rights reserved.</p>
   </footer>
 
-  <script src="dashboard-access.js?v=20260409-4"></script>
-  <script src="dashboard.js?v=20260409-15"></script>
+  <script src="js/dashboard-access.js?v=20260409-5"></script>
+  <script src="js/dashboard.js?v=20260409-16"></script>
 </body>
 </html>

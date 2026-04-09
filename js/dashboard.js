@@ -491,13 +491,13 @@ async function loadNews() {
   }
 
   try {
-    const response = await fetch("news.json", { cache: "no-store" });
-    if (!response.ok) throw new Error("Unable to load news.json");
+    const response = await fetch("data/news.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Unable to load data/news.json");
     newsItems = await response.json();
-    setStatus("Loaded existing news.json. Add a new update when ready.");
+    setStatus("Loaded existing data/news.json. Add a new update when ready.");
   } catch (error) {
     newsItems = [];
-    setStatus("Could not load news.json. You can still create a new list here.");
+    setStatus("Could not load data/news.json. You can still create a new list here.");
   }
 
   syncOutput();
@@ -509,13 +509,13 @@ async function loadPublications() {
   }
 
   try {
-    const response = await fetch("publications.json", { cache: "no-store" });
-    if (!response.ok) throw new Error("Unable to load publications.json");
+    const response = await fetch("data/publications.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Unable to load data/publications.json");
     publicationItems = await response.json();
-    setPublicationStatus("Loaded existing publications.json. Add a new entry when ready.");
+    setPublicationStatus("Loaded existing data/publications.json. Add a new entry when ready.");
   } catch (error) {
     publicationItems = [];
-    setPublicationStatus("Could not load publications.json. You can still create a new list here.");
+    setPublicationStatus("Could not load data/publications.json. You can still create a new list here.");
   }
 
   syncPublicationsOutput();
@@ -523,13 +523,13 @@ async function loadPublications() {
 
 async function loadProjects() {
   try {
-    const response = await fetch("projects.json", { cache: "no-store" });
-    if (!response.ok) throw new Error("Unable to load projects.json");
+    const response = await fetch("data/projects.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Unable to load data/projects.json");
     projectItems = await response.json();
-    setProjectStatus("Loaded existing projects.json. Add a new project when ready.");
+    setProjectStatus("Loaded existing data/projects.json. Add a new project when ready.");
   } catch (error) {
     projectItems = [];
-    setProjectStatus("Could not load projects.json. You can still create a new list here.");
+    setProjectStatus("Could not load data/projects.json. You can still create a new list here.");
   }
 
   syncProjectsOutput();
@@ -539,8 +539,8 @@ async function loadProjectModesReference() {
   if (!dashboardProjectModesBody) return;
 
   try {
-    const response = await fetch("project-modes.json", { cache: "no-store" });
-    if (!response.ok) throw new Error("Unable to load project-modes.json");
+    const response = await fetch("data/project-modes.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Unable to load data/project-modes.json");
     const modes = await response.json();
 
     if (!Array.isArray(modes) || !modes.length) {
@@ -750,7 +750,7 @@ clearFundedProjectDraft?.addEventListener("click", () => {
 copyJson?.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(jsonOutput.value);
-    setStatus("Copied JSON. Paste it into news.json in the GitHub editor.");
+    setStatus("Copied JSON. Paste it into data/news.json in the GitHub editor.");
     showToast("news.json copied");
   } catch (error) {
     jsonOutput.focus();
@@ -762,7 +762,7 @@ copyJson?.addEventListener("click", async () => {
 copyPublicationsJson?.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(publicationsJsonOutput.value);
-    setPublicationStatus("Copied JSON. Paste it into publications.json in the GitHub editor.");
+    setPublicationStatus("Copied JSON. Paste it into data/publications.json in the GitHub editor.");
     showToast("publications.json copied");
   } catch (error) {
     publicationsJsonOutput.focus();
@@ -778,7 +778,7 @@ copyProjectsJsonButtons.forEach((button, index) => {
 
     try {
       await navigator.clipboard.writeText(source.value);
-      setProjectStatus("Copied JSON. Paste it into projects.json in the GitHub editor.");
+      setProjectStatus("Copied JSON. Paste it into data/projects.json in the GitHub editor.");
       showToast("projects.json copied");
     } catch (error) {
       source.focus();
@@ -802,13 +802,13 @@ function downloadJsonFile(filename, value, callback) {
 
 downloadJson?.addEventListener("click", () => {
   downloadJsonFile("news.json", jsonOutput.value, () => {
-    setStatus("Downloaded news.json. Upload or paste it into GitHub to publish.");
+    setStatus("Downloaded news.json. Upload or paste it into GitHub to publish at data/news.json.");
   });
 });
 
 downloadPublicationsJson?.addEventListener("click", () => {
   downloadJsonFile("publications.json", publicationsJsonOutput.value, () => {
-    setPublicationStatus("Downloaded publications.json. Upload or paste it into GitHub to publish.");
+    setPublicationStatus("Downloaded publications.json. Upload or paste it into GitHub to publish at data/publications.json.");
   });
 });
 
@@ -818,7 +818,7 @@ downloadProjectsJsonButtons.forEach((button, index) => {
     if (!source) return;
 
     downloadJsonFile("projects.json", source.value, () => {
-      setProjectStatus("Downloaded projects.json. Upload or paste it into GitHub to publish.");
+      setProjectStatus("Downloaded projects.json. Upload or paste it into GitHub to publish at data/projects.json.");
     });
   });
 });

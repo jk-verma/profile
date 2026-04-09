@@ -207,8 +207,8 @@ async function loadPublications() {
   if (!container) return;
 
   try {
-    const response = await fetch("publications.json", { cache: "no-store" });
-    if (!response.ok) throw new Error("Unable to load publications.json");
+    const response = await fetch("data/publications.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Unable to load data/publications.json");
     const publications = await response.json();
     populateFilters(publications);
     applyFilters(publications, container);
@@ -220,7 +220,7 @@ async function loadPublications() {
     fallback.className = "panel";
     fallback.append(
       createTextElement("h3", "", "Publications unavailable"),
-      createTextElement("p", "", "Please check publications.json and try again.")
+      createTextElement("p", "", "Please check data/publications.json and try again.")
     );
     container.replaceChildren(fallback);
   }

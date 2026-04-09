@@ -103,8 +103,8 @@ async function loadProjects() {
   if (!container) return;
 
   try {
-    const response = await fetch("projects.json", { cache: "no-store" });
-    if (!response.ok) throw new Error("Unable to load projects.json");
+    const response = await fetch("data/projects.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Unable to load data/projects.json");
     const projects = await response.json();
 
     if (!Array.isArray(projects) || !projects.length) {
@@ -112,7 +112,7 @@ async function loadProjects() {
       empty.className = "panel";
       empty.append(
         createTextElement("h3", "", "Projects will appear here"),
-        createTextElement("p", "", "Add entries through the dashboard and publish the generated projects.json file.")
+      createTextElement("p", "", "Add entries through the dashboard and publish the generated data/projects.json file.")
       );
       container.replaceChildren(empty);
       return;
@@ -135,7 +135,7 @@ async function loadProjects() {
     fallback.className = "panel";
     fallback.append(
       createTextElement("h3", "", "Projects unavailable"),
-      createTextElement("p", "", "Please check projects.json and try again.")
+      createTextElement("p", "", "Please check data/projects.json and try again.")
     );
     container.replaceChildren(fallback);
   }

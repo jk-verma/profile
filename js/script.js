@@ -194,7 +194,7 @@ async function loadNews() {
   if (!container && !ticker) return;
 
   try {
-    const response = await fetch("news.json", { cache: "no-store" });
+    const response = await fetch("data/news.json", { cache: "no-store" });
     if (!response.ok) throw new Error("Unable to load news data");
 
     const items = sortNewsItems(await response.json());
@@ -205,7 +205,7 @@ async function loadNews() {
     }
   } catch (error) {
     if (ticker) {
-      ticker.replaceChildren(createTextElement("span", "", "Latest news will appear here once news.json is available."));
+      ticker.replaceChildren(createTextElement("span", "", "Latest news will appear here once data/news.json is available."));
     }
 
     if (container) {
@@ -213,7 +213,7 @@ async function loadNews() {
       fallback.className = "news-item";
       fallback.append(
         createTextElement("h3", "", "News feed unavailable"),
-        createTextElement("p", "", "Please check news.json or add the first update there.")
+        createTextElement("p", "", "Please check data/news.json or add the first update there.")
       );
       container.replaceChildren(fallback);
     }

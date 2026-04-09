@@ -5,15 +5,15 @@ Static academic profile website for GitHub Pages.
 ## Files
 
 - `index.html` - Main website page
-- `styles.css` - Website styling
-- `script.js` - Mobile navigation, protected photo behavior, and news rendering
+- `css/styles.css` - Website styling
+- `js/script.js` - Mobile navigation, protected photo behavior, and news rendering
 - `publications.html` - Publications and patents page grouped by publication type
-- `publications.js` - Publications rendering and IEEE-style reference formatting
+- `js/publications.js` - Publications rendering and IEEE-style reference formatting
 - `dashboard.html` - Browser-based dashboard for preparing Latest News and Publications updates
-- `dashboard.js` - Dashboard forms, previews, copy, and download behavior
-- `news.json` - Latest news / daily developments data source
-- `publications.json` - Publications and patents data source
-- `assets/profile-photo.jpg` - Optional portrait photo to add later
+- `js/dashboard.js` - Dashboard forms, previews, copy, and download behavior
+- `data/news.json` - Latest news / daily developments data source
+- `data/publications.json` - Publications and patents data source
+- `assets/profile-photo.jpg` - Optional portrait photo
 
 ## Publish on GitHub Pages
 
@@ -36,7 +36,7 @@ Use a small web version rather than a high-resolution original. A browser must d
 ## Update the Latest News section
 
 Open `dashboard.html` in the website, add a new item, then copy or download the generated `news.json`.
-Use the GitHub editor to replace the repository's `news.json` file and commit the change.
+Use the GitHub editor to replace the repository's `data/news.json` file and commit the change.
 
 You can use these categories:
 
@@ -64,7 +64,7 @@ Commit and push the change. GitHub Pages will update after deployment finishes.
 ## Update Publications
 
 Open `dashboard.html`, add a publication entry, then copy or download the generated `publications.json`.
-Use the GitHub editor to replace the repository's `publications.json` file and commit the change.
+Use the GitHub editor to replace the repository's `data/publications.json` file and commit the change.
 
 The public `publications.html` page automatically:
 
