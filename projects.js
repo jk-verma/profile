@@ -79,14 +79,9 @@ function renderProjectCard(project) {
 
 function renderProjectSection(title, projects) {
   const section = document.createElement("section");
-  section.className = "section";
+  section.className = "publication-group";
 
-  const heading = document.createElement("div");
-  heading.className = "section-heading";
-  heading.append(
-    createTextElement("p", "eyebrow", "Projects"),
-    createTextElement("h2", "", title)
-  );
+  const heading = createTextElement("h3", "", title);
 
   const grid = document.createElement("div");
   grid.className = "card-grid three project-grid";
