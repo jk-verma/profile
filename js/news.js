@@ -88,15 +88,9 @@ function createOption(value, text) {
   return option;
 }
 
-function normalizeCategory(category) {
-  if (!category) return "Other";
-  if (category.startsWith("Call for")) return "Calls";
-  return category;
-}
-
 function populateCategoryFilter(items) {
   if (!newsCategoryFilter) return;
-  const categories = Array.from(new Set(items.map((item) => normalizeCategory(item.category)))).sort();
+  const categories = Array.from(new Set(items.map((item) => item.category || "Other"))).sort();
   newsCategoryFilter.replaceChildren(
     ...[createOption("all", "All Categories"), ...categories.map((category) => createOption(category, category))]
   );
@@ -104,7 +98,7 @@ function populateCategoryFilter(items) {
 
 function applyCategoryFilter(items, container) {
   const selectedCategory = newsCategoryFilter?.value || "all";
-  const filtered = items.filter((item) => selectedCategory === "all" || normalizeCategory(item.category) === selectedCategory);
+  const filtered = items.filter((item) => selectedCategory === "all" || (item.category || "Other") === selectedCategory);
   if (!filtered.length) {
     const fallback = document.createElement("article");
     fallback.className = "news-item";
