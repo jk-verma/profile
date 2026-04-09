@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Dashboard for updating news, publications, and projects on the profile website of Dr. Jitendra Kumar Verma." />
   <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="styles.css?v=20260409-11" />
+  <link rel="stylesheet" href="styles.css?v=20260409-12" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -115,9 +115,11 @@
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/news.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p id="dashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
-        <div id="newsPreview" class="dashboard-preview news-list" hidden></div>
         <textarea id="jsonOutput" class="json-output dashboard-data-output" rows="16" spellcheck="false" aria-label="Generated news JSON" hidden></textarea>
       </article>
+    </section>
+    <section class="section dashboard-preview-section">
+      <div id="newsPreview" class="dashboard-preview news-list" hidden></div>
     </section>
 
     <section class="section dashboard-layout">
@@ -226,9 +228,11 @@
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/publications.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p id="publicationDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
-        <div id="publicationsPreview" class="dashboard-preview publications-list" hidden></div>
         <textarea id="publicationsJsonOutput" class="json-output dashboard-data-output" rows="18" spellcheck="false" aria-label="Generated publications JSON" hidden></textarea>
       </article>
+    </section>
+    <section class="section dashboard-preview-section">
+      <div id="publicationsPreview" class="dashboard-preview publications-list" hidden></div>
     </section>
 
     <section class="section dashboard-layout">
@@ -275,9 +279,11 @@
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p class="dashboard-status project-dashboard-status" role="status" aria-live="polite"></p>
-        <div id="websiteProjectsPreview" class="dashboard-preview publications-list" hidden></div>
         <textarea id="websiteProjectsJsonOutput" class="json-output dashboard-data-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON" hidden></textarea>
       </article>
+    </section>
+    <section class="section dashboard-preview-section">
+      <div id="websiteProjectsPreview" class="dashboard-preview publications-list" hidden></div>
     </section>
 
     <section class="section dashboard-layout">
@@ -359,9 +365,11 @@
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p class="dashboard-status project-dashboard-status" role="status" aria-live="polite"></p>
-        <div id="fundedProjectsPreview" class="dashboard-preview publications-list" hidden></div>
         <textarea id="fundedProjectsJsonOutput" class="json-output dashboard-data-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON" hidden></textarea>
       </article>
+    </section>
+    <section class="section dashboard-preview-section">
+      <div id="fundedProjectsPreview" class="dashboard-preview publications-list" hidden></div>
     </section>
 
     <section id="projectModesReference" class="section">
@@ -389,6 +397,6 @@
 
   </main>
 
-  <script src="dashboard.js?v=20260409-11"></script>
+  <script src="dashboard.js?v=20260409-12"></script>
 </body>
 </html>
