@@ -1238,6 +1238,10 @@ dd {
   grid-template-rows: auto auto auto auto minmax(320px, 1fr);
 }
 
+.publish-card > :not(.json-output) {
+  align-self: start;
+}
+
 .dashboard-inline-fields {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
