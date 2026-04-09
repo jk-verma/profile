@@ -83,6 +83,13 @@ function updateExperienceYears() {
   experienceElement.textContent = `${Math.max(years, 0)}+ years`;
 }
 
+function updateCurrentYear() {
+  const year = String(new Date().getFullYear());
+  document.querySelectorAll("[data-current-year]").forEach((element) => {
+    element.textContent = year;
+  });
+}
+
 function createTextElement(tag, className, text) {
   const element = document.createElement(tag);
   if (className) {
@@ -214,5 +221,6 @@ async function loadNews() {
 }
 
 updateExperienceYears();
+updateCurrentYear();
 loadNews();
 setupActiveSectionTracking();

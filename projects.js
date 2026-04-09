@@ -24,6 +24,13 @@ function createTextElement(tag, className, text) {
   return element;
 }
 
+function updateCurrentYear() {
+  const year = String(new Date().getFullYear());
+  document.querySelectorAll("[data-current-year]").forEach((element) => {
+    element.textContent = year;
+  });
+}
+
 function getProjectSectionName(project) {
   return project.projectType || (project.entryType === "fundedProject" ? "Funded Projects" : "Website and Utility Projects");
 }
@@ -134,4 +141,5 @@ async function loadProjects() {
   }
 }
 
+updateCurrentYear();
 loadProjects();

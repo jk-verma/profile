@@ -173,6 +173,13 @@ function createTextElement(tag, className, text) {
   return element;
 }
 
+function updateCurrentYear() {
+  const year = String(new Date().getFullYear());
+  document.querySelectorAll("[data-current-year]").forEach((element) => {
+    element.textContent = year;
+  });
+}
+
 function sortNewsItems(items) {
   return [...items].sort((left, right) => {
     const leftTime = Date.parse(left?.date || "");
@@ -816,6 +823,7 @@ downloadProjectsJsonButtons.forEach((button, index) => {
   });
 });
 
+updateCurrentYear();
 loadNews();
 loadPublications();
 loadProjects();

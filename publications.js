@@ -44,6 +44,13 @@ function createTextElement(tag, className, text) {
   return element;
 }
 
+function updateCurrentYear() {
+  const year = String(new Date().getFullYear());
+  document.querySelectorAll("[data-current-year]").forEach((element) => {
+    element.textContent = year;
+  });
+}
+
 function compactParts(parts, separator = ", ") {
   return parts.filter(Boolean).join(separator);
 }
@@ -219,4 +226,5 @@ async function loadPublications() {
   }
 }
 
+updateCurrentYear();
 loadPublications();
