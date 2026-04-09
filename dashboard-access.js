@@ -34,6 +34,7 @@
           <form class="dashboard-access-form">
             <label class="dashboard-access-label" for="dashboardAccessInput">Password</label>
             <input id="dashboardAccessInput" class="dashboard-access-input" name="password" type="password" autocomplete="current-password" required />
+            <label class="dashboard-access-toggle"><input id="dashboardAccessToggle" type="checkbox" /> Show password</label>
             <p class="dashboard-access-error" aria-live="polite"></p>
             <div class="dashboard-access-actions">
               <button type="button" class="button secondary" data-action="cancel">Cancel</button>
@@ -48,6 +49,7 @@
 
       const form = overlay.querySelector(".dashboard-access-form");
       const input = overlay.querySelector(".dashboard-access-input");
+      const toggle = overlay.querySelector("#dashboardAccessToggle");
       const error = overlay.querySelector(".dashboard-access-error");
       const cancel = overlay.querySelector("[data-action='cancel']");
 
@@ -112,3 +114,7 @@
     });
   }
 })();
+      toggle?.addEventListener("change", () => {
+        input.type = toggle.checked ? "text" : "password";
+        input.focus();
+      });

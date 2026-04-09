@@ -1,5 +1,6 @@
 const menuToggle = document.getElementById("menuToggle");
 const primaryNav = document.getElementById("primaryNav");
+const newsCategoryFilter = document.getElementById("newsCategoryFilter");
 
 if (menuToggle && primaryNav) {
   menuToggle.addEventListener("click", () => {
@@ -73,6 +74,44 @@ function renderNewsItem(item) {
   return article;
 }
 
+function createOption(value, text) {
+  const option = document.createElement("option");
+  option.value = value;
+  option.textContent = text;
+  return option;
+}
+
+function normalizeCategory(category) {
+  if (!category) return "Other";
+  if (category.startsWith("Call for")) return "Calls";
+  return category;
+}
+
+function populateCategoryFilter(items) {
+  if (!newsCategoryFilter) return;
+  const categories = Array.from(new Set(items.map((item) => normalizeCategory(item.category)))).sort();
+  newsCategoryFilter.replaceChildren(
+    ...[createOption("all", "All Categories"), ...categories.map((category) => createOption(category, category))]
+  );
+}
+
+function applyCategoryFilter(items, container) {
+  const selectedCategory = newsCategoryFilter?.value || "all";
+  const filtered = items.filter((item) => selectedCategory === "all" || normalizeCategory(item.category) === selectedCategory);
+  if (!filtered.length) {
+    const fallback = document.createElement("article");
+    fallback.className = "news-item";
+    fallback.append(
+      createTextElement("h3", "", "No updates match the selected category"),
+      createTextElement("p", "", "Choose another category to see more news and announcements.")
+    );
+    container.replaceChildren(fallback);
+    return;
+  }
+
+  container.replaceChildren(...filtered.map(renderNewsItem));
+}
+
 async function loadNews() {
   const container = document.getElementById("newsList");
   if (!container) return;
@@ -82,7 +121,9 @@ async function loadNews() {
     if (!response.ok) throw new Error("Unable to load news data");
 
     const items = sortNewsItems(await response.json());
-    container.replaceChildren(...items.map(renderNewsItem));
+    populateCategoryFilter(items);
+    applyCategoryFilter(items, container);
+    newsCategoryFilter?.addEventListener("change", () => applyCategoryFilter(items, container));
   } catch (error) {
     const fallback = document.createElement("article");
     fallback.className = "news-item";

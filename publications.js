@@ -18,6 +18,8 @@ const typeLabels = {
 
 const menuToggle = document.getElementById("menuToggle");
 const primaryNav = document.getElementById("primaryNav");
+const publicationTypeFilter = document.getElementById("publicationTypeFilter");
+const publicationYearFilter = document.getElementById("publicationYearFilter");
 
 if (menuToggle && primaryNav) {
   menuToggle.addEventListener("click", () => {
@@ -147,14 +149,50 @@ function renderPublications(publications, container) {
     const empty = document.createElement("article");
     empty.className = "panel";
     empty.append(
-      createTextElement("h3", "", "Publication list coming soon"),
-      createTextElement("p", "", "Add entries through the dashboard and publish the generated publications.json file.")
+      createTextElement("h3", "", "No publications match the current filters"),
+      createTextElement("p", "", "Try a different year or type to broaden the results.")
     );
     container.replaceChildren(empty);
     return;
   }
 
   container.replaceChildren(...sections);
+}
+
+function createOption(value, text) {
+  const option = document.createElement("option");
+  option.value = value;
+  option.textContent = text;
+  return option;
+}
+
+function populateFilters(publications) {
+  if (publicationTypeFilter) {
+    const availableTypes = Array.from(new Set(publications.map((publication) => publication.type).filter(Boolean)));
+    publicationTypeFilter.replaceChildren(
+      ...[createOption("all", "All Types"), ...availableTypes.map((type) => createOption(type, typeLabels[type] || type))]
+    );
+  }
+
+  if (publicationYearFilter) {
+    const availableYears = Array.from(new Set(publications.map((publication) => publication.year).filter(Boolean)))
+      .sort((left, right) => Number(right) - Number(left));
+    publicationYearFilter.replaceChildren(
+      ...[createOption("all", "All Years"), ...availableYears.map((year) => createOption(year, year))]
+    );
+  }
+}
+
+function applyFilters(publications, container) {
+  const selectedType = publicationTypeFilter?.value || "all";
+  const selectedYear = publicationYearFilter?.value || "all";
+  const filtered = publications.filter((publication) => {
+    const matchesType = selectedType === "all" || publication.type === selectedType;
+    const matchesYear = selectedYear === "all" || String(publication.year || "") === selectedYear;
+    return matchesType && matchesYear;
+  });
+
+  renderPublications(filtered, container);
 }
 
 async function loadPublications() {
@@ -165,7 +203,11 @@ async function loadPublications() {
     const response = await fetch("publications.json", { cache: "no-store" });
     if (!response.ok) throw new Error("Unable to load publications.json");
     const publications = await response.json();
-    renderPublications(publications, container);
+    populateFilters(publications);
+    applyFilters(publications, container);
+    [publicationTypeFilter, publicationYearFilter].forEach((filter) => {
+      filter?.addEventListener("change", () => applyFilters(publications, container));
+    });
   } catch (error) {
     const fallback = document.createElement("article");
     fallback.className = "panel";

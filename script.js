@@ -15,6 +15,41 @@ if (menuToggle && primaryNav) {
   });
 }
 
+function setupActiveSectionTracking() {
+  const navLinks = Array.from(document.querySelectorAll('.primary-nav a[href^="#"]'));
+  const sections = navLinks
+    .map((link) => link.getAttribute("href")?.slice(1))
+    .filter(Boolean)
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  if (!navLinks.length || !sections.length) {
+    return;
+  }
+
+  const setActive = (id) => {
+    navLinks.forEach((link) => {
+      link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((left, right) => right.intersectionRatio - left.intersectionRatio);
+
+    if (visible.length) {
+      setActive(visible[0].target.id);
+    }
+  }, {
+    rootMargin: "-30% 0px -55% 0px",
+    threshold: [0.2, 0.35, 0.5]
+  });
+
+  sections.forEach((section) => observer.observe(section));
+  setActive(window.location.hash ? window.location.hash.slice(1) : "about");
+}
+
 document.querySelectorAll(".protected-photo").forEach((photo) => {
   photo.addEventListener("contextmenu", (event) => event.preventDefault());
   photo.addEventListener("dragstart", (event) => event.preventDefault());
@@ -180,3 +215,4 @@ async function loadNews() {
 
 updateExperienceYears();
 loadNews();
+setupActiveSectionTracking();

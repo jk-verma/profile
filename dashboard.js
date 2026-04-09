@@ -66,6 +66,7 @@ const primaryNav = document.getElementById("primaryNav");
 let newsItems = [];
 let publicationItems = [];
 let projectItems = [];
+let activeToastTimeout = null;
 
 const publicationTypes = [
   "Journal Article",
@@ -131,6 +132,29 @@ function setProjectStatus(message) {
   projectStatusMessages.forEach((element) => {
     element.textContent = message;
   });
+}
+
+function showToast(message) {
+  let toast = document.getElementById("dashboardToast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "dashboardToast";
+    toast.className = "dashboard-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.append(toast);
+  }
+
+  toast.textContent = message;
+  toast.classList.add("visible");
+
+  if (activeToastTimeout) {
+    window.clearTimeout(activeToastTimeout);
+  }
+
+  activeToastTimeout = window.setTimeout(() => {
+    toast.classList.remove("visible");
+  }, 2200);
 }
 
 function parseIndexing(value) {
@@ -720,6 +744,7 @@ copyJson?.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(jsonOutput.value);
     setStatus("Copied JSON. Paste it into news.json in the GitHub editor.");
+    showToast("news.json copied");
   } catch (error) {
     jsonOutput.focus();
     jsonOutput.select();
@@ -731,6 +756,7 @@ copyPublicationsJson?.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(publicationsJsonOutput.value);
     setPublicationStatus("Copied JSON. Paste it into publications.json in the GitHub editor.");
+    showToast("publications.json copied");
   } catch (error) {
     publicationsJsonOutput.focus();
     publicationsJsonOutput.select();
@@ -746,6 +772,7 @@ copyProjectsJsonButtons.forEach((button, index) => {
     try {
       await navigator.clipboard.writeText(source.value);
       setProjectStatus("Copied JSON. Paste it into projects.json in the GitHub editor.");
+      showToast("projects.json copied");
     } catch (error) {
       source.focus();
       source.select();
@@ -763,6 +790,7 @@ function downloadJsonFile(filename, value, callback) {
   link.click();
   URL.revokeObjectURL(url);
   callback();
+  showToast(`${filename} downloaded`);
 }
 
 downloadJson?.addEventListener("click", () => {
