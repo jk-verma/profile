@@ -1,4 +1,4 @@
-# Dr. Jitendra Kumar Verma - GitHub Pages Website
+# Dr. Jitendra Kumar Verma - Profile Website
 
 Static academic profile website for GitHub Pages.
 
@@ -27,7 +27,7 @@ Supporting files are organized by purpose:
 - `data/project-modes.json` - Project and funding mode reference data
 - `assets/profile-photo.jpg` - Optional profile photo
 
-## Publish on GitHub Pages
+## Publish the website
 
 1. Upload the repository to GitHub.
 2. Open **Settings > Pages**.
@@ -42,7 +42,7 @@ GitHub Pages will serve the root HTML files directly.
 The dashboard is protected by a lightweight browser-side password prompt.
 
 - Dashboard URL: `dashboard.html`
-- Current password: `JKV@123`
+- Current password: `*******`
 
 Important: because this is a static GitHub Pages site, this is only light access control in the browser, not full secure authentication.
 
