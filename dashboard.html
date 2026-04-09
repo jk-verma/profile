@@ -130,7 +130,59 @@
         <div class="dashboard-publication-shell">
           <label>
             Publication Type
-            <select id="publicationType" name="type" required></select>
+            <select id="publicationType" name="type" required>
+              <optgroup label="Journal &amp; periodical outputs">
+                <option value="journal_article" selected>Journal Article</option>
+                <option value="review_article">Review Article</option>
+                <option value="short_communication">Short Communication</option>
+                <option value="case_study">Case Study</option>
+                <option value="editorial">Editorial</option>
+                <option value="magazine_article">Magazine Article</option>
+                <option value="newsletter_article">Newsletter Article</option>
+              </optgroup>
+              <optgroup label="Conference outputs">
+                <option value="conference_paper">Conference Paper</option>
+                <option value="conference_abstract">Conference Abstract</option>
+                <option value="conference_poster">Conference Poster</option>
+              </optgroup>
+              <optgroup label="Book-related outputs">
+                <option value="book">Book</option>
+                <option value="edited_book">Edited Book</option>
+                <option value="book_chapter">Book Chapter</option>
+                <option value="encyclopedia_entry">Encyclopedia Entry</option>
+                <option value="foreword_or_preface">Foreword / Preface</option>
+                <option value="monograph">Monograph</option>
+                <option value="translation">Translation</option>
+              </optgroup>
+              <optgroup label="Intellectual property">
+                <option value="patent">Patent</option>
+                <option value="copyright">Copyright</option>
+              </optgroup>
+              <optgroup label="Reports &amp; grey literature">
+                <option value="working_paper">Working Paper</option>
+                <option value="technical_report">Technical Report</option>
+                <option value="white_paper">White Paper</option>
+                <option value="policy_brief">Policy Brief</option>
+                <option value="standards_document">Standards Document</option>
+              </optgroup>
+              <optgroup label="Research artifacts">
+                <option value="dataset">Dataset</option>
+                <option value="software">Software</option>
+                <option value="preprint">Preprint</option>
+              </optgroup>
+              <optgroup label="Academic long-form works">
+                <option value="thesis">Thesis</option>
+                <option value="dissertation">Dissertation</option>
+              </optgroup>
+              <optgroup label="Teaching &amp; outreach outputs">
+                <option value="manual_or_module">Manual / Module</option>
+                <option value="teaching_case">Teaching Case</option>
+                <option value="blog_or_popular_article">Blog / Popular Article</option>
+              </optgroup>
+              <optgroup label="Other">
+                <option value="other">Other</option>
+              </optgroup>
+            </select>
           </label>
 
           <div id="publicationValidation" class="dashboard-validation" role="alert" aria-live="polite"></div>
