@@ -114,6 +114,18 @@ function sortNewsItems(items) {
   });
 }
 
+function selectTickerItems(items, maxMonths = 6, maxItems = 5) {
+  const cutoffDate = new Date();
+  cutoffDate.setMonth(cutoffDate.getMonth() - maxMonths);
+
+  return items
+    .filter((item) => {
+      const itemTime = Date.parse(item?.date || "");
+      return !Number.isNaN(itemTime) && itemTime >= cutoffDate.getTime();
+    })
+    .slice(0, maxItems);
+}
+
 function renderNewsItem(item) {
   const article = document.createElement("article");
   article.className = "news-item";
@@ -217,7 +229,7 @@ async function loadNews() {
     if (!response.ok) throw new Error("Unable to load news data");
 
     const items = sortNewsItems(await response.json());
-    renderNewsTicker(items);
+    renderNewsTicker(selectTickerItems(items));
 
     if (container) {
       container.replaceChildren(...items.slice(0, 2).map(renderNewsItem), renderNewsArchiveCard());
