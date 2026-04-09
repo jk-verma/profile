@@ -1,6 +1,5 @@
 (function () {
   const DASHBOARD_PASSWORD_HASH = "a4c5a1b85cb7e9a209e697050be8a912258c5991f963c3430d3b925028b514ef";
-  const ACCESS_KEY = "jkvDashboardAccess";
   const DASHBOARD_PATH = "dashboard.html";
   let activeDialog = null;
 
@@ -10,10 +9,6 @@
     return Array.from(new Uint8Array(hashBuffer))
       .map((byte) => byte.toString(16).padStart(2, "0"))
       .join("");
-  }
-
-  function hasAccess() {
-    return sessionStorage.getItem(ACCESS_KEY) === "granted";
   }
 
   function closeDialog() {
@@ -74,7 +69,6 @@
 
         const hash = await sha256(input.value.trim());
         if (hash === DASHBOARD_PASSWORD_HASH) {
-          sessionStorage.setItem(ACCESS_KEY, "granted");
           finish(true);
           return;
         }
@@ -89,10 +83,6 @@
   }
 
   async function requestAccess() {
-    if (hasAccess()) {
-      return true;
-    }
-
     return openPasswordDialog();
   }
 
