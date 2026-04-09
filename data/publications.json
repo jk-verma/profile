@@ -10,6 +10,15 @@
   },
   {
     "type": "Book / Edited Volume",
+    "year": "2026",
+    "authors": "D. P. Sharma, A. K. Yadav, J. K. Verma and P. K. Shrivastava",
+    "title": "Federated Blockchain—Trends and Challenges",
+    "venue": "Edited Book",
+    "publisher": "Benthem Science",
+    "status": "Forthcoming"
+  },
+  {
+    "type": "Book / Edited Volume",
     "year": "2023",
     "authors": "Jitendra Kumar Verma, Deepak Saxena, Vicente Gonzalez-Prida, and Vira Shendryk, Eds.",
     "title": "CloudIoT: Concepts, Paradigms, and Applications",
@@ -130,6 +139,14 @@
     "volume": "6",
     "issue": "7",
     "pages": "56-64"
+  },
+  {
+    "type": "Book Chapter",
+    "year": "2026",
+    "authors": "Prateep Mondol and J. K. Verma",
+    "title": "Federated Blockchain in Global Trade: Applications, Innovations and Future Trajectories",
+    "venue": "Edited Book",
+    "status": "Forthcoming"
   },
   {
     "type": "Book Chapter",
