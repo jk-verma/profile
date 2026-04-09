@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Dashboard for updating news, publications, and projects on the profile website of Dr. Jitendra Kumar Verma." />
   <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="css/styles.css?v=20260409-23" />
+  <link rel="stylesheet" href="css/styles.css?v=20260410-1" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -127,82 +127,14 @@
           <h2>New publication item</h2>
         </div>
         <p class="dashboard-form-note">Updates <code>data/publications.json</code></p>
-
-        <label>
-          Type
-          <select id="publicationType" name="type" required>
-            <option value="Journal Article">Journal Article</option>
-            <option value="Conference Paper">Conference Paper</option>
-            <option value="Book Chapter">Book Chapter</option>
-            <option value="Book / Edited Volume">Book / Edited Volume</option>
-            <option value="Patent">Patent</option>
-            <option value="Forthcoming / Accepted">Forthcoming / Accepted</option>
-          </select>
-        </label>
-
-        <label>
-          Year
-          <input id="publicationYear" name="year" type="number" min="1990" max="2100" placeholder="2026" required />
-        </label>
-
-        <label>
-          Authors / Inventors
-          <input id="publicationAuthors" name="authors" type="text" placeholder="J. K. Verma and A. Kumar" required />
-        </label>
-
-        <label>
-          Title
-          <input id="publicationTitle" name="title" type="text" placeholder="Publication or patent title" required />
-        </label>
-
-        <label>
-          Journal / Conference / Book / Patent Office
-          <input id="publicationVenue" name="venue" type="text" placeholder="Venue name" />
-        </label>
-
-        <label>
-          Publisher / Location
-          <input id="publicationPublisher" name="publisher" type="text" placeholder="Publisher or conference location" />
-        </label>
-
-        <div class="dashboard-inline-fields">
+        <div class="dashboard-publication-shell">
           <label>
-            Volume
-            <input id="publicationVolume" name="volume" type="text" placeholder="12" />
+            Publication Type
+            <select id="publicationType" name="type" required></select>
           </label>
-          <label>
-            Issue
-            <input id="publicationIssue" name="issue" type="text" placeholder="2" />
-          </label>
-          <label>
-            Pages
-            <input id="publicationPages" name="pages" type="text" placeholder="45-58" />
-          </label>
-        </div>
 
-        <label>
-          DOI / URL
-          <input id="publicationDoi" name="doi" type="url" placeholder="https://doi.org/..." />
-        </label>
-
-        <label>
-          Indexing
-          <input id="publicationIndexing" name="indexing" type="text" placeholder="Scopus, ABDC, WoS, UGC-CARE" />
-        </label>
-
-        <div class="dashboard-inline-fields">
-          <label>
-            Patent Number
-            <input id="publicationPatentNumber" name="patentNumber" type="text" placeholder="For patents" />
-          </label>
-          <label>
-            Country
-            <input id="publicationCountry" name="country" type="text" placeholder="India" />
-          </label>
-          <label>
-            Status / Date
-            <input id="publicationStatus" name="status" type="text" placeholder="Published, Granted, Filed" />
-          </label>
+          <div id="publicationValidation" class="dashboard-validation" role="alert" aria-live="polite"></div>
+          <div id="publicationDynamicSections" class="dashboard-dynamic-sections"></div>
         </div>
 
         <div class="dashboard-actions">
@@ -231,7 +163,7 @@
       </article>
     </section>
     <section class="section dashboard-preview-section">
-      <div id="publicationsPreview" class="dashboard-preview publications-list" hidden></div>
+      <div id="publicationsPreview" class="dashboard-preview" hidden></div>
     </section>
 
     <section class="section dashboard-layout">
@@ -404,5 +336,6 @@
 
   <script src="js/dashboard-access.js?v=20260409-6"></script>
   <script src="js/dashboard.js?v=20260409-16"></script>
+  <script src="js/dashboard-publications.js?v=20260410-2"></script>
 </body>
 </html>
