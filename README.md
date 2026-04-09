@@ -15,7 +15,7 @@ Static academic profile website for GitHub Pages.
 - `data/publications.json` - Publications and patents data source
 - `assets/profile-photo.jpg` - Optional portrait photo
 
-## Publish on GitHub Pages
+## Publish website
 
 1. Upload the files from this folder to a GitHub repository.
 2. In GitHub, open **Settings > Pages**.
