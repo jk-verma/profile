@@ -33,21 +33,33 @@ function setupActiveSectionTracking() {
     });
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((left, right) => right.intersectionRatio - left.intersectionRatio);
+  const getCurrentSection = () => {
+    const marker = window.scrollY + 140;
+    let current = sections[0]?.id || "about";
 
-    if (visible.length) {
-      setActive(visible[0].target.id);
+    sections.forEach((section) => {
+      if (section.offsetTop <= marker) {
+        current = section.id;
+      }
+    });
+
+    return current;
+  };
+
+  const updateActiveSection = () => {
+    const hash = window.location.hash?.slice(1);
+    if (hash && sections.some((section) => section.id === hash)) {
+      setActive(hash);
+      return;
     }
-  }, {
-    rootMargin: "-30% 0px -55% 0px",
-    threshold: [0.2, 0.35, 0.5]
-  });
 
-  sections.forEach((section) => observer.observe(section));
-  setActive(window.location.hash ? window.location.hash.slice(1) : "about");
+    setActive(getCurrentSection());
+  };
+
+  window.addEventListener("scroll", updateActiveSection, { passive: true });
+  window.addEventListener("resize", updateActiveSection);
+  window.addEventListener("hashchange", updateActiveSection);
+  updateActiveSection();
 }
 
 document.querySelectorAll(".protected-photo").forEach((photo) => {
