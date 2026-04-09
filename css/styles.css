@@ -1072,6 +1072,12 @@ dd {
   gap: 14px;
 }
 
+#news > .news-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
 .project-grid .card {
   display: grid;
   align-content: start;
