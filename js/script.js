@@ -161,7 +161,7 @@ function renderNewsArchiveCard() {
   const link = document.createElement("a");
   link.className = "button primary";
   link.href = "news.html";
-  link.textContent = "Open News Archive";
+  link.textContent = "View All Updates";
   article.append(link);
 
   return article;
