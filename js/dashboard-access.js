@@ -1,6 +1,7 @@
 (function () {
   const DASHBOARD_PASSWORD_HASH = "a4c5a1b85cb7e9a209e697050be8a912258c5991f963c3430d3b925028b514ef";
   const DASHBOARD_PATH = "dashboard.html";
+  const DASHBOARD_ACCESS_KEY = "jkv-dashboard-one-time-access";
   let activeDialog = null;
 
   async function sha256(value) {
@@ -18,6 +19,29 @@
 
     activeDialog.remove();
     activeDialog = null;
+  }
+
+  function grantOneTimeDashboardAccess() {
+    try {
+      sessionStorage.setItem(DASHBOARD_ACCESS_KEY, String(Date.now()));
+    } catch (error) {
+      // Ignore storage issues and fall back to direct prompting.
+    }
+  }
+
+  function consumeOneTimeDashboardAccess() {
+    try {
+      const value = sessionStorage.getItem(DASHBOARD_ACCESS_KEY);
+      if (!value) return false;
+      sessionStorage.removeItem(DASHBOARD_ACCESS_KEY);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function isDashboardPage() {
+    return window.location.pathname.endsWith("/dashboard.html") || window.location.pathname.endsWith("\\dashboard.html");
   }
 
   function openPasswordDialog() {
@@ -65,6 +89,12 @@
         }
       });
 
+      toggle?.addEventListener("change", () => {
+        input.type = toggle.checked ? "text" : "password";
+        input.focus();
+        input.setSelectionRange(input.value.length, input.value.length);
+      });
+
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
         error.textContent = "";
@@ -77,6 +107,7 @@
 
         error.textContent = "Incorrect password.";
         input.value = "";
+        input.type = toggle?.checked ? "text" : "password";
         input.focus();
       });
 
@@ -89,8 +120,7 @@
   }
 
   function getDashboardTarget(link) {
-    const href = link.getAttribute("href") || DASHBOARD_PATH;
-    return href;
+    return link.getAttribute("href") || DASHBOARD_PATH;
   }
 
   document.addEventListener("click", async (event) => {
@@ -102,19 +132,18 @@
     event.preventDefault();
     const allowed = await requestAccess();
     if (allowed) {
+      grantOneTimeDashboardAccess();
       window.location.href = getDashboardTarget(link);
     }
   });
 
-  if (window.location.pathname.endsWith("/dashboard.html") || window.location.pathname.endsWith("\\dashboard.html")) {
-    requestAccess().then((allowed) => {
-      if (!allowed) {
-        window.location.href = "index.html#news";
-      }
-    });
+  if (isDashboardPage()) {
+    if (!consumeOneTimeDashboardAccess()) {
+      requestAccess().then((allowed) => {
+        if (!allowed) {
+          window.location.href = "index.html#news";
+        }
+      });
+    }
   }
 })();
-      toggle?.addEventListener("change", () => {
-        input.type = toggle.checked ? "text" : "password";
-        input.focus();
-      });
