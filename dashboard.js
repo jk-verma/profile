@@ -49,10 +49,10 @@ const fundedProjectAmount = document.getElementById("fundedProjectAmount");
 const fundedProjectStatus = document.getElementById("fundedProjectStatus");
 const clearFundedProjectDraft = document.getElementById("clearFundedProjectDraft");
 
-const projectsJsonOutput = document.getElementById("projectsJsonOutput");
-const projectStatusMessage = document.getElementById("projectDashboardStatus");
-const copyProjectsJson = document.getElementById("copyProjectsJson");
-const downloadProjectsJson = document.getElementById("downloadProjectsJson");
+const projectsJsonOutputs = Array.from(document.querySelectorAll(".projects-json-output"));
+const projectStatusMessages = Array.from(document.querySelectorAll(".project-dashboard-status"));
+const copyProjectsJsonButtons = Array.from(document.querySelectorAll(".copy-projects-json"));
+const downloadProjectsJsonButtons = Array.from(document.querySelectorAll(".download-projects-json"));
 
 const menuToggle = document.getElementById("menuToggle");
 const primaryNav = document.getElementById("primaryNav");
@@ -93,7 +93,9 @@ function setPublicationStatus(message) {
 }
 
 function setProjectStatus(message) {
-  if (projectStatusMessage) projectStatusMessage.textContent = message;
+  projectStatusMessages.forEach((element) => {
+    element.textContent = message;
+  });
 }
 
 function parseIndexing(value) {
@@ -116,9 +118,10 @@ function syncPublicationsOutput() {
 }
 
 function syncProjectsOutput() {
-  if (projectsJsonOutput) {
-    projectsJsonOutput.value = JSON.stringify(projectItems, null, 2);
-  }
+  const value = JSON.stringify(projectItems, null, 2);
+  projectsJsonOutputs.forEach((element) => {
+    element.value = value;
+  });
 }
 
 async function loadNews() {
@@ -378,15 +381,20 @@ copyPublicationsJson?.addEventListener("click", async () => {
   }
 });
 
-copyProjectsJson?.addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText(projectsJsonOutput.value);
-    setProjectStatus("Copied JSON. Paste it into projects.json in the GitHub editor.");
-  } catch (error) {
-    projectsJsonOutput.focus();
-    projectsJsonOutput.select();
-    setProjectStatus("Select and copy the JSON manually from the box.");
-  }
+copyProjectsJsonButtons.forEach((button, index) => {
+  button.addEventListener("click", async () => {
+    const source = projectsJsonOutputs[index] || projectsJsonOutputs[0];
+    if (!source) return;
+
+    try {
+      await navigator.clipboard.writeText(source.value);
+      setProjectStatus("Copied JSON. Paste it into projects.json in the GitHub editor.");
+    } catch (error) {
+      source.focus();
+      source.select();
+      setProjectStatus("Select and copy the JSON manually from the box.");
+    }
+  });
 });
 
 function downloadJsonFile(filename, value, callback) {
@@ -412,9 +420,14 @@ downloadPublicationsJson?.addEventListener("click", () => {
   });
 });
 
-downloadProjectsJson?.addEventListener("click", () => {
-  downloadJsonFile("projects.json", projectsJsonOutput.value, () => {
-    setProjectStatus("Downloaded projects.json. Upload or paste it into GitHub to publish.");
+downloadProjectsJsonButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    const source = projectsJsonOutputs[index] || projectsJsonOutputs[0];
+    if (!source) return;
+
+    downloadJsonFile("projects.json", source.value, () => {
+      setProjectStatus("Downloaded projects.json. Upload or paste it into GitHub to publish.");
+    });
   });
 });
 
