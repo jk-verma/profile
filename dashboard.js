@@ -49,6 +49,7 @@ const fundedProjectDuration = document.getElementById("fundedProjectDuration");
 const fundedProjectAmount = document.getElementById("fundedProjectAmount");
 const fundedProjectStatus = document.getElementById("fundedProjectStatus");
 const clearFundedProjectDraft = document.getElementById("clearFundedProjectDraft");
+const dashboardProjectModesBody = document.getElementById("dashboardProjectModesBody");
 
 const projectsJsonOutputs = Array.from(document.querySelectorAll(".projects-json-output"));
 const projectStatusMessages = Array.from(document.querySelectorAll(".project-dashboard-status"));
@@ -126,6 +127,27 @@ function parseIndexing(value) {
     .filter(Boolean);
 }
 
+function createTextElement(tag, className, text) {
+  const element = document.createElement(tag);
+  if (className) {
+    element.className = className;
+  }
+  element.textContent = text || "";
+  return element;
+}
+
+function renderProjectModeRow(mode) {
+  const row = document.createElement("tr");
+  row.append(
+    createTextElement("td", "", mode.type),
+    createTextElement("td", "", mode.whoPays),
+    createTextElement("td", "", mode.purpose),
+    createTextElement("td", "", mode.flexibility),
+    createTextElement("td", "", mode.output)
+  );
+  return row;
+}
+
 function syncOutput() {
   if (jsonOutput) {
     jsonOutput.value = JSON.stringify(newsItems, null, 2);
@@ -193,6 +215,33 @@ async function loadProjects() {
   }
 
   syncProjectsOutput();
+}
+
+async function loadProjectModesReference() {
+  if (!dashboardProjectModesBody) return;
+
+  try {
+    const response = await fetch("project-modes.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Unable to load project-modes.json");
+    const modes = await response.json();
+
+    if (!Array.isArray(modes) || !modes.length) {
+      const row = document.createElement("tr");
+      const cell = createTextElement("td", "", "Project and funding modes are unavailable right now.");
+      cell.colSpan = 5;
+      row.append(cell);
+      dashboardProjectModesBody.replaceChildren(row);
+      return;
+    }
+
+    dashboardProjectModesBody.replaceChildren(...modes.map(renderProjectModeRow));
+  } catch (error) {
+    const row = document.createElement("tr");
+    const cell = createTextElement("td", "", "Project and funding modes are unavailable right now.");
+    cell.colSpan = 5;
+    row.append(cell);
+    dashboardProjectModesBody.replaceChildren(row);
+  }
 }
 
 newsForm?.addEventListener("submit", (event) => {
@@ -455,3 +504,4 @@ downloadProjectsJsonButtons.forEach((button, index) => {
 loadNews();
 loadPublications();
 loadProjects();
+loadProjectModesReference();

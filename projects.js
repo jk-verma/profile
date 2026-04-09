@@ -91,18 +91,6 @@ function renderProjectSection(title, projects) {
   return section;
 }
 
-function renderProjectModeRow(mode) {
-  const row = document.createElement("tr");
-  row.append(
-    createTextElement("td", "", mode.type),
-    createTextElement("td", "", mode.whoPays),
-    createTextElement("td", "", mode.purpose),
-    createTextElement("td", "", mode.flexibility),
-    createTextElement("td", "", mode.output)
-  );
-  return row;
-}
-
 async function loadProjects() {
   const container = document.getElementById("projectSections");
   if (!container) return;
@@ -146,33 +134,4 @@ async function loadProjects() {
   }
 }
 
-async function loadProjectModes() {
-  const body = document.getElementById("projectModesBody");
-  if (!body) return;
-
-  try {
-    const response = await fetch("project-modes.json", { cache: "no-store" });
-    if (!response.ok) throw new Error("Unable to load project-modes.json");
-    const modes = await response.json();
-
-    if (!Array.isArray(modes) || !modes.length) {
-      const row = document.createElement("tr");
-      const cell = createTextElement("td", "", "Add rows through the dashboard and publish the generated project-modes.json file.");
-      cell.colSpan = 5;
-      row.append(cell);
-      body.replaceChildren(row);
-      return;
-    }
-
-    body.replaceChildren(...modes.map(renderProjectModeRow));
-  } catch (error) {
-    const row = document.createElement("tr");
-    const cell = createTextElement("td", "", "Project modes are unavailable right now.");
-    cell.colSpan = 5;
-    row.append(cell);
-    body.replaceChildren(row);
-  }
-}
-
 loadProjects();
-loadProjectModes();
