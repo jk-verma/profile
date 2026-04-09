@@ -186,8 +186,288 @@
           </label>
 
           <div id="publicationValidation" class="dashboard-validation" role="alert" aria-live="polite"></div>
-          <div id="publicationDynamicSections" class="dashboard-dynamic-sections"></div>
-        </div>
+          <div id="publicationDynamicSections" class="dashboard-dynamic-sections">
+            <section class="dashboard-form-section">
+              <h3>Type &amp; identity</h3>
+              <div class="dashboard-field-grid">
+                <label>
+                  ID
+                  <input type="text" name="publication_id" placeholder="pub-001" />
+                </label>
+                <label>
+                  Title
+                  <input type="text" name="publication_title" placeholder="Title of the output" />
+                </label>
+                <label>
+                  Subtitle
+                  <input type="text" name="publication_subtitle" placeholder="Optional subtitle" />
+                </label>
+                <label>
+                  Status
+                  <select name="publication_status">
+                    <option value="Published" selected>Published</option>
+                    <option value="Accepted">Accepted</option>
+                    <option value="In Press">In Press</option>
+                    <option value="Online First">Online First</option>
+                    <option value="Forthcoming">Forthcoming</option>
+                    <option value="Submitted">Submitted</option>
+                    <option value="Presented">Presented</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Draft">Draft</option>
+                  </select>
+                </label>
+                <div class="dashboard-toggle-wrap">
+                  <label class="dashboard-toggle">
+                    <input type="checkbox" name="publication_forthcoming" />
+                    <span>Forthcoming / In Press</span>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section class="dashboard-form-section">
+              <h3>Contributors</h3>
+              <div class="dashboard-field-grid">
+                <label class="field-span-2">
+                  Authors
+                  <textarea name="publication_authors" rows="4" placeholder="Enter author names, affiliations, and contributor details."></textarea>
+                </label>
+              </div>
+            </section>
+
+            <section class="dashboard-form-section">
+              <h3>Publication details</h3>
+              <div class="dashboard-field-grid">
+                <label>
+                  Year
+                  <input type="number" name="publication_year" placeholder="2026" />
+                </label>
+                <label>
+                  Month
+                  <select name="publication_month">
+                    <option value="">Select Month</option>
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec">Dec</option>
+                  </select>
+                </label>
+                <label>
+                  Expected Year
+                  <input type="number" name="publication_expected_year" placeholder="2027" />
+                </label>
+                <label>
+                  Expected Month
+                  <select name="publication_expected_month">
+                    <option value="">Select Month</option>
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec">Dec</option>
+                  </select>
+                </label>
+                <label>
+                  Accepted Date
+                  <input type="date" name="publication_accepted_date" />
+                </label>
+              </div>
+            </section>
+
+            <section class="dashboard-form-section">
+              <h3>Outlet / source details</h3>
+              <div class="dashboard-field-grid">
+                <label>
+                  Journal
+                  <input type="text" name="publication_journal" placeholder="Journal name" />
+                </label>
+                <label>
+                  Publisher
+                  <input type="text" name="publication_publisher" placeholder="Publisher" />
+                </label>
+                <label>
+                  Volume
+                  <input type="text" name="publication_volume" placeholder="12" />
+                </label>
+                <label>
+                  Issue
+                  <input type="text" name="publication_issue" placeholder="3" />
+                </label>
+                <label>
+                  Pages
+                  <input type="text" name="publication_pages" placeholder="101-115" />
+                </label>
+                <label>
+                  Article Number
+                  <input type="text" name="publication_article_number" placeholder="Article 15" />
+                </label>
+                <label>
+                  ISSN
+                  <input type="text" name="publication_issn" placeholder="1234-5678" />
+                </label>
+                <label>
+                  eISSN
+                  <input type="text" name="publication_eissn" placeholder="1234-5678" />
+                </label>
+                <label>
+                  Publication Stage
+                  <select name="publication_stage">
+                    <option value="">Select Publication Stage</option>
+                    <option value="Published">Published</option>
+                    <option value="Accepted">Accepted</option>
+                    <option value="In Press">In Press</option>
+                    <option value="Online First">Online First</option>
+                    <option value="Forthcoming">Forthcoming</option>
+                  </select>
+                </label>
+                <label>
+                  Quartile
+                  <select name="publication_quartile">
+                    <option value="">Select Quartile</option>
+                    <option value="Q1">Q1</option>
+                    <option value="Q2">Q2</option>
+                    <option value="Q3">Q3</option>
+                    <option value="Q4">Q4</option>
+                    <option value="NA">NA</option>
+                  </select>
+                </label>
+                <label>
+                  Impact Factor
+                  <input type="text" name="publication_impact_factor" placeholder="3.2" />
+                </label>
+                <label>
+                  ABDC Category
+                  <select name="publication_abdc">
+                    <option value="">Select ABDC Category</option>
+                    <option value="A*">A*</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="NA">NA</option>
+                  </select>
+                </label>
+              </div>
+            </section>
+
+            <section class="dashboard-form-section">
+              <h3>Indexing &amp; classification</h3>
+              <div class="dashboard-field-grid">
+                <label class="field-span-2">
+                  Indexed In
+                  <textarea name="publication_indexing" rows="3" placeholder="Scopus, Web of Science, ABDC"></textarea>
+                </label>
+                <label>
+                  Peer Reviewed
+                  <select name="publication_peer_reviewed">
+                    <option value="">Select Peer Reviewed</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Not Applicable">Not Applicable</option>
+                  </select>
+                </label>
+                <label>
+                  Open Access
+                  <select name="publication_open_access">
+                    <option value="">Select Open Access</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Not Applicable">Not Applicable</option>
+                  </select>
+                </label>
+                <label>
+                  Language
+                  <select name="publication_language">
+                    <option value="English" selected>English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </label>
+              </div>
+            </section>
+
+            <section class="dashboard-form-section">
+              <h3>Links &amp; assets</h3>
+              <div class="dashboard-field-grid">
+                <label>
+                  DOI
+                  <input type="text" name="publication_doi" placeholder="10.xxxx/xxxx" />
+                </label>
+                <label>
+                  URL
+                  <input type="url" name="publication_url" placeholder="https://example.com" />
+                </label>
+                <label>
+                  PDF Link
+                  <input type="url" name="publication_pdf" placeholder="https://example.com/file.pdf" />
+                </label>
+                <label>
+                  Preprint URL
+                  <input type="url" name="publication_preprint" placeholder="https://arxiv.org/..." />
+                </label>
+                <label>
+                  Accepted Manuscript URL
+                  <input type="url" name="publication_accepted_manuscript" placeholder="https://example.com" />
+                </label>
+              </div>
+            </section>
+
+            <section class="dashboard-form-section">
+              <h3>Display settings</h3>
+              <div class="dashboard-field-grid">
+                <label class="field-span-2">
+                  Abstract
+                  <textarea name="publication_abstract" rows="5" placeholder="Short abstract"></textarea>
+                </label>
+                <label class="field-span-2">
+                  Keywords
+                  <input type="text" name="publication_keywords" placeholder="AI, Analytics, FinTech" />
+                </label>
+                <div class="dashboard-toggle-wrap">
+                  <label class="dashboard-toggle">
+                    <input type="checkbox" name="publication_featured" />
+                    <span>Featured</span>
+                  </label>
+                </div>
+                <div class="dashboard-toggle-wrap">
+                  <label class="dashboard-toggle">
+                    <input type="checkbox" name="publication_highlight" />
+                    <span>Highlight</span>
+                  </label>
+                </div>
+                <label>
+                  Award
+                  <input type="text" name="publication_award" placeholder="Best paper award" />
+                </label>
+              </div>
+            </section>
+
+            <section class="dashboard-form-section">
+              <h3>Notes</h3>
+              <div class="dashboard-field-grid">
+                <label class="field-span-2">
+                  Notes
+                  <textarea name="publication_notes" rows="4" placeholder="Display note"></textarea>
+                </label>
+              </div>
+            </section>
+          </div>
+          </div>
 
         <div class="dashboard-actions">
           <button class="button primary" type="submit">Add to Publications JSON</button>
