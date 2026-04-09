@@ -6,6 +6,7 @@ const newsDeadline = document.getElementById("newsDeadline");
 const newsLink = document.getElementById("newsLink");
 const newsSummary = document.getElementById("newsSummary");
 const jsonOutput = document.getElementById("jsonOutput");
+const newsPreview = document.getElementById("newsPreview");
 const statusMessage = document.getElementById("dashboardStatus");
 const copyJson = document.getElementById("copyJson");
 const downloadJson = document.getElementById("downloadJson");
@@ -27,6 +28,7 @@ const publicationPatentNumber = document.getElementById("publicationPatentNumber
 const publicationCountry = document.getElementById("publicationCountry");
 const publicationStatus = document.getElementById("publicationStatus");
 const publicationsJsonOutput = document.getElementById("publicationsJsonOutput");
+const publicationsPreview = document.getElementById("publicationsPreview");
 const publicationStatusMessage = document.getElementById("publicationDashboardStatus");
 const copyPublicationsJson = document.getElementById("copyPublicationsJson");
 const downloadPublicationsJson = document.getElementById("downloadPublicationsJson");
@@ -50,6 +52,8 @@ const fundedProjectAmount = document.getElementById("fundedProjectAmount");
 const fundedProjectStatus = document.getElementById("fundedProjectStatus");
 const clearFundedProjectDraft = document.getElementById("clearFundedProjectDraft");
 const dashboardProjectModesBody = document.getElementById("dashboardProjectModesBody");
+const websiteProjectsPreview = document.getElementById("websiteProjectsPreview");
+const fundedProjectsPreview = document.getElementById("fundedProjectsPreview");
 
 const projectsJsonOutputs = Array.from(document.querySelectorAll(".projects-json-output"));
 const projectStatusMessages = Array.from(document.querySelectorAll(".project-dashboard-status"));
@@ -71,6 +75,15 @@ const publicationTypes = [
   "Patent",
   "Forthcoming / Accepted"
 ];
+
+const publicationTypeLabels = {
+  "Journal Article": "Journal Articles",
+  "Conference Paper": "Conference Papers",
+  "Book Chapter": "Book Chapters",
+  "Book / Edited Volume": "Books / Edited Volumes",
+  "Patent": "Patents",
+  "Forthcoming / Accepted": "Forthcoming / Accepted Publications"
+};
 
 if (menuToggle && primaryNav) {
   menuToggle.addEventListener("click", () => {
@@ -136,6 +149,268 @@ function createTextElement(tag, className, text) {
   return element;
 }
 
+function sortNewsItems(items) {
+  return [...items].sort((left, right) => {
+    const leftTime = Date.parse(left?.date || "");
+    const rightTime = Date.parse(right?.date || "");
+
+    if (!Number.isNaN(leftTime) && !Number.isNaN(rightTime) && leftTime !== rightTime) {
+      return rightTime - leftTime;
+    }
+
+    if (!Number.isNaN(rightTime)) return 1;
+    if (!Number.isNaN(leftTime)) return -1;
+    return 0;
+  });
+}
+
+function renderNewsItem(item) {
+  const article = document.createElement("article");
+  article.className = "news-item";
+
+  const meta = document.createElement("div");
+  meta.className = "news-meta";
+  meta.append(
+    createTextElement("span", "news-badge", item.category),
+    createTextElement("span", "news-date", item.date)
+  );
+
+  if (item.submissionDeadline) {
+    meta.append(createTextElement("span", "news-deadline", `Submission Deadline: ${item.submissionDeadline}`));
+  }
+
+  article.append(
+    meta,
+    createTextElement("h3", "", item.title),
+    createTextElement("p", "", item.summary)
+  );
+
+  if (item.link) {
+    const link = document.createElement("a");
+    link.className = "button secondary news-link";
+    link.href = item.link;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "Open Link";
+    article.append(link);
+  }
+
+  return article;
+}
+
+function renderNewsPreview(items, container) {
+  if (!container) return;
+
+  if (!items.length) {
+    const empty = document.createElement("article");
+    empty.className = "news-item";
+    empty.append(
+      createTextElement("h3", "", "Latest updates will appear here"),
+      createTextElement("p", "", "Add a news entry to preview how it will appear on the website.")
+    );
+    container.replaceChildren(empty);
+    return;
+  }
+
+  container.replaceChildren(...items.map(renderNewsItem));
+}
+
+function compactParts(parts, separator = ", ") {
+  return parts.filter(Boolean).join(separator);
+}
+
+function wrapTitle(title) {
+  return title ? `"${title}"` : "";
+}
+
+function formatIndexing(indexing) {
+  if (!Array.isArray(indexing) || !indexing.length) return "";
+  return `[${indexing.join(", ")}]`;
+}
+
+function formatDoi(publication) {
+  const doi = publication.doi || publication.link || "";
+  if (!doi) return "";
+  return doi.startsWith("http") ? doi : `doi: ${doi}`;
+}
+
+function formatPublication(publication) {
+  const authors = publication.authors || "";
+  const title = wrapTitle(publication.title);
+  const year = publication.year || publication.date || "";
+  const type = publication.type || "";
+  const venue = publication.venue || "";
+  const publisher = publication.publisher || "";
+  const volume = publication.volume ? `vol. ${publication.volume}` : "";
+  const issue = publication.issue ? `no. ${publication.issue}` : "";
+  const pages = publication.pages ? `pp. ${publication.pages}` : "";
+  const indexing = formatIndexing(publication.indexing);
+  const doi = formatDoi(publication);
+
+  if (type === "Patent") {
+    const country = publication.country ? `${publication.country} Patent` : "Patent";
+    const number = publication.patentNumber || publication.number || "";
+    const status = publication.status || "";
+    return compactParts([authors, title, compactParts([country, number], " "), status, year, doi, indexing]);
+  }
+
+  if (type === "Conference Paper") {
+    const conference = venue ? `in ${venue}` : "";
+    return compactParts([authors, title, conference, publisher, year, pages, doi, indexing]);
+  }
+
+  if (type === "Book Chapter") {
+    const book = venue ? `in ${venue}` : "";
+    return compactParts([authors, title, book, publisher, year, pages, doi, indexing]);
+  }
+
+  if (type === "Book / Edited Volume") {
+    return compactParts([authors, publication.title, publisher || venue, year, doi, indexing]);
+  }
+
+  return compactParts([authors, title, venue, volume, issue, pages, year, doi, indexing]);
+}
+
+function renderPublicationGroup(type, publications) {
+  const section = document.createElement("section");
+  section.className = "publication-group";
+
+  const heading = createTextElement("h3", "", publicationTypeLabels[type] || type);
+  const list = document.createElement("ol");
+  list.className = "publication-items";
+
+  publications.forEach((publication, index) => {
+    const number = publications.length - index;
+    const item = document.createElement("li");
+    item.append(
+      createTextElement("span", "publication-number", `[${number}]`),
+      createTextElement("span", "publication-reference", formatPublication(publication))
+    );
+    list.append(item);
+  });
+
+  section.append(heading, list);
+  return section;
+}
+
+function renderPublicationsPreview(publications, container) {
+  if (!container) return;
+  const groups = new Map();
+  publicationTypes.forEach((type) => groups.set(type, []));
+
+  publications.forEach((publication) => {
+    const type = publication.type || "Forthcoming / Accepted";
+    if (!groups.has(type)) groups.set(type, []);
+    groups.get(type).push(publication);
+  });
+
+  const sections = [];
+  groups.forEach((items, type) => {
+    if (items.length) sections.push(renderPublicationGroup(type, items));
+  });
+
+  if (!sections.length) {
+    const empty = document.createElement("article");
+    empty.className = "panel";
+    empty.append(
+      createTextElement("h3", "", "Publication list coming soon"),
+      createTextElement("p", "", "Add entries to see the publication preview here.")
+    );
+    container.replaceChildren(empty);
+    return;
+  }
+
+  container.replaceChildren(...sections);
+}
+
+function getProjectSectionName(project) {
+  return project.projectType || (project.entryType === "fundedProject" ? "Funded Projects" : "Website and Utility Projects");
+}
+
+function renderProjectCard(project) {
+  const article = document.createElement("article");
+  article.className = "card";
+
+  const metaBits = [
+    project.projectType,
+    project.fundingAgency,
+    project.schemeName || project.schemeProgram,
+    project.yearOfFunding,
+    project.status
+  ].filter(Boolean);
+
+  article.append(createTextElement("h3", "", project.title));
+
+  if (metaBits.length) {
+    article.append(createTextElement("p", "project-meta", metaBits.join(" | ")));
+  }
+
+  if (project.summary) {
+    article.append(createTextElement("p", "", project.summary));
+  }
+
+  const detailBits = [];
+  if (project.duration) detailBits.push(`Duration: ${project.duration}`);
+  if (project.amountSanctioned) detailBits.push(`Amount: ${project.amountSanctioned}`);
+
+  if (detailBits.length) {
+    article.append(createTextElement("p", "project-detail", detailBits.join(" | ")));
+  }
+
+  if (project.siteUrl) {
+    const siteLink = document.createElement("a");
+    siteLink.className = "button secondary project-link";
+    siteLink.href = project.siteUrl;
+    siteLink.target = "_blank";
+    siteLink.rel = "noopener";
+    siteLink.textContent = "Open Project";
+    article.append(siteLink);
+  }
+
+  return article;
+}
+
+function renderProjectSection(title, projects) {
+  const section = document.createElement("section");
+  section.className = "publication-group";
+
+  const heading = createTextElement("h3", "", title);
+  const grid = document.createElement("div");
+  grid.className = "card-grid three project-grid";
+  grid.append(...projects.map(renderProjectCard));
+
+  section.append(heading, grid);
+  return section;
+}
+
+function renderProjectsPreview(projects, container) {
+  if (!container) return;
+
+  if (!projects.length) {
+    const empty = document.createElement("article");
+    empty.className = "panel";
+    empty.append(
+      createTextElement("h3", "", "Projects will appear here"),
+      createTextElement("p", "", "Add entries to see the project preview here.")
+    );
+    container.replaceChildren(empty);
+    return;
+  }
+
+  const groupedProjects = new Map();
+  projects.forEach((project) => {
+    const sectionName = getProjectSectionName(project);
+    if (!groupedProjects.has(sectionName)) {
+      groupedProjects.set(sectionName, []);
+    }
+    groupedProjects.get(sectionName).push(project);
+  });
+
+  container.replaceChildren(
+    ...Array.from(groupedProjects.entries()).map(([title, items]) => renderProjectSection(title, items))
+  );
+}
+
 function renderProjectModeRow(mode) {
   const row = document.createElement("tr");
   row.append(
@@ -152,12 +427,16 @@ function syncOutput() {
   if (jsonOutput) {
     jsonOutput.value = JSON.stringify(newsItems, null, 2);
   }
+  if (newsPreview) {
+    renderNewsPreview(sortNewsItems(newsItems), newsPreview);
+  }
 }
 
 function syncPublicationsOutput() {
   if (publicationsJsonOutput) {
     publicationsJsonOutput.value = JSON.stringify(publicationItems, null, 2);
   }
+  renderPublicationsPreview(publicationItems, publicationsPreview);
 }
 
 function syncProjectsOutput() {
@@ -165,6 +444,14 @@ function syncProjectsOutput() {
   projectsJsonOutputs.forEach((element) => {
     element.value = value;
   });
+  renderProjectsPreview(
+    projectItems.filter((item) => item.entryType !== "fundedProject"),
+    websiteProjectsPreview
+  );
+  renderProjectsPreview(
+    projectItems.filter((item) => item.entryType === "fundedProject"),
+    fundedProjectsPreview
+  );
 }
 
 async function loadNews() {

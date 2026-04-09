@@ -1224,13 +1224,14 @@ dd {
   display: grid;
   grid-template-columns: minmax(300px, 0.9fr) minmax(360px, 1.1fr);
   gap: 18px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .dashboard-card {
   display: grid;
   gap: 16px;
   padding: 24px;
+  height: 100%;
 }
 
 .dashboard-inline-fields {
@@ -1291,6 +1292,18 @@ dd {
   line-height: 1.55;
   font-family: "Cascadia Code", Consolas, "Courier New", monospace;
   font-size: 0.92rem;
+}
+
+.dashboard-data-output {
+  display: none;
+}
+
+.dashboard-preview {
+  min-height: 320px;
+}
+
+.dashboard-preview[hidden] {
+  display: none;
 }
 
 code {
