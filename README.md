@@ -13,7 +13,6 @@ Static academic profile website for GitHub Pages.
 - `dashboard.js` - Dashboard forms, previews, copy, and download behavior
 - `news.json` - Latest news / daily developments data source
 - `publications.json` - Publications and patents data source
-- `assets/JK_Verma_Resume.pdf` - Resume PDF
 - `assets/profile-photo.jpg` - Optional portrait photo to add later
 
 ## Publish on GitHub Pages
