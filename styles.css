@@ -1234,6 +1234,10 @@ dd {
   height: 100%;
 }
 
+.publish-card {
+  grid-template-rows: auto auto auto 1fr;
+}
+
 .dashboard-inline-fields {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1292,6 +1296,12 @@ dd {
   line-height: 1.55;
   font-family: "Cascadia Code", Consolas, "Courier New", monospace;
   font-size: 0.92rem;
+}
+
+.publish-card .json-output {
+  min-height: 0;
+  height: 100%;
+  align-self: stretch;
 }
 
 .dashboard-preview {
