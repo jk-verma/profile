@@ -1,29 +1,52 @@
-# Dr. Jitendra Kumar Verma - Profile Website
+# Dr. Jitendra Kumar Verma - GitHub Pages Website
 
 Static academic profile website for GitHub Pages.
 
-## Files
+## Structure
 
-- `index.html` - Main website page
-- `css/styles.css` - Website styling
-- `js/script.js` - Mobile navigation, protected photo behavior, and news rendering
-- `publications.html` - Publications and patents page grouped by publication type
-- `js/publications.js` - Publications rendering and IEEE-style reference formatting
-- `dashboard.html` - Browser-based dashboard for preparing Latest News and Publications updates
+All public `.html` pages are kept in the repository root:
+
+- `index.html` - Main profile homepage
+- `publications.html` - Publications and intellectual property page
+- `projects.html` - Projects page
+- `news.html` - Latest news archive page
+- `dashboard.html` - Content dashboard for preparing updates
+
+Supporting files are organized by purpose:
+
+- `css/styles.css` - Shared website styling
+- `js/script.js` - Homepage behavior, latest news preview, active nav highlighting
+- `js/publications.js` - Publications rendering and filters
+- `js/projects.js` - Projects rendering
+- `js/news.js` - News archive rendering and filters
 - `js/dashboard.js` - Dashboard forms, previews, copy, and download behavior
-- `data/news.json` - Latest news / daily developments data source
-- `data/publications.json` - Publications and patents data source
-- `assets/profile-photo.jpg` - Optional portrait photo
+- `js/dashboard-access.js` - Dashboard password prompt
+- `data/news.json` - Latest news data
+- `data/publications.json` - Publications and intellectual property data
+- `data/projects.json` - Website, utility, and funded project data
+- `data/project-modes.json` - Project and funding mode reference data
+- `assets/profile-photo.jpg` - Optional profile photo
 
-## Publish website
+## Publish on GitHub Pages
 
-1. Upload the files from this folder to a GitHub repository.
-2. In GitHub, open **Settings > Pages**.
+1. Upload the repository to GitHub.
+2. Open **Settings > Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**.
 4. Select branch `main` and folder `/root`.
 5. Save the settings.
 
-## Add or replace the profile photo
+GitHub Pages will serve the root HTML files directly.
+
+## Dashboard Access
+
+The dashboard is protected by a lightweight browser-side password prompt.
+
+- Dashboard URL: `dashboard.html`
+- Current password: `JKV@123`
+
+Important: because this is a static GitHub Pages site, this is only light access control in the browser, not full secure authentication.
+
+## Add or Replace the Profile Photo
 
 Add a portrait image at:
 
@@ -31,14 +54,19 @@ Add a portrait image at:
 assets/profile-photo.jpg
 ```
 
-Use a small web version rather than a high-resolution original. A browser must download any image it displays, so the site cannot make the photo impossible to copy. This site discourages casual saving by disabling right-click and dragging on the photo area, but the best protection is to upload only a low-resolution or watermarked copy.
+Use a small web version rather than a high-resolution original. Any image shown in a browser can still be copied by a determined visitor, so the best practical protection is to upload only a low-resolution or watermarked version.
 
-## Update the Latest News section
+## Update Latest News
 
-Open `dashboard.html` in the website, add a new item, then copy or download the generated `news.json`.
-Use the GitHub editor to replace the repository's `data/news.json` file and commit the change.
+Open `dashboard.html`, create a news entry, then copy or download the generated `news.json`.
 
-You can use these categories:
+Replace:
+
+```text
+data/news.json
+```
+
+Current categories supported in the dashboard:
 
 - Achievement
 - Call for Papers
@@ -48,31 +76,25 @@ You can use these categories:
 - Academic
 - Research
 
-The JSON format is:
+The homepage shows a short latest-news preview from `data/news.json`, while `news.html` shows the full archive with category filtering.
 
-```json
-{
-  "date": "2026-04-08",
-  "category": "News",
-  "title": "Your headline here",
-  "summary": "Short update text here."
-}
+## Update Publications and Intellectual Property
+
+Open `dashboard.html`, create a publication entry, then copy or download the generated `publications.json`.
+
+Replace:
+
+```text
+data/publications.json
 ```
-
-Commit and push the change. GitHub Pages will update after deployment finishes.
-
-## Update Publications
-
-Open `dashboard.html`, add a publication entry, then copy or download the generated `publications.json`.
-Use the GitHub editor to replace the repository's `data/publications.json` file and commit the change.
 
 The public `publications.html` page automatically:
 
-- Groups entries by publication type
-- Places new entries at the top of their selected type when prepared through the dashboard
-- Shows reverse numbering within each publication type
-- Formats entries in an IEEE-style reference format
-- Includes patents as a supported publication type
+- groups entries by publication type
+- shows reverse numbering within each type
+- formats references in IEEE-style form
+- supports year and type filtering
+- includes patents as part of intellectual property output
 
 Supported publication types:
 
@@ -82,3 +104,26 @@ Supported publication types:
 - Book / Edited Volume
 - Patent
 - Forthcoming / Accepted
+
+## Update Projects
+
+Open `dashboard.html`, create either:
+
+- a website or utility project entry
+- a funded project entry
+
+Then copy or download the generated `projects.json`.
+
+Replace:
+
+```text
+data/projects.json
+```
+
+The public `projects.html` page groups entries by project type automatically.
+
+## Notes
+
+- The homepage uses brief summary sections for research, projects, and latest news.
+- The full lists live on `publications.html`, `projects.html`, and `news.html`.
+- The footer year updates automatically through JavaScript.
