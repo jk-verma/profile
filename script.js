@@ -159,7 +159,7 @@ async function loadNews() {
     renderNewsTicker(items);
 
     if (container) {
-      container.replaceChildren(...items.map(renderNewsItem));
+      container.replaceChildren(...items.slice(0, 3).map(renderNewsItem));
     }
   } catch (error) {
     if (ticker) {
