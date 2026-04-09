@@ -148,6 +148,25 @@ function renderNewsItem(item) {
   return article;
 }
 
+function renderNewsArchiveCard() {
+  const article = document.createElement("article");
+  article.className = "news-item news-archive-card";
+
+  article.append(
+    createTextElement("span", "news-badge", "Archive"),
+    createTextElement("h3", "", "View All Updates"),
+    createTextElement("p", "", "Browse the full archive of achievements, calls, announcements, deadlines, and academic updates.")
+  );
+
+  const link = document.createElement("a");
+  link.className = "button primary";
+  link.href = "news.html";
+  link.textContent = "Open News Archive";
+  article.append(link);
+
+  return article;
+}
+
 function renderNewsTicker(items) {
   const track = document.getElementById("newsTickerTrack");
   if (!track) return;
@@ -201,7 +220,7 @@ async function loadNews() {
     renderNewsTicker(items);
 
     if (container) {
-      container.replaceChildren(...items.slice(0, 2).map(renderNewsItem));
+      container.replaceChildren(...items.slice(0, 2).map(renderNewsItem), renderNewsArchiveCard());
     }
   } catch (error) {
     if (ticker) {

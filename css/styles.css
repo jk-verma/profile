@@ -1073,9 +1073,18 @@ dd {
 }
 
 #news > .news-list {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 1080px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1240px;
   margin-inline: auto;
+}
+
+.news-archive-card {
+  text-align: center;
+  justify-items: center;
+}
+
+.news-archive-card .button {
+  margin-top: auto;
 }
 
 .project-grid .card {
