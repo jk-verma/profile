@@ -1,12 +1,3 @@
-const publicationTypes = [
-  "Journal Article",
-  "Conference Paper",
-  "Book Chapter",
-  "Book / Edited Volume",
-  "Patent",
-  "Forthcoming / Accepted"
-];
-
 const typeLabels = {
   "Journal Article": "Journal Articles",
   "Conference Paper": "Conference Papers",
@@ -70,6 +61,12 @@ function formatDoi(publication) {
   return doi.startsWith("http") ? doi : `doi: ${doi}`;
 }
 
+function formatTypeLabel(type) {
+  if (!type) return "Other Publications";
+  if (typeLabels[type]) return typeLabels[type];
+  return type.endsWith("s") ? type : `${type}s`;
+}
+
 function formatPublication(publication) {
   const authors = publication.authors || "";
   const title = wrapTitle(publication.title);
@@ -109,7 +106,6 @@ function formatPublication(publication) {
 
 function groupPublications(publications) {
   const groups = new Map();
-  publicationTypes.forEach((type) => groups.set(type, []));
 
   publications.forEach((publication) => {
     const type = publication.type || "Forthcoming / Accepted";
@@ -124,7 +120,7 @@ function renderPublicationGroup(type, publications) {
   const section = document.createElement("section");
   section.className = "publication-group";
 
-  const heading = createTextElement("h3", "", typeLabels[type] || type);
+  const heading = createTextElement("h3", "", formatTypeLabel(type));
   const list = document.createElement("ol");
   list.className = "publication-items";
 
@@ -177,7 +173,7 @@ function populateFilters(publications) {
   if (publicationTypeFilter) {
     const availableTypes = Array.from(new Set(publications.map((publication) => publication.type).filter(Boolean)));
     publicationTypeFilter.replaceChildren(
-      ...[createOption("all", "All Types"), ...availableTypes.map((type) => createOption(type, typeLabels[type] || type))]
+      ...[createOption("all", "All Types"), ...availableTypes.map((type) => createOption(type, formatTypeLabel(type)))]
     );
   }
 
