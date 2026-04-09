@@ -1294,10 +1294,6 @@ dd {
   font-size: 0.92rem;
 }
 
-.dashboard-data-output {
-  display: none;
-}
-
 .dashboard-preview {
   min-height: 320px;
 }
