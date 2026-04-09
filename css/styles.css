@@ -1186,12 +1186,24 @@ dd {
   border-radius: var(--radius);
   color: var(--text);
   background: rgba(255, 255, 255, 0.05);
+  color-scheme: dark;
+  appearance: none;
 }
 
 .filters-bar select:focus {
   outline: none;
   border-color: rgba(56, 209, 194, 0.52);
   box-shadow: 0 0 0 3px rgba(56, 209, 194, 0.14);
+}
+
+.filters-bar select option {
+  color: #e7f0f2;
+  background: #0b1b23;
+}
+
+.filters-bar select option:checked {
+  color: #031013;
+  background: #38d1c2;
 }
 
 .publications-hero {
