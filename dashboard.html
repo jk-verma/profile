@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Dashboard for updating news, publications, and projects on the profile website of Dr. Jitendra Kumar Verma." />
   <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="css/styles.css?v=20260411-3" />
+  <link rel="stylesheet" href="css/styles.css?v=20260411-4" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -45,7 +45,7 @@
       </div>
     </section>
 
-    <section class="section dashboard-layout">
+    <section class="section dashboard-layout" hidden>
       <form id="newsForm" class="dashboard-card" autocomplete="off">
         <div class="section-heading">
           <p class="eyebrow">Create Entry</p>
@@ -116,11 +116,11 @@
         <textarea id="jsonOutput" class="json-output dashboard-data-output" rows="16" spellcheck="false" aria-label="Generated news JSON"></textarea>
       </article>
     </section>
-    <section class="section dashboard-preview-section">
+    <section class="section dashboard-preview-section" hidden>
       <div id="newsPreview" class="dashboard-preview news-list" hidden></div>
     </section>
 
-    <section class="section dashboard-layout">
+    <section class="section dashboard-layout" hidden>
       <form id="publicationForm" class="dashboard-card" autocomplete="off">
         <div class="section-heading">
           <p class="eyebrow">Create Entry</p>
@@ -494,11 +494,11 @@
         <textarea id="publicationsJsonOutput" class="json-output dashboard-data-output" rows="18" spellcheck="false" aria-label="Generated publications JSON"></textarea>
       </article>
     </section>
-    <section class="section dashboard-preview-section">
+    <section class="section dashboard-preview-section" hidden>
       <div id="publicationsPreview" class="dashboard-preview" hidden></div>
     </section>
 
-    <section class="section dashboard-layout">
+    <section class="section dashboard-layout" hidden>
       <form id="websiteProjectForm" class="dashboard-card" autocomplete="off">
         <div class="section-heading">
           <p class="eyebrow">Create Entry</p>
@@ -546,11 +546,11 @@
         <textarea id="websiteProjectsJsonOutput" class="json-output dashboard-data-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
       </article>
     </section>
-    <section class="section dashboard-preview-section">
+    <section class="section dashboard-preview-section" hidden>
       <div id="websiteProjectsPreview" class="dashboard-preview publications-list" hidden></div>
     </section>
 
-    <section class="section dashboard-layout">
+    <section class="section dashboard-layout" hidden>
       <form id="fundedProjectForm" class="dashboard-card" autocomplete="off">
         <div class="section-heading">
           <p class="eyebrow">Create Entry</p>
@@ -633,11 +633,11 @@
         <textarea id="fundedProjectsJsonOutput" class="json-output dashboard-data-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
       </article>
     </section>
-    <section class="section dashboard-preview-section">
+    <section class="section dashboard-preview-section" hidden>
       <div id="fundedProjectsPreview" class="dashboard-preview publications-list" hidden></div>
     </section>
 
-    <section id="projectModesReference" class="section">
+    <section id="projectModesReference" class="section" hidden>
       <div class="section-heading">
         <p class="eyebrow">Modes</p>
         <h2>Project and Funding Modes</h2>
@@ -667,7 +667,7 @@
   </footer>
 
   <script src="js/dashboard-access.js?v=20260411-2"></script>
-  <script src="js/dashboard.js?v=20260411-2"></script>
+  <script src="js/dashboard.js?v=20260411-3"></script>
   <script src="js/dashboard-publications.js?v=20260410-2"></script>
 </body>
 </html>

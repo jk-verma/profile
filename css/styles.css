@@ -1634,6 +1634,12 @@ dd {
   display: none;
 }
 
+.dashboard-layout[hidden],
+.dashboard-preview-section[hidden],
+#projectModesReference[hidden] {
+  display: none !important;
+}
+
 .dashboard-preview-section {
   padding-top: 0;
 }
