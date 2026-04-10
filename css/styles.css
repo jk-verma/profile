@@ -1435,6 +1435,64 @@ dd {
   align-items: stretch;
 }
 
+.dashboard-section-toggle {
+  padding-bottom: 0;
+}
+
+.dashboard-section-toggle-button {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  background: var(--box-bg);
+  box-shadow: var(--shadow);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.dashboard-section-toggle-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 209, 194, 0.42);
+  box-shadow: var(--glow);
+}
+
+.dashboard-section-toggle-button::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--box-accent);
+  opacity: 0.86;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.dashboard-section-toggle-label {
+  display: grid;
+  gap: 4px;
+}
+
+.dashboard-section-toggle-label strong {
+  font-size: 1.05rem;
+}
+
+.dashboard-section-toggle-hint {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.dashboard-section-toggle-button[aria-expanded="false"] .dashboard-section-toggle-hint {
+  color: var(--accent);
+}
+
 .dashboard-card {
   display: grid;
   gap: 16px;

@@ -130,7 +130,7 @@ function sortNewsItems(items) {
   });
 }
 
-function selectTickerItems(items, maxMonths = 6, maxItems = 5) {
+function selectTickerItems(items, maxMonths = 12, maxItems = 6) {
   const cutoffDate = new Date();
   cutoffDate.setMonth(cutoffDate.getMonth() - maxMonths);
 

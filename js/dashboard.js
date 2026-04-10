@@ -1,4 +1,4 @@
-const newsForm = document.getElementById("newsForm");
+﻿const newsForm = document.getElementById("newsForm");
 const newsDate = document.getElementById("newsDate");
 const newsCategory = document.getElementById("newsCategory");
 const newsTitle = document.getElementById("newsTitle");
@@ -155,6 +155,77 @@ function showToast(message) {
   activeToastTimeout = window.setTimeout(() => {
     toast.classList.remove("visible");
   }, 2200);
+}
+
+function createDashboardSectionToggle(title, controlledSections) {
+  const wrapper = document.createElement("section");
+  wrapper.className = "section dashboard-section-toggle";
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "dashboard-section-toggle-button";
+  button.setAttribute("aria-expanded", "true");
+
+  const labelWrap = document.createElement("span");
+  labelWrap.className = "dashboard-section-toggle-label";
+  labelWrap.append(
+    createTextElement("span", "eyebrow", "Dashboard Section"),
+    createTextElement("strong", "", title)
+  );
+
+  const hint = createTextElement("span", "dashboard-section-toggle-hint", "Collapse");
+  button.append(labelWrap, hint);
+  wrapper.append(button);
+
+  button.addEventListener("click", () => {
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    controlledSections.forEach((section) => {
+      if (section) {
+        section.hidden = expanded;
+      }
+    });
+    button.setAttribute("aria-expanded", String(!expanded));
+    hint.textContent = expanded ? "Expand" : "Collapse";
+  });
+
+  return wrapper;
+}
+
+function setupDashboardCollapsibles() {
+  const sections = [
+    {
+      title: "Latest News",
+      anchor: newsForm?.closest(".dashboard-layout"),
+      preview: newsPreview?.closest(".dashboard-preview-section")
+    },
+    {
+      title: "Publications",
+      anchor: publicationForm?.closest(".dashboard-layout"),
+      preview: publicationsPreview?.closest(".dashboard-preview-section")
+    },
+    {
+      title: "Website and Utility Projects",
+      anchor: websiteProjectForm?.closest(".dashboard-layout"),
+      preview: websiteProjectsPreview?.closest(".dashboard-preview-section")
+    },
+    {
+      title: "Funded Projects",
+      anchor: fundedProjectForm?.closest(".dashboard-layout"),
+      preview: fundedProjectsPreview?.closest(".dashboard-preview-section")
+    },
+    {
+      title: "Project and Funding Modes",
+      anchor: document.getElementById("projectModesReference")
+    }
+  ];
+
+  sections.forEach(({ title, anchor, preview }) => {
+    if (!anchor || anchor.previousElementSibling?.classList.contains("dashboard-section-toggle")) {
+      return;
+    }
+
+    anchor.before(createDashboardSectionToggle(title, [anchor, preview].filter(Boolean)));
+  });
 }
 
 function parseIndexing(value) {
@@ -824,6 +895,7 @@ downloadProjectsJsonButtons.forEach((button, index) => {
 });
 
 updateCurrentYear();
+setupDashboardCollapsibles();
 loadNews();
 loadPublications();
 loadProjects();
