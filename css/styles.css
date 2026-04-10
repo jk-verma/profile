@@ -260,6 +260,7 @@ a:hover {
   background: rgba(8, 29, 39, 0.92);
   backdrop-filter: blur(16px);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+  scroll-margin-top: 92px;
 }
 
 .ticker-label {
@@ -666,7 +667,11 @@ main {
 .metric-card,
 .stat,
 .news-item,
-.contact-card {
+.contact-card,
+.timeline article,
+.publication-group,
+.dashboard-card,
+.dashboard-form-section {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background:
@@ -688,7 +693,11 @@ main {
 .card,
 .metric-card,
 .stat,
-.news-item {
+.news-item,
+.timeline article,
+.publication-group,
+.dashboard-card,
+.dashboard-form-section {
   position: relative;
   overflow: hidden;
 }
@@ -699,7 +708,11 @@ main {
 .card::before,
 .metric-card::before,
 .stat::before,
-.news-item::before {
+.news-item::before,
+.timeline article::before,
+.publication-group::before,
+.dashboard-card::before,
+.dashboard-form-section::before {
   content: "";
   position: absolute;
   inset: 0 0 auto;
@@ -715,7 +728,11 @@ main {
 .metric-card,
 .stat,
 .news-item,
-.contact-card {
+.contact-card,
+.timeline article,
+.publication-group,
+.dashboard-card,
+.dashboard-form-section {
   padding: 24px;
 }
 
