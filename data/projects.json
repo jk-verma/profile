@@ -1,5 +1,27 @@
 [
   {
+    "title": "Technology Trends in Buisness",
+    "entryType": "fundedProject",
+    "projectType": "Consultancy Project",
+    "fundingAgency": "IIM Rohtak",
+    "schemeName": "IPM 2021-24",
+    "yearOfFunding": "2023-24",
+    "duration": "3 Months",
+    "amountSanctioned": "INR 2,50,000",
+    "status": "Completed"
+  },
+  {
+    "title": "Technology Trends in Buisness",
+    "entryType": "fundedProject",
+    "projectType": "Consultancy Project",
+    "fundingAgency": "IIM Rohtak",
+    "schemeName": "IPM 2020-23",
+    "yearOfFunding": "2022-23",
+    "duration": "3 Months",
+    "amountSanctioned": "INR 2,50,000",
+    "status": "Completed"
+  },
+  {
     "title": "Profile Website",
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
