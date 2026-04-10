@@ -164,7 +164,7 @@ function createDashboardSectionToggle(title, controlledSections) {
   const button = document.createElement("button");
   button.type = "button";
   button.className = "dashboard-section-toggle-button";
-  button.setAttribute("aria-expanded", "true");
+  button.setAttribute("aria-expanded", "false");
 
   const labelWrap = document.createElement("span");
   labelWrap.className = "dashboard-section-toggle-label";
@@ -173,9 +173,15 @@ function createDashboardSectionToggle(title, controlledSections) {
     createTextElement("strong", "", title)
   );
 
-  const hint = createTextElement("span", "dashboard-section-toggle-hint", "Collapse");
+  const hint = createTextElement("span", "dashboard-section-toggle-hint", "Expand");
   button.append(labelWrap, hint);
   wrapper.append(button);
+
+  controlledSections.forEach((section) => {
+    if (section) {
+      section.hidden = true;
+    }
+  });
 
   button.addEventListener("click", () => {
     const expanded = button.getAttribute("aria-expanded") === "true";
