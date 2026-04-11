@@ -1319,6 +1319,12 @@ dd {
   line-height: 1.72;
 }
 
+.publication-reference em,
+.publication-preview-citation em {
+  color: var(--text);
+  font-style: italic;
+}
+
 .news-meta {
   display: flex;
   flex-wrap: wrap;
