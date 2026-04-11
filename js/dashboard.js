@@ -284,8 +284,17 @@ function setupDashboardCollapsibles() {
     {
       title: "Research",
       key: "research",
-      formId: "publicationForm",
-      previewId: "publicationsPreview"
+      getSections: () => {
+        const selector = document.getElementById("publicationType")?.closest(".dashboard-publication-selector");
+        const section = document.getElementById("publicationForm")?.closest(".dashboard-layout");
+        const preview = document.getElementById("publicationsPreview")?.closest(".dashboard-preview-section");
+        const previewInner = document.getElementById("publicationsPreview");
+        return [
+          selector ? { section: selector } : null,
+          section ? { section } : null,
+          preview ? { section: preview, preview: previewInner } : null
+        ];
+      }
     },
     {
       title: "Projects",
