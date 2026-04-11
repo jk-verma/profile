@@ -681,11 +681,14 @@
         <div class="dashboard-actions">
           <button class="button primary copy-projects-json" type="button">Copy Projects JSON</button>
           <button class="button secondary download-projects-json" type="button">Download projects.json</button>
+          <button id="copyFundedProjectReferences" class="button secondary" type="button">Copy Reference Output</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="fundedProjectsPreview">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p class="dashboard-status project-dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="fundedProjectsJsonOutput" class="json-output dashboard-data-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
+        <label class="dashboard-output-label" for="fundedProjectReferencesOutput">Generated reference output</label>
+        <textarea id="fundedProjectReferencesOutput" class="json-output dashboard-data-output" rows="12" spellcheck="false" aria-label="Generated funded project references"></textarea>
       </article>
     </section>
     <section class="section dashboard-preview-section" data-dashboard-section-key="projects" data-project-workflow="funded" hidden>
@@ -723,49 +726,46 @@
       <form id="siteContentForm" class="dashboard-card" autocomplete="off">
         <div class="section-heading">
           <p class="eyebrow">Create Entry</p>
-          <h2>New website content item</h2>
+          <h2>New voluntary project item</h2>
         </div>
         <p class="dashboard-form-note">
-          Updates <code>data/site-content.json</code>. Use this for future text updates without changing page layout or CSS.
+          Updates <code>data/voluntary-projects.json</code>. Use this for self-initiated websites, GitHub code,
+          programs, and PDF-based knowledge resources.
         </p>
 
         <label>
-          Website Section
+          Voluntary Output Type
           <select id="siteContentSection" name="section" required>
-            <option value="about">About</option>
-            <option value="qualification">Qualification</option>
-            <option value="interests">Interests</option>
-            <option value="skills">Tools &amp; Platforms</option>
-            <option value="research">Research</option>
-            <option value="consulting">Consulting</option>
-            <option value="projects">Projects</option>
-            <option value="affiliations">Affiliations</option>
-            <option value="contact">Contact</option>
+            <option value="github_pages_website">GitHub Pages Website</option>
+            <option value="github_repository">GitHub Code Repository</option>
+            <option value="code_program">Code / Program</option>
+            <option value="pdf_knowledge_resource">PDF Knowledge Resource</option>
+            <option value="other">Other Voluntary Output</option>
           </select>
         </label>
 
         <label>
-          Content Block Key
-          <input id="siteContentKey" name="contentKey" type="text" placeholder="consulting-intro / research-focus-1" required />
+          Project Identifier
+          <input id="siteContentKey" name="contentKey" type="text" placeholder="export-dashboard / python-utility / policy-note-pdf" required />
         </label>
 
         <label>
-          Heading
-          <input id="siteContentHeading" name="heading" type="text" placeholder="Short heading shown on the website" required />
+          Project Title
+          <input id="siteContentHeading" name="heading" type="text" placeholder="Title of the voluntary project or resource" required />
         </label>
 
         <label>
-          Body Text
-          <textarea id="siteContentBody" name="body" rows="6" placeholder="Visitor-facing text for this section." required></textarea>
+          Project Summary
+          <textarea id="siteContentBody" name="body" rows="6" placeholder="Short summary of the website, code, program, or PDF knowledge resource." required></textarea>
         </label>
 
         <div class="dashboard-inline-fields">
           <label>
-            Link Label
-            <input id="siteContentLinkLabel" name="linkLabel" type="text" placeholder="View Details" />
+            Output Label
+            <input id="siteContentLinkLabel" name="linkLabel" type="text" placeholder="Open Website / View Code / Download PDF" />
           </label>
           <label>
-            Link URL
+            Project / Resource Link
             <input id="siteContentLinkUrl" name="linkUrl" type="url" placeholder="https://example.com" />
           </label>
           <label>
@@ -775,7 +775,7 @@
         </div>
 
         <div class="dashboard-actions">
-          <button class="button primary" type="submit">Add to Website Content JSON</button>
+          <button class="button primary" type="submit">Add to Voluntary Projects JSON</button>
           <button id="clearSiteContentDraft" class="button secondary" type="button">Clear Draft</button>
         </div>
       </form>
@@ -783,26 +783,26 @@
       <article class="dashboard-card publish-card">
         <div class="section-heading">
           <p class="eyebrow">Publish</p>
-          <h2>Generated site-content.json</h2>
+          <h2>Generated voluntary-projects.json</h2>
         </div>
         <p>
-          Copy or download this JSON, then replace <code>data/site-content.json</code> in GitHub when you want future
-          editable website content blocks.
+          Copy or download this JSON, then replace <code>data/voluntary-projects.json</code> in GitHub when you want
+          to publish voluntary websites, code, programs, or PDF knowledge resources.
         </p>
         <div class="dashboard-actions">
-          <button id="copySiteContentJson" class="button primary" type="button">Copy Website Content JSON</button>
-          <button id="downloadSiteContentJson" class="button secondary" type="button">Download site-content.json</button>
+          <button id="copySiteContentJson" class="button primary" type="button">Copy Voluntary Projects JSON</button>
+          <button id="downloadSiteContentJson" class="button secondary" type="button">Download voluntary-projects.json</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="siteContentPreview">Show Preview</button>
-          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/site-content.json" target="_blank" rel="noopener">Open GitHub Editor</a>
+          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/voluntary-projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p id="siteContentDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
-        <textarea id="siteContentJsonOutput" class="json-output dashboard-data-output" rows="18" spellcheck="false" aria-label="Generated website content JSON"></textarea>
+        <textarea id="siteContentJsonOutput" class="json-output dashboard-data-output" rows="18" spellcheck="false" aria-label="Generated voluntary projects JSON"></textarea>
       </article>
     </section>
     <section class="section dashboard-preview-section" data-dashboard-section-key="site-content" hidden>
       <div class="section-heading dashboard-preview-heading">
         <p class="eyebrow">Preview</p>
-        <h2>Website Content Preview</h2>
+        <h2>Voluntary Project Preview</h2>
       </div>
       <div id="siteContentPreview" class="dashboard-preview publications-list" hidden></div>
     </section>

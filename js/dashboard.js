@@ -62,6 +62,8 @@ const projectsJsonOutputs = Array.from(document.querySelectorAll(".projects-json
 const projectStatusMessages = Array.from(document.querySelectorAll(".project-dashboard-status"));
 const copyProjectsJsonButtons = Array.from(document.querySelectorAll(".copy-projects-json"));
 const downloadProjectsJsonButtons = Array.from(document.querySelectorAll(".download-projects-json"));
+const fundedProjectReferencesOutput = document.getElementById("fundedProjectReferencesOutput");
+const copyFundedProjectReferences = document.getElementById("copyFundedProjectReferences");
 
 const siteContentForm = document.getElementById("siteContentForm");
 const siteContentSection = document.getElementById("siteContentSection");
@@ -322,11 +324,11 @@ function setupDashboardCollapsibles() {
       previewId: "newsPreview"
     },
     {
-      title: "Website Content",
+      title: "Voluntary Project",
       key: "site-content",
       formId: "siteContentForm",
       previewId: "siteContentPreview",
-      summary: "Future JSON-Based Section Updates"
+      summary: "Websites, Code, Programs, and PDF Knowledge Outputs"
     }
   ];
 
@@ -599,17 +601,63 @@ function renderProjectCard(project) {
   return article;
 }
 
+function formatFundedProjectReference(project, index, total) {
+  const number = total - index;
+  const role = project.role ? ` (${project.role})` : "";
+  const valueLabel = project.projectType === "Consultancy Project" ? "Project Value" : "Amount";
+  const parts = [
+    `J. K. Verma${role}`,
+    project.title ? `"${project.title}"` : "",
+    project.projectType,
+    project.fundingAgency,
+    project.schemeName ? `Scheme: ${project.schemeName}` : "",
+    project.grantNumber ? `Grant No. ${project.grantNumber}` : "",
+    project.duration ? `Duration: ${project.duration}` : "",
+    project.yearOfFunding ? `Year: ${project.yearOfFunding}` : "",
+    project.amountSanctioned ? `${valueLabel}: ${project.amountSanctioned}` : "",
+    project.status ? `Status: ${project.status}` : ""
+  ].filter(Boolean);
+
+  return `[${number}] ${parts.join(", ")}.`;
+}
+
+function renderFundedProjectReference(project, index, projects) {
+  const item = document.createElement("li");
+  item.append(
+    createTextElement("span", "publication-number", `[${projects.length - index}]`),
+    createTextElement("span", "publication-reference", formatFundedProjectReference(project, index, projects.length).replace(/^\[\d+\]\s*/, ""))
+  );
+  return item;
+}
+
 function renderProjectSection(title, projects) {
   const section = document.createElement("section");
   section.className = "publication-group";
 
   const heading = createTextElement("h3", "", title);
+  const allFundedProjects = projects.every((project) => project.entryType === "fundedProject");
+
+  if (allFundedProjects) {
+    const list = document.createElement("ol");
+    list.className = "publication-items project-reference-list";
+    list.append(...projects.map(renderFundedProjectReference));
+    section.append(heading, list);
+    return section;
+  }
+
   const grid = document.createElement("div");
   grid.className = "card-grid three project-grid";
   grid.append(...projects.map(renderProjectCard));
 
   section.append(heading, grid);
   return section;
+}
+
+function fundedProjectReferencesText(projects) {
+  return projects
+    .filter((project) => project.entryType === "fundedProject")
+    .map((project, index, list) => formatFundedProjectReference(project, index, list.length))
+    .join("\n");
 }
 
 function renderProjectsPreview(projects, container) {
@@ -642,18 +690,14 @@ function renderProjectsPreview(projects, container) {
 
 function getSiteContentSectionLabel(sectionKey) {
   const labels = {
-    about: "About",
-    qualification: "Qualification",
-    interests: "Interests",
-    skills: "Tools & Platforms",
-    research: "Research",
-    consulting: "Consulting",
-    projects: "Projects",
-    affiliations: "Affiliations",
-    contact: "Contact"
+    github_pages_website: "GitHub Pages Website",
+    github_repository: "GitHub Code Repository",
+    code_program: "Code / Program",
+    pdf_knowledge_resource: "PDF Knowledge Resource",
+    other: "Other Voluntary Output"
   };
 
-  return labels[sectionKey] || sectionKey || "Website";
+  return labels[sectionKey] || sectionKey || "Voluntary Project";
 }
 
 function renderSiteContentCard(item) {
@@ -666,7 +710,7 @@ function renderSiteContentCard(item) {
     item.displayOrder ? `Order ${item.displayOrder}` : ""
   ], " | ");
 
-  article.append(createTextElement("p", "eyebrow", meta || "Website Content"));
+  article.append(createTextElement("p", "eyebrow", meta || "Voluntary Project"));
   article.append(createTextElement("h3", "", item.heading || "Untitled content item"));
 
   if (item.body) {
@@ -693,8 +737,8 @@ function renderSiteContentPreview(items, container) {
     const empty = document.createElement("article");
     empty.className = "panel";
     empty.append(
-      createTextElement("h3", "", "Website content entries will appear here"),
-      createTextElement("p", "", "Add an entry to preview future JSON-managed section content.")
+      createTextElement("h3", "", "Voluntary project entries will appear here"),
+      createTextElement("p", "", "Add an entry to preview voluntary websites, code, programs, or PDF knowledge outputs.")
     );
     container.replaceChildren(empty);
     return;
@@ -755,6 +799,9 @@ function syncProjectsOutput() {
   projectsJsonOutputs.forEach((element) => {
     element.value = value;
   });
+  if (fundedProjectReferencesOutput) {
+    fundedProjectReferencesOutput.value = fundedProjectReferencesText(projectItems);
+  }
   renderProjectsPreview(
     projectItems.filter((item) => item.entryType !== "fundedProject"),
     websiteProjectsPreview
@@ -824,13 +871,13 @@ async function loadProjects() {
 
 async function loadSiteContent() {
   try {
-    const response = await fetch("data/site-content.json", { cache: "no-store" });
-    if (!response.ok) throw new Error("Unable to load data/site-content.json");
+    const response = await fetch("data/voluntary-projects.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Unable to load data/voluntary-projects.json");
     siteContentItems = await response.json();
-    setSiteContentStatus("Loaded existing data/site-content.json. Add a new website content entry when ready.");
+    setSiteContentStatus("Loaded existing data/voluntary-projects.json. Add a voluntary project entry when ready.");
   } catch (error) {
     siteContentItems = [];
-    setSiteContentStatus("Could not load data/site-content.json. You can still create a new list here.");
+    setSiteContentStatus("Could not load data/voluntary-projects.json. You can still create a new list here.");
   }
 
   syncSiteContentOutput();
@@ -1032,7 +1079,7 @@ siteContentForm?.addEventListener("submit", (event) => {
   siteContentLinkUrl.value = "";
   siteContentOrder.value = "";
   syncSiteContentOutput();
-  setSiteContentStatus("Website content entry added to JSON. Copy or download site-content.json to publish it.");
+  setSiteContentStatus("Voluntary project entry added to JSON. Copy or download voluntary-projects.json to publish it.");
 });
 
 clearDraft?.addEventListener("click", () => {
@@ -1085,14 +1132,14 @@ clearFundedProjectDraft?.addEventListener("click", () => {
 });
 
 clearSiteContentDraft?.addEventListener("click", () => {
-  siteContentSection.value = "about";
+  siteContentSection.value = "github_pages_website";
   siteContentKey.value = "";
   siteContentHeading.value = "";
   siteContentBody.value = "";
   siteContentLinkLabel.value = "";
   siteContentLinkUrl.value = "";
   siteContentOrder.value = "";
-  setSiteContentStatus("Website content draft cleared.");
+  setSiteContentStatus("Voluntary project draft cleared.");
 });
 
 projectEntryMode?.addEventListener("change", () => {
@@ -1141,11 +1188,23 @@ copyProjectsJsonButtons.forEach((button, index) => {
   });
 });
 
+copyFundedProjectReferences?.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(fundedProjectReferencesOutput?.value || "");
+    setProjectStatus("Copied funded project reference output.");
+    showToast("project references copied");
+  } catch (error) {
+    fundedProjectReferencesOutput?.focus();
+    fundedProjectReferencesOutput?.select();
+    setProjectStatus("Select and copy the reference output manually from the box.");
+  }
+});
+
 copySiteContentJson?.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(siteContentJsonOutput.value);
-    setSiteContentStatus("Copied JSON. Paste it into data/site-content.json in the GitHub editor.");
-    showToast("site-content.json copied");
+    setSiteContentStatus("Copied JSON. Paste it into data/voluntary-projects.json in the GitHub editor.");
+    showToast("voluntary-projects.json copied");
   } catch (error) {
     siteContentJsonOutput.focus();
     siteContentJsonOutput.select();
@@ -1189,8 +1248,8 @@ downloadProjectsJsonButtons.forEach((button, index) => {
 });
 
 downloadSiteContentJson?.addEventListener("click", () => {
-  downloadJsonFile("site-content.json", siteContentJsonOutput.value, () => {
-    setSiteContentStatus("Downloaded site-content.json. Upload or paste it into GitHub to publish at data/site-content.json.");
+  downloadJsonFile("voluntary-projects.json", siteContentJsonOutput.value, () => {
+    setSiteContentStatus("Downloaded voluntary-projects.json. Upload or paste it into GitHub to publish at data/voluntary-projects.json.");
   });
 });
 
