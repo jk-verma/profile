@@ -1636,8 +1636,21 @@ dd {
 
 .dashboard-layout[hidden],
 .dashboard-preview-section[hidden],
+.dashboard-project-selector[hidden],
 #projectModesReference[hidden] {
   display: none !important;
+}
+
+.dashboard-project-selector {
+  padding-top: 0;
+}
+
+.dashboard-project-selector .dashboard-card {
+  max-width: 720px;
+}
+
+.dashboard-preview-heading {
+  margin-bottom: 18px;
 }
 
 .dashboard-preview-section {

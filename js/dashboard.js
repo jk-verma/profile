@@ -54,6 +54,7 @@ const clearFundedProjectDraft = document.getElementById("clearFundedProjectDraft
 const dashboardProjectModesBody = document.getElementById("dashboardProjectModesBody");
 const websiteProjectsPreview = document.getElementById("websiteProjectsPreview");
 const fundedProjectsPreview = document.getElementById("fundedProjectsPreview");
+const projectEntryMode = document.getElementById("projectEntryMode");
 
 const projectsJsonOutputs = Array.from(document.querySelectorAll(".projects-json-output"));
 const projectStatusMessages = Array.from(document.querySelectorAll(".project-dashboard-status"));
@@ -157,9 +158,10 @@ function showToast(message) {
   }, 2200);
 }
 
-function createDashboardSectionToggle(title, getSections) {
+function createDashboardSectionToggle(title, getSections, options = {}) {
   const wrapper = document.createElement("section");
   wrapper.className = "section dashboard-section-toggle";
+  wrapper.dataset.dashboardToggleFor = options.key || title.toLowerCase().replace(/\s+/g, "-");
 
   const button = document.createElement("button");
   button.type = "button";
@@ -169,8 +171,8 @@ function createDashboardSectionToggle(title, getSections) {
   const labelWrap = document.createElement("span");
   labelWrap.className = "dashboard-section-toggle-label";
   labelWrap.append(
-    createTextElement("span", "eyebrow", "Dashboard Section"),
-    createTextElement("strong", "", title)
+    createTextElement("span", "eyebrow", `${title} Section`),
+    createTextElement("strong", "", options.summary || "Create Entry, Publish, and Preview")
   );
 
   const hint = createTextElement("span", "dashboard-section-toggle-hint", "Expand");
@@ -206,42 +208,83 @@ function createDashboardSectionToggle(title, getSections) {
     button.setAttribute("aria-expanded", String(!expanded));
     hint.textContent = expanded ? "Expand" : "Collapse";
     setSectionVisibility(!expanded);
+    if (!expanded && typeof options.onExpand === "function") {
+      options.onExpand();
+    }
   });
 
   return wrapper;
 }
 
+function moveDashboardSection(key, parentNode) {
+  const nodes = Array.from(document.querySelectorAll(`[data-dashboard-section-key="${key}"]`));
+  const toggle = document.querySelector(`[data-dashboard-toggle-for="${key}"]`);
+  const orderedNodes = [toggle, ...nodes].filter(Boolean);
+
+  orderedNodes.forEach((node) => {
+    parentNode.appendChild(node);
+  });
+}
+
+function orderDashboardSections() {
+  const main = document.getElementById("main");
+  if (!main) return;
+
+  ["research", "projects", "news"].forEach((key) => {
+    moveDashboardSection(key, main);
+  });
+}
+
+function syncProjectEntryMode() {
+  const activeMode = projectEntryMode?.value || "website";
+  const projectExpanded = document
+    .querySelector('[data-dashboard-toggle-for="projects"] .dashboard-section-toggle-button')
+    ?.getAttribute("aria-expanded") === "true";
+
+  document.querySelectorAll("[data-project-workflow]").forEach((section) => {
+    const matches = section.dataset.projectWorkflow === activeMode;
+    section.hidden = !projectExpanded || !matches;
+  });
+}
+
 function setupDashboardCollapsibles() {
   const sections = [
     {
-      title: "Latest News",
-      formId: "newsForm",
-      previewId: "newsPreview"
-    },
-    {
-      title: "Publications",
+      title: "Research",
+      key: "research",
       formId: "publicationForm",
       previewId: "publicationsPreview"
     },
     {
-      title: "Website and Utility Projects",
-      formId: "websiteProjectForm",
-      previewId: "websiteProjectsPreview"
+      title: "Projects",
+      key: "projects",
+      onExpand: syncProjectEntryMode,
+      getSections: () => {
+        const selector = document.getElementById("projectEntryMode")?.closest(".dashboard-project-selector");
+        const mode = projectEntryMode?.value || "website";
+        const activeLayout = document.querySelector(`.dashboard-layout[data-project-workflow="${mode}"]`);
+        const activePreview = document.querySelector(`.dashboard-preview-section[data-project-workflow="${mode}"]`);
+        const previewInner = activePreview?.querySelector(".dashboard-preview");
+        const modes = document.getElementById("projectModesReference");
+        return [
+          selector ? { section: selector } : null,
+          activeLayout ? { section: activeLayout } : null,
+          activePreview ? { section: activePreview, preview: previewInner } : null,
+          modes ? { section: modes } : null
+        ];
+      }
     },
     {
-      title: "Funded Projects",
-      formId: "fundedProjectForm",
-      previewId: "fundedProjectsPreview"
-    },
-    {
-      title: "Project and Funding Modes",
-      sectionId: "projectModesReference"
+      title: "Latest News",
+      key: "news",
+      formId: "newsForm",
+      previewId: "newsPreview"
     }
   ];
 
-  sections.forEach(({ title, formId, previewId, sectionId }) => {
-    const anchor = sectionId
-      ? document.getElementById(sectionId)
+  sections.forEach(({ title, key, formId, previewId, getSections, onExpand }) => {
+    const anchor = getSections
+      ? getSections().find(Boolean)?.section
       : document.getElementById(formId)?.closest(".dashboard-layout");
 
     if (!anchor || anchor.previousElementSibling?.classList.contains("dashboard-section-toggle")) {
@@ -249,17 +292,19 @@ function setupDashboardCollapsibles() {
     }
 
     anchor.before(createDashboardSectionToggle(title, () => {
-      const section = sectionId
-        ? document.getElementById(sectionId)
-        : document.getElementById(formId)?.closest(".dashboard-layout");
+      if (getSections) return getSections();
+      const section = document.getElementById(formId)?.closest(".dashboard-layout");
       const preview = previewId ? document.getElementById(previewId)?.closest(".dashboard-preview-section") : null;
       const previewInner = previewId ? document.getElementById(previewId) : null;
       return [
         section ? { section } : null,
         preview ? { section: preview, preview: previewInner } : null
       ];
-    }));
+    }, { key, onExpand }));
   });
+
+  orderDashboardSections();
+  syncProjectEntryMode();
 }
 
 function parseIndexing(value) {
@@ -850,6 +895,11 @@ clearFundedProjectDraft?.addEventListener("click", () => {
   fundedProjectAmount.value = "";
   fundedProjectStatus.value = "Ongoing";
   setProjectStatus("Funded project draft cleared.");
+});
+
+projectEntryMode?.addEventListener("change", () => {
+  syncProjectEntryMode();
+  setProjectStatus(`Showing ${projectEntryMode.value === "funded" ? "funded project" : "website and utility project"} cards.`);
 });
 
 copyJson?.addEventListener("click", async () => {
