@@ -50,27 +50,55 @@
     {
         "type":  "edited_book",
         "title":  "CloudIoT: Concepts, Paradigms, and Applications",
-        "year":  "2023",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
         "editors":  [
                         {
-                            "name":  "Jitendra Kumar Verma, Deepak Saxena, Vicente Gonzalez-Prida, and Vira Shendryk, Eds.",
+                            "name":  "Jitendra Kumar Verma",
+                            "affiliation":  "Indian Institute of Foreign Trade",
+                            "is_me":  true,
+                            "corresponding":  true,
+                            "orcid":  "0000-0003-4103-4218",
+                            "equal_contribution":  false
+                        },
+                        {
+                            "name":  "Deepak Saxena",
+                            "affiliation":  "IIT Jodhpur",
+                            "is_me":  false,
+                            "corresponding":  false,
+                            "orcid":  "0000-0002-9331-3799",
+                            "equal_contribution":  true
+                        },
+                        {
+                            "name":  "Vicente González-Prida Díaz",
                             "affiliation":  "",
                             "is_me":  false,
                             "corresponding":  false,
                             "orcid":  "",
-                            "equal_contribution":  false
+                            "equal_contribution":  true
+                        },
+                        {
+                            "name":  "Vira Shendryk",
+                            "affiliation":  "",
+                            "is_me":  false,
+                            "corresponding":  false,
+                            "orcid":  "",
+                            "equal_contribution":  true
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus"
-                       ],
+        "year":  "2022",
+        "month":  "Dec",
+        "status":  "Published",
+        "doi":  "https://doi.org/10.1201/9781003155577",
+        "url":  "https://www.taylorfrancis.com/books/edit/10.1201/9781003155577/cloud-iot-jitendra-kumar-verma-deepak-kumar-saxena-vicente-gonz%C3%A1lez-prida-d%C3%ADaz-vira-shendryk",
+        "language":  "English",
+        "featured":  false,
+        "highlight":  false,
+        "is_forthcoming":  false,
         "details":  {
-                        "publisher":  "London, United Kingdom: Chapman and Hall/CRC (Taylor \u0026 Francis Group)"
+                        "edition":  "1st",
+                        "place_of_publication":  "New York",
+                        "total_pages":  "286",
+                        "publisher":  "Taylor \u0026 Francis Group",
+                        "isbn":  "9781003155577"
                     }
     },
     {
