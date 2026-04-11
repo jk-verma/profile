@@ -1149,6 +1149,10 @@ dd {
   margin-top: auto;
 }
 
+.project-reference-list .publication-reference {
+  line-height: 1.75;
+}
+
 .project-table-panel {
   margin-top: 18px;
 }

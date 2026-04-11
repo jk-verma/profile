@@ -45,7 +45,9 @@ const fundedProjectForm = document.getElementById("fundedProjectForm");
 const fundedProjectType = document.getElementById("fundedProjectType");
 const fundedProjectAgency = document.getElementById("fundedProjectAgency");
 const fundedProjectScheme = document.getElementById("fundedProjectScheme");
+const fundedProjectRole = document.getElementById("fundedProjectRole");
 const fundedProjectTitle = document.getElementById("fundedProjectTitle");
+const fundedProjectGrantNumber = document.getElementById("fundedProjectGrantNumber");
 const fundedProjectYears = document.getElementById("fundedProjectYears");
 const fundedProjectDuration = document.getElementById("fundedProjectDuration");
 const fundedProjectAmount = document.getElementById("fundedProjectAmount");
@@ -194,6 +196,13 @@ function createDashboardSectionToggle(title, getSections, options = {}) {
     });
   };
 
+  const collapseOtherSections = () => {
+    document.querySelectorAll(".dashboard-section-toggle-button").forEach((otherButton) => {
+      if (otherButton === button || otherButton.getAttribute("aria-expanded") !== "true") return;
+      otherButton.click();
+    });
+  };
+
   getControlledSections().forEach(({ section, preview }) => {
     if (section) {
       section.hidden = true;
@@ -205,6 +214,9 @@ function createDashboardSectionToggle(title, getSections, options = {}) {
 
   button.addEventListener("click", () => {
     const expanded = button.getAttribute("aria-expanded") === "true";
+    if (!expanded) {
+      collapseOtherSections();
+    }
     button.setAttribute("aria-expanded", String(!expanded));
     hint.textContent = expanded ? "Expand" : "Collapse";
     setSectionVisibility(!expanded);
@@ -825,6 +837,8 @@ fundedProjectForm?.addEventListener("submit", (event) => {
     projectType: fundedProjectType.value,
     fundingAgency: fundedProjectAgency.value.trim(),
     schemeName: fundedProjectScheme.value.trim(),
+    role: fundedProjectRole.value.trim(),
+    grantNumber: fundedProjectGrantNumber.value.trim(),
     yearOfFunding: fundedProjectYears.value.trim(),
     duration: fundedProjectDuration.value.trim(),
     amountSanctioned: fundedProjectAmount.value.trim(),
@@ -841,7 +855,9 @@ fundedProjectForm?.addEventListener("submit", (event) => {
   fundedProjectType.value = "Consultancy Project";
   fundedProjectAgency.value = "";
   fundedProjectScheme.value = "";
+  fundedProjectRole.value = "";
   fundedProjectTitle.value = "";
+  fundedProjectGrantNumber.value = "";
   fundedProjectYears.value = "";
   fundedProjectDuration.value = "";
   fundedProjectAmount.value = "";
@@ -889,7 +905,9 @@ clearFundedProjectDraft?.addEventListener("click", () => {
   fundedProjectType.value = "Consultancy Project";
   fundedProjectAgency.value = "";
   fundedProjectScheme.value = "";
+  fundedProjectRole.value = "";
   fundedProjectTitle.value = "";
+  fundedProjectGrantNumber.value = "";
   fundedProjectYears.value = "";
   fundedProjectDuration.value = "";
   fundedProjectAmount.value = "";
