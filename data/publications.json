@@ -25,7 +25,7 @@
                     }
     },
     {
-        "type":  "book",
+        "type":  "edited_book",
         "title":  "Federated Blockchain—Trends and Challenges",
         "year":  "2026",
         "status":  "Forthcoming",
@@ -33,7 +33,10 @@
         "featured":  false,
         "highlight":  false,
         "is_forthcoming":  true,
-        "authors":  [
+        "details":  {
+                        "publisher":  "Benthem Science"
+                    },
+        "editors":  [
                         {
                             "name":  "D. P. Sharma, A. K. Yadav, J. K. Verma and P. K. Shrivastava",
                             "affiliation":  "",
@@ -42,10 +45,7 @@
                             "orcid":  "",
                             "equal_contribution":  false
                         }
-                    ],
-        "details":  {
-                        "publisher":  "Benthem Science"
-                    }
+                    ]
     },
     {
         "type":  "edited_book",
