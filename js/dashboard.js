@@ -63,12 +63,28 @@ const projectStatusMessages = Array.from(document.querySelectorAll(".project-das
 const copyProjectsJsonButtons = Array.from(document.querySelectorAll(".copy-projects-json"));
 const downloadProjectsJsonButtons = Array.from(document.querySelectorAll(".download-projects-json"));
 
+const siteContentForm = document.getElementById("siteContentForm");
+const siteContentSection = document.getElementById("siteContentSection");
+const siteContentKey = document.getElementById("siteContentKey");
+const siteContentHeading = document.getElementById("siteContentHeading");
+const siteContentBody = document.getElementById("siteContentBody");
+const siteContentLinkLabel = document.getElementById("siteContentLinkLabel");
+const siteContentLinkUrl = document.getElementById("siteContentLinkUrl");
+const siteContentOrder = document.getElementById("siteContentOrder");
+const clearSiteContentDraft = document.getElementById("clearSiteContentDraft");
+const siteContentJsonOutput = document.getElementById("siteContentJsonOutput");
+const siteContentPreview = document.getElementById("siteContentPreview");
+const siteContentStatusMessage = document.getElementById("siteContentDashboardStatus");
+const copySiteContentJson = document.getElementById("copySiteContentJson");
+const downloadSiteContentJson = document.getElementById("downloadSiteContentJson");
+
 const menuToggle = document.getElementById("menuToggle");
 const primaryNav = document.getElementById("primaryNav");
 
 let newsItems = [];
 let publicationItems = [];
 let projectItems = [];
+let siteContentItems = [];
 let activeToastTimeout = null;
 
 const publicationTypes = [
@@ -135,6 +151,10 @@ function setProjectStatus(message) {
   projectStatusMessages.forEach((element) => {
     element.textContent = message;
   });
+}
+
+function setSiteContentStatus(message) {
+  if (siteContentStatusMessage) siteContentStatusMessage.textContent = message;
 }
 
 function showToast(message) {
@@ -242,7 +262,7 @@ function orderDashboardSections() {
   const main = document.getElementById("main");
   if (!main) return;
 
-  ["research", "projects", "news"].forEach((key) => {
+  ["research", "projects", "news", "site-content"].forEach((key) => {
     moveDashboardSection(key, main);
   });
 }
@@ -291,10 +311,17 @@ function setupDashboardCollapsibles() {
       key: "news",
       formId: "newsForm",
       previewId: "newsPreview"
+    },
+    {
+      title: "Website Content",
+      key: "site-content",
+      formId: "siteContentForm",
+      previewId: "siteContentPreview",
+      summary: "Future JSON-Based Section Updates"
     }
   ];
 
-  sections.forEach(({ title, key, formId, previewId, getSections, onExpand }) => {
+  sections.forEach(({ title, key, formId, previewId, getSections, onExpand, summary }) => {
     const anchor = getSections
       ? getSections().find(Boolean)?.section
       : document.getElementById(formId)?.closest(".dashboard-layout");
@@ -312,7 +339,7 @@ function setupDashboardCollapsibles() {
         section ? { section } : null,
         preview ? { section: preview, preview: previewInner } : null
       ];
-    }, { key, onExpand }));
+    }, { key, onExpand, summary }));
   });
 
   orderDashboardSections();
@@ -604,6 +631,88 @@ function renderProjectsPreview(projects, container) {
   );
 }
 
+function getSiteContentSectionLabel(sectionKey) {
+  const labels = {
+    about: "About",
+    qualification: "Qualification",
+    interests: "Interests",
+    skills: "Tools & Platforms",
+    research: "Research",
+    consulting: "Consulting",
+    projects: "Projects",
+    affiliations: "Affiliations",
+    contact: "Contact"
+  };
+
+  return labels[sectionKey] || sectionKey || "Website";
+}
+
+function renderSiteContentCard(item) {
+  const article = document.createElement("article");
+  article.className = "card";
+
+  const meta = compactParts([
+    getSiteContentSectionLabel(item.section),
+    item.contentKey,
+    item.displayOrder ? `Order ${item.displayOrder}` : ""
+  ], " | ");
+
+  article.append(createTextElement("p", "eyebrow", meta || "Website Content"));
+  article.append(createTextElement("h3", "", item.heading || "Untitled content item"));
+
+  if (item.body) {
+    article.append(createTextElement("p", "", item.body));
+  }
+
+  if (item.linkUrl) {
+    const link = document.createElement("a");
+    link.className = "button secondary project-link";
+    link.href = item.linkUrl;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = item.linkLabel || "Open Link";
+    article.append(link);
+  }
+
+  return article;
+}
+
+function renderSiteContentPreview(items, container) {
+  if (!container) return;
+
+  if (!items.length) {
+    const empty = document.createElement("article");
+    empty.className = "panel";
+    empty.append(
+      createTextElement("h3", "", "Website content entries will appear here"),
+      createTextElement("p", "", "Add an entry to preview future JSON-managed section content.")
+    );
+    container.replaceChildren(empty);
+    return;
+  }
+
+  const groupedItems = new Map();
+  items.forEach((item) => {
+    const sectionName = getSiteContentSectionLabel(item.section);
+    if (!groupedItems.has(sectionName)) {
+      groupedItems.set(sectionName, []);
+    }
+    groupedItems.get(sectionName).push(item);
+  });
+
+  const sections = Array.from(groupedItems.entries()).map(([title, groupItems]) => {
+    const section = document.createElement("section");
+    section.className = "publication-group";
+    const grid = document.createElement("div");
+    grid.className = "card-grid three";
+    grid.append(...groupItems.map(renderSiteContentCard));
+    section.append(createTextElement("h3", "", title), grid);
+    return section;
+  });
+
+  container.replaceChildren(...sections);
+}
+
 function renderProjectModeRow(mode) {
   const row = document.createElement("tr");
   row.append(
@@ -645,6 +754,13 @@ function syncProjectsOutput() {
     projectItems.filter((item) => item.entryType === "fundedProject"),
     fundedProjectsPreview
   );
+}
+
+function syncSiteContentOutput() {
+  if (siteContentJsonOutput) {
+    siteContentJsonOutput.value = JSON.stringify(siteContentItems, null, 2);
+  }
+  renderSiteContentPreview(siteContentItems, siteContentPreview);
 }
 
 async function loadNews() {
@@ -695,6 +811,20 @@ async function loadProjects() {
   }
 
   syncProjectsOutput();
+}
+
+async function loadSiteContent() {
+  try {
+    const response = await fetch("data/site-content.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Unable to load data/site-content.json");
+    siteContentItems = await response.json();
+    setSiteContentStatus("Loaded existing data/site-content.json. Add a new website content entry when ready.");
+  } catch (error) {
+    siteContentItems = [];
+    setSiteContentStatus("Could not load data/site-content.json. You can still create a new list here.");
+  }
+
+  syncSiteContentOutput();
 }
 
 async function loadProjectModesReference() {
@@ -866,6 +996,36 @@ fundedProjectForm?.addEventListener("submit", (event) => {
   setProjectStatus("Funded project added to JSON. Copy or download projects.json to publish it.");
 });
 
+siteContentForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const item = {
+    section: siteContentSection.value,
+    contentKey: siteContentKey.value.trim(),
+    heading: siteContentHeading.value.trim(),
+    body: siteContentBody.value.trim(),
+    linkLabel: siteContentLinkLabel.value.trim(),
+    linkUrl: siteContentLinkUrl.value.trim(),
+    displayOrder: siteContentOrder.value ? Number(siteContentOrder.value) : ""
+  };
+
+  Object.keys(item).forEach((key) => {
+    if (item[key] === "" || Number.isNaN(item[key])) {
+      delete item[key];
+    }
+  });
+
+  siteContentItems = [item, ...siteContentItems];
+  siteContentKey.value = "";
+  siteContentHeading.value = "";
+  siteContentBody.value = "";
+  siteContentLinkLabel.value = "";
+  siteContentLinkUrl.value = "";
+  siteContentOrder.value = "";
+  syncSiteContentOutput();
+  setSiteContentStatus("Website content entry added to JSON. Copy or download site-content.json to publish it.");
+});
+
 clearDraft?.addEventListener("click", () => {
   newsTitle.value = "";
   newsDeadline.value = "";
@@ -915,6 +1075,17 @@ clearFundedProjectDraft?.addEventListener("click", () => {
   setProjectStatus("Funded project draft cleared.");
 });
 
+clearSiteContentDraft?.addEventListener("click", () => {
+  siteContentSection.value = "about";
+  siteContentKey.value = "";
+  siteContentHeading.value = "";
+  siteContentBody.value = "";
+  siteContentLinkLabel.value = "";
+  siteContentLinkUrl.value = "";
+  siteContentOrder.value = "";
+  setSiteContentStatus("Website content draft cleared.");
+});
+
 projectEntryMode?.addEventListener("change", () => {
   syncProjectEntryMode();
   setProjectStatus(`Showing ${projectEntryMode.value === "funded" ? "funded project" : "website and utility project"} cards.`);
@@ -961,6 +1132,18 @@ copyProjectsJsonButtons.forEach((button, index) => {
   });
 });
 
+copySiteContentJson?.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(siteContentJsonOutput.value);
+    setSiteContentStatus("Copied JSON. Paste it into data/site-content.json in the GitHub editor.");
+    showToast("site-content.json copied");
+  } catch (error) {
+    siteContentJsonOutput.focus();
+    siteContentJsonOutput.select();
+    setSiteContentStatus("Select and copy the JSON manually from the box.");
+  }
+});
+
 function downloadJsonFile(filename, value, callback) {
   const blob = new Blob([value], { type: "application/json" });
   const url = URL.createObjectURL(blob);
@@ -996,9 +1179,16 @@ downloadProjectsJsonButtons.forEach((button, index) => {
   });
 });
 
+downloadSiteContentJson?.addEventListener("click", () => {
+  downloadJsonFile("site-content.json", siteContentJsonOutput.value, () => {
+    setSiteContentStatus("Downloaded site-content.json. Upload or paste it into GitHub to publish at data/site-content.json.");
+  });
+});
+
 updateCurrentYear();
 window.setTimeout(setupDashboardCollapsibles, 0);
 loadNews();
 loadPublications();
 loadProjects();
+loadSiteContent();
 loadProjectModesReference();
