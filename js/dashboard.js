@@ -157,7 +157,7 @@ function showToast(message) {
   }, 2200);
 }
 
-function createDashboardSectionToggle(title, controlledSections) {
+function createDashboardSectionToggle(title, getSections) {
   const wrapper = document.createElement("section");
   wrapper.className = "section dashboard-section-toggle";
 
@@ -177,21 +177,35 @@ function createDashboardSectionToggle(title, controlledSections) {
   button.append(labelWrap, hint);
   wrapper.append(button);
 
-  controlledSections.forEach((section) => {
+  const getControlledSections = () => getSections().filter(Boolean);
+  const setSectionVisibility = (expanded) => {
+    getControlledSections().forEach(({ section, preview }) => {
+      section.hidden = !expanded;
+      if (preview) {
+        preview.hidden = !expanded;
+        const previewButton = document.querySelector(`[aria-controls="${preview.id}"]`);
+        if (previewButton) {
+          previewButton.textContent = expanded ? "Hide Preview" : "Show Preview";
+          previewButton.setAttribute("aria-expanded", String(expanded));
+        }
+      }
+    });
+  };
+
+  getControlledSections().forEach(({ section, preview }) => {
     if (section) {
       section.hidden = true;
+    }
+    if (preview) {
+      preview.hidden = true;
     }
   });
 
   button.addEventListener("click", () => {
     const expanded = button.getAttribute("aria-expanded") === "true";
-    controlledSections.forEach((section) => {
-      if (section) {
-        section.hidden = expanded;
-      }
-    });
     button.setAttribute("aria-expanded", String(!expanded));
     hint.textContent = expanded ? "Expand" : "Collapse";
+    setSectionVisibility(!expanded);
   });
 
   return wrapper;
@@ -201,36 +215,50 @@ function setupDashboardCollapsibles() {
   const sections = [
     {
       title: "Latest News",
-      anchor: newsForm?.closest(".dashboard-layout"),
-      preview: newsPreview?.closest(".dashboard-preview-section")
+      formId: "newsForm",
+      previewId: "newsPreview"
     },
     {
       title: "Publications",
-      anchor: publicationForm?.closest(".dashboard-layout"),
-      preview: publicationsPreview?.closest(".dashboard-preview-section")
+      formId: "publicationForm",
+      previewId: "publicationsPreview"
     },
     {
       title: "Website and Utility Projects",
-      anchor: websiteProjectForm?.closest(".dashboard-layout"),
-      preview: websiteProjectsPreview?.closest(".dashboard-preview-section")
+      formId: "websiteProjectForm",
+      previewId: "websiteProjectsPreview"
     },
     {
       title: "Funded Projects",
-      anchor: fundedProjectForm?.closest(".dashboard-layout"),
-      preview: fundedProjectsPreview?.closest(".dashboard-preview-section")
+      formId: "fundedProjectForm",
+      previewId: "fundedProjectsPreview"
     },
     {
       title: "Project and Funding Modes",
-      anchor: document.getElementById("projectModesReference")
+      sectionId: "projectModesReference"
     }
   ];
 
-  sections.forEach(({ title, anchor, preview }) => {
+  sections.forEach(({ title, formId, previewId, sectionId }) => {
+    const anchor = sectionId
+      ? document.getElementById(sectionId)
+      : document.getElementById(formId)?.closest(".dashboard-layout");
+
     if (!anchor || anchor.previousElementSibling?.classList.contains("dashboard-section-toggle")) {
       return;
     }
 
-    anchor.before(createDashboardSectionToggle(title, [anchor, preview].filter(Boolean)));
+    anchor.before(createDashboardSectionToggle(title, () => {
+      const section = sectionId
+        ? document.getElementById(sectionId)
+        : document.getElementById(formId)?.closest(".dashboard-layout");
+      const preview = previewId ? document.getElementById(previewId)?.closest(".dashboard-preview-section") : null;
+      const previewInner = previewId ? document.getElementById(previewId) : null;
+      return [
+        section ? { section } : null,
+        preview ? { section: preview, preview: previewInner } : null
+      ];
+    }));
   });
 }
 
@@ -901,7 +929,7 @@ downloadProjectsJsonButtons.forEach((button, index) => {
 });
 
 updateCurrentYear();
-setupDashboardCollapsibles();
+window.setTimeout(setupDashboardCollapsibles, 0);
 loadNews();
 loadPublications();
 loadProjects();
