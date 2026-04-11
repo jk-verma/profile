@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Dashboard for updating news, publications, and projects on the profile website of Dr. Jitendra Kumar Verma." />
   <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="css/styles.css?v=20260411-7" />
+  <link rel="stylesheet" href="css/styles.css?v=20260411-8" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -502,11 +502,14 @@
         <div class="dashboard-actions">
           <button id="copyPublicationsJson" class="button primary" type="button">Copy Publications JSON</button>
           <button id="downloadPublicationsJson" class="button secondary" type="button">Download publications.json</button>
+          <button id="copyPublicationReferences" class="button secondary" type="button">Copy IEEE References</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="publicationsPreview">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/publications.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p id="publicationDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="publicationsJsonOutput" class="json-output dashboard-data-output" rows="18" spellcheck="false" aria-label="Generated publications JSON"></textarea>
+        <label class="dashboard-output-label" for="publicationReferencesOutput">Generated IEEE reference output</label>
+        <textarea id="publicationReferencesOutput" class="json-output dashboard-data-output" rows="12" spellcheck="false" aria-label="Generated IEEE references"></textarea>
       </article>
     </section>
     <section class="section dashboard-preview-section" data-dashboard-section-key="research" hidden>
@@ -812,7 +815,7 @@
 
   <script src="js/dashboard-access.js?v=20260411-2"></script>
   <script src="js/dashboard.js?v=20260411-9"></script>
-  <script src="js/dashboard-publications.js?v=20260411-8"></script>
+  <script src="js/dashboard-publications.js?v=20260411-9"></script>
 </body>
 </html>
 

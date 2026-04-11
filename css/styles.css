@@ -1505,11 +1505,19 @@ dd {
 }
 
 .publish-card {
-  grid-template-rows: auto auto auto auto minmax(320px, 1fr);
+  grid-template-rows: auto auto auto auto minmax(260px, 0.9fr) auto minmax(220px, 0.7fr);
 }
 
 .publish-card > :not(.json-output) {
   align-self: start;
+}
+
+.dashboard-output-label {
+  color: var(--accent-2);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .dashboard-inline-fields {
@@ -1582,6 +1590,10 @@ dd {
   min-height: 320px;
   height: 100%;
   align-self: stretch;
+}
+
+#publicationReferencesOutput {
+  min-height: 220px;
 }
 
 .site-footer {
