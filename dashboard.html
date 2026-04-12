@@ -503,7 +503,6 @@
           <button id="copyPublicationsJson" class="button primary" type="button">Copy Publications JSON</button>
           <button id="downloadPublicationsJson" class="button secondary" type="button">Download publications.json</button>
           <button id="copyPublicationEntryJson" class="button secondary" type="button">Copy Single Entry JSON</button>
-          <button id="copyPublicationReferences" class="button secondary" type="button">Copy References</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="publicationsPreview">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/publications.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
@@ -511,8 +510,6 @@
         <textarea id="publicationsJsonOutput" class="json-output dashboard-data-output" rows="18" spellcheck="false" aria-label="Generated publications JSON"></textarea>
         <label class="dashboard-output-label" for="publicationEntryJsonOutput">Single publication JSON entry</label>
         <textarea id="publicationEntryJsonOutput" class="json-output dashboard-data-output" rows="10" spellcheck="false" aria-label="Single publication JSON entry"></textarea>
-        <label class="dashboard-output-label" for="publicationReferencesOutput">Generated reference output</label>
-        <textarea id="publicationReferencesOutput" class="json-output dashboard-data-output" rows="12" spellcheck="false" aria-label="Generated IEEE references"></textarea>
       </article>
     </section>
     <section class="section dashboard-preview-section" data-dashboard-section-key="research" hidden>
@@ -583,11 +580,14 @@
         <div class="dashboard-actions">
           <button class="button primary copy-projects-json" type="button">Copy Projects JSON</button>
           <button class="button secondary download-projects-json" type="button">Download projects.json</button>
+          <button id="copyWebsiteProjectEntryJson" class="button secondary" type="button">Copy Single Entry JSON</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="websiteProjectsPreview">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p class="dashboard-status project-dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="websiteProjectsJsonOutput" class="json-output dashboard-data-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
+        <label class="dashboard-output-label" for="websiteProjectEntryJsonOutput">Single project JSON entry</label>
+        <textarea id="websiteProjectEntryJsonOutput" class="json-output dashboard-data-output" rows="10" spellcheck="false" aria-label="Single website or utility project JSON entry"></textarea>
       </article>
     </section>
     <section class="section dashboard-preview-section" data-dashboard-section-key="projects" data-project-workflow="website" hidden>
@@ -684,14 +684,14 @@
         <div class="dashboard-actions">
           <button class="button primary copy-projects-json" type="button">Copy Projects JSON</button>
           <button class="button secondary download-projects-json" type="button">Download projects.json</button>
-          <button id="copyFundedProjectReferences" class="button secondary" type="button">Copy Reference Output</button>
+          <button id="copyFundedProjectEntryJson" class="button secondary" type="button">Copy Single Entry JSON</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="fundedProjectsPreview">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p class="dashboard-status project-dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="fundedProjectsJsonOutput" class="json-output dashboard-data-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
-        <label class="dashboard-output-label" for="fundedProjectReferencesOutput">Generated reference output</label>
-        <textarea id="fundedProjectReferencesOutput" class="json-output dashboard-data-output" rows="12" spellcheck="false" aria-label="Generated funded project references"></textarea>
+        <label class="dashboard-output-label" for="fundedProjectEntryJsonOutput">Single funded project JSON entry</label>
+        <textarea id="fundedProjectEntryJsonOutput" class="json-output dashboard-data-output" rows="10" spellcheck="false" aria-label="Single funded project JSON entry"></textarea>
       </article>
     </section>
     <section class="section dashboard-preview-section" data-dashboard-section-key="projects" data-project-workflow="funded" hidden>
@@ -795,11 +795,14 @@
         <div class="dashboard-actions">
           <button id="copySiteContentJson" class="button primary" type="button">Copy Voluntary Projects JSON</button>
           <button id="downloadSiteContentJson" class="button secondary" type="button">Download voluntary-projects.json</button>
+          <button id="copySiteContentEntryJson" class="button secondary" type="button">Copy Single Entry JSON</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="siteContentPreview">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/voluntary-projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p id="siteContentDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="siteContentJsonOutput" class="json-output dashboard-data-output" rows="18" spellcheck="false" aria-label="Generated voluntary projects JSON"></textarea>
+        <label class="dashboard-output-label" for="siteContentEntryJsonOutput">Single voluntary project JSON entry</label>
+        <textarea id="siteContentEntryJsonOutput" class="json-output dashboard-data-output" rows="10" spellcheck="false" aria-label="Single voluntary project JSON entry"></textarea>
       </article>
     </section>
     <section class="section dashboard-preview-section" data-dashboard-section-key="site-content" hidden>
@@ -817,8 +820,8 @@
   </footer>
 
   <script src="js/dashboard-access.js?v=20260411-2"></script>
-  <script src="js/dashboard.js?v=20260411-9"></script>
-  <script src="js/dashboard-publications.js?v=20260412-1"></script>
+  <script src="js/dashboard.js?v=20260412-1"></script>
+  <script src="js/dashboard-publications.js?v=20260412-2"></script>
 </body>
 </html>
 

@@ -62,8 +62,10 @@ const projectsJsonOutputs = Array.from(document.querySelectorAll(".projects-json
 const projectStatusMessages = Array.from(document.querySelectorAll(".project-dashboard-status"));
 const copyProjectsJsonButtons = Array.from(document.querySelectorAll(".copy-projects-json"));
 const downloadProjectsJsonButtons = Array.from(document.querySelectorAll(".download-projects-json"));
-const fundedProjectReferencesOutput = document.getElementById("fundedProjectReferencesOutput");
-const copyFundedProjectReferences = document.getElementById("copyFundedProjectReferences");
+const websiteProjectEntryJsonOutput = document.getElementById("websiteProjectEntryJsonOutput");
+const copyWebsiteProjectEntryJson = document.getElementById("copyWebsiteProjectEntryJson");
+const fundedProjectEntryJsonOutput = document.getElementById("fundedProjectEntryJsonOutput");
+const copyFundedProjectEntryJson = document.getElementById("copyFundedProjectEntryJson");
 
 const siteContentForm = document.getElementById("siteContentForm");
 const siteContentSection = document.getElementById("siteContentSection");
@@ -75,9 +77,11 @@ const siteContentLinkUrl = document.getElementById("siteContentLinkUrl");
 const siteContentOrder = document.getElementById("siteContentOrder");
 const clearSiteContentDraft = document.getElementById("clearSiteContentDraft");
 const siteContentJsonOutput = document.getElementById("siteContentJsonOutput");
+const siteContentEntryJsonOutput = document.getElementById("siteContentEntryJsonOutput");
 const siteContentPreview = document.getElementById("siteContentPreview");
 const siteContentStatusMessage = document.getElementById("siteContentDashboardStatus");
 const copySiteContentJson = document.getElementById("copySiteContentJson");
+const copySiteContentEntryJson = document.getElementById("copySiteContentEntryJson");
 const downloadSiteContentJson = document.getElementById("downloadSiteContentJson");
 
 const menuToggle = document.getElementById("menuToggle");
@@ -87,6 +91,9 @@ let newsItems = [];
 let publicationItems = [];
 let projectItems = [];
 let siteContentItems = [];
+let lastWebsiteProjectEntry = null;
+let lastFundedProjectEntry = null;
+let lastSiteContentEntry = null;
 let activeToastTimeout = null;
 
 const publicationTypes = [
@@ -799,8 +806,11 @@ function syncProjectsOutput() {
   projectsJsonOutputs.forEach((element) => {
     element.value = value;
   });
-  if (fundedProjectReferencesOutput) {
-    fundedProjectReferencesOutput.value = fundedProjectReferencesText(projectItems);
+  if (websiteProjectEntryJsonOutput) {
+    websiteProjectEntryJsonOutput.value = lastWebsiteProjectEntry ? JSON.stringify(lastWebsiteProjectEntry, null, 2) : "";
+  }
+  if (fundedProjectEntryJsonOutput) {
+    fundedProjectEntryJsonOutput.value = lastFundedProjectEntry ? JSON.stringify(lastFundedProjectEntry, null, 2) : "";
   }
   renderProjectsPreview(
     projectItems.filter((item) => item.entryType !== "fundedProject"),
@@ -815,6 +825,9 @@ function syncProjectsOutput() {
 function syncSiteContentOutput() {
   if (siteContentJsonOutput) {
     siteContentJsonOutput.value = JSON.stringify(siteContentItems, null, 2);
+  }
+  if (siteContentEntryJsonOutput) {
+    siteContentEntryJsonOutput.value = lastSiteContentEntry ? JSON.stringify(lastSiteContentEntry, null, 2) : "";
   }
   renderSiteContentPreview(siteContentItems, siteContentPreview);
 }
@@ -1007,6 +1020,7 @@ websiteProjectForm?.addEventListener("submit", (event) => {
   });
 
   projectItems = [item, ...projectItems];
+  lastWebsiteProjectEntry = item;
   projectTitle.value = "";
   websiteProjectSummary.value = "";
   websiteProjectLink.value = "";
@@ -1038,6 +1052,7 @@ fundedProjectForm?.addEventListener("submit", (event) => {
   });
 
   projectItems = [item, ...projectItems];
+  lastFundedProjectEntry = item;
   fundedProjectType.value = "Consultancy Project";
   fundedProjectAgency.value = "";
   fundedProjectScheme.value = "";
@@ -1072,6 +1087,7 @@ siteContentForm?.addEventListener("submit", (event) => {
   });
 
   siteContentItems = [item, ...siteContentItems];
+  lastSiteContentEntry = item;
   siteContentKey.value = "";
   siteContentHeading.value = "";
   siteContentBody.value = "";
@@ -1188,15 +1204,27 @@ copyProjectsJsonButtons.forEach((button, index) => {
   });
 });
 
-copyFundedProjectReferences?.addEventListener("click", async () => {
+copyWebsiteProjectEntryJson?.addEventListener("click", async () => {
   try {
-    await navigator.clipboard.writeText(fundedProjectReferencesOutput?.value || "");
-    setProjectStatus("Copied funded project reference output.");
-    showToast("project references copied");
+    await navigator.clipboard.writeText(websiteProjectEntryJsonOutput?.value || "");
+    setProjectStatus("Copied the single website or utility project JSON entry.");
+    showToast("single project entry copied");
   } catch (error) {
-    fundedProjectReferencesOutput?.focus();
-    fundedProjectReferencesOutput?.select();
-    setProjectStatus("Select and copy the reference output manually from the box.");
+    websiteProjectEntryJsonOutput?.focus();
+    websiteProjectEntryJsonOutput?.select();
+    setProjectStatus("Select and copy the single project entry manually from the box.");
+  }
+});
+
+copyFundedProjectEntryJson?.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(fundedProjectEntryJsonOutput?.value || "");
+    setProjectStatus("Copied the single funded project JSON entry.");
+    showToast("single funded project entry copied");
+  } catch (error) {
+    fundedProjectEntryJsonOutput?.focus();
+    fundedProjectEntryJsonOutput?.select();
+    setProjectStatus("Select and copy the single funded project entry manually from the box.");
   }
 });
 
@@ -1209,6 +1237,18 @@ copySiteContentJson?.addEventListener("click", async () => {
     siteContentJsonOutput.focus();
     siteContentJsonOutput.select();
     setSiteContentStatus("Select and copy the JSON manually from the box.");
+  }
+});
+
+copySiteContentEntryJson?.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(siteContentEntryJsonOutput?.value || "");
+    setSiteContentStatus("Copied the single voluntary project JSON entry.");
+    showToast("single voluntary project entry copied");
+  } catch (error) {
+    siteContentEntryJsonOutput?.focus();
+    siteContentEntryJsonOutput?.select();
+    setSiteContentStatus("Select and copy the single voluntary project entry manually from the box.");
   }
 });
 
