@@ -1,5 +1,12 @@
 (function () {
-  const DASHBOARD_PASSWORD_HASH = "a4c5a1b85cb7e9a209e697050be8a912258c5991f963c3430d3b925028b514ef";
+  const DEFAULT_DASHBOARD_ACCESS_CONFIG = {
+    enabled: false,
+    passwordHash: "a4c5a1b85cb7e9a209e697050be8a912258c5991f963c3430d3b925028b514ef"
+  };
+  const DASHBOARD_ACCESS_CONFIG = {
+    ...DEFAULT_DASHBOARD_ACCESS_CONFIG,
+    ...(window.DASHBOARD_ACCESS_CONFIG || {})
+  };
   const DASHBOARD_PATH = "dashboard.html";
   const DASHBOARD_ACCESS_KEY = "jkv-dashboard-one-time-access";
   let activeDialog = null;
@@ -100,7 +107,7 @@
         error.textContent = "";
 
         const hash = await sha256(input.value.trim());
-        if (hash === DASHBOARD_PASSWORD_HASH) {
+        if (hash === DASHBOARD_ACCESS_CONFIG.passwordHash) {
           finish(true);
           return;
         }
@@ -125,7 +132,7 @@
 
   document.addEventListener("click", async (event) => {
     const link = event.target.closest("[data-dashboard-link]");
-    if (!link) {
+    if (!link || !DASHBOARD_ACCESS_CONFIG.enabled) {
       return;
     }
 
@@ -138,6 +145,10 @@
   });
 
   if (isDashboardPage()) {
+    if (!DASHBOARD_ACCESS_CONFIG.enabled) {
+      return;
+    }
+
     if (!consumeOneTimeDashboardAccess()) {
       requestAccess().then((allowed) => {
         if (!allowed) {

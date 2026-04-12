@@ -5,25 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Dashboard for updating news, publications, and projects on the profile website of Dr. Jitendra Kumar Verma." />
   <title>Content Dashboard | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="css/styles.css?v=20260410-1" />
+  <link rel="stylesheet" href="css/styles.css?v=20260412-2" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Back to profile home">
+    <a class="brand" href="index.html#latest-ticker" aria-label="Back to profile home">
       <span>JKV</span>
       <strong>Content Dashboard</strong>
     </a>
     <button id="menuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
       Menu
     </button>
-    <nav id="primaryNav" class="primary-nav" aria-label="Dashboard navigation">
-      <a href="index.html">Profile</a>
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary navigation">
+      <a href="index.html#about">About</a>
+      <a href="index.html#qualification">Qualification</a>
+      <a href="index.html#interests">Interests</a>
+      <a href="index.html#skills">Tools &amp; Platforms</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#consulting">Consulting</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#affiliations">Affiliations</a>
       <a href="index.html#news">Latest News<sup class="nav-badge">New</sup></a>
-      <a href="publications.html">Publications</a>
-      <a href="projects.html">Projects</a>
-      <a href="#main">Dashboard</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
@@ -45,7 +50,7 @@
       </div>
     </section>
 
-    <section class="section dashboard-layout">
+    <section class="section dashboard-layout" data-dashboard-section-key="news" hidden>
       <form id="newsForm" class="dashboard-card" autocomplete="off">
         <div class="section-heading">
           <p class="eyebrow">Create Entry</p>
@@ -116,75 +121,91 @@
         <textarea id="jsonOutput" class="json-output dashboard-data-output" rows="16" spellcheck="false" aria-label="Generated news JSON"></textarea>
       </article>
     </section>
-    <section class="section dashboard-preview-section">
+    <section class="section dashboard-preview-section" data-dashboard-section-key="news" hidden>
+      <div class="section-heading dashboard-preview-heading">
+        <p class="eyebrow">Preview</p>
+        <h2>Latest News Preview</h2>
+      </div>
       <div id="newsPreview" class="dashboard-preview news-list" hidden></div>
     </section>
 
-    <section class="section dashboard-layout">
+    <section class="section dashboard-publication-selector" data-dashboard-section-key="research" hidden>
+      <div class="dashboard-card">
+        <div class="section-heading">
+          <p class="eyebrow">Publication Entry Type</p>
+          <h2>Select publication type</h2>
+        </div>
+        <p class="dashboard-form-note">
+          Choose the publication or scholarly output type. The Create Entry card below will switch to the essential
+          IEEE-reference fields for that type.
+        </p>
+        <label>
+          Publication Type
+          <select id="publicationType" name="type" required>
+            <optgroup label="Journal &amp; periodical outputs">
+              <option value="journal_article" selected>Journal Article</option>
+              <option value="review_article">Review Article</option>
+              <option value="short_communication">Short Communication</option>
+              <option value="case_study">Case Study</option>
+              <option value="editorial">Editorial</option>
+              <option value="magazine_article">Magazine Article</option>
+              <option value="newsletter_article">Newsletter Article</option>
+            </optgroup>
+            <optgroup label="Conference outputs">
+              <option value="conference_paper">Conference Paper</option>
+              <option value="conference_abstract">Conference Abstract</option>
+              <option value="conference_poster">Conference Poster</option>
+            </optgroup>
+            <optgroup label="Book-related outputs">
+              <option value="book">Book</option>
+              <option value="edited_book">Edited Book</option>
+              <option value="book_chapter">Book Chapter</option>
+              <option value="encyclopedia_entry">Encyclopedia Entry</option>
+              <option value="foreword_or_preface">Foreword / Preface</option>
+              <option value="monograph">Monograph</option>
+              <option value="translation">Translation</option>
+            </optgroup>
+            <optgroup label="Intellectual property">
+              <option value="patent">Patent</option>
+              <option value="copyright">Copyright</option>
+            </optgroup>
+            <optgroup label="Reports &amp; grey literature">
+              <option value="working_paper">Working Paper</option>
+              <option value="technical_report">Technical Report</option>
+              <option value="white_paper">White Paper</option>
+              <option value="policy_brief">Policy Brief</option>
+              <option value="standards_document">Standards Document</option>
+            </optgroup>
+            <optgroup label="Research artifacts">
+              <option value="dataset">Dataset</option>
+              <option value="software">Software</option>
+              <option value="preprint">Preprint</option>
+            </optgroup>
+            <optgroup label="Academic long-form works">
+              <option value="thesis">Thesis</option>
+              <option value="dissertation">Dissertation</option>
+            </optgroup>
+            <optgroup label="Teaching &amp; outreach outputs">
+              <option value="manual_or_module">Manual / Module</option>
+              <option value="teaching_case">Teaching Case</option>
+              <option value="blog_or_popular_article">Blog / Popular Article</option>
+            </optgroup>
+            <optgroup label="Other">
+              <option value="other">Other</option>
+            </optgroup>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="section dashboard-layout" data-dashboard-section-key="research" hidden>
       <form id="publicationForm" class="dashboard-card" autocomplete="off">
         <div class="section-heading">
           <p class="eyebrow">Create Entry</p>
-          <h2>New publication item</h2>
+          <h2 id="publicationFormTitle">New journal article</h2>
         </div>
         <p class="dashboard-form-note">Updates <code>data/publications.json</code></p>
         <div class="dashboard-publication-shell">
-          <label>
-            Publication Type
-            <select id="publicationType" name="type" required>
-              <optgroup label="Journal &amp; periodical outputs">
-                <option value="journal_article" selected>Journal Article</option>
-                <option value="review_article">Review Article</option>
-                <option value="short_communication">Short Communication</option>
-                <option value="case_study">Case Study</option>
-                <option value="editorial">Editorial</option>
-                <option value="magazine_article">Magazine Article</option>
-                <option value="newsletter_article">Newsletter Article</option>
-              </optgroup>
-              <optgroup label="Conference outputs">
-                <option value="conference_paper">Conference Paper</option>
-                <option value="conference_abstract">Conference Abstract</option>
-                <option value="conference_poster">Conference Poster</option>
-              </optgroup>
-              <optgroup label="Book-related outputs">
-                <option value="book">Book</option>
-                <option value="edited_book">Edited Book</option>
-                <option value="book_chapter">Book Chapter</option>
-                <option value="encyclopedia_entry">Encyclopedia Entry</option>
-                <option value="foreword_or_preface">Foreword / Preface</option>
-                <option value="monograph">Monograph</option>
-                <option value="translation">Translation</option>
-              </optgroup>
-              <optgroup label="Intellectual property">
-                <option value="patent">Patent</option>
-                <option value="copyright">Copyright</option>
-              </optgroup>
-              <optgroup label="Reports &amp; grey literature">
-                <option value="working_paper">Working Paper</option>
-                <option value="technical_report">Technical Report</option>
-                <option value="white_paper">White Paper</option>
-                <option value="policy_brief">Policy Brief</option>
-                <option value="standards_document">Standards Document</option>
-              </optgroup>
-              <optgroup label="Research artifacts">
-                <option value="dataset">Dataset</option>
-                <option value="software">Software</option>
-                <option value="preprint">Preprint</option>
-              </optgroup>
-              <optgroup label="Academic long-form works">
-                <option value="thesis">Thesis</option>
-                <option value="dissertation">Dissertation</option>
-              </optgroup>
-              <optgroup label="Teaching &amp; outreach outputs">
-                <option value="manual_or_module">Manual / Module</option>
-                <option value="teaching_case">Teaching Case</option>
-                <option value="blog_or_popular_article">Blog / Popular Article</option>
-              </optgroup>
-              <optgroup label="Other">
-                <option value="other">Other</option>
-              </optgroup>
-            </select>
-          </label>
-
           <div id="publicationValidation" class="dashboard-validation" role="alert" aria-live="polite"></div>
           <div id="publicationDynamicSections" class="dashboard-dynamic-sections">
             <section class="dashboard-form-section">
@@ -216,12 +237,6 @@
                     <option value="Draft">Draft</option>
                   </select>
                 </label>
-                <div class="dashboard-toggle-wrap">
-                  <label class="dashboard-toggle">
-                    <input type="checkbox" name="publication_forthcoming" />
-                    <span>Forthcoming / In Press</span>
-                  </label>
-                </div>
               </div>
             </section>
 
@@ -487,18 +502,44 @@
         <div class="dashboard-actions">
           <button id="copyPublicationsJson" class="button primary" type="button">Copy Publications JSON</button>
           <button id="downloadPublicationsJson" class="button secondary" type="button">Download publications.json</button>
+          <button id="copyPublicationEntryJson" class="button secondary" type="button">Copy Single Entry JSON</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="publicationsPreview">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/publications.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p id="publicationDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="publicationsJsonOutput" class="json-output dashboard-data-output" rows="18" spellcheck="false" aria-label="Generated publications JSON"></textarea>
+        <label class="dashboard-output-label" for="publicationEntryJsonOutput">Single publication JSON entry</label>
+        <textarea id="publicationEntryJsonOutput" class="json-output dashboard-data-output" rows="10" spellcheck="false" aria-label="Single publication JSON entry"></textarea>
       </article>
     </section>
-    <section class="section dashboard-preview-section">
+    <section class="section dashboard-preview-section" data-dashboard-section-key="research" hidden>
+      <div class="section-heading dashboard-preview-heading">
+        <p class="eyebrow">Preview</p>
+        <h2>Research and Publications Preview</h2>
+      </div>
       <div id="publicationsPreview" class="dashboard-preview" hidden></div>
     </section>
 
-    <section class="section dashboard-layout">
+    <section class="section dashboard-project-selector" data-dashboard-section-key="projects" hidden>
+      <div class="dashboard-card">
+        <div class="section-heading">
+          <p class="eyebrow">Project Entry Type</p>
+          <h2>Select project card</h2>
+        </div>
+        <p class="dashboard-form-note">
+          Choose the project entry type. The relevant Create Entry and Publish cards will appear below.
+        </p>
+        <label>
+          Project Card Type
+          <select id="projectEntryMode">
+            <option value="website" selected>Website and Utility Project</option>
+            <option value="funded">Funded Project</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="section dashboard-layout" data-dashboard-section-key="projects" data-project-workflow="website" hidden>
       <form id="websiteProjectForm" class="dashboard-card" autocomplete="off">
         <div class="section-heading">
           <p class="eyebrow">Create Entry</p>
@@ -539,18 +580,25 @@
         <div class="dashboard-actions">
           <button class="button primary copy-projects-json" type="button">Copy Projects JSON</button>
           <button class="button secondary download-projects-json" type="button">Download projects.json</button>
+          <button id="copyWebsiteProjectEntryJson" class="button secondary" type="button">Copy Single Entry JSON</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="websiteProjectsPreview">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p class="dashboard-status project-dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="websiteProjectsJsonOutput" class="json-output dashboard-data-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
+        <label class="dashboard-output-label" for="websiteProjectEntryJsonOutput">Single project JSON entry</label>
+        <textarea id="websiteProjectEntryJsonOutput" class="json-output dashboard-data-output" rows="10" spellcheck="false" aria-label="Single website or utility project JSON entry"></textarea>
       </article>
     </section>
-    <section class="section dashboard-preview-section">
+    <section class="section dashboard-preview-section" data-dashboard-section-key="projects" data-project-workflow="website" hidden>
+      <div class="section-heading dashboard-preview-heading">
+        <p class="eyebrow">Preview</p>
+        <h2>Website and Utility Projects Preview</h2>
+      </div>
       <div id="websiteProjectsPreview" class="dashboard-preview publications-list" hidden></div>
     </section>
 
-    <section class="section dashboard-layout">
+    <section class="section dashboard-layout" data-dashboard-section-key="projects" data-project-workflow="funded" hidden>
       <form id="fundedProjectForm" class="dashboard-card" autocomplete="off">
         <div class="section-heading">
           <p class="eyebrow">Create Entry</p>
@@ -581,8 +629,18 @@
         </label>
 
         <label>
+          Role
+          <input id="fundedProjectRole" name="role" type="text" placeholder="PI / Co-PI / Consultant" />
+        </label>
+
+        <label>
           Program/Project Title
           <input id="fundedProjectTitle" name="title" type="text" placeholder="Title of the funded project" required />
+        </label>
+
+        <label>
+          Grant / Project Number
+          <input id="fundedProjectGrantNumber" name="grantNumber" type="text" placeholder="DST/AI/2024/123" />
         </label>
 
         <div class="dashboard-inline-fields">
@@ -626,18 +684,25 @@
         <div class="dashboard-actions">
           <button class="button primary copy-projects-json" type="button">Copy Projects JSON</button>
           <button class="button secondary download-projects-json" type="button">Download projects.json</button>
+          <button id="copyFundedProjectEntryJson" class="button secondary" type="button">Copy Single Entry JSON</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="fundedProjectsPreview">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p class="dashboard-status project-dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="fundedProjectsJsonOutput" class="json-output dashboard-data-output projects-json-output" rows="18" spellcheck="false" aria-label="Generated projects JSON"></textarea>
+        <label class="dashboard-output-label" for="fundedProjectEntryJsonOutput">Single funded project JSON entry</label>
+        <textarea id="fundedProjectEntryJsonOutput" class="json-output dashboard-data-output" rows="10" spellcheck="false" aria-label="Single funded project JSON entry"></textarea>
       </article>
     </section>
-    <section class="section dashboard-preview-section">
+    <section class="section dashboard-preview-section" data-dashboard-section-key="projects" data-project-workflow="funded" hidden>
+      <div class="section-heading dashboard-preview-heading">
+        <p class="eyebrow">Preview</p>
+        <h2>Funded Projects Preview</h2>
+      </div>
       <div id="fundedProjectsPreview" class="dashboard-preview publications-list" hidden></div>
     </section>
 
-    <section id="projectModesReference" class="section">
+    <section id="projectModesReference" class="section" data-dashboard-section-key="projects" hidden>
       <div class="section-heading">
         <p class="eyebrow">Modes</p>
         <h2>Project and Funding Modes</h2>
@@ -660,14 +725,104 @@
       </div>
     </section>
 
+    <section class="section dashboard-layout" data-dashboard-section-key="site-content" hidden>
+      <form id="siteContentForm" class="dashboard-card" autocomplete="off">
+        <div class="section-heading">
+          <p class="eyebrow">Create Entry</p>
+          <h2>New voluntary project item</h2>
+        </div>
+        <p class="dashboard-form-note">
+          Updates <code>data/voluntary-projects.json</code>. Use this for self-initiated websites, GitHub code,
+          programs, and PDF-based knowledge resources.
+        </p>
+
+        <label>
+          Voluntary Output Type
+          <select id="siteContentSection" name="section" required>
+            <option value="github_pages_website">GitHub Pages Website</option>
+            <option value="github_repository">GitHub Code Repository</option>
+            <option value="code_program">Code / Program</option>
+            <option value="pdf_knowledge_resource">PDF Knowledge Resource</option>
+            <option value="other">Other Voluntary Output</option>
+          </select>
+        </label>
+
+        <label>
+          Project Identifier
+          <input id="siteContentKey" name="contentKey" type="text" placeholder="export-dashboard / python-utility / policy-note-pdf" required />
+        </label>
+
+        <label>
+          Project Title
+          <input id="siteContentHeading" name="heading" type="text" placeholder="Title of the voluntary project or resource" required />
+        </label>
+
+        <label>
+          Project Summary
+          <textarea id="siteContentBody" name="body" rows="6" placeholder="Short summary of the website, code, program, or PDF knowledge resource." required></textarea>
+        </label>
+
+        <div class="dashboard-inline-fields">
+          <label>
+            Output Label
+            <input id="siteContentLinkLabel" name="linkLabel" type="text" placeholder="Open Website / View Code / Download PDF" />
+          </label>
+          <label>
+            Project / Resource Link
+            <input id="siteContentLinkUrl" name="linkUrl" type="url" placeholder="https://example.com" />
+          </label>
+          <label>
+            Display Order
+            <input id="siteContentOrder" name="displayOrder" type="number" min="1" placeholder="1" />
+          </label>
+        </div>
+
+        <div class="dashboard-actions">
+          <button class="button primary" type="submit">Add to Voluntary Projects JSON</button>
+          <button id="clearSiteContentDraft" class="button secondary" type="button">Clear Draft</button>
+        </div>
+      </form>
+
+      <article class="dashboard-card publish-card">
+        <div class="section-heading">
+          <p class="eyebrow">Publish</p>
+          <h2>Generated voluntary-projects.json</h2>
+        </div>
+        <p>
+          Copy or download this JSON, then replace <code>data/voluntary-projects.json</code> in GitHub when you want
+          to publish voluntary websites, code, programs, or PDF knowledge resources.
+        </p>
+        <div class="dashboard-actions">
+          <button id="copySiteContentJson" class="button primary" type="button">Copy Voluntary Projects JSON</button>
+          <button id="downloadSiteContentJson" class="button secondary" type="button">Download voluntary-projects.json</button>
+          <button id="copySiteContentEntryJson" class="button secondary" type="button">Copy Single Entry JSON</button>
+          <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="siteContentPreview">Show Preview</button>
+          <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/voluntary-projects.json" target="_blank" rel="noopener">Open GitHub Editor</a>
+        </div>
+        <p id="siteContentDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
+        <textarea id="siteContentJsonOutput" class="json-output dashboard-data-output" rows="18" spellcheck="false" aria-label="Generated voluntary projects JSON"></textarea>
+        <label class="dashboard-output-label" for="siteContentEntryJsonOutput">Single voluntary project JSON entry</label>
+        <textarea id="siteContentEntryJsonOutput" class="json-output dashboard-data-output" rows="10" spellcheck="false" aria-label="Single voluntary project JSON entry"></textarea>
+      </article>
+    </section>
+    <section class="section dashboard-preview-section" data-dashboard-section-key="site-content" hidden>
+      <div class="section-heading dashboard-preview-heading">
+        <p class="eyebrow">Preview</p>
+        <h2>Voluntary Project Preview</h2>
+      </div>
+      <div id="siteContentPreview" class="dashboard-preview publications-list" hidden></div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
-    <p class="site-footer-note">© <span data-current-year></span> Dr. Jitendra Kumar Verma. All rights reserved.</p>
+    <p class="site-footer-note">&copy; <span data-current-year></span> Dr. Jitendra Kumar Verma. All rights reserved.</p>
   </footer>
 
-  <script src="js/dashboard-access.js?v=20260409-6"></script>
-  <script src="js/dashboard.js?v=20260409-16"></script>
-  <script src="js/dashboard-publications.js?v=20260410-2"></script>
+  <script src="js/dashboard-access.js?v=20260411-2"></script>
+  <script src="js/dashboard.js?v=20260412-1"></script>
+  <script src="js/dashboard-publications.js?v=20260412-5"></script>
 </body>
 </html>
+
+

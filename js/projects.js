@@ -84,7 +84,48 @@ function renderProjectCard(project) {
   return article;
 }
 
+function formatFundedProjectReference(project, index) {
+  const role = project.role ? ` (${project.role})` : "";
+  const valueLabel = project.projectType === "Consultancy Project" ? "Project Value" : "Amount";
+  const parts = [
+    `J. K. Verma${role}`,
+    project.title ? `"${project.title}"` : "",
+    project.projectType,
+    project.fundingAgency,
+    project.schemeName ? `Scheme: ${project.schemeName}` : "",
+    project.grantNumber ? `Grant No. ${project.grantNumber}` : "",
+    project.duration ? `Duration: ${project.duration}` : "",
+    project.yearOfFunding ? `Year: ${project.yearOfFunding}` : "",
+    project.amountSanctioned ? `${valueLabel}: ${project.amountSanctioned}` : "",
+    project.status ? `Status: ${project.status}` : ""
+  ].filter(Boolean);
+
+  const item = document.createElement("li");
+  item.append(
+    createTextElement("span", "publication-number", `[${index + 1}]`),
+    createTextElement("span", "publication-reference", `${parts.join(", ")}.`)
+  );
+  return item;
+}
+
+function renderFundedProjectSection(title, projects) {
+  const section = document.createElement("section");
+  section.className = "publication-group";
+
+  const heading = createTextElement("h3", "", title);
+  const list = document.createElement("ol");
+  list.className = "publication-items project-reference-list";
+  list.append(...projects.map(formatFundedProjectReference));
+
+  section.append(heading, list);
+  return section;
+}
+
 function renderProjectSection(title, projects) {
+  if (projects.every((project) => project.entryType === "fundedProject")) {
+    return renderFundedProjectSection(title, projects);
+  }
+
   const section = document.createElement("section");
   section.className = "publication-group";
 

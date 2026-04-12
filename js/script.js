@@ -1,7 +1,9 @@
 const menuToggle = document.getElementById("menuToggle");
 const primaryNav = document.getElementById("primaryNav");
 
-if (menuToggle && primaryNav) {
+function setupMenuToggle() {
+  if (!menuToggle || !primaryNav) return;
+
   menuToggle.addEventListener("click", () => {
     const isOpen = primaryNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
@@ -62,20 +64,22 @@ function setupActiveSectionTracking() {
   updateActiveSection();
 }
 
-document.querySelectorAll(".protected-photo").forEach((photo) => {
-  photo.addEventListener("contextmenu", (event) => event.preventDefault());
-  photo.addEventListener("dragstart", (event) => event.preventDefault());
-});
-
-document.querySelectorAll(".protected-photo img").forEach((image) => {
-  image.addEventListener("load", () => {
-    image.closest(".protected-photo")?.classList.add("photo-loaded");
+function setupProtectedPhotos() {
+  document.querySelectorAll(".protected-photo").forEach((photo) => {
+    photo.addEventListener("contextmenu", (event) => event.preventDefault());
+    photo.addEventListener("dragstart", (event) => event.preventDefault());
   });
 
-  image.addEventListener("error", () => {
-    image.hidden = true;
+  document.querySelectorAll(".protected-photo img").forEach((image) => {
+    image.addEventListener("load", () => {
+      image.closest(".protected-photo")?.classList.add("photo-loaded");
+    });
+
+    image.addEventListener("error", () => {
+      image.hidden = true;
+    });
   });
-});
+}
 
 function updateExperienceYears() {
   const experienceElement = document.getElementById("experienceYears");
@@ -126,7 +130,7 @@ function sortNewsItems(items) {
   });
 }
 
-function selectTickerItems(items, maxMonths = 6, maxItems = 5) {
+function selectTickerItems(items, maxMonths = 12, maxItems = 6) {
   const cutoffDate = new Date();
   cutoffDate.setMonth(cutoffDate.getMonth() - maxMonths);
 
@@ -263,7 +267,46 @@ async function loadNews() {
   }
 }
 
-updateExperienceYears();
-updateCurrentYear();
-loadNews();
-setupActiveSectionTracking();
+async function loadSectionFragments() {
+  const placeholders = Array.from(document.querySelectorAll("[data-section-fragment]"));
+  if (!placeholders.length) return;
+
+  await Promise.all(placeholders.map(async (placeholder) => {
+    const fragmentPath = placeholder.getAttribute("data-section-fragment");
+    if (!fragmentPath) return;
+
+    try {
+      const response = await fetch(fragmentPath, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Unable to load ${fragmentPath}`);
+      const html = await response.text();
+      placeholder.insertAdjacentHTML("afterend", html);
+    } catch (error) {
+      const fallback = document.createElement("section");
+      fallback.className = "section";
+      fallback.append(
+        createTextElement("h2", "", "Section unavailable"),
+        createTextElement("p", "", `Please check ${fragmentPath}.`)
+      );
+      placeholder.insertAdjacentElement("afterend", fallback);
+    } finally {
+      placeholder.remove();
+    }
+  }));
+}
+
+async function initializePage() {
+  setupMenuToggle();
+  await loadSectionFragments();
+  setupProtectedPhotos();
+  updateExperienceYears();
+  updateCurrentYear();
+  await loadNews();
+  setupActiveSectionTracking();
+
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    target?.scrollIntoView({ block: "start" });
+  }
+}
+
+initializePage();
