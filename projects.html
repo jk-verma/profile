@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Selected GitHub projects and project engagement models of Dr. Jitendra Kumar Verma." />
   <title>Projects | Dr. Jitendra Kumar Verma</title>
-  <link rel="stylesheet" href="css/styles.css?v=20260411-5" />
+  <link rel="stylesheet" href="css/styles.css?v=20260412-6" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -53,6 +53,37 @@
         <p class="eyebrow">Grouped by Type</p>
         <h2>Project List</h2>
       </div>
+      <div class="filters-bar project-filters" aria-label="Project filters">
+        <label>
+          Search
+          <input id="projectSearch" type="search" placeholder="Search projects" autocomplete="off" />
+        </label>
+        <label>
+          Type
+          <select id="projectTypeFilter">
+            <option value="">All Types</option>
+          </select>
+        </label>
+        <label>
+          Status
+          <select id="projectStatusFilter">
+            <option value="">All Statuses</option>
+          </select>
+        </label>
+        <label>
+          Year
+          <select id="projectYearFilter">
+            <option value="">All Years</option>
+          </select>
+        </label>
+        <label>
+          Focus Area
+          <select id="projectFocusFilter">
+            <option value="">All Focus Areas</option>
+          </select>
+        </label>
+      </div>
+      <p id="projectFilterSummary" class="filter-summary" aria-live="polite"></p>
       <div id="projectSections" class="publications-list" aria-live="polite"></div>
     </section>
 
@@ -63,7 +94,7 @@
   </footer>
 
   <script src="js/dashboard-access.js?v=20260411-2"></script>
-  <script src="js/projects.js?v=20260411-1"></script>
+  <script src="js/projects.js?v=20260412-2"></script>
 </body>
 </html>
 

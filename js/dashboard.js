@@ -39,6 +39,7 @@ const websiteProjectForm = document.getElementById("websiteProjectForm");
 const projectTitle = document.getElementById("projectTitle");
 const websiteProjectSummary = document.getElementById("websiteProjectSummary");
 const websiteProjectLink = document.getElementById("websiteProjectLink");
+const websiteProjectFocusAreas = document.getElementById("websiteProjectFocusAreas");
 const clearWebsiteProjectDraft = document.getElementById("clearWebsiteProjectDraft");
 
 const fundedProjectForm = document.getElementById("fundedProjectForm");
@@ -52,6 +53,7 @@ const fundedProjectYears = document.getElementById("fundedProjectYears");
 const fundedProjectDuration = document.getElementById("fundedProjectDuration");
 const fundedProjectAmount = document.getElementById("fundedProjectAmount");
 const fundedProjectStatus = document.getElementById("fundedProjectStatus");
+const fundedProjectFocusAreas = document.getElementById("fundedProjectFocusAreas");
 const clearFundedProjectDraft = document.getElementById("clearFundedProjectDraft");
 const dashboardProjectModesBody = document.getElementById("dashboardProjectModesBody");
 const websiteProjectsPreview = document.getElementById("websiteProjectsPreview");
@@ -369,6 +371,15 @@ function parseIndexing(value) {
     .split(",")
     .map((item) => item.trim())
     .filter(Boolean);
+}
+
+function pruneEmptyProjectFields(item) {
+  Object.keys(item).forEach((key) => {
+    if (item[key] === "" || (Array.isArray(item[key]) && !item[key].length)) {
+      delete item[key];
+    }
+  });
+  return item;
 }
 
 function createTextElement(tag, className, text) {
@@ -1009,21 +1020,20 @@ websiteProjectForm?.addEventListener("submit", (event) => {
     title: projectTitle.value.trim(),
     entryType: "websiteUtility",
     projectType: "Self-Initiated Utility / Showcase",
+    status: "Deployed",
     summary: websiteProjectSummary.value.trim(),
-    siteUrl: websiteProjectLink.value.trim()
+    siteUrl: websiteProjectLink.value.trim(),
+    focusAreas: parseIndexing(websiteProjectFocusAreas?.value || "")
   };
 
-  Object.keys(item).forEach((key) => {
-    if (item[key] === "") {
-      delete item[key];
-    }
-  });
+  pruneEmptyProjectFields(item);
 
   projectItems = [item, ...projectItems];
   lastWebsiteProjectEntry = item;
   projectTitle.value = "";
   websiteProjectSummary.value = "";
   websiteProjectLink.value = "";
+  if (websiteProjectFocusAreas) websiteProjectFocusAreas.value = "";
   syncProjectsOutput();
   setProjectStatus("Website or utility project added to JSON. Copy or download projects.json to publish it.");
 });
@@ -1042,14 +1052,11 @@ fundedProjectForm?.addEventListener("submit", (event) => {
     yearOfFunding: fundedProjectYears.value.trim(),
     duration: fundedProjectDuration.value.trim(),
     amountSanctioned: fundedProjectAmount.value.trim(),
-    status: fundedProjectStatus.value
+    status: fundedProjectStatus.value,
+    focusAreas: parseIndexing(fundedProjectFocusAreas?.value || "")
   };
 
-  Object.keys(item).forEach((key) => {
-    if (item[key] === "") {
-      delete item[key];
-    }
-  });
+  pruneEmptyProjectFields(item);
 
   projectItems = [item, ...projectItems];
   lastFundedProjectEntry = item;
@@ -1063,6 +1070,7 @@ fundedProjectForm?.addEventListener("submit", (event) => {
   fundedProjectDuration.value = "";
   fundedProjectAmount.value = "";
   fundedProjectStatus.value = "Ongoing";
+  if (fundedProjectFocusAreas) fundedProjectFocusAreas.value = "";
   syncProjectsOutput();
   setProjectStatus("Funded project added to JSON. Copy or download projects.json to publish it.");
 });
@@ -1130,6 +1138,7 @@ clearWebsiteProjectDraft?.addEventListener("click", () => {
   projectTitle.value = "";
   websiteProjectSummary.value = "";
   websiteProjectLink.value = "";
+  if (websiteProjectFocusAreas) websiteProjectFocusAreas.value = "";
   setProjectStatus("Website or utility project draft cleared.");
 });
 
@@ -1144,6 +1153,7 @@ clearFundedProjectDraft?.addEventListener("click", () => {
   fundedProjectDuration.value = "";
   fundedProjectAmount.value = "";
   fundedProjectStatus.value = "Ongoing";
+  if (fundedProjectFocusAreas) fundedProjectFocusAreas.value = "";
   setProjectStatus("Funded project draft cleared.");
 });
 
