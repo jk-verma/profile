@@ -117,29 +117,6 @@
   },
   {
     "type": "edited_book",
-    "title": "Advances in Augmented Reality and Virtual Reality",
-    "editors": [
-      {
-        "name": "Jitendra Kumar Verma and Sudip Paul, Eds.",
-        "affiliation": "",
-        "is_me": false,
-        "corresponding": false,
-        "orcid": "",
-        "equal_contribution": false
-      }
-    ],
-    "year": "2022",
-    "status": "Published",
-    "language": "English",
-    "featured": false,
-    "highlight": false,
-    "is_forthcoming": false,
-    "details": {
-      "publisher": "Springer Nature, Singapore"
-    }
-  },
-  {
-    "type": "edited_book",
     "title": "IoT and Cloud Computing for Societal Good",
     "editors": [
       {
