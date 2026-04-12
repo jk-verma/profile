@@ -37,6 +37,7 @@ const previewToggles = Array.from(document.querySelectorAll(".preview-toggle"));
 
 const websiteProjectForm = document.getElementById("websiteProjectForm");
 const projectTitle = document.getElementById("projectTitle");
+const projectTitleAcronym = document.getElementById("projectTitleAcronym");
 const websiteProjectSummary = document.getElementById("websiteProjectSummary");
 const websiteProjectLink = document.getElementById("websiteProjectLink");
 const websiteProjectFocusAreas = document.getElementById("websiteProjectFocusAreas");
@@ -48,6 +49,7 @@ const fundedProjectAgency = document.getElementById("fundedProjectAgency");
 const fundedProjectScheme = document.getElementById("fundedProjectScheme");
 const fundedProjectRole = document.getElementById("fundedProjectRole");
 const fundedProjectTitle = document.getElementById("fundedProjectTitle");
+const fundedProjectTitleAcronym = document.getElementById("fundedProjectTitleAcronym");
 const fundedProjectGrantNumber = document.getElementById("fundedProjectGrantNumber");
 const fundedProjectYears = document.getElementById("fundedProjectYears");
 const fundedProjectDuration = document.getElementById("fundedProjectDuration");
@@ -373,6 +375,16 @@ function parseIndexing(value) {
     .filter(Boolean);
 }
 
+function titleAcronym(value) {
+  return String(value || "")
+    .replace(/&/g, " and ")
+    .split(/[^A-Za-z0-9]+/)
+    .filter((word) => word && !["and", "of", "the", "for", "in", "on", "to", "a", "an"].includes(word.toLowerCase()))
+    .map((word) => word[0].toUpperCase())
+    .join("")
+    .slice(0, 12);
+}
+
 function pruneEmptyProjectFields(item) {
   Object.keys(item).forEach((key) => {
     if (item[key] === "" || (Array.isArray(item[key]) && !item[key].length)) {
@@ -392,6 +404,7 @@ function resetFundedProjectForm() {
   fundedProjectScheme.value = "";
   fundedProjectRole.value = "";
   fundedProjectTitle.value = "";
+  if (fundedProjectTitleAcronym) fundedProjectTitleAcronym.value = "";
   fundedProjectGrantNumber.value = "";
   fundedProjectYears.value = "";
   fundedProjectDuration.value = "";
@@ -1036,6 +1049,7 @@ websiteProjectForm?.addEventListener("submit", (event) => {
 
   const item = {
     title: projectTitle.value.trim(),
+    titleAcronym: (projectTitleAcronym?.value || "").trim() || titleAcronym(projectTitle.value),
     entryType: "websiteUtility",
     projectType: "Self-Initiated Utility / Showcase",
     status: "Deployed",
@@ -1049,6 +1063,7 @@ websiteProjectForm?.addEventListener("submit", (event) => {
   projectItems = [item, ...projectItems];
   lastWebsiteProjectEntry = item;
   projectTitle.value = "";
+  if (projectTitleAcronym) projectTitleAcronym.value = "";
   websiteProjectSummary.value = "";
   websiteProjectLink.value = "";
   if (websiteProjectFocusAreas) websiteProjectFocusAreas.value = "";
@@ -1067,6 +1082,7 @@ fundedProjectForm?.addEventListener("submit", (event) => {
     schemeName: fundedProjectScheme.value.trim(),
     role: fundedProjectRole.value.trim(),
     grantNumber: fundedProjectGrantNumber.value.trim(),
+    titleAcronym: (fundedProjectTitleAcronym?.value || "").trim() || titleAcronym(fundedProjectTitle.value),
     yearOfFunding: fundedProjectYears.value.trim(),
     duration: fundedProjectDuration.value.trim(),
     amountSanctioned: fundedProjectAmount.value.trim(),
@@ -1144,6 +1160,7 @@ clearPublicationDraft?.addEventListener("click", () => {
 
 clearWebsiteProjectDraft?.addEventListener("click", () => {
   projectTitle.value = "";
+  if (projectTitleAcronym) projectTitleAcronym.value = "";
   websiteProjectSummary.value = "";
   websiteProjectLink.value = "";
   if (websiteProjectFocusAreas) websiteProjectFocusAreas.value = "";

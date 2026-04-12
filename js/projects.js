@@ -60,6 +60,7 @@ function getProjectFocusAreas(project) {
 function getProjectSearchText(project) {
   return [
     project.title,
+    project.titleAcronym,
     project.summary,
     getProjectType(project),
     getProjectStatus(project),
@@ -93,6 +94,7 @@ function renderProjectCard(project) {
   const fragments = [];
   const isFundedProject = project.entryType === "fundedProject";
   const metaBits = [
+    project.titleAcronym,
     getProjectType(project),
     project.fundingAgency,
     project.schemeName || project.schemeProgram,
