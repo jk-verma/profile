@@ -1,25 +1,29 @@
 [
   {
-    "title": "Technology Trends in Buisness",
+    "title": "Technology Trends in Business",
     "entryType": "fundedProject",
     "projectType": "Consultancy Project",
     "fundingAgency": "IIM Rohtak",
     "schemeName": "IPM 2021-24",
+    "role": "Visiting Faculty",
     "yearOfFunding": "2023-24",
     "duration": "3 Months",
     "amountSanctioned": "INR 2,50,000",
-    "status": "Completed"
+    "status": "Completed",
+    "focusAreas": ["Visiting Faculty Assignment", "Executive Teaching", "Technology Trends"]
   },
   {
-    "title": "Technology Trends in Buisness",
+    "title": "Technology Trends in Business",
     "entryType": "fundedProject",
     "projectType": "Consultancy Project",
     "fundingAgency": "IIM Rohtak",
     "schemeName": "IPM 2020-23",
+    "role": "Visiting Faculty",
     "yearOfFunding": "2022-23",
     "duration": "3 Months",
     "amountSanctioned": "INR 2,50,000",
-    "status": "Completed"
+    "status": "Completed",
+    "focusAreas": ["Visiting Faculty Assignment", "Executive Teaching", "Technology Trends"]
   },
   {
     "title": "Profile Website",
