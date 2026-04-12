@@ -132,7 +132,11 @@
                         "place_of_publication":  "New York",
                         "isbn":  "9781003155577",
                         "total_pages":  "286"
-                    }
+                    },
+        "indexed_in":  [
+                           "Taylor & Francis",
+                           "Crossref"
+                       ]
     },
     {
         "type":  "edited_book",
@@ -171,7 +175,11 @@
                         "place_of_publication":  "Singapore",
                         "edition":  "1st",
                         "series":  "Studies in Computational Intelligence"
-                    }
+                    },
+        "indexed_in":  [
+                           "SpringerLink",
+                           "Crossref"
+                       ]
     },
     {
         "type":  "edited_book",
@@ -220,7 +228,11 @@
                         "series":  "EAI/Springer Innovations in Communication and Computing",
                         "edition":  "1st",
                         "publisher":  "Springer Nature"
-                    }
+                    },
+        "indexed_in":  [
+                           "SpringerLink",
+                           "Crossref"
+                       ]
     },
     {
         "type":  "edited_book",
@@ -265,7 +277,11 @@
                         "place_of_publication":  "Cambridge, United States of America",
                         "isbn":  "978-0-12-820604-1",
                         "total_pages":  "251"
-                    }
+                    },
+        "indexed_in":  [
+                           "ScienceDirect",
+                           "Crossref"
+                       ]
     },
     {
         "type":  "edited_book",
@@ -314,7 +330,11 @@
                         "series":  "Algorithms for Intelligent Systems",
                         "edition":  "1st",
                         "publisher":  "Springer Nature"
-                    }
+                    },
+        "indexed_in":  [
+                           "SpringerLink",
+                           "Crossref"
+                       ]
     },
     {
         "type":  "edited_book",
@@ -374,7 +394,11 @@
                         "place_of_publication":  "Greater Noida, Uttar Pradesh, India",
                         "isbn":  "9781538644928",
                         "total_pages":  "1208"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "book",
@@ -434,9 +458,9 @@
                         "pages":  "1-21"
                     },
         "indexed_in":  [
-                           "ABDC",
                            "Scopus",
-                           "Web of Science"
+                           "Web of Science",
+                           "ABDC"
                        ]
     },
     {
@@ -552,7 +576,8 @@
                     },
         "indexed_in":  [
                            "Scopus",
-                           "Web of Science"
+                           "Web of Science",
+                           "ABDC"
                        ]
     },
     {
@@ -697,7 +722,12 @@
                         "volume":  "6",
                         "issue":  "7",
                         "pages":  "56-64"
-                    }
+                    },
+        "indexed_in":  [
+                           "Scopus",
+                           "INSPEC",
+                           "Crossref"
+                       ]
     },
     {
         "type":  "book_chapter",
@@ -733,7 +763,8 @@
                         "isbn":  "9781003155577"
                     },
         "indexed_in":  [
-                           "Scopus"
+                           "Scopus",
+                           "Taylor & Francis"
                        ]
     },
     {
@@ -770,7 +801,8 @@
                         "isbn":  "978-981-16-7220-0"
                     },
         "indexed_in":  [
-                           "Scopus"
+                           "Scopus",
+                           "SpringerLink"
                        ]
     },
     {
@@ -808,7 +840,8 @@
                         "isbn":  "978-3-030-73885-3"
                     },
         "indexed_in":  [
-                           "Scopus"
+                           "Scopus",
+                           "SpringerLink"
                        ]
     },
     {
@@ -1029,7 +1062,8 @@
                         "publisher":  "Springer Nature"
                     },
         "indexed_in":  [
-                           "Scopus"
+                           "Scopus",
+                           "SpringerLink"
                        ]
     },
     {
@@ -1081,7 +1115,8 @@
                         "publisher":  "Springer Nature"
                     },
         "indexed_in":  [
-                           "Scopus"
+                           "Scopus",
+                           "SpringerLink"
                        ]
     },
     {
@@ -1117,7 +1152,8 @@
                         "publisher":  "Taylor & Francis Group (CRC Press)"
                     },
         "indexed_in":  [
-                           "Scopus"
+                           "Scopus",
+                           "Taylor & Francis"
                        ]
     },
     {
@@ -1155,16 +1191,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "111-114",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1209,16 +1245,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "365-371",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1255,16 +1291,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "992-995",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1301,16 +1337,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "155-166",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1347,16 +1383,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "196-201",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1385,16 +1421,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "864-871",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1431,16 +1467,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "848-852",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1477,16 +1513,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "844-847",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1523,16 +1559,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "841-843",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1569,16 +1605,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "837-840",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1615,16 +1651,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "831-836",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1669,16 +1705,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "553-557",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1715,16 +1751,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "548-552",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1785,16 +1821,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "275-279",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1831,16 +1867,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "269-274",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1885,16 +1921,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
                         "pages":  "091-094",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1947,16 +1983,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2018 4th International Conference on Computing Communication and Automation (ICCCA)",
                         "proceedings_title":  "2018 4th International Conference on Computing Communication and Automation (ICCCA)",
                         "pages":  "1-5",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -1993,16 +2029,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
                         "proceedings_title":  "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
                         "pages":  "1066-1071",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -2039,16 +2075,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
                         "proceedings_title":  "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
                         "pages":  "1101-1106",
                         "publisher":  "IEEE"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "conference_paper",
@@ -2077,16 +2113,16 @@
                             "equal_contribution":  false
                         }
                     ],
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
         "details":  {
                         "conference_name":  "2015 International Conference of Computing for Sustainable Global Development (INDIACom)",
                         "proceedings_title":  "2015 International Conference of Computing for Sustainable Global Development (INDIACom)",
                         "publisher":  "IEEE",
                         "pages":  "2062-2067"
-                    }
+                    },
+        "indexed_in":  [
+                           "IEEE Xplore",
+                           "Scopus"
+                       ]
     },
     {
         "type":  "book_chapter",
