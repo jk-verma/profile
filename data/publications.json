@@ -76,45 +76,45 @@
       "isbn": "9781003155577"
     }
   },
-  {
-    "type": "edited_book",
-    "title": "Advances in Augmented Reality and Virtual Reality",
-    "editors": [
-      {
-        "name": " Jitendra Kumar Verma",
-        "affiliation": "Indian Institute of Foreign Trade",
-        "is_me": true,
-        "corresponding": true,
-        "orcid": "0000-0003-4103-4218",
-        "equal_contribution": false
-      },
-      {
-        "name": "Sudip Paul",
-        "affiliation": "North Eastern Hill University",
-        "is_me": false,
-        "corresponding": false,
-        "orcid": "0000-0001-9856-539X",
-        "equal_contribution": true
-      }
-    ],
-    "year": "2022",
-    "month": "Dec",
-    "status": "Published",
-    "doi": "https://doi.org/10.1007/978-981-16-7220-0",
-    "url": "https://link.springer.com/book/10.1007/978-981-16-7220-0",
-    "language": "English",
-    "featured": false,
-    "highlight": false,
-    "is_forthcoming": false,
-    "details": {
-      "edition": "1st",
-      "series": "Studies in Computational Intelligence",
-      "place_of_publication": "SIngapore",
-      "total_pages": "212",
-      "publisher": "Springer Nature",
-      "isbn": "978-9811672194"
+{
+  "type": "edited_book",
+  "title": "Advances in Augmented Reality and Virtual Reality",
+  "editors": [
+    {
+      "name": "Jitendra Kumar Verma",
+      "affiliation": "Indian Institute of Foreign Trade",
+      "is_me": true,
+      "corresponding": true,
+      "orcid": "0000-0003-4103-4218",
+      "equal_contribution": false
+    },
+    {
+      "name": "Sudip Paul",
+      "affiliation": "North-Eastern Hill University",
+      "is_me": false,
+      "corresponding": false,
+      "orcid": "0000-0001-9856-539X",
+      "equal_contribution": false
     }
-  },
+  ],
+  "year": "2022",
+  "month": "Dec",
+  "status": "Published",
+  "doi": "https://doi.org/10.1007/978-981-16-7220-0",
+  "url": "https://link.springer.com/book/10.1007/978-981-16-7220-0",
+  "language": "English",
+  "featured": false,
+  "highlight": false,
+  "is_forthcoming": false,
+  "details": {
+    "edition": "1st",
+    "series": "Studies in Computational Intelligence",
+    "place_of_publication": "Singapore",
+    "total_pages": "212",
+    "publisher": "Springer Nature",
+    "isbn": "978-981-16-7222-4"
+  }
+}
   {
     "type": "edited_book",
     "title": "IoT and Cloud Computing for Societal Good",
