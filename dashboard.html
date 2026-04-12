@@ -502,13 +502,16 @@
         <div class="dashboard-actions">
           <button id="copyPublicationsJson" class="button primary" type="button">Copy Publications JSON</button>
           <button id="downloadPublicationsJson" class="button secondary" type="button">Download publications.json</button>
-          <button id="copyPublicationReferences" class="button secondary" type="button">Copy IEEE References</button>
+          <button id="copyPublicationEntryJson" class="button secondary" type="button">Copy Single Entry JSON</button>
+          <button id="copyPublicationReferences" class="button secondary" type="button">Copy References</button>
           <button class="button secondary preview-toggle" type="button" aria-expanded="false" aria-controls="publicationsPreview">Show Preview</button>
           <a class="button secondary" href="https://github.com/jk-verma/profile/edit/main/data/publications.json" target="_blank" rel="noopener">Open GitHub Editor</a>
         </div>
         <p id="publicationDashboardStatus" class="dashboard-status" role="status" aria-live="polite"></p>
         <textarea id="publicationsJsonOutput" class="json-output dashboard-data-output" rows="18" spellcheck="false" aria-label="Generated publications JSON"></textarea>
-        <label class="dashboard-output-label" for="publicationReferencesOutput">Generated IEEE reference output</label>
+        <label class="dashboard-output-label" for="publicationEntryJsonOutput">Single publication JSON entry</label>
+        <textarea id="publicationEntryJsonOutput" class="json-output dashboard-data-output" rows="10" spellcheck="false" aria-label="Single publication JSON entry"></textarea>
+        <label class="dashboard-output-label" for="publicationReferencesOutput">Generated reference output</label>
         <textarea id="publicationReferencesOutput" class="json-output dashboard-data-output" rows="12" spellcheck="false" aria-label="Generated IEEE references"></textarea>
       </article>
     </section>
@@ -815,7 +818,7 @@
 
   <script src="js/dashboard-access.js?v=20260411-2"></script>
   <script src="js/dashboard.js?v=20260411-9"></script>
-  <script src="js/dashboard-publications.js?v=20260411-11"></script>
+  <script src="js/dashboard-publications.js?v=20260412-1"></script>
 </body>
 </html>
 
