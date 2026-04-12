@@ -382,6 +382,24 @@ function pruneEmptyProjectFields(item) {
   return item;
 }
 
+function getDefaultFundedProjectStatus() {
+  return fundedProjectType?.value === "Consultancy Project" ? "Completed" : "Ongoing";
+}
+
+function resetFundedProjectForm() {
+  fundedProjectType.value = "Consultancy Project";
+  fundedProjectAgency.value = "";
+  fundedProjectScheme.value = "";
+  fundedProjectRole.value = "";
+  fundedProjectTitle.value = "";
+  fundedProjectGrantNumber.value = "";
+  fundedProjectYears.value = "";
+  fundedProjectDuration.value = "";
+  fundedProjectAmount.value = "";
+  fundedProjectStatus.value = getDefaultFundedProjectStatus();
+  if (fundedProjectFocusAreas) fundedProjectFocusAreas.value = "";
+}
+
 function createTextElement(tag, className, text) {
   const element = document.createElement(tag);
   if (className) {
@@ -1060,17 +1078,7 @@ fundedProjectForm?.addEventListener("submit", (event) => {
 
   projectItems = [item, ...projectItems];
   lastFundedProjectEntry = item;
-  fundedProjectType.value = "Consultancy Project";
-  fundedProjectAgency.value = "";
-  fundedProjectScheme.value = "";
-  fundedProjectRole.value = "";
-  fundedProjectTitle.value = "";
-  fundedProjectGrantNumber.value = "";
-  fundedProjectYears.value = "";
-  fundedProjectDuration.value = "";
-  fundedProjectAmount.value = "";
-  fundedProjectStatus.value = "Ongoing";
-  if (fundedProjectFocusAreas) fundedProjectFocusAreas.value = "";
+  resetFundedProjectForm();
   syncProjectsOutput();
   setProjectStatus("Funded project added to JSON. Copy or download projects.json to publish it.");
 });
@@ -1143,18 +1151,12 @@ clearWebsiteProjectDraft?.addEventListener("click", () => {
 });
 
 clearFundedProjectDraft?.addEventListener("click", () => {
-  fundedProjectType.value = "Consultancy Project";
-  fundedProjectAgency.value = "";
-  fundedProjectScheme.value = "";
-  fundedProjectRole.value = "";
-  fundedProjectTitle.value = "";
-  fundedProjectGrantNumber.value = "";
-  fundedProjectYears.value = "";
-  fundedProjectDuration.value = "";
-  fundedProjectAmount.value = "";
-  fundedProjectStatus.value = "Ongoing";
-  if (fundedProjectFocusAreas) fundedProjectFocusAreas.value = "";
+  resetFundedProjectForm();
   setProjectStatus("Funded project draft cleared.");
+});
+
+fundedProjectType?.addEventListener("change", () => {
+  fundedProjectStatus.value = getDefaultFundedProjectStatus();
 });
 
 clearSiteContentDraft?.addEventListener("click", () => {
