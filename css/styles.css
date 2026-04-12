@@ -1325,6 +1325,22 @@ dd {
   font-style: italic;
 }
 
+.publication-entry-body {
+  display: grid;
+  gap: 8px;
+}
+
+.publication-indexing-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.publication-indexing-chips .dashboard-chip {
+  padding: 5px 8px;
+  font-size: 0.74rem;
+}
+
 .news-meta {
   display: flex;
   flex-wrap: wrap;
