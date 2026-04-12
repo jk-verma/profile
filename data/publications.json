@@ -134,9 +134,11 @@
                         "total_pages":  "286"
                     },
         "indexed_in":  [
-                           "Taylor & Francis",
                            "Crossref"
-                       ]
+                       ],
+        "platforms":  [
+                          "Taylor & Francis"
+                      ]
     },
     {
         "type":  "edited_book",
@@ -177,9 +179,11 @@
                         "series":  "Studies in Computational Intelligence"
                     },
         "indexed_in":  [
-                           "SpringerLink",
                            "Crossref"
-                       ]
+                       ],
+        "platforms":  [
+                          "SpringerLink"
+                      ]
     },
     {
         "type":  "edited_book",
@@ -230,9 +234,11 @@
                         "publisher":  "Springer Nature"
                     },
         "indexed_in":  [
-                           "SpringerLink",
                            "Crossref"
-                       ]
+                       ],
+        "platforms":  [
+                          "SpringerLink"
+                      ]
     },
     {
         "type":  "edited_book",
@@ -279,9 +285,11 @@
                         "total_pages":  "251"
                     },
         "indexed_in":  [
-                           "ScienceDirect",
                            "Crossref"
-                       ]
+                       ],
+        "platforms":  [
+                          "ScienceDirect"
+                      ]
     },
     {
         "type":  "edited_book",
@@ -332,9 +340,11 @@
                         "publisher":  "Springer Nature"
                     },
         "indexed_in":  [
-                           "SpringerLink",
                            "Crossref"
-                       ]
+                       ],
+        "platforms":  [
+                          "SpringerLink"
+                      ]
     },
     {
         "type":  "edited_book",
@@ -396,9 +406,11 @@
                         "total_pages":  "1208"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "book",
@@ -763,9 +775,11 @@
                         "isbn":  "9781003155577"
                     },
         "indexed_in":  [
-                           "Scopus",
-                           "Taylor & Francis"
-                       ]
+                           "Scopus"
+                       ],
+        "platforms":  [
+                          "Taylor & Francis"
+                      ]
     },
     {
         "type":  "book_chapter",
@@ -801,9 +815,11 @@
                         "isbn":  "978-981-16-7220-0"
                     },
         "indexed_in":  [
-                           "Scopus",
-                           "SpringerLink"
-                       ]
+                           "Scopus"
+                       ],
+        "platforms":  [
+                          "SpringerLink"
+                      ]
     },
     {
         "type":  "book_chapter",
@@ -840,9 +856,11 @@
                         "isbn":  "978-3-030-73885-3"
                     },
         "indexed_in":  [
-                           "Scopus",
-                           "SpringerLink"
-                       ]
+                           "Scopus"
+                       ],
+        "platforms":  [
+                          "SpringerLink"
+                      ]
     },
     {
         "type":  "book_chapter",
@@ -1062,9 +1080,11 @@
                         "publisher":  "Springer Nature"
                     },
         "indexed_in":  [
-                           "Scopus",
-                           "SpringerLink"
-                       ]
+                           "Scopus"
+                       ],
+        "platforms":  [
+                          "SpringerLink"
+                      ]
     },
     {
         "type":  "book_chapter",
@@ -1115,9 +1135,11 @@
                         "publisher":  "Springer Nature"
                     },
         "indexed_in":  [
-                           "Scopus",
-                           "SpringerLink"
-                       ]
+                           "Scopus"
+                       ],
+        "platforms":  [
+                          "SpringerLink"
+                      ]
     },
     {
         "type":  "book_chapter",
@@ -1152,9 +1174,11 @@
                         "publisher":  "Taylor & Francis Group (CRC Press)"
                     },
         "indexed_in":  [
-                           "Scopus",
-                           "Taylor & Francis"
-                       ]
+                           "Scopus"
+                       ],
+        "platforms":  [
+                          "Taylor & Francis"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1198,9 +1222,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1252,9 +1278,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1298,9 +1326,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1344,9 +1374,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1390,9 +1422,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1428,9 +1462,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1474,9 +1510,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1520,9 +1558,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1566,9 +1606,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1612,9 +1654,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1658,9 +1702,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1712,9 +1758,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1758,9 +1806,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1828,9 +1878,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1874,9 +1926,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1928,9 +1982,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -1990,9 +2046,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -2036,9 +2094,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -2082,9 +2142,11 @@
                         "publisher":  "IEEE"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "conference_paper",
@@ -2120,9 +2182,11 @@
                         "pages":  "2062-2067"
                     },
         "indexed_in":  [
-                           "IEEE Xplore",
                            "Scopus"
-                       ]
+                       ],
+        "platforms":  [
+                          "IEEE Xplore"
+                      ]
     },
     {
         "type":  "book_chapter",
