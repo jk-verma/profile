@@ -1543,11 +1543,14 @@ dd {
   display: grid;
   gap: 16px;
   padding: 24px;
+}
+
+.dashboard-layout > form.dashboard-card {
   height: 100%;
 }
 
 .publish-card {
-  grid-template-rows: auto auto auto auto minmax(260px, 0.9fr) auto minmax(220px, 0.7fr);
+  grid-template-rows: auto;
 }
 
 .publish-card > :not(.json-output) {
