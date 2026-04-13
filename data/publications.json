@@ -482,7 +482,9 @@
                         "pages":  "1-21",
                         "publisher":  "IGI Global",
                         "publication_stage":  "Published",
-                        "abdc_category":  "A"
+                        "abdc_category":  "A",
+                        "issn":  "1062-7375",
+                        "eissn":  "1533-7995"
                     },
         "indexed_in":  [
                            "Scopus",
@@ -561,12 +563,14 @@
                         "journal":  "Transactions on Emerging Telecommunications Technologies",
                         "volume":  "29",
                         "issue":  "11",
-                        "pages":  "1-25"
+                        "pages":  "1-25",
+                        "issn":  "2161-3915"
                     },
         "indexed_in":  [
                            "Scopus",
                            "Web of Science"
-                       ]
+                       ],
+        "doi":  "10.1002/ett.3434"
     },
     {
         "type":  "journal_article",
@@ -599,13 +603,16 @@
                         "journal":  "Journal of Global Information Management",
                         "volume":  "26",
                         "issue":  "4",
-                        "pages":  "1-7"
+                        "pages":  "1-7",
+                        "issn":  "1062-7375",
+                        "eissn":  "1533-7995"
                     },
         "indexed_in":  [
                            "Scopus",
                            "Web of Science",
                            "ABDC"
-                       ]
+                       ],
+        "doi":  "10.4018/jgim.2018100101"
     },
     {
         "type":  "journal_article",
@@ -706,8 +713,11 @@
                         "journal":  "Smart Computing Review",
                         "volume":  "4",
                         "issue":  "5",
-                        "pages":  "389-411"
-                    }
+                        "pages":  "389-411",
+                        "issn":  "2234-4624",
+                        "eissn":  "2234-4624"
+                    },
+        "doi":  "10.6029/smartcr.2014.05.005"
     },
     {
         "type":  "journal_article",
@@ -748,13 +758,16 @@
                         "journal":  "International Journal of Information Technology and Computer Science",
                         "volume":  "6",
                         "issue":  "7",
-                        "pages":  "56-64"
+                        "pages":  "56-64",
+                        "issn":  "2074-9007",
+                        "eissn":  "2074-9015"
                     },
         "indexed_in":  [
                            "Scopus",
                            "INSPEC",
                            "Crossref"
-                       ]
+                       ],
+        "doi":  "10.5815/ijitcs.2014.07.08"
     },
     {
         "type":  "book_chapter",
@@ -794,7 +807,8 @@
                        ],
         "platforms":  [
                           "Taylor \u0026 Francis"
-                      ]
+                      ],
+        "doi":  "10.1201/9781003155577-4"
     },
     {
         "type":  "book_chapter",
@@ -827,14 +841,17 @@
                         "book_title":  "Advances in Augmented Reality and Virtual Reality",
                         "pages":  "3-9",
                         "publisher":  "Springer Nature",
-                        "isbn":  "978-981-16-7220-0"
+                        "isbn":  "978-981-16-7220-0",
+                        "issn":  "1860-949X",
+                        "eissn":  "1860-9503"
                     },
         "indexed_in":  [
                            "Scopus"
                        ],
         "platforms":  [
                           "SpringerLink"
-                      ]
+                      ],
+        "doi":  "10.1007/978-981-16-7220-0_1"
     },
     {
         "type":  "book_chapter",
@@ -859,7 +876,6 @@
                     ],
         "year":  "2022",
         "status":  "Published",
-        "doi":  "https://doi.org/10.1007/978-3-030-73885-3_2",
         "language":  "English",
         "featured":  false,
         "highlight":  false,
@@ -868,14 +884,17 @@
                         "book_title":  "IoT and Cloud Computing for Societal Good",
                         "pages":  "3-13",
                         "publisher":  "Springer Nature",
-                        "isbn":  "978-3-030-73885-3"
+                        "isbn":  "978-3-030-73885-3",
+                        "issn":  "2522-8595",
+                        "eissn":  "2522-8609"
                     },
         "indexed_in":  [
                            "Scopus"
                        ],
         "platforms":  [
                           "SpringerLink"
-                      ]
+                      ],
+        "doi":  "10.1007/978-3-030-73885-3_1"
     },
     {
         "type":  "book_chapter",
@@ -925,7 +944,8 @@
                         "pages":  "70-87",
                         "publisher":  "IGI Global / Engineering Science Reference",
                         "isbn":  "9781799858768"
-                    }
+                    },
+        "doi":  "10.4018/978-1-7998-5876-8.ch004"
     },
     {
         "type":  "book_chapter",
@@ -1001,8 +1021,11 @@
                         "book_title":  "Applications of Machine Learning",
                         "pages":  "15-30",
                         "publisher":  "Springer Nature",
-                        "isbn":  "978-981-15-3357-0"
-                    }
+                        "isbn":  "978-981-15-3357-0",
+                        "issn":  "2524-7565",
+                        "eissn":  "2524-7573"
+                    },
+        "doi":  "10.1007/978-981-15-3357-0_2"
     },
     {
         "type":  "book_chapter",
@@ -1051,8 +1074,11 @@
                         "book_title":  "Applications of Machine Learning",
                         "pages":  "353-364",
                         "publisher":  "Springer Nature",
-                        "isbn":  "978-981-15-3357-0"
-                    }
+                        "isbn":  "978-981-15-3357-0",
+                        "issn":  "2524-7565",
+                        "eissn":  "2524-7573"
+                    },
+        "doi":  "10.1007/978-981-15-3357-0_23"
     },
     {
         "type":  "book_chapter",
@@ -1092,14 +1118,18 @@
         "details":  {
                         "book_title":  "Data and Communication Networks",
                         "pages":  "1-12",
-                        "publisher":  "Springer Nature"
+                        "publisher":  "Springer Nature",
+                        "isbn":  "978-981-13-2254-9",
+                        "issn":  "2194-5357",
+                        "eissn":  "2194-5365"
                     },
         "indexed_in":  [
                            "Scopus"
                        ],
         "platforms":  [
                           "SpringerLink"
-                      ]
+                      ],
+        "doi":  "10.1007/978-981-13-2254-9_1"
     },
     {
         "type":  "book_chapter",
@@ -1147,14 +1177,18 @@
         "details":  {
                         "book_title":  "Data and Communication Networks",
                         "pages":  "195-203",
-                        "publisher":  "Springer Nature"
+                        "publisher":  "Springer Nature",
+                        "isbn":  "978-981-13-2254-9",
+                        "issn":  "2194-5357",
+                        "eissn":  "2194-5365"
                     },
         "indexed_in":  [
                            "Scopus"
                        ],
         "platforms":  [
                           "SpringerLink"
-                      ]
+                      ],
+        "doi":  "10.1007/978-981-13-2254-9_17"
     },
     {
         "type":  "book_chapter",
@@ -1186,14 +1220,16 @@
         "details":  {
                         "book_title":  "Communication and Computing Systems",
                         "pages":  "1095-1101",
-                        "publisher":  "Taylor \u0026 Francis Group (CRC Press)"
+                        "publisher":  "Taylor \u0026 Francis Group (CRC Press)",
+                        "isbn":  "9781315364094"
                     },
         "indexed_in":  [
                            "Scopus"
                        ],
         "platforms":  [
                           "Taylor \u0026 Francis"
-                      ]
+                      ],
+        "doi":  "10.1201/9781315364094-196"
     },
     {
         "type":  "conference_paper",
@@ -1241,7 +1277,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe53109.2021.9752067"
     },
     {
         "type":  "conference_paper",
@@ -1297,7 +1334,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe53109.2021.9752402"
     },
     {
         "type":  "conference_paper",
@@ -1345,7 +1383,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe53109.2021.9752380"
     },
     {
         "type":  "conference_paper",
@@ -1393,7 +1432,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe53109.2021.9752260"
     },
     {
         "type":  "conference_paper",
@@ -1441,7 +1481,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe53109.2021.9752270"
     },
     {
         "type":  "conference_paper",
@@ -1481,7 +1522,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe49325.2020.9200049"
     },
     {
         "type":  "conference_paper",
@@ -1529,7 +1571,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe49325.2020.9199997"
     },
     {
         "type":  "conference_paper",
@@ -1577,7 +1620,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe49325.2020.9200035"
     },
     {
         "type":  "conference_paper",
@@ -1625,7 +1669,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe49325.2020.9200110"
     },
     {
         "type":  "conference_paper",
@@ -1673,7 +1718,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe49325.2020.9200036"
     },
     {
         "type":  "conference_paper",
@@ -1721,7 +1767,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe49325.2020.9200020"
     },
     {
         "type":  "conference_paper",
@@ -1777,7 +1824,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe49325.2020.9200051"
     },
     {
         "type":  "conference_paper",
@@ -1825,7 +1873,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe49325.2020.9199995"
     },
     {
         "type":  "conference_paper",
@@ -1897,7 +1946,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe49325.2020.9200195"
     },
     {
         "type":  "conference_paper",
@@ -1945,7 +1995,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe49325.2020.9200105"
     },
     {
         "type":  "conference_paper",
@@ -2001,7 +2052,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/compe49325.2020.9200192"
     },
     {
         "type":  "conference_paper",
@@ -2065,7 +2117,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/ccaa.2018.8777527"
     },
     {
         "type":  "conference_paper",
@@ -2113,7 +2166,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/gucon.2018.8674918"
     },
     {
         "type":  "conference_paper",
@@ -2161,7 +2215,8 @@
                        ],
         "platforms":  [
                           "IEEE Xplore"
-                      ]
+                      ],
+        "doi":  "10.1109/gucon.2018.8675016"
     },
     {
         "type":  "conference_paper",
