@@ -243,7 +243,8 @@ function bindProjectFilters() {
   });
 }
 
-function formatFundedProjectReference(project, index) {
+function formatFundedProjectReference(project, index, projects) {
+  const number = projects.length - index;
   const role = project.role ? ` (${project.role})` : "";
   const valueLabel = project.projectType === "Consultancy Project" ? "Project Value" : "Amount";
   const parts = [
@@ -261,7 +262,7 @@ function formatFundedProjectReference(project, index) {
 
   const item = document.createElement("li");
   item.append(
-    createTextElement("span", "publication-number", `[${index + 1}]`),
+    createTextElement("span", "publication-number", `[${number}]`),
     createTextElement("span", "publication-reference", `${parts.join(", ")}.`)
   );
   return item;
