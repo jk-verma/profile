@@ -253,7 +253,7 @@ function renderNewsTicker(items) {
     if (item.submissionDeadline) {
       if (item.deadlineExpired) {
         link.append(
-          createTextElement("span", "ticker-status-badge is-closed", "Closed"),
+          createTextElement("sup", "ticker-status-badge is-closed", "Closed"),
           createTextElement("span", "ticker-deadline is-expired", item.submissionDeadline)
         );
       } else {
