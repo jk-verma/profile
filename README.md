@@ -20,7 +20,7 @@ Supporting files are organized by purpose:
 - `js/projects.js` - Projects rendering
 - `js/news.js` - News archive rendering and filters
 - `js/dashboard.js` - Dashboard forms, previews, copy, and download behavior
-- `js/dashboard-access.js` - Dashboard password prompt
+- `js/dashboard-access.js` - Optional dashboard access helper; no password or private value is stored in public JavaScript
 - `data/news.json` - Latest news data
 - `data/publications.json` - Publications and intellectual property data
 - `data/projects.json` - Website, utility, and funded project data
@@ -39,12 +39,13 @@ GitHub Pages will serve the root HTML files directly.
 
 ## Dashboard Access
 
-The dashboard is protected by a lightweight browser-side password prompt.
+The dashboard is intentionally not protected by a client-side password.
 
 - Dashboard URL: `dashboard.html`
-- Current password: `*******`
+- Do not place dashboard passwords, password hashes, tokens, API keys, or private data in public JavaScript.
+- On GitHub Pages, dashboard forms should be used only to prepare reviewed JSON updates for the public data files.
 
-Important: because this is a static GitHub Pages site, this is only light access control in the browser, not full secure authentication.
+Important: GitHub Pages is static public hosting. Any password placed in browser-side code can be inspected by visitors.
 
 ## Add or Replace the Profile Photo
 
@@ -54,7 +55,13 @@ Add a portrait image at:
 assets/profile-photo.jpg
 ```
 
-Use a small web version rather than a high-resolution original. Any image shown in a browser can still be copied by a determined visitor, so the best practical protection is to upload only a low-resolution or watermarked version.
+Use a compressed, watermarked web version rather than a high-resolution original. Any image shown in a browser can still be copied by a determined visitor, so the best practical protection is to upload only a low-resolution or watermarked version.
+
+## Copyright and Use
+
+Copyright (c) Dr. Jitendra Kumar Verma. All rights reserved.
+
+Website text, profile information, images, resume material, publication/project metadata, and other personal or academic content may not be copied, reused, republished, or redistributed without written permission, except where allowed by law.
 
 ## Update Latest News
 

@@ -1,12 +1,15 @@
 (function () {
+  // GitHub Pages is fully public, so do not keep passwords, hashes, tokens,
+  // or private data in this JavaScript file.
   const DEFAULT_DASHBOARD_ACCESS_CONFIG = {
     enabled: false,
-    passwordHash: "a4c5a1b85cb7e9a209e697050be8a912258c5991f963c3430d3b925028b514ef"
+    passwordHash: ""
   };
   const DASHBOARD_ACCESS_CONFIG = {
     ...DEFAULT_DASHBOARD_ACCESS_CONFIG,
     ...(window.DASHBOARD_ACCESS_CONFIG || {})
   };
+  const dashboardAccessEnabled = Boolean(DASHBOARD_ACCESS_CONFIG.enabled && DASHBOARD_ACCESS_CONFIG.passwordHash);
   const DASHBOARD_PATH = "dashboard.html";
   const DASHBOARD_ACCESS_KEY = "jkv-dashboard-one-time-access";
   let activeDialog = null;
@@ -132,7 +135,7 @@
 
   document.addEventListener("click", async (event) => {
     const link = event.target.closest("[data-dashboard-link]");
-    if (!link || !DASHBOARD_ACCESS_CONFIG.enabled) {
+    if (!link || !dashboardAccessEnabled) {
       return;
     }
 
@@ -145,7 +148,7 @@
   });
 
   if (isDashboardPage()) {
-    if (!DASHBOARD_ACCESS_CONFIG.enabled) {
+    if (!dashboardAccessEnabled) {
       return;
     }
 
