@@ -220,6 +220,7 @@ function renderNewsTicker(items) {
     .map((item) => ({
       category: item.category || "News",
       title: item.title,
+      link: item.link || "",
       submissionDeadline: item.submissionDeadline || "",
       deadlineExpired: isPastDeadline(item.submissionDeadline)
     }));
@@ -240,7 +241,11 @@ function renderNewsTicker(items) {
 
     const link = document.createElement("a");
     link.className = item.deadlineExpired ? "ticker-link deadline-expired" : "ticker-link";
-    link.href = "#news";
+    link.href = item.link || "#news";
+    if (item.link) {
+      link.target = "_blank";
+      link.rel = "noopener";
+    }
     link.append(
       createTextElement("span", "ticker-category", item.category),
       createTextElement("span", "ticker-title", item.title)
@@ -252,10 +257,12 @@ function renderNewsTicker(items) {
         `${item.deadlineExpired ? "Closed" : "Deadline"}: ${item.submissionDeadline}`
       ));
     }
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      document.getElementById("news")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+    if (!item.link) {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        document.getElementById("news")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
     return link;
   }));
 }
