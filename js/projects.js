@@ -57,6 +57,19 @@ function getProjectFocusAreas(project) {
   ];
 }
 
+function renderFocusAreas(project) {
+  const focusAreas = getProjectFocusAreas(project);
+  if (!focusAreas.length) return null;
+
+  const wrap = document.createElement("div");
+  wrap.className = "project-focus-list";
+  wrap.append(createTextElement("span", "project-focus-label", "Focus Areas"));
+  focusAreas.forEach((area) => {
+    wrap.append(createTextElement("span", "dashboard-chip", area));
+  });
+  return wrap;
+}
+
 function getProjectSearchText(project) {
   return [
     project.title,
@@ -113,11 +126,17 @@ function renderProjectCard(project) {
   }
 
   const detailBits = [];
+  if (project.role) detailBits.push(`Role: ${project.role}`);
   if (project.duration) detailBits.push(`Duration: ${project.duration}`);
   if (project.amountSanctioned) detailBits.push(`Amount: ${project.amountSanctioned}`);
 
   if (detailBits.length) {
     fragments.push(createTextElement("p", "project-detail", detailBits.join(" | ")));
+  }
+
+  const focusList = renderFocusAreas(project);
+  if (focusList) {
+    fragments.push(focusList);
   }
 
   article.append(...fragments);
@@ -247,6 +266,7 @@ function formatFundedProjectReference(project, index, projects) {
   const number = projects.length - index;
   const role = project.role ? ` (${project.role})` : "";
   const valueLabel = project.projectType === "Consultancy Project" ? "Project Value" : "Amount";
+  const focusAreas = getProjectFocusAreas(project);
   const parts = [
     `J. K. Verma${role}`,
     project.title ? `"${project.title}"` : "",
@@ -257,6 +277,7 @@ function formatFundedProjectReference(project, index, projects) {
     project.duration ? `Duration: ${project.duration}` : "",
     project.yearOfFunding ? `Year: ${project.yearOfFunding}` : "",
     project.amountSanctioned ? `${valueLabel}: ${project.amountSanctioned}` : "",
+    focusAreas.length ? `Focus Areas: ${focusAreas.join(", ")}` : "",
     project.status ? `Status: ${project.status}` : ""
   ].filter(Boolean);
 

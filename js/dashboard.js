@@ -401,6 +401,25 @@ function pruneEmptyProjectFields(item) {
   return item;
 }
 
+function getProjectFocusAreas(project) {
+  if (Array.isArray(project.focusAreas)) return project.focusAreas.filter(Boolean);
+  if (!project.focusAreas) return [];
+  return parseIndexing(String(project.focusAreas));
+}
+
+function renderProjectFocusAreas(project) {
+  const focusAreas = getProjectFocusAreas(project);
+  if (!focusAreas.length) return null;
+
+  const wrap = document.createElement("div");
+  wrap.className = "project-focus-list";
+  wrap.append(createTextElement("span", "project-focus-label", "Focus Areas"));
+  focusAreas.forEach((area) => {
+    wrap.append(createTextElement("span", "dashboard-chip", area));
+  });
+  return wrap;
+}
+
 function getDefaultFundedProjectStatus() {
   return fundedProjectType?.value === "Consultancy Project" ? "Completed" : "Ongoing";
 }
@@ -770,11 +789,17 @@ function renderProjectCard(project) {
   }
 
   const detailBits = [];
+  if (project.role) detailBits.push(`Role: ${project.role}`);
   if (project.duration) detailBits.push(`Duration: ${project.duration}`);
   if (project.amountSanctioned) detailBits.push(`Amount: ${project.amountSanctioned}`);
 
   if (detailBits.length) {
     article.append(createTextElement("p", "project-detail", detailBits.join(" | ")));
+  }
+
+  const focusList = renderProjectFocusAreas(project);
+  if (focusList) {
+    article.append(focusList);
   }
 
   if (project.siteUrl) {
@@ -801,6 +826,7 @@ function formatFundedProjectReference(project, index, total) {
   const number = total - index;
   const role = project.role ? ` (${project.role})` : "";
   const valueLabel = project.projectType === "Consultancy Project" ? "Project Value" : "Amount";
+  const focusAreas = getProjectFocusAreas(project);
   const parts = [
     `J. K. Verma${role}`,
     project.title ? `"${project.title}"` : "",
@@ -811,6 +837,7 @@ function formatFundedProjectReference(project, index, total) {
     project.duration ? `Duration: ${project.duration}` : "",
     project.yearOfFunding ? `Year: ${project.yearOfFunding}` : "",
     project.amountSanctioned ? `${valueLabel}: ${project.amountSanctioned}` : "",
+    focusAreas.length ? `Focus Areas: ${focusAreas.join(", ")}` : "",
     project.status ? `Status: ${project.status}` : ""
   ].filter(Boolean);
 

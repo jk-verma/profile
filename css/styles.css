@@ -1144,6 +1144,22 @@ dd {
   font-size: 0.92rem;
 }
 
+.project-focus-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.project-focus-label {
+  color: var(--accent-2);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .project-link {
   justify-self: start;
   margin-top: auto;
