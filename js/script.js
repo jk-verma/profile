@@ -158,6 +158,16 @@ function createDeadlineBadge(deadline) {
   );
 }
 
+function scheduleDailyDeadlineRefresh(callback) {
+  const now = new Date();
+  const nextMidnight = new Date(now);
+  nextMidnight.setHours(24, 0, 2, 0);
+  window.setTimeout(() => {
+    callback();
+    window.setInterval(callback, 24 * 60 * 60 * 1000);
+  }, nextMidnight.getTime() - now.getTime());
+}
+
 function renderNewsItem(item) {
   const article = document.createElement("article");
   article.className = "news-item";
@@ -277,11 +287,16 @@ async function loadNews() {
     if (!response.ok) throw new Error("Unable to load news data");
 
     const items = sortNewsItems(await response.json());
-    renderNewsTicker(selectTickerItems(items));
+    const renderDynamicNews = () => {
+      renderNewsTicker(selectTickerItems(items));
 
-    if (container) {
-      container.replaceChildren(...items.slice(0, 2).map(renderNewsItem), renderNewsArchiveCard());
-    }
+      if (container) {
+        container.replaceChildren(...items.slice(0, 2).map(renderNewsItem), renderNewsArchiveCard());
+      }
+    };
+
+    renderDynamicNews();
+    scheduleDailyDeadlineRefresh(renderDynamicNews);
   } catch (error) {
     if (ticker) {
       ticker.replaceChildren(createTextElement("span", "", "Latest news will appear here once data/news.json is available."));

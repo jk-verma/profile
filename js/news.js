@@ -63,6 +63,16 @@ function createDeadlineBadge(deadline) {
   );
 }
 
+function scheduleDailyDeadlineRefresh(callback) {
+  const now = new Date();
+  const nextMidnight = new Date(now);
+  nextMidnight.setHours(24, 0, 2, 0);
+  window.setTimeout(() => {
+    callback();
+    window.setInterval(callback, 24 * 60 * 60 * 1000);
+  }, nextMidnight.getTime() - now.getTime());
+}
+
 function renderNewsItem(item) {
   const article = document.createElement("article");
   article.className = "news-item";
@@ -141,6 +151,7 @@ async function loadNews() {
     populateCategoryFilter(items);
     applyCategoryFilter(items, container);
     newsCategoryFilter?.addEventListener("change", () => applyCategoryFilter(items, container));
+    scheduleDailyDeadlineRefresh(() => applyCategoryFilter(items, container));
   } catch (error) {
     const fallback = document.createElement("article");
     fallback.className = "news-item";
