@@ -24,7 +24,7 @@ function academicYearFromDate(value){const match=String(value||"").match(/^(\d{4
 function academicYearFromMonthYear(year,month){const y=Number(year||0),m=months.indexOf(month||"");if(!y||m<0)return"";const start=m>=6?y:y-1;return start+"-"+String((start+1)%100).padStart(2,"0")}
 function academicYearEndingIn(year){const y=Number(year||0);if(!y)return"";const start=y-1;return start+"-"+String(y%100).padStart(2,"0")}
 const standardStatuses=["Published","Accepted","In Press","Online First","Forthcoming","Submitted","Presented","Completed","Draft"];
-const patentStatuses=["Filed","Published","Granted"];
+const patentStatuses=["Filed","Published","Under Examination","Granted"];
 const copyrightStatuses=["Applied","Registered","Granted"];
 const artifactStatuses=["Released","Updated","Archived","Draft"];
 const indexing=["Scopus","Web of Science Core Collection","SCIE","SSCI","AHCI","ESCI","CPCI","BKCI","ABDC","ABS","PubMed","MEDLINE","Crossref","DOAJ","Google Scholar","SSRN","arXiv","RePEc","EBSCO","ProQuest","UGC-CARE","Shodhganga","Zenodo","Figshare","Dryad","OSF","Indian Citation Index","DBLP","EI Compendex","INSPEC","Other"];
