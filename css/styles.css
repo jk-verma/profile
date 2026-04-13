@@ -1459,8 +1459,6 @@ dd {
   border-color: rgba(255, 88, 88, 0.5);
   color: #ffe6e6;
   background: linear-gradient(135deg, rgba(190, 42, 42, 0.94), rgba(115, 24, 24, 0.92));
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
 }
 
 .news-link {
