@@ -352,8 +352,6 @@ a:hover {
   border-color: rgba(255, 96, 96, 0.72);
   color: #fff;
   background: linear-gradient(135deg, #e02525, #8b1515);
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
 }
 
 .ticker-title {
@@ -362,8 +360,6 @@ a:hover {
 
 .ticker-link.deadline-expired .ticker-title {
   color: #ff4d4d;
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
 }
 
 .ticker-link.deadline-expired .ticker-category {
