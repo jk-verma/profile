@@ -356,11 +356,11 @@ a:hover {
 
 .ticker-status-badge {
   align-self: flex-start;
-  margin-left: -4px;
+  margin-left: -2px;
   padding: 2px 6px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius);
-  font-size: 0.64rem;
+  font-size: 0.66rem;
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
