@@ -1628,7 +1628,14 @@ dd {
 }
 
 .publish-card .json-output {
-  min-height: 320px;
+  min-height: 180px;
+  max-height: 240px;
+  overflow: auto;
+}
+
+.publish-card .dashboard-output-label + .json-output {
+  min-height: 120px;
+  max-height: 160px;
 }
 
 #publicationReferencesOutput {
