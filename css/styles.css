@@ -289,7 +289,7 @@ a:hover {
 
 .ticker-track {
   display: inline-flex;
-  gap: 34px;
+  gap: 52px;
   min-width: max-content;
   color: var(--text);
   font-size: 0.95rem;
@@ -305,14 +305,14 @@ a:hover {
 .ticker-track > span,
 .ticker-track > a {
   position: relative;
-  padding-right: 18px;
+  padding-right: 30px;
   color: var(--text);
 }
 
 .ticker-track a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
   pointer-events: auto;
 }
@@ -349,9 +349,9 @@ a:hover {
 }
 
 .ticker-deadline.is-expired {
-  border-color: rgba(255, 88, 88, 0.46);
-  color: #ffe6e6;
-  background: rgba(167, 35, 35, 0.72);
+  border-color: rgba(255, 96, 96, 0.72);
+  color: #fff;
+  background: linear-gradient(135deg, #e02525, #8b1515);
   text-decoration: line-through;
   text-decoration-thickness: 2px;
 }
@@ -361,9 +361,15 @@ a:hover {
 }
 
 .ticker-link.deadline-expired .ticker-title {
-  color: #ffb4b4;
+  color: #ff4d4d;
   text-decoration: line-through;
   text-decoration-thickness: 2px;
+}
+
+.ticker-link.deadline-expired .ticker-category {
+  border-color: rgba(255, 96, 96, 0.72);
+  color: #fff;
+  background: #d82020;
 }
 
 .ticker-track a:hover .ticker-title {
@@ -379,7 +385,7 @@ a:hover {
   content: "";
   position: absolute;
   top: 50%;
-  right: 4px;
+  right: 8px;
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -396,7 +402,8 @@ a:hover {
 }
 
 .ticker-category::after,
-.ticker-title::after {
+.ticker-title::after,
+.ticker-deadline::after {
   display: none;
 }
 
