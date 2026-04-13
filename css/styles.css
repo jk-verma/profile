@@ -289,7 +289,7 @@ a:hover {
 
 .ticker-track {
   display: inline-flex;
-  gap: 52px;
+  gap: 34px;
   min-width: max-content;
   color: var(--text);
   font-size: 0.95rem;
@@ -305,14 +305,14 @@ a:hover {
 .ticker-track > span,
 .ticker-track > a {
   position: relative;
-  padding-right: 30px;
+  padding-right: 18px;
   color: var(--text);
 }
 
 .ticker-track a {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   cursor: pointer;
   pointer-events: auto;
 }
@@ -377,22 +377,8 @@ a:hover {
   color: var(--text);
 }
 
-.ticker-link.deadline-expired .ticker-title {
-  color: #ff4d4d;
-}
-
-.ticker-link.deadline-expired .ticker-category {
-  border-color: rgba(255, 96, 96, 0.72);
-  color: #fff;
-  background: #d82020;
-}
-
 .ticker-track a:hover .ticker-title {
   color: var(--accent-2);
-}
-
-.ticker-track a.deadline-expired:hover .ticker-title {
-  color: #ffd1d1;
 }
 
 .ticker-track > span::after,
@@ -400,7 +386,7 @@ a:hover {
   content: "";
   position: absolute;
   top: 50%;
-  right: 8px;
+  right: 4px;
   width: 6px;
   height: 6px;
   border-radius: 50%;
