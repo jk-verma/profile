@@ -349,6 +349,21 @@ a:hover {
 }
 
 .ticker-deadline.is-expired {
+  border-color: rgba(255, 96, 96, 0.28);
+  color: #ffb4b4;
+  background: rgba(255, 96, 96, 0.1);
+}
+
+.ticker-status-badge {
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.ticker-status-badge.is-closed {
   border-color: rgba(255, 96, 96, 0.72);
   color: #fff;
   background: linear-gradient(135deg, #e02525, #8b1515);
@@ -399,7 +414,8 @@ a:hover {
 
 .ticker-category::after,
 .ticker-title::after,
-.ticker-deadline::after {
+.ticker-deadline::after,
+.ticker-status-badge::after {
   display: none;
 }
 

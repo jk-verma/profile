@@ -251,11 +251,14 @@ function renderNewsTicker(items) {
       createTextElement("span", "ticker-title", item.title)
     );
     if (item.submissionDeadline) {
-      link.append(createTextElement(
-        "span",
-        item.deadlineExpired ? "ticker-deadline is-expired" : "ticker-deadline",
-        `${item.deadlineExpired ? "Closed" : "Deadline"}: ${item.submissionDeadline}`
-      ));
+      if (item.deadlineExpired) {
+        link.append(
+          createTextElement("span", "ticker-status-badge is-closed", "Closed"),
+          createTextElement("span", "ticker-deadline is-expired", item.submissionDeadline)
+        );
+      } else {
+        link.append(createTextElement("span", "ticker-deadline", `Deadline: ${item.submissionDeadline}`));
+      }
     }
     if (!item.link) {
       link.addEventListener("click", (event) => {
