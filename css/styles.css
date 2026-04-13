@@ -1543,6 +1543,7 @@ dd {
   display: grid;
   gap: 16px;
   padding: 24px;
+  align-self: start;
 }
 
 .publish-card {
@@ -1628,14 +1629,16 @@ dd {
 }
 
 .publish-card .json-output {
-  min-height: 180px;
-  max-height: 240px;
+  height: 190px;
+  min-height: 150px;
+  max-height: 220px;
   overflow: auto;
 }
 
 .publish-card .dashboard-output-label + .json-output {
-  min-height: 120px;
-  max-height: 160px;
+  height: 120px;
+  min-height: 96px;
+  max-height: 145px;
 }
 
 #publicationReferencesOutput {
