@@ -99,8 +99,9 @@ let lastWebsiteProjectEntry = null;
 let lastFundedProjectEntry = null;
 let lastSiteContentEntry = null;
 let activeToastTimeout = null;
-
-window.dashboardJsonSections = window.dashboardJsonSections || {};
+let editingNewsIndex = -1;
+let editingProjectIndex = -1;
+let editingSiteContentIndex = -1;
 
 const publicationTypes = [
   "Journal Article",
@@ -424,6 +425,32 @@ function createTextElement(tag, className, text) {
   return element;
 }
 
+function createPreviewActions(onEdit, onDelete) {
+  const actions = document.createElement("div");
+  actions.className = "dashboard-preview-actions";
+
+  const edit = document.createElement("button");
+  edit.type = "button";
+  edit.className = "button secondary dashboard-preview-edit";
+  edit.textContent = "Edit";
+  edit.addEventListener("click", onEdit);
+
+  const remove = document.createElement("button");
+  remove.type = "button";
+  remove.className = "dashboard-preview-delete";
+  remove.textContent = "×";
+  remove.setAttribute("aria-label", "Delete this record");
+  remove.title = "Delete this record";
+  remove.addEventListener("click", onDelete);
+
+  actions.append(edit, remove);
+  return actions;
+}
+
+function confirmDelete(label) {
+  return window.confirm(`Delete ${label}? This updates the generated JSON shown in the Publish card.`);
+}
+
 function updateCurrentYear() {
   const year = String(new Date().getFullYear());
   document.querySelectorAll("[data-current-year]").forEach((element) => {
@@ -446,9 +473,31 @@ function sortNewsItems(items) {
   });
 }
 
+function loadNewsEntryForEdit(item, index) {
+  editingNewsIndex = index;
+  newsDate.value = item.date || today();
+  newsCategory.value = item.category || "Achievement";
+  newsTitle.value = item.title || "";
+  newsDeadline.value = item.submissionDeadline || "";
+  newsLink.value = item.link || "";
+  newsSummary.value = item.summary || "";
+  setStatus("News record loaded for editing. Update details and click Add to JSON to save changes.");
+  newsForm?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function deleteNewsEntry(index) {
+  if (index < 0 || !newsItems[index]) return;
+  if (!confirmDelete(newsItems[index].title || "this news item")) return;
+  newsItems.splice(index, 1);
+  if (editingNewsIndex === index) editingNewsIndex = -1;
+  syncOutput();
+  setStatus("News record deleted from generated JSON.");
+}
+
 function renderNewsItem(item) {
   const article = document.createElement("article");
   article.className = "news-item";
+  const itemIndex = newsItems.indexOf(item);
 
   const meta = document.createElement("div");
   meta.className = "news-meta";
@@ -477,7 +526,72 @@ function renderNewsItem(item) {
     article.append(link);
   }
 
+  if (itemIndex >= 0) {
+    article.append(createPreviewActions(
+      () => loadNewsEntryForEdit(item, itemIndex),
+      () => deleteNewsEntry(itemIndex)
+    ));
+  }
+
   return article;
+}
+
+function loadProjectEntryForEdit(project, index) {
+  editingProjectIndex = index;
+
+  if (project.entryType === "fundedProject") {
+    if (projectEntryMode) {
+      projectEntryMode.value = "funded";
+      syncProjectEntryMode();
+    }
+
+    fundedProjectType.value = project.projectType || "Consultancy Project";
+    fundedProjectAgency.value = project.fundingAgency || "";
+    fundedProjectScheme.value = project.schemeName || project.schemeProgram || "";
+    fundedProjectRole.value = project.role || "";
+    fundedProjectTitle.value = project.title || "";
+    if (fundedProjectTitleAcronym) fundedProjectTitleAcronym.value = project.titleAcronym || "";
+    fundedProjectGrantNumber.value = project.grantNumber || "";
+    fundedProjectYears.value = project.yearOfFunding || "";
+    fundedProjectDuration.value = project.duration || "";
+    fundedProjectAmount.value = project.amountSanctioned || "";
+    fundedProjectStatus.value = project.status || getDefaultFundedProjectStatus();
+    if (fundedProjectFocusAreas) {
+      fundedProjectFocusAreas.value = Array.isArray(project.focusAreas) ? project.focusAreas.join(", ") : (project.focusAreas || "");
+    }
+
+    setProjectStatus("Funded project loaded for editing. Update details and click Add to Projects JSON to save changes.");
+    fundedProjectForm?.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+
+  if (projectEntryMode) {
+    projectEntryMode.value = "website";
+    syncProjectEntryMode();
+  }
+
+  projectTitle.value = project.title || "";
+  if (projectTitleAcronym) projectTitleAcronym.value = project.titleAcronym || "";
+  websiteProjectSummary.value = project.summary || "";
+  websiteProjectLink.value = project.siteUrl || project.url || "";
+  if (websiteProjectFocusAreas) {
+    websiteProjectFocusAreas.value = Array.isArray(project.focusAreas) ? project.focusAreas.join(", ") : (project.focusAreas || "");
+  }
+
+  setProjectStatus("Website or utility project loaded for editing. Update details and click Add to Projects JSON to save changes.");
+  websiteProjectForm?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function deleteProjectEntry(index) {
+  if (index < 0 || !projectItems[index]) return;
+  if (!confirmDelete(projectItems[index].title || "this project record")) return;
+  const deleted = projectItems[index];
+  projectItems.splice(index, 1);
+  if (editingProjectIndex === index) editingProjectIndex = -1;
+  if (lastWebsiteProjectEntry === deleted) lastWebsiteProjectEntry = null;
+  if (lastFundedProjectEntry === deleted) lastFundedProjectEntry = null;
+  syncProjectsOutput();
+  setProjectStatus("Project record deleted from generated JSON.");
 }
 
 function renderNewsPreview(items, container) {
@@ -612,6 +726,7 @@ function getProjectSectionName(project) {
 function renderProjectCard(project) {
   const article = document.createElement("article");
   article.className = "card";
+  const itemIndex = projectItems.indexOf(project);
 
   const metaBits = [
     project.projectType,
@@ -649,6 +764,13 @@ function renderProjectCard(project) {
     article.append(siteLink);
   }
 
+  if (itemIndex >= 0) {
+    article.append(createPreviewActions(
+      () => loadProjectEntryForEdit(project, itemIndex),
+      () => deleteProjectEntry(itemIndex)
+    ));
+  }
+
   return article;
 }
 
@@ -674,10 +796,19 @@ function formatFundedProjectReference(project, index, total) {
 
 function renderFundedProjectReference(project, index, projects) {
   const item = document.createElement("li");
+  const itemIndex = projectItems.indexOf(project);
   item.append(
     createTextElement("span", "publication-number", `[${projects.length - index}]`),
     createTextElement("span", "publication-reference", formatFundedProjectReference(project, index, projects.length).replace(/^\[\d+\]\s*/, ""))
   );
+
+  if (itemIndex >= 0) {
+    item.append(createPreviewActions(
+      () => loadProjectEntryForEdit(project, itemIndex),
+      () => deleteProjectEntry(itemIndex)
+    ));
+  }
+
   return item;
 }
 
@@ -754,6 +885,7 @@ function getSiteContentSectionLabel(sectionKey) {
 function renderSiteContentCard(item) {
   const article = document.createElement("article");
   article.className = "card";
+  const itemIndex = siteContentItems.indexOf(item);
 
   const meta = compactParts([
     getSiteContentSectionLabel(item.section),
@@ -778,7 +910,38 @@ function renderSiteContentCard(item) {
     article.append(link);
   }
 
+  if (itemIndex >= 0) {
+    article.append(createPreviewActions(
+      () => loadSiteContentEntryForEdit(item, itemIndex),
+      () => deleteSiteContentEntry(itemIndex)
+    ));
+  }
+
   return article;
+}
+
+function loadSiteContentEntryForEdit(item, index) {
+  editingSiteContentIndex = index;
+  siteContentSection.value = item.section || "github_pages_website";
+  siteContentKey.value = item.contentKey || "";
+  siteContentHeading.value = item.heading || "";
+  siteContentBody.value = item.body || "";
+  siteContentLinkLabel.value = item.linkLabel || "";
+  siteContentLinkUrl.value = item.linkUrl || "";
+  siteContentOrder.value = item.displayOrder || "";
+  setSiteContentStatus("Voluntary project record loaded for editing. Update details and click Add to JSON to save changes.");
+  siteContentForm?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function deleteSiteContentEntry(index) {
+  if (index < 0 || !siteContentItems[index]) return;
+  if (!confirmDelete(siteContentItems[index].heading || "this voluntary project record")) return;
+  const deleted = siteContentItems[index];
+  siteContentItems.splice(index, 1);
+  if (editingSiteContentIndex === index) editingSiteContentIndex = -1;
+  if (lastSiteContentEntry === deleted) lastSiteContentEntry = null;
+  syncSiteContentOutput();
+  setSiteContentStatus("Voluntary project record deleted from generated JSON.");
 }
 
 function renderSiteContentPreview(items, container) {
@@ -874,53 +1037,6 @@ function syncSiteContentOutput() {
     siteContentEntryJsonOutput.value = lastSiteContentEntry ? JSON.stringify(lastSiteContentEntry, null, 2) : "";
   }
   renderSiteContentPreview(siteContentItems, siteContentPreview);
-}
-
-function registerDashboardJsonSections() {
-  window.dashboardJsonSections.news = {
-    label: "Latest News",
-    filename: "news.json",
-    dataUrl: "data/news.json",
-    output: jsonOutput,
-    getItems: () => newsItems,
-    setItems: (items) => {
-      newsItems = Array.isArray(items) ? items : [];
-      syncOutput();
-    },
-    sync: syncOutput,
-    setStatus,
-    labelItem: (item, index) => compactParts([item?.date, item?.category, item?.title || `News item ${index + 1}`], " | ")
-  };
-
-  window.dashboardJsonSections.projects = {
-    label: "Projects",
-    filename: "projects.json",
-    dataUrl: "data/projects.json",
-    output: projectsJsonOutputs[0],
-    getItems: () => projectItems,
-    setItems: (items) => {
-      projectItems = Array.isArray(items) ? items : [];
-      syncProjectsOutput();
-    },
-    sync: syncProjectsOutput,
-    setStatus: setProjectStatus,
-    labelItem: (item, index) => compactParts([item?.entryType === "fundedProject" ? "Funded" : "Website", item?.projectType, item?.title || `Project ${index + 1}`], " | ")
-  };
-
-  window.dashboardJsonSections.siteContent = {
-    label: "Voluntary Projects",
-    filename: "voluntary-projects.json",
-    dataUrl: "data/voluntary-projects.json",
-    output: siteContentJsonOutput,
-    getItems: () => siteContentItems,
-    setItems: (items) => {
-      siteContentItems = Array.isArray(items) ? items : [];
-      syncSiteContentOutput();
-    },
-    sync: syncSiteContentOutput,
-    setStatus: setSiteContentStatus,
-    labelItem: (item, index) => compactParts([getSiteContentSectionLabel(item?.section), item?.heading || item?.contentKey || `Voluntary item ${index + 1}`], " | ")
-  };
 }
 
 async function loadNews() {
@@ -1029,14 +1145,21 @@ newsForm?.addEventListener("submit", (event) => {
   if (!item.submissionDeadline) delete item.submissionDeadline;
   if (!item.link) delete item.link;
 
-  newsItems = [item, ...newsItems];
+  if (editingNewsIndex >= 0 && newsItems[editingNewsIndex]) {
+    newsItems[editingNewsIndex] = item;
+    editingNewsIndex = -1;
+    setStatus("News record updated in generated JSON. Copy or download news.json to publish it.");
+  } else {
+    newsItems = [item, ...newsItems];
+    setStatus("Update added to JSON. Copy or download news.json to publish it.");
+  }
+
   newsTitle.value = "";
   newsDeadline.value = "";
   newsLink.value = "";
   newsSummary.value = "";
   newsDate.value = today();
   syncOutput();
-  setStatus("Update added to JSON. Copy or download news.json to publish it.");
 });
 
 publicationForm?.addEventListener("submit", (event) => {
@@ -1109,7 +1232,15 @@ websiteProjectForm?.addEventListener("submit", (event) => {
 
   pruneEmptyProjectFields(item);
 
-  projectItems = [item, ...projectItems];
+  if (editingProjectIndex >= 0 && projectItems[editingProjectIndex]) {
+    projectItems[editingProjectIndex] = item;
+    editingProjectIndex = -1;
+    setProjectStatus("Website or utility project updated in generated JSON. Copy or download projects.json to publish it.");
+  } else {
+    projectItems = [item, ...projectItems];
+    setProjectStatus("Website or utility project added to JSON. Copy or download projects.json to publish it.");
+  }
+
   lastWebsiteProjectEntry = item;
   projectTitle.value = "";
   if (projectTitleAcronym) projectTitleAcronym.value = "";
@@ -1117,7 +1248,6 @@ websiteProjectForm?.addEventListener("submit", (event) => {
   websiteProjectLink.value = "";
   if (websiteProjectFocusAreas) websiteProjectFocusAreas.value = "";
   syncProjectsOutput();
-  setProjectStatus("Website or utility project added to JSON. Copy or download projects.json to publish it.");
 });
 
 fundedProjectForm?.addEventListener("submit", (event) => {
@@ -1141,11 +1271,18 @@ fundedProjectForm?.addEventListener("submit", (event) => {
 
   pruneEmptyProjectFields(item);
 
-  projectItems = [item, ...projectItems];
+  if (editingProjectIndex >= 0 && projectItems[editingProjectIndex]) {
+    projectItems[editingProjectIndex] = item;
+    editingProjectIndex = -1;
+    setProjectStatus("Funded project updated in generated JSON. Copy or download projects.json to publish it.");
+  } else {
+    projectItems = [item, ...projectItems];
+    setProjectStatus("Funded project added to JSON. Copy or download projects.json to publish it.");
+  }
+
   lastFundedProjectEntry = item;
   resetFundedProjectForm();
   syncProjectsOutput();
-  setProjectStatus("Funded project added to JSON. Copy or download projects.json to publish it.");
 });
 
 siteContentForm?.addEventListener("submit", (event) => {
@@ -1167,7 +1304,15 @@ siteContentForm?.addEventListener("submit", (event) => {
     }
   });
 
-  siteContentItems = [item, ...siteContentItems];
+  if (editingSiteContentIndex >= 0 && siteContentItems[editingSiteContentIndex]) {
+    siteContentItems[editingSiteContentIndex] = item;
+    editingSiteContentIndex = -1;
+    setSiteContentStatus("Voluntary project entry updated in generated JSON. Copy or download voluntary-projects.json to publish it.");
+  } else {
+    siteContentItems = [item, ...siteContentItems];
+    setSiteContentStatus("Voluntary project entry added to JSON. Copy or download voluntary-projects.json to publish it.");
+  }
+
   lastSiteContentEntry = item;
   siteContentKey.value = "";
   siteContentHeading.value = "";
@@ -1176,10 +1321,10 @@ siteContentForm?.addEventListener("submit", (event) => {
   siteContentLinkUrl.value = "";
   siteContentOrder.value = "";
   syncSiteContentOutput();
-  setSiteContentStatus("Voluntary project entry added to JSON. Copy or download voluntary-projects.json to publish it.");
 });
 
 clearDraft?.addEventListener("click", () => {
+  editingNewsIndex = -1;
   newsTitle.value = "";
   newsDeadline.value = "";
   newsLink.value = "";
@@ -1208,6 +1353,7 @@ clearPublicationDraft?.addEventListener("click", () => {
 });
 
 clearWebsiteProjectDraft?.addEventListener("click", () => {
+  editingProjectIndex = -1;
   projectTitle.value = "";
   if (projectTitleAcronym) projectTitleAcronym.value = "";
   websiteProjectSummary.value = "";
@@ -1217,6 +1363,7 @@ clearWebsiteProjectDraft?.addEventListener("click", () => {
 });
 
 clearFundedProjectDraft?.addEventListener("click", () => {
+  editingProjectIndex = -1;
   resetFundedProjectForm();
   setProjectStatus("Funded project draft cleared.");
 });
@@ -1226,6 +1373,7 @@ fundedProjectType?.addEventListener("change", () => {
 });
 
 clearSiteContentDraft?.addEventListener("click", () => {
+  editingSiteContentIndex = -1;
   siteContentSection.value = "github_pages_website";
   siteContentKey.value = "";
   siteContentHeading.value = "";
@@ -1237,6 +1385,7 @@ clearSiteContentDraft?.addEventListener("click", () => {
 });
 
 projectEntryMode?.addEventListener("change", () => {
+  editingProjectIndex = -1;
   syncProjectEntryMode();
   setProjectStatus(`Showing ${projectEntryMode.value === "funded" ? "funded project" : "website and utility project"} cards.`);
 });
@@ -1372,7 +1521,6 @@ downloadSiteContentJson?.addEventListener("click", () => {
 });
 
 updateCurrentYear();
-registerDashboardJsonSections();
 window.setTimeout(setupDashboardCollapsibles, 0);
 loadNews();
 loadPublications();
