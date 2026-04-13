@@ -1,31 +1,41 @@
 [
   {
     "title": "Technology Trends in Business",
-    "titleAcronym": "TTB",
     "entryType": "fundedProject",
     "projectType": "Consultancy Project",
     "fundingAgency": "IIM Rohtak",
     "schemeName": "IPM 2021-24",
     "role": "Visiting Faculty",
+    "grantNumber": "Admn. 10(33)/98-II dated January 10, 2024",
+    "titleAcronym": "TTB",
     "yearOfFunding": "2023-24",
     "duration": "3 Months",
     "amountSanctioned": "INR 2,50,000",
     "status": "Completed",
-    "focusAreas": ["Visiting Faculty Assignment", "Executive Teaching", "Technology Trends"]
+    "focusAreas": [
+      "Visiting Faculty Assignment",
+      "Executive Teaching",
+      "Technology Trends"
+    ]
   },
   {
     "title": "Technology Trends in Business",
-    "titleAcronym": "TTB",
     "entryType": "fundedProject",
     "projectType": "Consultancy Project",
     "fundingAgency": "IIM Rohtak",
     "schemeName": "IPM 2020-23",
     "role": "Visiting Faculty",
+    "grantNumber": "Admn. 10(33)/98-II dated February 02,2023",
+    "titleAcronym": "TTB",
     "yearOfFunding": "2022-23",
     "duration": "3 Months",
     "amountSanctioned": "INR 2,50,000",
     "status": "Completed",
-    "focusAreas": ["Visiting Faculty Assignment", "Executive Teaching", "Technology Trends"]
+    "focusAreas": [
+      "Visiting Faculty Assignment",
+      "Executive Teaching",
+      "Technology Trends"
+    ]
   },
   {
     "title": "Profile Website",
@@ -33,7 +43,11 @@
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
     "status": "Deployed",
-    "focusAreas": ["Academic Profile", "GitHub Pages", "Digital Presence"],
+    "focusAreas": [
+      "Academic Profile",
+      "GitHub Pages",
+      "Digital Presence"
+    ],
     "summary": "Academic profile website built for GitHub Pages with editable news, publications, and profile sections.",
     "siteUrl": "https://jk-verma.github.io/profile/",
     "repoUrl": "https://github.com/jk-verma/profile"
@@ -44,7 +58,11 @@
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
     "status": "Deployed",
-    "focusAreas": ["Teaching Support", "Classroom Analytics", "Utility Tool"],
+    "focusAreas": [
+      "Teaching Support",
+      "Classroom Analytics",
+      "Utility Tool"
+    ],
     "summary": "JavaScript-based attendance management utility for tracking learner participation and classroom records.",
     "siteUrl": "https://jk-verma.github.io/attendance-tracker/",
     "repoUrl": "https://github.com/jk-verma/attendance-tracker"
@@ -55,7 +73,11 @@
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
     "status": "Deployed",
-    "focusAreas": ["Administrative Utility", "Date Calculator", "Utility Tool"],
+    "focusAreas": [
+      "Administrative Utility",
+      "Date Calculator",
+      "Utility Tool"
+    ],
     "summary": "Web-based calculator for computing retirement timelines and superannuation-related dates.",
     "siteUrl": "https://jk-verma.github.io/superannuation-date-calculator/",
     "repoUrl": "https://github.com/jk-verma/superannuation-date-calculator"
@@ -66,7 +88,11 @@
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
     "status": "Deployed",
-    "focusAreas": ["Teaching Support", "Learning Resource", "Knowledge Resource"],
+    "focusAreas": [
+      "Teaching Support",
+      "Learning Resource",
+      "Knowledge Resource"
+    ],
     "summary": "HTML-based educational resource project focused on learner support and reflective strategy design.",
     "siteUrl": "https://jk-verma.github.io/metacognitive-strategies/",
     "repoUrl": "https://github.com/jk-verma/metacognitive-strategies"
@@ -77,7 +103,11 @@
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
     "status": "Deployed",
-    "focusAreas": ["Administrative Utility", "Time Calculator", "Utility Tool"],
+    "focusAreas": [
+      "Administrative Utility",
+      "Time Calculator",
+      "Utility Tool"
+    ],
     "summary": "Lightweight web utility for calculating durations and time differences for academic and administrative use.",
     "siteUrl": "https://jk-verma.github.io/time-duration-calculator/",
     "repoUrl": "https://github.com/jk-verma/time-duration-calculator"
@@ -88,7 +118,11 @@
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
     "status": "Deployed",
-    "focusAreas": ["Teaching Support", "Learner Engagement", "Utility Tool"],
+    "focusAreas": [
+      "Teaching Support",
+      "Learner Engagement",
+      "Utility Tool"
+    ],
     "summary": "Learning-support web tool designed to facilitate learner nudges and classroom engagement workflows.",
     "siteUrl": "https://jk-verma.github.io/classroom-nudge/",
     "repoUrl": "https://github.com/jk-verma/classroom-nudge"
@@ -99,7 +133,11 @@
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
     "status": "Deployed",
-    "focusAreas": ["Academic Event", "Call for Contributions", "GitHub Pages"],
+    "focusAreas": [
+      "Academic Event",
+      "Call for Contributions",
+      "GitHub Pages"
+    ],
     "summary": "Template-based academic event website prepared for conference and call-for-contributions communication.",
     "siteUrl": "https://jk-verma.github.io/fbtc2025-cfc/",
     "repoUrl": "https://github.com/jk-verma/fbtc2025-cfc"
@@ -110,7 +148,11 @@
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
     "status": "Deployed",
-    "focusAreas": ["Administrative Utility", "Date Calculator", "Utility Tool"],
+    "focusAreas": [
+      "Administrative Utility",
+      "Date Calculator",
+      "Utility Tool"
+    ],
     "summary": "Simple website utility for age calculation, date comparison, and related institutional use cases.",
     "siteUrl": "https://jk-verma.github.io/age-calculator/",
     "repoUrl": "https://github.com/jk-verma/age-calculator"
@@ -121,9 +163,12 @@
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
     "status": "Deployed",
-    "focusAreas": ["Administrative Utility", "Experience Calculator", "Utility Tool"],
     "summary": "Web-based tool for calculating professional experience durations and milestone timelines automatically.",
     "siteUrl": "https://jk-verma.github.io/experience-calculator/",
-    "repoUrl": "https://github.com/jk-verma/experience-calculator"
+    "focusAreas": [
+      "Administrative Utility",
+      "Experience Calculator",
+      "Utility Tool"
+    ]
   }
 ]
