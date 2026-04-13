@@ -47,6 +47,22 @@ function sortNewsItems(items) {
   });
 }
 
+function isPastDeadline(value) {
+  if (!value) return false;
+  const deadlineTime = Date.parse(`${value}T23:59:59`);
+  if (Number.isNaN(deadlineTime)) return false;
+  return deadlineTime < Date.now();
+}
+
+function createDeadlineBadge(deadline) {
+  const expired = isPastDeadline(deadline);
+  return createTextElement(
+    "span",
+    expired ? "news-deadline is-expired" : "news-deadline",
+    `${expired ? "Submission Closed" : "Submission Deadline"}: ${deadline}`
+  );
+}
+
 function renderNewsItem(item) {
   const article = document.createElement("article");
   article.className = "news-item";
@@ -59,7 +75,7 @@ function renderNewsItem(item) {
   );
 
   if (item.submissionDeadline) {
-    meta.append(createTextElement("span", "news-deadline", `Submission Deadline: ${item.submissionDeadline}`));
+    meta.append(createDeadlineBadge(item.submissionDeadline));
   }
 
   article.append(

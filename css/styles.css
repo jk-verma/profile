@@ -1408,6 +1408,14 @@ dd {
   font-weight: 900;
 }
 
+.news-deadline.is-expired {
+  border-color: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
 .news-link {
   justify-self: start;
   margin-top: 4px;
