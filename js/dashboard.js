@@ -100,6 +100,8 @@ let lastFundedProjectEntry = null;
 let lastSiteContentEntry = null;
 let activeToastTimeout = null;
 
+window.dashboardJsonSections = window.dashboardJsonSections || {};
+
 const publicationTypes = [
   "Journal Article",
   "Conference Paper",
@@ -874,6 +876,53 @@ function syncSiteContentOutput() {
   renderSiteContentPreview(siteContentItems, siteContentPreview);
 }
 
+function registerDashboardJsonSections() {
+  window.dashboardJsonSections.news = {
+    label: "Latest News",
+    filename: "news.json",
+    dataUrl: "data/news.json",
+    output: jsonOutput,
+    getItems: () => newsItems,
+    setItems: (items) => {
+      newsItems = Array.isArray(items) ? items : [];
+      syncOutput();
+    },
+    sync: syncOutput,
+    setStatus,
+    labelItem: (item, index) => compactParts([item?.date, item?.category, item?.title || `News item ${index + 1}`], " | ")
+  };
+
+  window.dashboardJsonSections.projects = {
+    label: "Projects",
+    filename: "projects.json",
+    dataUrl: "data/projects.json",
+    output: projectsJsonOutputs[0],
+    getItems: () => projectItems,
+    setItems: (items) => {
+      projectItems = Array.isArray(items) ? items : [];
+      syncProjectsOutput();
+    },
+    sync: syncProjectsOutput,
+    setStatus: setProjectStatus,
+    labelItem: (item, index) => compactParts([item?.entryType === "fundedProject" ? "Funded" : "Website", item?.projectType, item?.title || `Project ${index + 1}`], " | ")
+  };
+
+  window.dashboardJsonSections.siteContent = {
+    label: "Voluntary Projects",
+    filename: "voluntary-projects.json",
+    dataUrl: "data/voluntary-projects.json",
+    output: siteContentJsonOutput,
+    getItems: () => siteContentItems,
+    setItems: (items) => {
+      siteContentItems = Array.isArray(items) ? items : [];
+      syncSiteContentOutput();
+    },
+    sync: syncSiteContentOutput,
+    setStatus: setSiteContentStatus,
+    labelItem: (item, index) => compactParts([getSiteContentSectionLabel(item?.section), item?.heading || item?.contentKey || `Voluntary item ${index + 1}`], " | ")
+  };
+}
+
 async function loadNews() {
   if (newsDate) {
     newsDate.value = today();
@@ -1323,6 +1372,7 @@ downloadSiteContentJson?.addEventListener("click", () => {
 });
 
 updateCurrentYear();
+registerDashboardJsonSections();
 window.setTimeout(setupDashboardCollapsibles, 0);
 loadNews();
 loadPublications();

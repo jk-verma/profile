@@ -21,22 +21,27 @@ Improve `dashboard.html` so records can be loaded, reviewed, edited, deleted, re
    - `data/projects.json`
    - `data/voluntary-projects.json`
 
-## Planned Dashboard Updates
+## Implemented in This Branch
 
 - Add `Load Current JSON` button for each dashboard section.
 - Add `Upload JSON File` button for each dashboard section.
 - Add record picker/list for loaded entries.
-- Allow selected record editing inside the existing Create Entry card.
+- Allow selected record editing through a selected-record JSON editor.
 - Add delete selected record.
 - Add duplicate selected record.
 - Add move selected record to top.
-- Add reset/reload original JSON.
 - Keep full JSON output box visible in Publish card.
-- Keep single selected-entry JSON output.
+- Keep existing single-entry JSON output.
 - Keep Preview below the Create Entry and Publish cards.
 - Show clear status messages after load, edit, delete, copy, and download.
 - Add validation before export.
 - Keep password/token-free public JavaScript.
+
+## Still Optional Later
+
+- Populate every specialized Create Entry form directly from a selected record.
+- Add field-level edit forms for older publication records that do not use the newest normalized schema.
+- Add drag-and-drop ordering for long lists.
 
 ## Section-Specific Notes
 
