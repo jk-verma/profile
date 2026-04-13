@@ -482,9 +482,9 @@
                         "pages":  "1-21",
                         "publisher":  "IGI Global",
                         "publication_stage":  "Published",
-                        "abdc_category":  "A",
                         "issn":  "1062-7375",
-                        "eissn":  "1533-7995"
+                        "eissn":  "1533-7995",
+                        "abdc_category":  "A"
                     },
         "indexed_in":  [
                            "Scopus",
@@ -605,7 +605,8 @@
                         "issue":  "4",
                         "pages":  "1-7",
                         "issn":  "1062-7375",
-                        "eissn":  "1533-7995"
+                        "eissn":  "1533-7995",
+                        "abdc_category":  "A"
                     },
         "indexed_in":  [
                            "Scopus",
