@@ -11,6 +11,7 @@ const statusMessage = document.getElementById("dashboardStatus");
 const copyJson = document.getElementById("copyJson");
 const downloadJson = document.getElementById("downloadJson");
 const clearDraft = document.getElementById("clearDraft");
+const newsSubmit = newsForm?.querySelector('button[type="submit"]');
 
 const publicationForm = document.getElementById("publicationForm");
 const publicationType = document.getElementById("publicationType");
@@ -42,6 +43,7 @@ const websiteProjectSummary = document.getElementById("websiteProjectSummary");
 const websiteProjectLink = document.getElementById("websiteProjectLink");
 const websiteProjectFocusAreas = document.getElementById("websiteProjectFocusAreas");
 const clearWebsiteProjectDraft = document.getElementById("clearWebsiteProjectDraft");
+const websiteProjectSubmit = websiteProjectForm?.querySelector('button[type="submit"]');
 
 const fundedProjectForm = document.getElementById("fundedProjectForm");
 const fundedProjectType = document.getElementById("fundedProjectType");
@@ -57,6 +59,7 @@ const fundedProjectAmount = document.getElementById("fundedProjectAmount");
 const fundedProjectStatus = document.getElementById("fundedProjectStatus");
 const fundedProjectFocusAreas = document.getElementById("fundedProjectFocusAreas");
 const clearFundedProjectDraft = document.getElementById("clearFundedProjectDraft");
+const fundedProjectSubmit = fundedProjectForm?.querySelector('button[type="submit"]');
 const dashboardProjectModesBody = document.getElementById("dashboardProjectModesBody");
 const websiteProjectsPreview = document.getElementById("websiteProjectsPreview");
 const fundedProjectsPreview = document.getElementById("fundedProjectsPreview");
@@ -87,6 +90,7 @@ const siteContentStatusMessage = document.getElementById("siteContentDashboardSt
 const copySiteContentJson = document.getElementById("copySiteContentJson");
 const copySiteContentEntryJson = document.getElementById("copySiteContentEntryJson");
 const downloadSiteContentJson = document.getElementById("downloadSiteContentJson");
+const siteContentSubmit = siteContentForm?.querySelector('button[type="submit"]');
 
 const menuToggle = document.getElementById("menuToggle");
 const primaryNav = document.getElementById("primaryNav");
@@ -451,6 +455,21 @@ function confirmDelete(label) {
   return window.confirm(`Delete ${label}? This updates the generated JSON shown in the Publish card.`);
 }
 
+function updateDashboardSubmitLabels() {
+  if (newsSubmit) {
+    newsSubmit.textContent = editingNewsIndex >= 0 ? "Update News JSON" : "Add to JSON";
+  }
+  if (websiteProjectSubmit) {
+    websiteProjectSubmit.textContent = editingProjectIndex >= 0 ? "Update Projects JSON" : "Add to Projects JSON";
+  }
+  if (fundedProjectSubmit) {
+    fundedProjectSubmit.textContent = editingProjectIndex >= 0 ? "Update Projects JSON" : "Add to Projects JSON";
+  }
+  if (siteContentSubmit) {
+    siteContentSubmit.textContent = editingSiteContentIndex >= 0 ? "Update Voluntary Projects JSON" : "Add to Voluntary Projects JSON";
+  }
+}
+
 function updateCurrentYear() {
   const year = String(new Date().getFullYear());
   document.querySelectorAll("[data-current-year]").forEach((element) => {
@@ -475,13 +494,14 @@ function sortNewsItems(items) {
 
 function loadNewsEntryForEdit(item, index) {
   editingNewsIndex = index;
+  updateDashboardSubmitLabels();
   newsDate.value = item.date || today();
   newsCategory.value = item.category || "Achievement";
   newsTitle.value = item.title || "";
   newsDeadline.value = item.submissionDeadline || "";
   newsLink.value = item.link || "";
   newsSummary.value = item.summary || "";
-  setStatus("News record loaded for editing. Update details and click Add to JSON to save changes.");
+  setStatus("News record loaded for editing. Update details and click Update News JSON to save changes.");
   newsForm?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -490,6 +510,7 @@ function deleteNewsEntry(index) {
   if (!confirmDelete(newsItems[index].title || "this news item")) return;
   newsItems.splice(index, 1);
   if (editingNewsIndex === index) editingNewsIndex = -1;
+  updateDashboardSubmitLabels();
   syncOutput();
   setStatus("News record deleted from generated JSON.");
 }
@@ -538,6 +559,7 @@ function renderNewsItem(item) {
 
 function loadProjectEntryForEdit(project, index) {
   editingProjectIndex = index;
+  updateDashboardSubmitLabels();
 
   if (project.entryType === "fundedProject") {
     if (projectEntryMode) {
@@ -560,7 +582,7 @@ function loadProjectEntryForEdit(project, index) {
       fundedProjectFocusAreas.value = Array.isArray(project.focusAreas) ? project.focusAreas.join(", ") : (project.focusAreas || "");
     }
 
-    setProjectStatus("Funded project loaded for editing. Update details and click Add to Projects JSON to save changes.");
+    setProjectStatus("Funded project loaded for editing. Update details and click Update Projects JSON to save changes.");
     fundedProjectForm?.scrollIntoView({ behavior: "smooth", block: "start" });
     return;
   }
@@ -578,7 +600,7 @@ function loadProjectEntryForEdit(project, index) {
     websiteProjectFocusAreas.value = Array.isArray(project.focusAreas) ? project.focusAreas.join(", ") : (project.focusAreas || "");
   }
 
-  setProjectStatus("Website or utility project loaded for editing. Update details and click Add to Projects JSON to save changes.");
+  setProjectStatus("Website or utility project loaded for editing. Update details and click Update Projects JSON to save changes.");
   websiteProjectForm?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -590,6 +612,7 @@ function deleteProjectEntry(index) {
   if (editingProjectIndex === index) editingProjectIndex = -1;
   if (lastWebsiteProjectEntry === deleted) lastWebsiteProjectEntry = null;
   if (lastFundedProjectEntry === deleted) lastFundedProjectEntry = null;
+  updateDashboardSubmitLabels();
   syncProjectsOutput();
   setProjectStatus("Project record deleted from generated JSON.");
 }
@@ -922,6 +945,7 @@ function renderSiteContentCard(item) {
 
 function loadSiteContentEntryForEdit(item, index) {
   editingSiteContentIndex = index;
+  updateDashboardSubmitLabels();
   siteContentSection.value = item.section || "github_pages_website";
   siteContentKey.value = item.contentKey || "";
   siteContentHeading.value = item.heading || "";
@@ -929,7 +953,7 @@ function loadSiteContentEntryForEdit(item, index) {
   siteContentLinkLabel.value = item.linkLabel || "";
   siteContentLinkUrl.value = item.linkUrl || "";
   siteContentOrder.value = item.displayOrder || "";
-  setSiteContentStatus("Voluntary project record loaded for editing. Update details and click Add to JSON to save changes.");
+  setSiteContentStatus("Voluntary project record loaded for editing. Update details and click Update Voluntary Projects JSON to save changes.");
   siteContentForm?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -940,6 +964,7 @@ function deleteSiteContentEntry(index) {
   siteContentItems.splice(index, 1);
   if (editingSiteContentIndex === index) editingSiteContentIndex = -1;
   if (lastSiteContentEntry === deleted) lastSiteContentEntry = null;
+  updateDashboardSubmitLabels();
   syncSiteContentOutput();
   setSiteContentStatus("Voluntary project record deleted from generated JSON.");
 }
@@ -1159,6 +1184,7 @@ newsForm?.addEventListener("submit", (event) => {
   newsLink.value = "";
   newsSummary.value = "";
   newsDate.value = today();
+  updateDashboardSubmitLabels();
   syncOutput();
 });
 
@@ -1247,6 +1273,7 @@ websiteProjectForm?.addEventListener("submit", (event) => {
   websiteProjectSummary.value = "";
   websiteProjectLink.value = "";
   if (websiteProjectFocusAreas) websiteProjectFocusAreas.value = "";
+  updateDashboardSubmitLabels();
   syncProjectsOutput();
 });
 
@@ -1282,6 +1309,7 @@ fundedProjectForm?.addEventListener("submit", (event) => {
 
   lastFundedProjectEntry = item;
   resetFundedProjectForm();
+  updateDashboardSubmitLabels();
   syncProjectsOutput();
 });
 
@@ -1320,6 +1348,7 @@ siteContentForm?.addEventListener("submit", (event) => {
   siteContentLinkLabel.value = "";
   siteContentLinkUrl.value = "";
   siteContentOrder.value = "";
+  updateDashboardSubmitLabels();
   syncSiteContentOutput();
 });
 
@@ -1331,6 +1360,7 @@ clearDraft?.addEventListener("click", () => {
   newsSummary.value = "";
   newsCategory.value = "Achievement";
   newsDate.value = today();
+  updateDashboardSubmitLabels();
   setStatus("Draft cleared.");
 });
 
@@ -1359,12 +1389,14 @@ clearWebsiteProjectDraft?.addEventListener("click", () => {
   websiteProjectSummary.value = "";
   websiteProjectLink.value = "";
   if (websiteProjectFocusAreas) websiteProjectFocusAreas.value = "";
+  updateDashboardSubmitLabels();
   setProjectStatus("Website or utility project draft cleared.");
 });
 
 clearFundedProjectDraft?.addEventListener("click", () => {
   editingProjectIndex = -1;
   resetFundedProjectForm();
+  updateDashboardSubmitLabels();
   setProjectStatus("Funded project draft cleared.");
 });
 
@@ -1381,11 +1413,13 @@ clearSiteContentDraft?.addEventListener("click", () => {
   siteContentLinkLabel.value = "";
   siteContentLinkUrl.value = "";
   siteContentOrder.value = "";
+  updateDashboardSubmitLabels();
   setSiteContentStatus("Voluntary project draft cleared.");
 });
 
 projectEntryMode?.addEventListener("change", () => {
   editingProjectIndex = -1;
+  updateDashboardSubmitLabels();
   syncProjectEntryMode();
   setProjectStatus(`Showing ${projectEntryMode.value === "funded" ? "funded project" : "website and utility project"} cards.`);
 });
@@ -1521,6 +1555,7 @@ downloadSiteContentJson?.addEventListener("click", () => {
 });
 
 updateCurrentYear();
+updateDashboardSubmitLabels();
 window.setTimeout(setupDashboardCollapsibles, 0);
 loadNews();
 loadPublications();
