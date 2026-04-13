@@ -219,7 +219,9 @@ function renderNewsTicker(items) {
     .filter((item) => item.title)
     .map((item) => ({
       category: item.category || "News",
-      title: item.title
+      title: item.title,
+      submissionDeadline: item.submissionDeadline || "",
+      deadlineExpired: isPastDeadline(item.submissionDeadline)
     }));
 
   if (!tickerItems.length) {
@@ -237,12 +239,19 @@ function renderNewsTicker(items) {
     }
 
     const link = document.createElement("a");
-    link.className = "ticker-link";
+    link.className = item.deadlineExpired ? "ticker-link deadline-expired" : "ticker-link";
     link.href = "#news";
     link.append(
       createTextElement("span", "ticker-category", item.category),
       createTextElement("span", "ticker-title", item.title)
     );
+    if (item.submissionDeadline) {
+      link.append(createTextElement(
+        "span",
+        item.deadlineExpired ? "ticker-deadline is-expired" : "ticker-deadline",
+        `${item.deadlineExpired ? "Closed" : "Deadline"}: ${item.submissionDeadline}`
+      ));
+    }
     link.addEventListener("click", (event) => {
       event.preventDefault();
       document.getElementById("news")?.scrollIntoView({ behavior: "smooth", block: "start" });

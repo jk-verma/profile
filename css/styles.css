@@ -338,12 +338,40 @@ a:hover {
   text-transform: uppercase;
 }
 
+.ticker-deadline {
+  padding: 4px 8px;
+  border: 1px solid rgba(231, 189, 100, 0.42);
+  border-radius: var(--radius);
+  color: #2b1700;
+  background: linear-gradient(135deg, #ffd27a, #ffebb9);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.ticker-deadline.is-expired {
+  border-color: rgba(255, 88, 88, 0.46);
+  color: #ffe6e6;
+  background: rgba(167, 35, 35, 0.72);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
 .ticker-title {
   color: var(--text);
 }
 
+.ticker-link.deadline-expired .ticker-title {
+  color: #ffb4b4;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
 .ticker-track a:hover .ticker-title {
   color: var(--accent-2);
+}
+
+.ticker-track a.deadline-expired:hover .ticker-title {
+  color: #ffd1d1;
 }
 
 .ticker-track > span::after,
@@ -1409,9 +1437,9 @@ dd {
 }
 
 .news-deadline.is-expired {
-  border-color: rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.68);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 88, 88, 0.5);
+  color: #ffe6e6;
+  background: linear-gradient(135deg, rgba(190, 42, 42, 0.94), rgba(115, 24, 24, 0.92));
   text-decoration: line-through;
   text-decoration-thickness: 2px;
 }
