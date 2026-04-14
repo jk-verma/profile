@@ -1,2296 +1,2177 @@
-﻿[
-    {
-        "type":  "patent",
-        "title":  "Peltier based Hot-Cold Thermos",
-        "inventors":  [
-                          {
-                              "name":  "Sandeep Panwar Jogi",
-                              "affiliation":  "",
-                              "is_me":  false,
-                              "corresponding":  false,
-                              "orcid":  "",
-                              "equal_contribution":  false
-                          },
-                          {
-                              "name":  "Jitendra Kumar Verma",
-                              "affiliation":  "",
-                              "is_me":  true,
-                              "corresponding":  false,
-                              "orcid":  "",
-                              "equal_contribution":  false
-                          }
-                      ],
-        "year":  "2020",
-        "status":  "Under examination",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "patent_title":  "Peltier based Hot-Cold Thermos",
-                        "application_number":  "202011008125",
-                        "country":  "India"
-                    }
-    },
-    {
-        "type":  "edited_book",
-        "title":  "Federated Blockchain—Trends and Challenges",
-        "editors":  [
-                        {
-                            "name":  "Durga Prasad Sharma",
-                            "affiliation":  "AMUIT MOEFDRE under UNDP, Ethiopia; Vrije Universiteit Brussel, Belgium",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Ashok Kumar Yadav",
-                            "affiliation":  "Rajkiya Engineering College, Azamgarh, Uttar Pradesh, India",
-                            "is_me":  false,
-                            "corresponding":  true,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Pramod Kumar Srivastava",
-                            "affiliation":  "Rajkiya Engineering College, Azamgarh, Uttar Pradesh, India",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2026",
-        "academic_year":  "2025-26",
-        "status":  "Forthcoming",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  true,
-        "expected_year":  "2026",
-        "details":  {
-                        "publisher":  "Bentham Science Publishers"
-                    }
-    },
-    {
-        "type":  "edited_book",
-        "title":  "CloudIoT: Concepts, Paradigms, and Applications",
-        "editors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  true,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Deepak Saxena",
-                            "affiliation":  "IIT Jodhpur",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "0000-0002-9331-3799",
-                            "equal_contribution":  true
-                        },
-                        {
-                            "name":  "Vicente González-Prida Díaz",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "0000-0001-5257-8224",
-                            "equal_contribution":  true
-                        },
-                        {
-                            "name":  "Vira Shendryk",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "0000-0001-8325-3115",
-                            "equal_contribution":  true
-                        }
-                    ],
-        "year":  "2022",
-        "month":  "Dec",
-        "academic_year":  "2022-23",
-        "status":  "Published",
-        "doi":  "https://doi.org/10.1201/9781003155577",
-        "url":  "https://www.taylorfrancis.com/books/edit/10.1201/9781003155577/cloud-iot-jitendra-kumar-verma-deepak-kumar-saxena-vicente-gonz%C3%A1lez-prida-d%C3%ADaz-vira-shendryk",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "edition":  "1st",
-                        "place_of_publication":  "New York",
-                        "total_pages":  "286",
-                        "publisher":  "Chapman and Hall/CRC (Taylor \u0026 Francis Group)",
-                        "isbn":  "9781003155577"
-                    },
-        "indexed_in":  [
-                           "Crossref"
-                       ],
-        "platforms":  [
-                          "Taylor \u0026 Francis"
-                      ]
-    },
-    {
-        "type":  "edited_book",
-        "title":  "Advances in Augmented Reality and Virtual Reality",
-        "editors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  true,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Sudip Paul",
-                            "affiliation":  "North-Eastern Hill University",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "0000-0001-9856-539X",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2022",
-        "month":  "Dec",
-        "academic_year":  "2022-23",
-        "status":  "Published",
-        "doi":  "https://doi.org/10.1007/978-981-16-7220-0",
-        "url":  "https://link.springer.com/book/10.1007/978-981-16-7220-0",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "edition":  "1st",
-                        "series":  "Studies in Computational Intelligence",
-                        "place_of_publication":  "Singapore",
-                        "total_pages":  "212",
-                        "publisher":  "Springer Nature",
-                        "isbn":  "978-981-16-7222-4"
-                    },
-        "indexed_in":  [
-                           "Crossref"
-                       ],
-        "platforms":  [
-                          "SpringerLink"
-                      ]
-    },
-    {
-        "type":  "edited_book",
-        "title":  "IoT and Cloud Computing for Societal Good",
-        "editors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  true,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Deepak Saxena",
-                            "affiliation":  "Birla Institute of Technology \u0026 Science, Pilani",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Vicente González-Prida",
-                            "affiliation":  "University of Seville and UNED, Seville, Spain",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2022",
-        "month":  "Nov",
-        "academic_year":  "2022-23",
-        "status":  "Published",
-        "doi":  "https://doi.org/10.1007/978-3-030-73885-3",
-        "url":  "https://link.springer.com/book/10.1007/978-3-030-73885-3",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "edition":  "1st",
-                        "series":  "EAI/Springer Innovations in Communication and Computing",
-                        "place_of_publication":  "Cham",
-                        "total_pages":  "332",
-                        "publisher":  "Springer Nature",
-                        "isbn":  "978-3-030-73885-3",
-                        "issn":  "2522-8595",
-                        "eissn":  "2522-8609"
-                    },
-        "indexed_in":  [
-                           "Crossref"
-                       ],
-        "platforms":  [
-                          "SpringerLink"
-                      ]
-    },
-    {
-        "type":  "edited_book",
-        "title":  "Computational Intelligence and Its Applications in Healthcare",
-        "editors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  true,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Sudip Paul",
-                            "affiliation":  "North-Eastern Hill University",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "0000-0001-9856-539X",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Prashant Johri",
-                            "affiliation":  "Galgotias University, Greater Noida, India",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "doi":  "https://doi.org/10.1016/C2019-0-01685-8",
-        "url":  "https://www.sciencedirect.com/book/9780128206041/computational-intelligence-and-its-applications-in-healthcare",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "edition":  "1st",
-                        "place_of_publication":  "Cambridge, United States of America",
-                        "total_pages":  "251",
-                        "publisher":  "Academic Press / Elsevier",
-                        "isbn":  "978-0-12-820604-1"
-                    },
-        "indexed_in":  [
-                           "Crossref"
-                       ],
-        "platforms":  [
-                          "ScienceDirect"
-                      ]
-    },
-    {
-        "type":  "edited_book",
-        "title":  "Applications of Machine Learning",
-        "editors":  [
-                        {
-                            "name":  "Prashant Johri",
-                            "affiliation":  "Galgotias University, Greater Noida, India",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Sudip Paul",
-                            "affiliation":  "North-Eastern Hill University",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "0000-0001-9856-539X",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "month":  "May",
-        "academic_year":  "2019-20",
-        "status":  "Published",
-        "doi":  "https://doi.org/10.1007/978-981-15-3357-0",
-        "url":  "https://link.springer.com/book/10.1007/978-981-15-3357-0",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "edition":  "1st",
-                        "series":  "Algorithms for Intelligent Systems",
-                        "place_of_publication":  "Singapore",
-                        "total_pages":  "394",
-                        "publisher":  "Springer Nature",
-                        "isbn":  "978-981-15-3357-0",
-                        "issn":  "2524-7565",
-                        "eissn":  "2524-7573"
-                    },
-        "indexed_in":  [
-                           "Crossref"
-                       ],
-        "platforms":  [
-                          "SpringerLink"
-                      ]
-    },
-    {
-        "type":  "edited_book",
-        "title":  "2018 International Conference on Computing, Power and Communication Technologies",
-        "editors":  [
-                        {
-                            "name":  "Valentina E. Balas",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "George A. Tsihrintzis",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "R. N. Shaw",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Prashant Johri",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2018",
-        "month":  "Sep",
-        "academic_year":  "2018-19",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "edition":  "1st",
-                        "place_of_publication":  "Greater Noida, Uttar Pradesh, India",
-                        "total_pages":  "1208",
-                        "publisher":  "IEEE",
-                        "isbn":  "9781538644928"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ]
-    },
-    {
-        "type":  "book",
-        "title":  "Green Cloud Computing",
-        "authors":  [
-                        {
-                            "name":  "J. K. Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2016",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "place_of_publication":  "Saarbrucken, Germany",
-                        "publisher":  "Lambert Academic Publishing"
-                    }
-    },
-    {
-        "type":  "journal_article",
-        "title":  "Reverse Traceability Framework for Identifying Liability of Crashes for Self-Driving Vehicles using Blockchains",
-        "authors":  [
-                        {
-                            "name":  "Samar Gupta",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "0000-0002-8048-9031",
-                            "equal_contribution":  true
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  true,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2023",
-        "month":  "Jan",
-        "date_of_publication":  "2023-01-01",
-        "academic_year":  "2022-23",
-        "status":  "Published",
-        "doi":  "https://doi.org/10.4018/JGIM.329961",
-        "url":  "https://www.igi-global.com/gateway/article/329961",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "journal":  "Journal of Global Information Management",
-                        "volume":  "31",
-                        "issue":  "7",
-                        "article_number":  "1",
-                        "pages":  "1-21",
-                        "publisher":  "IGI Global",
-                        "publication_stage":  "Published",
-                        "issn":  "1062-7375",
-                        "eissn":  "1533-7995",
-                        "abdc_category":  "A"
-                    },
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science",
-                           "ABDC"
-                       ]
-    },
-    {
-        "type":  "journal_article",
-        "title":  "Enabling Green Computing in Cloud Environments: Network Virtualization Approach Towards 5G Support",
-        "authors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "S. Kumar",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "O. Kaiwartya",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Y. Cao",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "J. Lloret",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "C. P. Katti",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Rupak Kharel",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2018",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "journal":  "Transactions on Emerging Telecommunications Technologies",
-                        "volume":  "29",
-                        "issue":  "11",
-                        "pages":  "1-25",
-                        "issn":  "2161-3915"
-                    },
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science"
-                       ],
-        "doi":  "10.1002/ett.3434"
-    },
-    {
-        "type":  "journal_article",
-        "title":  "Resource Request Based Energy Efficient Heuristic for Server Offloading in Cloud Computing Environment",
-        "authors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "C. P. Katti",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2018",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "journal":  "Journal of Global Information Management",
-                        "volume":  "26",
-                        "issue":  "4",
-                        "pages":  "1-7",
-                        "issn":  "1062-7375",
-                        "eissn":  "1533-7995",
-                        "abdc_category":  "A"
-                    },
-        "indexed_in":  [
-                           "Scopus",
-                           "Web of Science",
-                           "ABDC"
-                       ],
-        "doi":  "10.4018/jgim.2018100101"
-    },
-    {
-        "type":  "journal_article",
-        "title":  "A Survey on Load Balancing Techniques in Cloud Computing Environment",
-        "authors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "C. P. Katti",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2015",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "journal":  "International Journal of Latest Trends in Engineering \u0026 Technology",
-                        "volume":  "5",
-                        "issue":  "2",
-                        "pages":  "469-478"
-                    }
-    },
-    {
-        "type":  "journal_article",
-        "title":  "View on Security, Privacy and Trust Issues in Cloud Computing Environment",
-        "authors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "C. P. Katti",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2015",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "journal":  "International Journal of Latest Trends in Engineering \u0026 Technology",
-                        "volume":  "5",
-                        "issue":  "3",
-                        "pages":  "490-494"
-                    }
-    },
-    {
-        "type":  "journal_article",
-        "title":  "Study of Cloud Computing and its Issues: A Review",
-        "authors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "C. P. Katti",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2014",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "journal":  "Smart Computing Review",
-                        "volume":  "4",
-                        "issue":  "5",
-                        "pages":  "389-411",
-                        "issn":  "2234-4624",
-                        "eissn":  "2234-4624"
-                    },
-        "doi":  "10.6029/smartcr.2014.05.005"
-    },
-    {
-        "type":  "journal_article",
-        "title":  "MADLVF: An energy efficient resource utilization approach for cloud computing",
-        "authors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "C. P. Katti",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "P. C. Saxena",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2014",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "journal":  "International Journal of Information Technology and Computer Science",
-                        "volume":  "6",
-                        "issue":  "7",
-                        "pages":  "56-64",
-                        "issn":  "2074-9007",
-                        "eissn":  "2074-9015"
-                    },
-        "indexed_in":  [
-                           "Scopus",
-                           "INSPEC",
-                           "Crossref"
-                       ],
-        "doi":  "10.5815/ijitcs.2014.07.08"
-    },
-    {
-        "type":  "book_chapter",
-        "title":  "ERP on the Cloud: Evolution, Benefits and Critical Success Factors",
-        "authors":  [
-                        {
-                            "name":  "Deepak Saxena",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2022",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "book_title":  "Cloud IoT: Concepts, Paradigms, and Applications",
-                        "pages":  "35-44",
-                        "publisher":  "Chapman and Hall/CRC (Taylor \u0026 Francis Group)",
-                        "isbn":  "9781003155577"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "Taylor \u0026 Francis"
-                      ],
-        "doi":  "10.1201/9781003155577-4"
-    },
-    {
-        "type":  "book_chapter",
-        "title":  "Recreating Reality: Classification of Computer-Assisted Environments",
-        "authors":  [
-                        {
-                            "name":  "Deepak Saxena",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2022",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "book_title":  "Advances in Augmented Reality and Virtual Reality",
-                        "pages":  "3-9",
-                        "publisher":  "Springer Nature",
-                        "isbn":  "978-981-16-7220-0",
-                        "issn":  "1860-949X",
-                        "eissn":  "1860-9503"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "SpringerLink"
-                      ],
-        "doi":  "10.1007/978-981-16-7220-0_1"
-    },
-    {
-        "type":  "book_chapter",
-        "title":  "Towards Energy Efficient Cloud Computing: Research Directions and Methodological Approach",
-        "authors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Deepak Saxena",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2022",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "book_title":  "IoT and Cloud Computing for Societal Good",
-                        "pages":  "3-13",
-                        "publisher":  "Springer Nature",
-                        "isbn":  "978-3-030-73885-3",
-                        "issn":  "2522-8595",
-                        "eissn":  "2522-8609"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "SpringerLink"
-                      ],
-        "doi":  "10.1007/978-3-030-73885-3_1"
-    },
-    {
-        "type":  "book_chapter",
-        "title":  "Google Stock Movement: A Time Series Study Using LSTM Network",
-        "authors":  [
-                        {
-                            "name":  "Nishu Sethi",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Shalini Bhaskar Bajaj",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Utpal Shrivastava",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2021",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "book_title":  "Multidisciplinary Functions of Blockchain Technology in AI and IoT Applications",
-                        "pages":  "70-87",
-                        "publisher":  "IGI Global / Engineering Science Reference",
-                        "isbn":  "9781799858768"
-                    },
-        "doi":  "10.4018/978-1-7998-5876-8.ch004"
-    },
-    {
-        "type":  "book_chapter",
-        "title":  "Blockchain for Public Health: Technology, Applications, and a Case Study",
-        "authors":  [
-                        {
-                            "name":  "Deepak Saxena",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "doi":  "https://doi.org/10.1016/B978-0-12-820604-1.00004-2",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "book_title":  "Computational Intelligence and Its Applications in Healthcare",
-                        "pages":  "53-61",
-                        "publisher":  "Academic Press / Elsevier",
-                        "isbn":  "978-0-12-820604-1"
-                    }
-    },
-    {
-        "type":  "book_chapter",
-        "title":  "Sentiment Analysis on Google Play Store Data using Deep Learning",
-        "authors":  [
-                        {
-                            "name":  "Swathi Venkatakrishnan",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Abhishek Kaushik",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "book_title":  "Applications of Machine Learning",
-                        "pages":  "15-30",
-                        "publisher":  "Springer Nature",
-                        "isbn":  "978-981-15-3357-0",
-                        "issn":  "2524-7565",
-                        "eissn":  "2524-7573"
-                    },
-        "doi":  "10.1007/978-981-15-3357-0_2"
-    },
-    {
-        "type":  "book_chapter",
-        "title":  "MLPGI: Multi-Layer Perceptron Based Gender Identification over Voice Samples in Supervised Machine Learning",
-        "authors":  [
-                        {
-                            "name":  "Meenu Yadav",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Vinod Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "ChandraShekhar Yadav",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "book_title":  "Applications of Machine Learning",
-                        "pages":  "353-364",
-                        "publisher":  "Springer Nature",
-                        "isbn":  "978-981-15-3357-0",
-                        "issn":  "2524-7565",
-                        "eissn":  "2524-7573"
-                    },
-        "doi":  "10.1007/978-981-15-3357-0_23"
-    },
-    {
-        "type":  "book_chapter",
-        "title":  "A Novel Hash-Based Mutual RFID Tag Authentication Protocol",
-        "authors":  [
-                        {
-                            "name":  "M. Saxena",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "R. N. Shaw",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2019",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "book_title":  "Data and Communication Networks",
-                        "pages":  "1-12",
-                        "publisher":  "Springer Nature",
-                        "isbn":  "978-981-13-2254-9",
-                        "issn":  "2194-5357",
-                        "eissn":  "2194-5365"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "SpringerLink"
-                      ],
-        "doi":  "10.1007/978-981-13-2254-9_1"
-    },
-    {
-        "type":  "book_chapter",
-        "title":  "Framework for Real World Events Detection through Online Social Networking Sites",
-        "authors":  [
-                        {
-                            "name":  "Ritesh Srivastava",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "M. P. S. Bhatia",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Veena Tayal",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2019",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "book_title":  "Data and Communication Networks",
-                        "pages":  "195-203",
-                        "publisher":  "Springer Nature",
-                        "isbn":  "978-981-13-2254-9",
-                        "issn":  "2194-5357",
-                        "eissn":  "2194-5365"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "SpringerLink"
-                      ],
-        "doi":  "10.1007/978-981-13-2254-9_17"
-    },
-    {
-        "type":  "book_chapter",
-        "title":  "QVF: A Heuristic for VM Migration from Overloaded Servers in Cloud Computing Environment",
-        "authors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "C. P. Katti",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2017",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "book_title":  "Communication and Computing Systems",
-                        "pages":  "1095-1101",
-                        "publisher":  "Taylor \u0026 Francis Group (CRC Press)",
-                        "isbn":  "9781315364094"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "Taylor \u0026 Francis"
-                      ],
-        "doi":  "10.1201/9781315364094-196"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Comparative Study on Data Storage algorithms and solution to improve CIA on Cloud using Dynamic Encryption",
-        "authors":  [
-                        {
-                            "name":  "Sagar Mistry",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Anil Kumar Mishra",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2021",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "111-114"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe53109.2021.9752067"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "A Study on 5G Technology and Its Applications in Telecommunications",
-        "authors":  [
-                        {
-                            "name":  "Deepender",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Manoj",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Utpal Shrivastava",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2021",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "365-371"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe53109.2021.9752402"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Impact of Review Sentiment and Magnitude on Customers\u0027 Recommendations for Video Games",
-        "authors":  [
-                        {
-                            "name":  "Gleb Andreev",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Deepak Saxena",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2021",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "992-995"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe53109.2021.9752380"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Study on Machine-Learning Algorithms in Crop Yield Predictions specific to Indian Agricultural Contexts",
-        "authors":  [
-                        {
-                            "name":  "Suresh Kumar Sharma",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Durga Prasad Sharma",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2021",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "155-166"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe53109.2021.9752260"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Intelligence Information Retrieval System Modeling for Afaan Oromo",
-        "authors":  [
-                        {
-                            "name":  "Suresh Kumar Sharma",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Durga Prasad Sharma",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2021",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2021 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "196-201"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe53109.2021.9752270"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Characterizing Social Media Content for Regulating Hate Crimes and Cyber Racism against Marginalized and Dalits",
-        "authors":  [
-                        {
-                            "name":  "Amita Charan",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "864-871"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe49325.2020.9200049"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Design of Hybrid Cryptography System based on Vigenere Cipher and Polybius Cipher",
-        "authors":  [
-                        {
-                            "name":  "Shivam Vatshayan",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Raza Abbas Haidri",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "848-852"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe49325.2020.9199997"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "IoT in Agriculture",
-        "authors":  [
-                        {
-                            "name":  "Bakhtawar Parvez",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Raza Abbas Haidri",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "844-847"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe49325.2020.9200035"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Braille Book Reader using Raspberry Pi",
-        "authors":  [
-                        {
-                            "name":  "Abhishek Sharma",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Suman Devi",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "841-843"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe49325.2020.9200110"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Digital money: The Empowering New Currency",
-        "authors":  [
-                        {
-                            "name":  "Nikhil Shrivastva",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Suman Devi",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "837-840"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe49325.2020.9200036"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Design, Implementation and Controlling of a Humanoid Robot",
-        "authors":  [
-                        {
-                            "name":  "Kiran Somisetti",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Khushboo Tripathi",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "831-836"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe49325.2020.9200020"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Sensor based detection of Parkinson\u0027s disease motor symptoms",
-        "authors":  [
-                        {
-                            "name":  "Vinayak Majhi",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Sudip Paul",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Goutam Saha",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "553-557"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe49325.2020.9200051"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Qualitative software process management for developing countries: An exploratory study",
-        "authors":  [
-                        {
-                            "name":  "Azeem Uddin",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Suman Devi",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "548-552"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe49325.2020.9199995"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Machine learning based diagnostic system for early detection of Parkinson\u0027s disease",
-        "authors":  [
-                        {
-                            "name":  "Angana Saikia",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Vinayak Majhi",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Masaraf Hussain",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Amit Ranjan Barua",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Sudip Paul",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "275-279"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe49325.2020.9200195"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "A User Scheduling in LTE Network Having Environment with Mixed Traffic",
-        "authors":  [
-                        {
-                            "name":  "Rahul Kumar",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Manoj Yadav",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "269-274"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe49325.2020.9200105"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Modelling of Brushless DC Hub Motor to control the speed of Indigenous powered wheelchair",
-        "authors":  [
-                        {
-                            "name":  "Sateesh Reddy Avutu",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Sudip Paul",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Anjaneya Prasad V.V.B",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2020",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "proceedings_title":  "2020 International Conference on Computational Performance Evaluation (ComPE)",
-                        "publisher":  "IEEE",
-                        "pages":  "091-094"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/compe49325.2020.9200192"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Deep Learning and its Importance for Early Signature of Neuronal Disorders",
-        "authors":  [
-                        {
-                            "name":  "S. Paul",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "A. Datta",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "R. N. Shaw",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "A. Saikia",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2018",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2018 4th International Conference on Computing Communication and Automation (ICCCA)",
-                        "proceedings_title":  "2018 4th International Conference on Computing Communication and Automation (ICCCA)",
-                        "publisher":  "IEEE",
-                        "pages":  "1-5"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/ccaa.2018.8777527"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Mining Public Opinion on Aadhaar Card Linking in India",
-        "authors":  [
-                        {
-                            "name":  "N. Tomar",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "R. Srivastava",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2018",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
-                        "proceedings_title":  "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
-                        "publisher":  "IEEE",
-                        "pages":  "1066-1071"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/gucon.2018.8674918"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "Analysing Public Sentiment on GST Implementation in India",
-        "authors":  [
-                        {
-                            "name":  "N. Tomar",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "R. Srivastava",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2018",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
-                        "proceedings_title":  "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
-                        "publisher":  "IEEE",
-                        "pages":  "1101-1106"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ],
-        "doi":  "10.1109/gucon.2018.8675016"
-    },
-    {
-        "type":  "conference_paper",
-        "title":  "A comparative study into energy efficient techniques for Cloud computing",
-        "authors":  [
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "C. P. Katti",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2015",
-        "status":  "Published",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  false,
-        "details":  {
-                        "conference_name":  "2015 International Conference of Computing for Sustainable Global Development (INDIACom)",
-                        "proceedings_title":  "2015 International Conference of Computing for Sustainable Global Development (INDIACom)",
-                        "publisher":  "IEEE",
-                        "pages":  "2062-2067"
-                    },
-        "indexed_in":  [
-                           "Scopus"
-                       ],
-        "platforms":  [
-                          "IEEE Xplore"
-                      ]
-    },
-    {
-        "type":  "book_chapter",
-        "title":  "Federated Blockchain in Global Trade: Applications, Innovations and Future Trajectories",
-        "authors":  [
-                        {
-                            "name":  "Prateep Mondol",
-                            "affiliation":  "",
-                            "is_me":  false,
-                            "corresponding":  false,
-                            "orcid":  "",
-                            "equal_contribution":  false
-                        },
-                        {
-                            "name":  "Jitendra Kumar Verma",
-                            "affiliation":  "Indian Institute of Foreign Trade",
-                            "is_me":  true,
-                            "corresponding":  false,
-                            "orcid":  "0000-0003-4103-4218",
-                            "equal_contribution":  false
-                        }
-                    ],
-        "year":  "2026",
-        "academic_year":  "2025-26",
-        "status":  "Forthcoming",
-        "language":  "English",
-        "featured":  false,
-        "highlight":  false,
-        "is_forthcoming":  true,
-        "expected_year":  "2026",
-        "details":  {
-                        "book_title":  "Federated Blockchain—Trends and Challenges",
-                        "publisher":  "Bentham Science Publishers"
-                    }
+[
+  {
+    "type": "patent",
+    "title": "Peltier based Hot-Cold Thermos",
+    "inventors": [
+      {
+        "name": "Sandeep Panwar Jogi",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Under examination",
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "patent_title": "Peltier based Hot-Cold Thermos",
+      "application_number": "202011008125",
+      "country": "India"
     }
+  },
+  {
+    "type": "edited_book",
+    "title": "Federated Blockchain—Trends and Challenges",
+    "editors": [
+      {
+        "name": "Durga Prasad Sharma",
+        "affiliation": "AMUIT MOEFDRE under UNDP, Ethiopia; Vrije Universiteit Brussel, Belgium",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Ashok Kumar Yadav",
+        "affiliation": "Rajkiya Engineering College, Azamgarh, Uttar Pradesh, India",
+        "is_me": false,
+        "corresponding": true,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      },
+      {
+        "name": "Pramod Kumar Srivastava",
+        "affiliation": "Rajkiya Engineering College, Azamgarh, Uttar Pradesh, India",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2026",
+    "academic_year": "2025-26",
+    "status": "Forthcoming",
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": true,
+    "expected_year": "2026",
+    "details": {
+      "publisher": "Bentham Science Publishers"
+    }
+  },
+  {
+    "type": "edited_book",
+    "title": "CloudIoT: Concepts, Paradigms, and Applications",
+    "editors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": true,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      },
+      {
+        "name": "Deepak Saxena",
+        "affiliation": "IIT Jodhpur",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "0000-0002-9331-3799",
+        "equal_contribution": true
+      },
+      {
+        "name": "Vicente González-Prida Díaz",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "0000-0001-5257-8224",
+        "equal_contribution": true
+      },
+      {
+        "name": "Vira Shendryk",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "0000-0001-8325-3115",
+        "equal_contribution": true
+      }
+    ],
+    "year": "2022",
+    "month": "Dec",
+    "academic_year": "2022-23",
+    "status": "Published",
+    "doi": "https://doi.org/10.1201/9781003155577",
+    "url": "https://www.taylorfrancis.com/books/edit/10.1201/9781003155577/cloud-iot-jitendra-kumar-verma-deepak-kumar-saxena-vicente-gonz%C3%A1lez-prida-d%C3%ADaz-vira-shendryk",
+    "indexed_in": [
+      "Crossref"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "edition": "1st",
+      "place_of_publication": "New York",
+      "total_pages": "286",
+      "publisher": "Chapman and Hall/CRC (Taylor & Francis Group)",
+      "isbn": "9781003155577"
+    }
+  },
+  {
+    "type": "edited_book",
+    "title": "Advances in Augmented Reality and Virtual Reality",
+    "editors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": true,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      },
+      {
+        "name": "Sudip Paul",
+        "affiliation": "North-Eastern Hill University",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "0000-0001-9856-539X",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2022",
+    "month": "Dec",
+    "academic_year": "2022-23",
+    "status": "Published",
+    "doi": "https://doi.org/10.1007/978-981-16-7220-0",
+    "url": "https://link.springer.com/book/10.1007/978-981-16-7220-0",
+    "indexed_in": [
+      "Crossref"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "edition": "1st",
+      "series": "Studies in Computational Intelligence",
+      "place_of_publication": "Singapore",
+      "total_pages": "212",
+      "publisher": "Springer Nature",
+      "isbn": "978-981-16-7222-4"
+    }
+  },
+  {
+    "type": "edited_book",
+    "title": "IoT and Cloud Computing for Societal Good",
+    "editors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": true,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      },
+      {
+        "name": "Deepak Saxena",
+        "affiliation": "Birla Institute of Technology & Science, Pilani",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Vicente González-Prida",
+        "affiliation": "University of Seville and UNED, Seville, Spain",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2022",
+    "month": "Nov",
+    "academic_year": "2022-23",
+    "status": "Published",
+    "doi": "https://doi.org/10.1007/978-3-030-73885-3",
+    "url": "https://link.springer.com/book/10.1007/978-3-030-73885-3",
+    "indexed_in": [
+      "Crossref"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "edition": "1st",
+      "series": "EAI/Springer Innovations in Communication and Computing",
+      "place_of_publication": "Cham",
+      "total_pages": "332",
+      "publisher": "Springer Nature",
+      "isbn": "978-3-030-73885-3"
+    }
+  },
+  {
+    "type": "edited_book",
+    "title": "Computational Intelligence and Its Applications in Healthcare",
+    "editors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": true,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      },
+      {
+        "name": "Sudip Paul",
+        "affiliation": "North-Eastern Hill University",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "0000-0001-9856-539X",
+        "equal_contribution": false
+      },
+      {
+        "name": "Prashant Johri",
+        "affiliation": "Galgotias University, Greater Noida, India",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "https://doi.org/10.1016/C2019-0-01685-8",
+    "url": "https://www.sciencedirect.com/book/9780128206041/computational-intelligence-and-its-applications-in-healthcare",
+    "indexed_in": [
+      "Crossref"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "edition": "1st",
+      "place_of_publication": "Cambridge, United States of America",
+      "total_pages": "251",
+      "publisher": "Academic Press / Elsevier",
+      "isbn": "978-0-12-820604-1"
+    }
+  },
+  {
+    "type": "edited_book",
+    "title": "Applications of Machine Learning",
+    "editors": [
+      {
+        "name": "Prashant Johri",
+        "affiliation": "Galgotias University, Greater Noida, India",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      },
+      {
+        "name": "Sudip Paul",
+        "affiliation": "North-Eastern Hill University",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "0000-0001-9856-539X",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "month": "May",
+    "academic_year": "2019-20",
+    "status": "Published",
+    "doi": "https://doi.org/10.1007/978-981-15-3357-0",
+    "url": "https://link.springer.com/book/10.1007/978-981-15-3357-0",
+    "indexed_in": [
+      "Crossref"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "edition": "1st",
+      "series": "Algorithms for Intelligent Systems",
+      "place_of_publication": "Singapore",
+      "total_pages": "394",
+      "publisher": "Springer Nature",
+      "isbn": "978-981-15-3357-0"
+    }
+  },
+  {
+    "type": "edited_book",
+    "title": "2018 International Conference on Computing, Power and Communication Technologies",
+    "editors": [
+      {
+        "name": "Valentina E. Balas",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "George A. Tsihrintzis",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "R. N. Shaw",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      },
+      {
+        "name": "Prashant Johri",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2018",
+    "month": "Sep",
+    "academic_year": "2018-19",
+    "status": "Published",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "edition": "1st",
+      "place_of_publication": "Greater Noida, Uttar Pradesh, India",
+      "total_pages": "1208",
+      "publisher": "IEEE",
+      "isbn": "9781538644928"
+    }
+  },
+  {
+    "type": "book",
+    "title": "Green Cloud Computing",
+    "authors": [
+      {
+        "name": "J. K. Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2016",
+    "status": "Published",
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "place_of_publication": "Saarbrucken, Germany",
+      "publisher": "Lambert Academic Publishing"
+    }
+  },
+  {
+    "type": "journal_article",
+    "title": "Reverse Traceability Framework for Identifying Liability of Crashes for Self-Driving Vehicles using Blockchains",
+    "authors": [
+      {
+        "name": "Samar Gupta",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "0000-0002-8048-9031",
+        "equal_contribution": true
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": true,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2023",
+    "month": "Jan",
+    "date_of_publication": "2023-01-01",
+    "academic_year": "2022-23",
+    "status": "Published",
+    "doi": "https://doi.org/10.4018/JGIM.329961",
+    "url": "https://www.igi-global.com/gateway/article/329961",
+    "indexed_in": [
+      "Scopus",
+      "Web of Science Core Collection",
+      "ABDC"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "journal": "Journal of Global Information Management",
+      "volume": "31",
+      "issue": "7",
+      "article_number": "1",
+      "pages": "1-21",
+      "publisher": "IGI Global",
+      "publication_stage": "Published",
+      "abdc_category": "A",
+      "abs_category": "2"
+    }
+  },
+  {
+    "type": "journal_article",
+    "title": "Enabling Green Computing in Cloud Environments: Network Virtualization Approach Towards 5G Support",
+    "authors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "S. Kumar",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "O. Kaiwartya",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Y. Cao",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "J. Lloret",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "C. P. Katti",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Rupak Kharel",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2018",
+    "status": "Published",
+    "doi": "10.1002/ett.3434",
+    "indexed_in": [
+      "Scopus",
+      "Web of Science Core Collection"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "journal": "Transactions on Emerging Telecommunications Technologies",
+      "volume": "29",
+      "issue": "11",
+      "pages": "1-25"
+    }
+  },
+  {
+    "type": "journal_article",
+    "title": "Resource Request Based Energy Efficient Heuristic for Server Offloading in Cloud Computing Environment",
+    "authors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Jawaharlal Nehru University",
+        "is_me": true,
+        "corresponding": true,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "C. P. Katti",
+        "affiliation": "Jawaharlal Nehru University",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2018",
+    "status": "Published",
+    "doi": "10.4018/jgim.2018100101",
+    "indexed_in": [
+      "Scopus",
+      "Web of Science Core Collection",
+      "ABDC"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "journal": "Journal of Global Information Management",
+      "volume": "26",
+      "issue": "4",
+      "pages": "1-7",
+      "abdc_category": "A",
+      "abs_category": "2"
+    }
+  },
+  {
+    "type": "journal_article",
+    "title": "A Survey on Load Balancing Techniques in Cloud Computing Environment",
+    "authors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "C. P. Katti",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2015",
+    "status": "Published",
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "journal": "International Journal of Latest Trends in Engineering & Technology",
+      "volume": "5",
+      "issue": "2",
+      "pages": "469-478"
+    }
+  },
+  {
+    "type": "journal_article",
+    "title": "View on Security, Privacy and Trust Issues in Cloud Computing Environment",
+    "authors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "C. P. Katti",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2015",
+    "status": "Published",
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "journal": "International Journal of Latest Trends in Engineering & Technology",
+      "volume": "5",
+      "issue": "3",
+      "pages": "490-494"
+    }
+  },
+  {
+    "type": "journal_article",
+    "title": "Study of Cloud Computing and its Issues: A Review",
+    "authors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "C. P. Katti",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2014",
+    "status": "Published",
+    "doi": "10.6029/smartcr.2014.05.005",
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "journal": "Smart Computing Review",
+      "volume": "4",
+      "issue": "5",
+      "pages": "389-411"
+    }
+  },
+  {
+    "type": "journal_article",
+    "title": "MADLVF: An energy efficient resource utilization approach for cloud computing",
+    "authors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "C. P. Katti",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "P. C. Saxena",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2014",
+    "status": "Published",
+    "doi": "10.5815/ijitcs.2014.07.08",
+    "indexed_in": [
+      "Scopus",
+      "INSPEC",
+      "Crossref"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "journal": "International Journal of Information Technology and Computer Science",
+      "volume": "6",
+      "issue": "7",
+      "pages": "56-64"
+    }
+  },
+  {
+    "type": "book_chapter",
+    "title": "ERP on the Cloud: Evolution, Benefits and Critical Success Factors",
+    "authors": [
+      {
+        "name": "Deepak Saxena",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2022",
+    "status": "Published",
+    "doi": "10.1201/9781003155577-4",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "book_title": "Cloud IoT: Concepts, Paradigms, and Applications",
+      "pages": "35-44",
+      "publisher": "Chapman and Hall/CRC (Taylor & Francis Group)",
+      "isbn": "9781003155577"
+    }
+  },
+  {
+    "type": "book_chapter",
+    "title": "Recreating Reality: Classification of Computer-Assisted Environments",
+    "authors": [
+      {
+        "name": "Deepak Saxena",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2022",
+    "status": "Published",
+    "doi": "10.1007/978-981-16-7220-0_1",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "book_title": "Advances in Augmented Reality and Virtual Reality",
+      "pages": "3-9",
+      "publisher": "Springer Nature",
+      "isbn": "978-981-16-7220-0"
+    }
+  },
+  {
+    "type": "book_chapter",
+    "title": "Towards Energy Efficient Cloud Computing: Research Directions and Methodological Approach",
+    "authors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      },
+      {
+        "name": "Deepak Saxena",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2022",
+    "status": "Published",
+    "doi": "10.1007/978-3-030-73885-3_1",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "book_title": "IoT and Cloud Computing for Societal Good",
+      "pages": "3-13",
+      "publisher": "Springer Nature",
+      "isbn": "978-3-030-73885-3"
+    }
+  },
+  {
+    "type": "book_chapter",
+    "title": "Google Stock Movement: A Time Series Study Using LSTM Network",
+    "authors": [
+      {
+        "name": "Nishu Sethi",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Shalini Bhaskar Bajaj",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      },
+      {
+        "name": "Utpal Shrivastava",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2021",
+    "status": "Published",
+    "doi": "10.4018/978-1-7998-5876-8.ch004",
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "book_title": "Multidisciplinary Functions of Blockchain Technology in AI and IoT Applications",
+      "pages": "70-87",
+      "publisher": "IGI Global / Engineering Science Reference",
+      "isbn": "9781799858768"
+    }
+  },
+  {
+    "type": "book_chapter",
+    "title": "Blockchain for Public Health: Technology, Applications, and a Case Study",
+    "authors": [
+      {
+        "name": "Deepak Saxena",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "https://doi.org/10.1016/B978-0-12-820604-1.00004-2",
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "book_title": "Computational Intelligence and Its Applications in Healthcare",
+      "pages": "53-61",
+      "publisher": "Academic Press / Elsevier",
+      "isbn": "978-0-12-820604-1"
+    }
+  },
+  {
+    "type": "book_chapter",
+    "title": "Sentiment Analysis on Google Play Store Data using Deep Learning",
+    "authors": [
+      {
+        "name": "Swathi Venkatakrishnan",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Abhishek Kaushik",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1007/978-981-15-3357-0_2",
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "book_title": "Applications of Machine Learning",
+      "pages": "15-30",
+      "publisher": "Springer Nature",
+      "isbn": "978-981-15-3357-0"
+    }
+  },
+  {
+    "type": "book_chapter",
+    "title": "MLPGI: Multi-Layer Perceptron Based Gender Identification over Voice Samples in Supervised Machine Learning",
+    "authors": [
+      {
+        "name": "Meenu Yadav",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Vinod Kumar Verma",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "ChandraShekhar Yadav",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1007/978-981-15-3357-0_23",
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "book_title": "Applications of Machine Learning",
+      "pages": "353-364",
+      "publisher": "Springer Nature",
+      "isbn": "978-981-15-3357-0"
+    }
+  },
+  {
+    "type": "book_chapter",
+    "title": "A Novel Hash-Based Mutual RFID Tag Authentication Protocol",
+    "authors": [
+      {
+        "name": "M. Saxena",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "R. N. Shaw",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2019",
+    "status": "Published",
+    "doi": "10.1007/978-981-13-2254-9_1",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "book_title": "Data and Communication Networks",
+      "pages": "1-12",
+      "publisher": "Springer Nature",
+      "isbn": "978-981-13-2254-9"
+    }
+  },
+  {
+    "type": "book_chapter",
+    "title": "Framework for Real World Events Detection through Online Social Networking Sites",
+    "authors": [
+      {
+        "name": "Ritesh Srivastava",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "M. P. S. Bhatia",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Veena Tayal",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2019",
+    "status": "Published",
+    "doi": "10.1007/978-981-13-2254-9_17",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "book_title": "Data and Communication Networks",
+      "pages": "195-203",
+      "publisher": "Springer Nature",
+      "isbn": "978-981-13-2254-9"
+    }
+  },
+  {
+    "type": "book_chapter",
+    "title": "QVF: A Heuristic for VM Migration from Overloaded Servers in Cloud Computing Environment",
+    "authors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "C. P. Katti",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2017",
+    "status": "Published",
+    "doi": "10.1201/9781315364094-196",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "book_title": "Communication and Computing Systems",
+      "pages": "1095-1101",
+      "publisher": "Taylor & Francis Group (CRC Press)",
+      "isbn": "9781315364094"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Comparative Study on Data Storage algorithms and solution to improve CIA on Cloud using Dynamic Encryption",
+    "authors": [
+      {
+        "name": "Sagar Mistry",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Anil Kumar Mishra",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2021",
+    "status": "Published",
+    "doi": "10.1109/compe53109.2021.9752067",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2021 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2021 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "111-114"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "A Study on 5G Technology and Its Applications in Telecommunications",
+    "authors": [
+      {
+        "name": "Deepender",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Manoj",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Utpal Shrivastava",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2021",
+    "status": "Published",
+    "doi": "10.1109/compe53109.2021.9752402",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2021 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2021 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "365-371"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Impact of Review Sentiment and Magnitude on Customers' Recommendations for Video Games",
+    "authors": [
+      {
+        "name": "Gleb Andreev",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Deepak Saxena",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2021",
+    "status": "Published",
+    "doi": "10.1109/compe53109.2021.9752380",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2021 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2021 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "992-995"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Study on Machine-Learning Algorithms in Crop Yield Predictions specific to Indian Agricultural Contexts",
+    "authors": [
+      {
+        "name": "Suresh Kumar Sharma",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Durga Prasad Sharma",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2021",
+    "status": "Published",
+    "doi": "10.1109/compe53109.2021.9752260",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2021 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2021 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "155-166"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Intelligence Information Retrieval System Modeling for Afaan Oromo",
+    "authors": [
+      {
+        "name": "Suresh Kumar Sharma",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Durga Prasad Sharma",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2021",
+    "status": "Published",
+    "doi": "10.1109/compe53109.2021.9752270",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2021 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2021 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "196-201"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Characterizing Social Media Content for Regulating Hate Crimes and Cyber Racism against Marginalized and Dalits",
+    "authors": [
+      {
+        "name": "Amita Charan",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1109/compe49325.2020.9200049",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "864-871"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Design of Hybrid Cryptography System based on Vigenere Cipher and Polybius Cipher",
+    "authors": [
+      {
+        "name": "Shivam Vatshayan",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Raza Abbas Haidri",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1109/compe49325.2020.9199997",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "848-852"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "IoT in Agriculture",
+    "authors": [
+      {
+        "name": "Bakhtawar Parvez",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Raza Abbas Haidri",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1109/compe49325.2020.9200035",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "844-847"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Braille Book Reader using Raspberry Pi",
+    "authors": [
+      {
+        "name": "Abhishek Sharma",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Suman Devi",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1109/compe49325.2020.9200110",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "841-843"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Digital money: The Empowering New Currency",
+    "authors": [
+      {
+        "name": "Nikhil Shrivastva",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Suman Devi",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1109/compe49325.2020.9200036",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "837-840"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Design, Implementation and Controlling of a Humanoid Robot",
+    "authors": [
+      {
+        "name": "Kiran Somisetti",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Khushboo Tripathi",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1109/compe49325.2020.9200020",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "831-836"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Sensor based detection of Parkinson's disease motor symptoms",
+    "authors": [
+      {
+        "name": "Vinayak Majhi",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Sudip Paul",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Goutam Saha",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1109/compe49325.2020.9200051",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "553-557"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Qualitative software process management for developing countries: An exploratory study",
+    "authors": [
+      {
+        "name": "Azeem Uddin",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Suman Devi",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1109/compe49325.2020.9199995",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "548-552"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Machine learning based diagnostic system for early detection of Parkinson's disease",
+    "authors": [
+      {
+        "name": "Angana Saikia",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Vinayak Majhi",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Masaraf Hussain",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Amit Ranjan Barua",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Sudip Paul",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1109/compe49325.2020.9200195",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "275-279"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "A User Scheduling in LTE Network Having Environment with Mixed Traffic",
+    "authors": [
+      {
+        "name": "Rahul Kumar",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Manoj Yadav",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1109/compe49325.2020.9200105",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "269-274"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Modelling of Brushless DC Hub Motor to control the speed of Indigenous powered wheelchair",
+    "authors": [
+      {
+        "name": "Sateesh Reddy Avutu",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Sudip Paul",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Anjaneya Prasad V.V.B",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2020",
+    "status": "Published",
+    "doi": "10.1109/compe49325.2020.9200192",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "proceedings_title": "2020 International Conference on Computational Performance Evaluation (ComPE)",
+      "publisher": "IEEE",
+      "pages": "091-094"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Deep Learning and its Importance for Early Signature of Neuronal Disorders",
+    "authors": [
+      {
+        "name": "S. Paul",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "A. Datta",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "R. N. Shaw",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "A. Saikia",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2018",
+    "status": "Published",
+    "doi": "10.1109/ccaa.2018.8777527",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2018 4th International Conference on Computing Communication and Automation (ICCCA)",
+      "proceedings_title": "2018 4th International Conference on Computing Communication and Automation (ICCCA)",
+      "publisher": "IEEE",
+      "pages": "1-5"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Mining Public Opinion on Aadhaar Card Linking in India",
+    "authors": [
+      {
+        "name": "N. Tomar",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "R. Srivastava",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2018",
+    "status": "Published",
+    "doi": "10.1109/gucon.2018.8674918",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
+      "proceedings_title": "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
+      "publisher": "IEEE",
+      "pages": "1066-1071"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "Analysing Public Sentiment on GST Implementation in India",
+    "authors": [
+      {
+        "name": "N. Tomar",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "R. Srivastava",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2018",
+    "status": "Published",
+    "doi": "10.1109/gucon.2018.8675016",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
+      "proceedings_title": "2018 International Conference on Computing, Power and Communication Technologies (GUCON)",
+      "publisher": "IEEE",
+      "pages": "1101-1106"
+    }
+  },
+  {
+    "type": "conference_paper",
+    "title": "A comparative study into energy efficient techniques for Cloud computing",
+    "authors": [
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "C. P. Katti",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2015",
+    "status": "Published",
+    "indexed_in": [
+      "Scopus"
+    ],
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": false,
+    "details": {
+      "conference_name": "2015 International Conference of Computing for Sustainable Global Development (INDIACom)",
+      "proceedings_title": "2015 International Conference of Computing for Sustainable Global Development (INDIACom)",
+      "publisher": "IEEE",
+      "pages": "2062-2067"
+    }
+  },
+  {
+    "type": "book_chapter",
+    "title": "Federated Blockchain in Global Trade: Applications, Innovations and Future Trajectories",
+    "authors": [
+      {
+        "name": "Prateep Mondol",
+        "affiliation": "",
+        "is_me": false,
+        "corresponding": false,
+        "orcid": "",
+        "equal_contribution": false
+      },
+      {
+        "name": "Jitendra Kumar Verma",
+        "affiliation": "Indian Institute of Foreign Trade",
+        "is_me": true,
+        "corresponding": false,
+        "orcid": "0000-0003-4103-4218",
+        "equal_contribution": false
+      }
+    ],
+    "year": "2026",
+    "academic_year": "2025-26",
+    "status": "Forthcoming",
+    "language": "English",
+    "featured": false,
+    "highlight": false,
+    "is_forthcoming": true,
+    "expected_year": "2026",
+    "details": {
+      "book_title": "Federated Blockchain—Trends and Challenges",
+      "publisher": "Bentham Science Publishers"
+    }
+  }
 ]
