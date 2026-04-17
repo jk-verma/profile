@@ -1,5 +1,21 @@
 [
   {
+    "title": "Academic Lifecycle Manager",
+    "titleAcronym": "ALM",
+    "entryType": "websiteUtility",
+    "projectType": "Self-Initiated Utility / Showcase",
+    "status": "Deployed",
+    "summary": "A user-friendly web application for academicians to manage teaching, research, student supervision, projects, academic administration, external engagements, and career opportunities in one place. It organizes work academic year-wise, tracks deadlines and subtasks in timeline form, carries forward incomplete items, and preserves history with admin/assistant-supported updates.",
+    "siteUrl": "https://jk-verma.github.io/academic-lifecycle-manager/",
+    "focusAreas": [
+      "Academic Work Management",
+      "Planning & Productivity",
+      "Academic Year Continuity",
+      "Academic Year Continuity",
+      "User-Friendly Workflow"
+    ]
+  },
+  {
     "title": "Technology Trends in Business",
     "entryType": "fundedProject",
     "projectType": "Consultancy Project",
