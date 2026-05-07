@@ -5,8 +5,7 @@
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
     "status": "Deployed",
-    "summary": "A lightweight browser-based TelePrompter for online teaching, YouTube videos, webinars, and presentations. It offers adjustable auto-scrolling, full-screen mode, voice-controlled hands-free navigation, and works seamlessly on desktop and mobile devices. Designed for smooth content delivery with no software installation required.
-",
+    "summary": "A lightweight browser-based TelePrompter for online teaching, YouTube videos, webinars, and presentations. It offers adjustable auto-scrolling, full-screen mode, voice-controlled hands-free navigation, and works seamlessly on desktop and mobile devices. Designed for smooth content delivery with no software installation required.",
     "siteUrl": "https://jk-verma.github.io/teleprompter/",
     "focusAreas": [
       "Educational Technology",
@@ -20,7 +19,7 @@
     "entryType": "websiteUtility",
     "projectType": "Self-Initiated Utility / Showcase",
     "status": "Deployed",
-    "summary": "A user-friendly web application for academicians to manage teaching, research, student supervision, projects, academic administration, external engagements, and career opportunities in one place. It organizes work academic year-wise, tracks deadlines and subtasks in timeline form, carries forward incomplete items, and preserves history with admin/assistant-supported updates.",
+    "summary": "A web-based academic lifecycle management system for organizing teaching, research, supervision, projects, administration, external engagements, and career opportunities. It supports academic year-wise planning, deadline tracking, timeline-based subtasks, carry-forward of pending items, and historical records with admin/assistant-supported updates.",
     "siteUrl": "https://jk-verma.github.io/academic-lifecycle-manager/",
     "focusAreas": [
       "Academic Work Management",
