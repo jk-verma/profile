@@ -1,5 +1,25 @@
 [
   {
+    "title": "TelePrompter",
+    "titleAcronym": "TP",
+    "entryType": "websiteUtility",
+    "projectType": "Self-Initiated Utility / Showcase",
+    "status": "Deployed",
+    "summary": "A lightweight browser-based TelePrompter web application designed for online teaching, YouTube content creation, presentations, webinars, and MOOC recording. The tool supports smooth adjustable auto-scrolling, full-screen mode, microphone-enabled voice support for hands-free script navigation, and compatibility with both desktop and mobile devices. It is especially useful for OBS Studio based professional recording workflows without requiring any software installation.",
+    "siteUrl": "https://jk-verma.github.io/teleprompter/",
+    "focusAreas": [
+      "Educational Technology",
+      "Digital Content Creation",
+      "Web-based Productivity Tools",
+      "TelePrompter Systems",
+      "Voice-enabled Interfaces",
+      "OBS Studio Integration",
+      "Online Teaching Support",
+      "MOOC Content Recording",
+      "Human-Computer Interaction."
+    ]
+  },
+  {
     "title": "Academic Lifecycle Manager",
     "titleAcronym": "ALM",
     "entryType": "websiteUtility",
