@@ -1,4 +1,51 @@
 [
+
+  {
+  "type": "journal_article",
+  "title": "The Role of Emerging Information Technologies in Manufacturing Traceability – Trends, Challenges, and Future Directions",
+  "authors": [
+    {
+      "name": "Samar Gupta",
+      "affiliation": "Indian Institute of Foreign Trade, Delhi",
+      "is_me": false,
+      "corresponding": false,
+      "orcid": "0000-0002-8048-9031",
+      "equal_contribution": false
+    },
+    {
+      "name": "Jitendra Kumar Verma",
+      "affiliation": "Indian Institute of Foreign Trade, Kakinada",
+      "is_me": false,
+      "corresponding": false,
+      "orcid": "0000-0003-4103-4218",
+      "equal_contribution": false
+    }
+  ],
+  "year": "2026",
+  "month": "Jul",
+  "date_of_publication": "2026-07-08",
+  "academic_year": "2026-27",
+  "status": "Published",
+  "doi": "10.70917/ijcisim-2026-2865",
+  "url": "https://cspub-ijcisim.org/index.php/ijcisim/article/view/2865",
+  "indexed_in": [
+    "Scopus"
+  ],
+  "language": "English",
+  "featured": false,
+  "highlight": false,
+  "is_forthcoming": false,
+  "details": {
+    "journal": "International Journal of Computer Information Systems and Industrial Management Applications",
+    "volume": "18",
+    "issue": "6s",
+    "pages": "19--34",
+    "publication_stage": "Published",
+    "quartile": "Q4",
+    "abdc_category": "NA",
+    "abs_category": "NA"
+  }
+}
   {
     "type": "patent",
     "title": "Peltier based Hot-Cold Thermos",
