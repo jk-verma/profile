@@ -16,7 +16,7 @@
       "name": "Jitendra Kumar Verma",
       "affiliation": "Indian Institute of Foreign Trade, Kakinada",
       "is_me": false,
-      "corresponding": false,
+      "corresponding": true,
       "orcid": "0000-0003-4103-4218",
       "equal_contribution": false
     }
